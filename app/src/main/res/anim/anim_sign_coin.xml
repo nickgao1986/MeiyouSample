@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/flaganim"
+        android:repeatCount="10"
+        >
+    <item android:drawable="@drawable/apk_first_coin1" android:duration="250"/>
+    <item android:drawable="@drawable/apk_first_coin2" android:duration="250"/>
+    <item android:drawable="@drawable/apk_first_coin3" android:duration="250"/>
+    <item android:drawable="@drawable/apk_first_coin4" android:duration="250"/>
+    <item android:drawable="@drawable/apk_first_coin5" android:duration="250"/>
+
+</animation-list>

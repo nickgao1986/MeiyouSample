@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="HomeSlidingTabLayout">
+        <attr name="HomeSlidingTabTextSize" format="dimension"/>
+        <attr name="HomeSlidingTabTextSelectSize" format="dimension"/>
+        <attr name="HomeSlidingTabTextColor" format="reference|color"/>
+        <attr name="HomeSlidingTabTextSelectColor" format="reference|color"/>
+        <attr name="HomeSlidingTabTextBackground" format="reference"/>
+        <attr name="HomeSlidingTabIndicatorColor" format="reference|color"/>
+        <attr name="HomeSlidingTabIndicatorHight" format="dimension"/>
+        <attr name="HomeSlidingTabDividerColor" format="reference|color"/>
+        <attr name="HomeSlidingTabStyle">
+            <enum name="HomeTypeDefault" value="0"/>
+            <enum name="HomeTypeAlignCenter" value="1"/>
+            <enum name="HomeTypeAverage" value="2"/>
+            <enum name="HomeTypeCust" value="3"/>
+        </attr>
+        <attr name="HomeCountPerScreen" format="float"/>
+    </declare-styleable>
+
+    <!--倒计时TextView-->
+    <declare-styleable name="TimeTextView">
+    </declare-styleable>
+
+    <declare-styleable name="WheelView">
+        <attr name="textValueColor" format="color"/>
+        <attr name="textItemColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="indicator">
+        <!--正常颜色-->
+        <attr name="normalColor" format="reference"/>
+        <!--选中颜色-->
+        <attr name="selectColor" format="reference"/>
+        <!--正常 是否空心-->
+        <attr name="normalKongxin" format="boolean"/>
+        <!--选中 是否空心-->
+        <attr name="selectKongxin" format="boolean"/>
+        <!--点的宽高-->
+        <attr name="icon_w_h" format="dimension"/>
+
+    </declare-styleable>
+
+    <declare-styleable name="yipageindicator">
+        <!-- 指示器的位置 是否在右下角 -->
+        <attr name="position_right" format="boolean"></attr>
+        <!-- 指示器的位置 1 左下角  2 在中间  3 右下角-->
+        <attr name="position_left_center_right" format="integer"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="CenterChkBox">
+        <attr name="src" format="reference"/>
+        <attr name="src_checked" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="SwitchTextButton">
+        <attr name="frame" format="reference"/>
+        <attr name="textColor" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="text" format="string"/>
+        <attr name="buttonText" format="string"/>
+        <attr name="buttonBackground" format="reference|color"/>
+    </declare-styleable>
+    <declare-styleable name="CompoundButton">
+        <attr name="button" format="reference|color"/>
+    </declare-styleable>
+
+    <declare-styleable name="PullToRefresh">
+        <attr name="adapterViewBackground" format="reference|color"/>
+        <attr name="headerBackground" format="reference|color"/>
+        <attr name="headerTextColor" format="color"/>
+        <attr name="loadingLayout">
+            <flag name="defaultLoading" value="0"/>
+            <flag name="showImageLoading" value="0x1"/>
+            <flag name="nullLoading" value="0x2"/>
+        </attr>
+        <attr name="mode">
+            <flag name="pullDownFromTop" value="0x1"/>
+            <flag name="pullUpFromBottom" value="0x2"/>
+            <flag name="both" value="0x3"/>
+        </attr>
+    </declare-styleable>
+
+
+
+
+    <declare-styleable name="MultiDirectionSlidingDrawer">
+        <attr name="direction">
+            <enum name="rightToLeft" value="0"/>
+            <enum name="bottomToTop" value="1"/>
+            <enum name="leftToRight" value="2"/>
+            <enum name="topToBottom" value="3"/>
+        </attr>
+
+        <attr name="handle" format="reference"/>
+        <attr name="content" format="reference"/>
+
+        <attr name="bottomOffset" format="dimension"/>
+        <attr name="topOffset" format="dimension"/>
+        <attr name="allowSingleTap" format="boolean"/>
+        <attr name="animateOnClick" format="boolean"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="ColoredRatingBar">
+        <attr name="indicator" format="boolean"/>
+        <attr name="rating" format="float"/>
+        <attr name="type" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="small" value="1"/>
+        </attr>
+        <attr name="coloredRatingBarStyle" format="reference"/>
+        <!-- Indicator RatingBar style. -->
+        <attr name="coloredRatingBarStyleIndicator" format="reference"/>
+        <!-- Small RatingBar style. -->
+        <attr name="coloredRatingBarStyleSmall" format="reference"/>
+        <!-- Small indicator RatingBar style. -->
+        <attr name="coloredRatingBarStyleSmallIndicator" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="OverWidthSwipeView">
+        <attr name="contentView" format="reference"/>
+        <attr name="actionView" format="reference"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="StaggeredGridView">
+        <attr name="column_count" format="integer"/>
+        <attr name="column_count_portrait" format="integer"/>
+        <attr name="column_count_landscape" format="integer"/>
+        <attr name="item_margin" format="dimension"/>
+        <attr name="grid_paddingLeft" format="dimension"/>
+        <attr name="grid_paddingRight" format="dimension"/>
+        <attr name="grid_paddingTop" format="dimension"/>
+        <attr name="grid_paddingBottom" format="dimension"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="GifView">
+        <attr name="gif" format="reference"/>
+        <attr name="paused" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="CustomTheme">
+        <attr name="gifViewStyle" format="reference"/>
+    </declare-styleable>
+
+    <!-- Defines the custom XML attributes supported for a HorizontalListView -->
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension"/>
+        <attr name="android:divider"/>
+        <attr name="android:requiresFadingEdge"/>
+        <attr name="android:fadingEdgeLength"/>
+    </declare-styleable>
+
+    <declare-styleable name="SwitchNewButton">
+        <attr name="borderWidth_sb" format="dimension">
+        </attr>
+        <attr name="offBorderColor" format="reference|color">
+        </attr>
+        <attr name="offColor" format="reference|color">
+        </attr>
+        <attr name="onColor" format="reference|color">
+        </attr>
+        <attr name="spotColor" format="reference|color">
+        </attr>
+        <attr name="animate" format="reference|boolean">
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="tip_bubble">
+        <attr name="maxLength" format="integer"/>
+        <attr name="maxLengthMask" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color"/>
+        <attr name="pstsUnderlineColor" format="color"/>
+        <attr name="pstsDividerColor" format="color"/>
+        <attr name="pstsIndicatorHeight" format="dimension"/>
+        <attr name="pstsIndicatorPadding" format="dimension"/>
+        <attr name="pstsUnderlineHeight" format="dimension"/>
+        <attr name="pstsDividerPadding" format="dimension"/>
+        <attr name="pstsTabPaddingLeftRight" format="dimension"/>
+        <attr name="pstsScrollOffset" format="dimension"/>
+        <attr name="pstsTabBackground" format="reference"/>
+        <attr name="pstsShouldExpand" format="boolean"/>
+        <attr name="pstsTextAllCaps" format="boolean"/>
+        <attr name="pstsTextSize" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="BizcardImageView">
+        <attr name="typeForScale">
+            <enum name="minZoom" value="0"/>
+            <enum name="maxZoom" value="1"/>
+        </attr>
+        <attr name="verticalLocation" >
+            <enum name="top" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="bottom" value="2"/>
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="ExpandableAndCollapseView">
+        <attr name="duration" format="integer"/>
+        <attr name="defaultState">
+            <enum name="show" value="0"/>
+            <enum name="hide" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

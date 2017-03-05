@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/flaganim"
+        android:oneshot="false"
+        >
+    <item android:drawable="@drawable/apk_level_four_one" android:duration="250"/>
+    <item android:drawable="@drawable/apk_level_four_two" android:duration="250"/>
+    <item android:drawable="@drawable/apk_level_four_three" android:duration="250"/>
+    <item android:drawable="@drawable/apk_level_four_four" android:duration="250"/>
+</animation-list>

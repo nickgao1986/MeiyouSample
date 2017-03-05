@@ -1,3 +1,777 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MeiyouSample</string>
+
+    <string name="app_name">美柚</string>
+    <string name="youma">柚妈</string>
+    <string name="find">发现</string>
+    <string name="about">关于</string>
+    <string name="sign_coin">还有%1$d天即可\n获得%2$d柚币奖励哦！</string>
+    <string name="sign_continue_prize">已连续签到%1$d天\n奖励%2$d个柚币哦~</string>
+    <string name="sign_coin_login">登录美柚\n签到可获得柚币哦~</string>
+    <string name="encourage_to_sign_in">明日签到\n继续领取柚币哦</string>
+    <string name="lottery_draw_txt_no_login">赶快去抽奖，兑换商品吧</string>
+    <string name="my_skins">我的主题</string>
+    <string name="not_free">付费</string>
+    <string name="download">下载</string>
+    <string name="day">天</string>
+    <string name="affirmative">是</string>
+    <string name="negative">否</string>
+    <string name="login">登录</string>
+    <string name="my_skin">个性主题</string>
+    <string name="login_get">登录领取</string>
+    <string name="login_via_tencent">QQ登录</string>
+    <string name="login_via_sina_weibo">新浪微博登录</string>
+    <string name="prompt">提示</string>
+    <string name="registration">注册</string>
+    <string name="recover_password">找回密码</string>
+    <string name="forget_password">忘记密码</string>
+    <string name="everyday">每天</string>
+    <string name="everyweek">每周</string>
+    <string name="never">永不</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="finish">完成</string>
+    <string name="theme">主题</string>
+    <string name="repeat">重复</string>
+    <string name="initial_text">请选择提醒时间</string>
+    <string name="rank">排名</string>
+    <string name="no_tataquan">赶快加入圈子,\n跟姐妹们一起聊起来吧！</string>
+    <string name="login2recovery">恢复</string>
+    <string name="clear_unread">忽略未读</string>
+    <string name="first_publish_shuoshuo_promotion">你发的动态，你的粉丝可以看到并评论。\n\n可以跟好友们分享兴趣、心情、经验和小秘密哦。</string>
+    <string name="login2backup">登录备份</string>
+    <string name="public_public">发布话题</string>
+    <string name="configure_info">月经间隔天数是指：上一次月经开始的第一天到这一次月经开始的前一天，一般月经间隔天数为28。您的天数如果不规律可以提供一个范围，美柚将自动为您计算哦！</string>
+    <string name="community_report">谢谢支持，美柚会尽快受理您的举报哦~</string>
+    <string name="contact_way_promotion">美柚活动奖品我们将按此地址给您邮寄，请您确保信息准确哦！柚币兑换商品请在提交订单的时候重新确认收货地址噢~</string>
+    <string name="community_mark_as_favorite_success">标记成功啦，你可以到[我的话题]查看哦！</string>
+    <string name="community_mark_failed_retry">标记失败，请重试~</string>
+    <string name="community_mark_as_favorite">正在标记~</string>
+    <string name="community_most_circle">最多只能加入20个圈子哦！建议退出不感兴趣的圈子,再加入新圈子哦~！</string>
+    <string name="circle_category">圈子分类</string>
+    <string name="placed_at_the_top">置顶</string>
+    <string name="today">今天</string>
+    <!-- yanxj add -->
+    <string name="prompt_feedback">为了更好的为您服务，请您务必详细描述出问题的步骤哦，3Q~</string>
+    <string name="xiyou_Prompt">美柚v1.2.1</string>
+    <string name="copyright_Prompt">Copyright©2013&#8211;2017 美柚 版权所有</string>
+    <string name="xiyou_account2">美柚账号:</string>
+    <string name="xiyou_content">这里是获取的内容\n FROM:美柚-See You</string>
+    <string name="nickname_limit_small">昵称不能少于1个汉字或2个字符哦~</string>
+    <string name="nickname_limit_small_2">昵称太短了，最少两个字哦~</string>
+    <string name="nickname_limit">昵称长度不超过16个字符或8个汉字~</string>
+    <string name="nickname_limit_2">昵称太长了，简化后再试试哦~</string>
+    <string name="xiyou_welcome_back">欢迎回到美柚大家庭~</string>
+    <string name="xiyou_welcome">欢迎加入美柚大家庭~</string>
+    <!--
+    <string name="introduction1">新增【云同步】功能\n数据永不丢失</string>
+    <string name="introduction2">新增【我的美柚】功能\n健康数据一目了然</string>
+    <string name="introduction3">日历进一步优化\n界面更简洁好用</string>
+
+    -->
+    <string name="tiaoli_content">在月经期间，女性容易出现精神焦虑、情绪不安，抵抗力下降。应多吃豆制品等富含植物性雌激素的食物以缓和身心失调，多摄取钙质以安心养神。</string>
+    <string name="jinhou_content">经期后第一周，身体内的雌性激素分泌相对旺盛，会加快体内碳水化合物、脂肪、蛋白质的吸收和消耗，因此身体的新陈代谢加快，消化功能增强。</string>
+    <string name="jifu_content">经期前一周，女性体内的黄体荷尔蒙分泌增加，肌肤进入超级敏感期，痘痘、毛孔粗大等都有可能出现。期间一定要做好控油保湿和清洁工作哦！</string>
+    <string name="pailuan_content">排卵期体内雌激素量迅速增加，而这段时间内，影响胸部丰满度的动情素更是24小时等量分泌，刺激乳房脂肪囤积，是绝佳的丰胸时期~</string>
+
+    <!-- 首页本地数据 -->
+    <string-array name="home_local_strings">
+        <item>专为女性打造，解决一切困扰。提供预测、分析及个性化建议，轻松摆脱尴尬难题。
+            支持经期、备孕、怀孕及育儿四大模式，在不同阶段享受健康贴士，完成变美任务。
+            独创“蜜友圈”和“她她圈”，分享快乐、探讨生活，与美柚相约，遇见更美的你。
+</item>
+        <item>蜜友圈：好友互粉刷动态，亲密互动弹指间，一切尽在蜜友圈。在这里可以畅所欲言，与好友分享你的情感、知识和经历，关注名人、好友，和更多共同兴趣，相似轨迹的好友们，一起结缘“蜜友圈”~
+</item>
+        <item>她她圈：专属女生的交流社区，涵盖不同性质的数十个圈子。不论你是学生、白领还是全职太太，关注健康时尚还是育儿养生，只要你感兴趣的话题，在这里都能找到聊得来的蜜友哦~
+</item>
+    </string-array>
+
+    <string name="localstring1">“她她圈”是美柚专门为女生建立的社区，将相同身份，相同兴趣爱好的妹子们聚集到一起，快一起加入吧！</string>
+    <string name="no_record">当前没有数据哦~请点击重试</string>
+    <string name="loading">努力加载中&#8230;</string>
+    <string name="login_if_youwant_something">没登录哦，登录后再用吧</string>
+    <string name="no_task">啊&#8230;木有任何任务</string>
+    <string name="no_already_task">没有已完成任务哦~</string>
+    <string name="promotion_tips_left">点击这里\n可以按分类查看哦~</string>
+    <string name="promotion_tips_right">点击这里\n可以搜索贴士哦~</string>
+    <string name="promotion_calendar_down">点击这里\n可以进行上滑和下滑哦~</string>
+    <string name="promotion_task">点击这里\n可以添加任务哦~</string>
+    <string name="reminder_ps_promotion">月经期间御寒能力下降，尽量不要食用冰冷和凉性的食物和饮料哦</string>
+    <string name="reminder_ps_one">大姨妈明天驾到，准备好面包去接驾吧~</string>
+    <string name="reminder_beiyun_promotion">排卵日前后爱爱怀孕机率较高的，如果还没有准备好要做好安全措施哟!</string>
+    <string name="reminder_beiyun_one">明天就是排卵日啦，前后几天爱爱怀孕机率较高哟！</string>
+    <string name="reminder_wsj_promotion">卫生巾最迟3、4个小时要更换哦，如果长时间不换的话，可能会感染的！</string>
+    <string name="reminder_wsj_one">清早起床出门前，要记得为姨妈换装哦！</string>
+    <string name="reminder_wsj_two">再忙也别忘了姨妈哦，小心给你颜色瞧呐！</string>
+    <string name="reminder_wsj_three">久坐会姨妈“内伤”哦，换垫垫时间到咯！</string>
+    <string name="reminder_wsj_four">结束了工作的繁忙，别忘了更换姨妈巾哦！</string>
+    <string name="reminder_wsj_five">夜深了，记得为姨妈换上睡衣哦~晚安咯~</string>
+    <string name="reminder_water_promotion">人体中超过50%是水，因此人体需要补充足够的水份以维持生理机能。一般人每天需要摄入1.5～2升的水量，相当于八杯200毫升左右的水分。</string>
+    <string name="reminder_water_one">起床喝杯水，有助于清理肠胃~</string>
+    <string name="reminder_water_two">工作前喝杯水，提前预存上午所需水分~</string>
+    <string name="reminder_water_three">午饭前来一杯，补充上午缺失的水分~</string>
+    <string name="reminder_water_four">饭后来杯水，补充水分有助消化~</string>
+    <string name="reminder_water_five">下午茶时间喝杯茶，让你下午有精神~</string>
+    <string name="reminder_water_six">下班前喝杯水，缓解工作的疲劳~</string>
+    <string name="reminder_water_seven">新陈代谢巅峰时间来一杯，帮助身体排毒~</string>
+    <string name="reminder_water_eight">睡前2小时来一杯，为夜晚的身体预存水分~</string>
+    <string name="reminder_mianmo_promotion">一天中在睡前敷面膜效果最佳，有助于将养分随新陈代谢送入肌肤底层。</string>
+    <string name="reminder_mianmo_one">贴贴更水润，抹抹好Q弹~</string>
+    <string name="reminder_medicine_promotion">在多数情况下不建议用茶水服药哦，一些西药遇到茶会降低或失去药效。</string>
+    <string name="reminder_medicine_one">赶走小病菌，不要林妹妹~</string>
+    <string name="reminder_yesuan_promotion">备孕或者怀孕的麻麻注意每天补充叶酸，以防止小宝宝来“报到”时，自己还没做好准备，措手不及。</string>
+    <string name="reminder_gaipian_promotion">怀孕的麻麻要注意补钙哦~及时给胎儿供给养分，维持胎儿成长大于过程中所需的必要物质。</string>
+    <string name="reminder_yesuan_one">每天记得补充叶酸片哦~</string>
+    <string name="reminder_gaipian_one">准妈妈在4个月后开始补钙片了</string>
+    <string name="reminder_yesuan_title">叶酸片提醒</string>
+    <string name="reminder_gaipian_title">钙片提醒</string>
+    <string name="prompt_no_period">没有经期记录小柚子不知道怎么提醒你哦~</string>
+    <string name="config_title">快速设定</string>
+    <string name="choose_life_phase">选择人生阶段</string>
+    <string name="config_tips_zero">最近一次月经还没填哦~</string>
+    <string name="config_babyout_zero">宝宝出生日还没填哦~</string>
+    <string name="config_baby_gender_zero">宝宝性别还没填哦~</string>
+    <string name="config_yuchan_zero">预产期还没填哦~</string>
+    <string name="config_tips_circle">经期长度还没有填哦~</string>
+    <string name="config_tips_duration">周期长度还没填哦~</string>
+    <string name="config_tips_three">周期天数和经期天数还没填哦~</string>
+    <string name="config_tips_five">已经登录成功，请进行初始化</string>
+    <string name="liu1">月经量很少</string>
+    <string name="liu2">月经量偏少</string>
+    <string name="liu3">月经量正常</string>
+    <string name="liu4">月经量偏多</string>
+    <string name="liu5">月经量很多</string>
+    <string name="tongji1">基本不痛</string>
+    <string name="tongji2">轻微痛</string>
+    <string name="tongji3">很痛</string>
+    <string name="tongji4">非常痛</string>
+    <string name="tongji5">痛死了</string>
+
+    <string name="set_item_firstOfWeek">日历开始日</string>
+    <string name="set_item_image_mode">非WIFI下开启省流量功能</string>
+    <string name="big_image_mode">高</string>
+    <string name="thumb_image_mode">默认</string>
+    <string name="close_image_load">关闭</string>
+    <string name="set_item_cleanCache">清理缓存</string>
+    <string name="set_item_fankui">意见反馈</string>
+    <string name="set_item_baoxiang">百宝箱</string>
+    <string name="shopping_help">柚子街购物帮助</string>
+    <string name="meetyou_help">帮助与反馈</string>
+    <string name="set_item_about_xiyou">关于美柚</string>
+    <string name="noapp">不好意思亲,没有应用获取哦~</string>
+
+    <!--记录分析-start-->
+    <string name="no_record_score">无</string>
+    <string name="count_title">次数</string>
+    <!--记录分析-end-->
+
+
+    <!-- yanxj end -->
+
+    <string name="animation_duration">550</string>
+
+
+    <string-array name="home_reminder">
+        <item>欢迎您成为美柚的一员，成为注册用户就可以备份个人信息哟，就算换手机也能直接找回全部数据~</item>
+        <item>美柚提醒您：还有个人资料未完善，填写相关信息后预测更准哦！</item>
+        <item>大姨妈来了要在日历中添加开始日期哟~</item>
+        <item>你的大姨妈走了吗?不要忘了在日历中录入结束日期哦~如果大姨妈迟迟不走,就调理一下吧</item>
+        <item>有一些记录未备份哦，快来备份一下吧！</item>
+        <item>亲爱的，大姨妈测算你的平均周期是%1$d天,与你填写的%2$d天有差距哦~修改后预测会准确哦~</item>
+        <item>关注我们的官方微博,会有不定期的活动和惊喜奖品哦!</item>
+        <item>以下是美柚对你的健康建议哦，坚持不懈，做个健康美丽的女人吧！</item>
+    </string-array>
+    <string-array name="home_pa_reminder">
+        <item>大姨妈来了要在日历中添加开始日期哟~</item>
+        <item>大姨妈来了要在日历中添加开始日期哟~若大姨妈推迟7天内没来是正常情况，不用太紧张哦~</item>
+        <item>大姨妈推迟7天以上可能是月经不调，需要调理哦，如果大姨妈已经来了，快去记录一下吧~</item>
+        <item>你已经好久没记录月经了，是不是忘了呢？如果没来，建议买个早孕试纸测下是否怀孕哦~</item>
+        <item>你已经超过预测期15天没记录月经了，是不是忘了呢？如果没来，建议去医院检查一下哦~</item>
+        <item>你已经好久没记录月经了，是不是忘了呢？如果怀孕了，可以在 我>我的状态 中设置我怀孕了哦~</item>
+    </string-array>
+    <string-array name="home_pb_reminder">
+        <item>大姨妈如果结束了要记得记录结束点哦？偶尔经期延长也属于正常现象，不用太紧张哦~</item>
+        <item>大姨妈还没结束吗？经期延长太久可能是月经不调需要调理哦。如果已经结束了，快去记录一下吧~</item>
+        <item>你的姨妈期已经超过10天了，是不是忘了记录结束呢？如果的确没结束，建议去医院检查一下哦~</item>
+    </string-array>
+
+    <string name="calendar_all_record_title">所有记录</string>
+
+    <string name="home_reminder_period">亲爱的，美柚测算你的平均周期是%1$d天，与你记录相关填写的%2$d天有差距哦~修改后预测会准确哦~</string>
+    <string name="home_reminder_period_again">亲爱的，美柚再次提醒您，美柚测算你的平均周期是%1$d天，与你记录相关填写的%2$d天有差距哦~修改后预测会准确哦~</string>
+    <string name="home_reminder_period_min">亲爱的，美柚测算你的平均周期是%1$d天，与你记录相关填写的%2$d天有差距哦~请检查有没有记错哦~</string>
+    <string name="home_reminder_period_min_again">亲爱的，美柚再次提醒您，美柚测算你的平均周期是%1$d天，与你记录相关填写的%2$d天有差距哦~请检查有没有记错哦~</string>
+    <string name="calenar_end">怎么修改月经结束时间：\n如果不是今天结束，请在结束那天选“是”；如果到今天还没结束，等到未来结束那天选“是”</string>
+    <string name="calenar_first_title">如何修改开始日</string>
+    <string name="calenar_first">·请先选中错误经期开始日\n·关闭-姨妈来了&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+        \n·再选择正确日期&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</string>
+    <string name="task_cry">一半都没有完成，从哪里跌到就\n从哪里爬起来呀喂！</string>
+    <string name="task_down">都完成一半了，怎么就半途而废了呢~</string>
+    <string name="task_sad">败给了三分一，三分二的坚持在\n偷偷桑心呐~</string>
+    <string name="task_happy">完成度很高哦，成就感飙升了，\n有木有~</string>
+    <string name="reminder_calarm">自定义提醒</string>
+    <string name="reminder_mine">我的提醒</string>
+    <string name="reminder_hint_calarm_title">请输入主题</string>
+    <string name="reminder_time_start">提醒时间</string>
+    <string name="reminder_create_new">添加提醒</string>
+    <string name="reminder_calarm_name_too_short">主题至少输入2个汉字哦~</string>
+    <string name="reminder_calarm_name_over_length">主题不能超过20个字哦~</string>
+    <string name="reminder_confirm_delete">你确定要删除该提醒吗?</string>
+    <string name="reminder_remove_success">提醒已成功移除~</string>
+    <string name="reminder_remove_failed">提醒移除失败~</string>
+    <string name="reminder_modify_success">提醒修改成功~</string>
+    <string name="reminder_create_success">提醒添加成功~</string>
+    <string name="reminder_pick_up_time">请选择提醒时间~</string>
+    <string name="reminder_leave_or_save">您的自定义提醒还未保存，是否放弃？</string>
+    <string name="settings_sound_pick_up_ringtone">选择提醒铃声</string>
+    <string name="settings_sound_name_one">美柚音</string>
+    <string name="settings_sound_name_two">风铃</string>
+    <string name="settings_sound_name_three">竖琴</string>
+    <string name="settings_sound_name_four">钟琴</string>
+    <string name="settings_sound_system">系统默认铃声</string>
+    <string name="rank_board">柚姐榜</string>
+    <string name="rank_contribution">月贡献</string>
+    <string name="rank_previou_increment">离上榜差</string>
+    <string name="checkin">签到</string>
+    <string name="topic">话题</string>
+    <string name="recommend">推荐</string>
+    <string name="jinghua">精华</string>
+    <string name="over_shuoshuo_publish_limit_count">最多只能输入200个字哦~</string>
+
+    <!-- 今日特卖 -->
+    <string name="today_sale">今日特卖</string>
+    <string name="today_sale_order">订单</string>
+    <string name="today_sale_cart">购物车</string>
+    <string name="today_sale_tae_brand_tip">精品兑换,每天10点准时上新</string>
+
+    <!-- 今日特卖 END -->
+
+
+    <!-- 花柚币 -->
+    <string name="use_ucion">花柚币</string>
+    <string name="ucion_market">柚币专场</string>
+    <string name="my_ucion">我的柚币：</string>
+    <string name="my_u_coin">我的柚币</string>
+    <string name="earn_more_ucoin">去赚更多柚币 ></string>
+    <string name="ucoin_mall">柚币商城</string>
+    <!-- 花柚币 END -->
+
+
+    <!-- 商品详情 -->
+    <string name="product_detail_title">商品详情</string>
+    <!-- 商品详情END -->
+    <!-- 登录的同步页面 提示文案 -->
+    <string name="sync_recovery_ing">正在恢复历史数据&#8230;</string>
+    <string name="sync_backup_ing">正在备份数据&#8230;</string>
+    <string name="sync_finish_100">您目前的记录已全部备份!</string>
+    <string name="sync_finish_100_recovery">您目前的记录已全部恢复!</string>
+    <string name="sync_recovery_success">您目前的记录均已恢复完成，安全不要担心啦！</string>
+    <string name="sync_backup_success">您目前的记录均已备份完成，安全不要担心啦！!</string>
+
+    <!-- 手动 同步的 页面 文案 -->
+
+    <string name="not_network">咦？网络不见了，请检查网络连接</string>
+    <string name="sync_broken">咦？网络不见了，请检查网络连接</string>
+    <string name="no_internetbroken">咦？网络不见了，请检查网络连接</string>
+    <string name="network_error_no_network">咦？网络不见了，请检查网络连接</string>
+    <string name="no_internet">咦？网络不见了，请检查网络连接</string>
+    <string name="no_internet_for_loading">咦？网络不见了，请检查网络连接后\n点击屏幕重新加载</string>
+
+    <string name="sync_network_slow">当前网络缓慢，您再重新试试</string>
+    <string name="sync_failed">备份出了点问题，您再试试哦~</string>
+    <string name="sync_not_login">您还未登录，不能自动备份哦</string>
+    <string name="application_mode">我的状态</string>
+    <string name="profile">我的资料</string>
+    <string name="user_safe">账号安全</string>
+    <string name="my_level">等级</string>
+    <string name="invalid_body_height">身高输入错误</string>
+    <string name="contact_info">我的收货地址</string>
+    <string name="temperature_anlysis">体温分析</string>
+    <string name="period_anlysis">月经分析</string>
+    <string name="task_description">任务介绍</string>
+    <string name="pregnancy_analysis">爱爱分析</string>
+    <string name="body_weight_anlysis">体重分析</string>
+    <string name="settings">设置</string>
+    <string name="mores">更多</string>
+    <string name="myremind_tools">提醒、工具、设置</string>
+    <string name="mycollect_record">收藏</string>
+    <string name="what_is_your_name">你叫什么呢~</string>
+    <string name="feedback">意见反馈</string>
+    <string name="my_records">我的记录</string>
+    <string name="my_safe">我的保障</string>
+    <string name="my_nickname">我的昵称</string>
+    <string name="reminder_period">经期开始提醒</string>
+    <string name="reminder_wsj">换卫生巾提醒</string>
+    <string name="reminder_beiyun">备孕提醒</string>
+    <string name="reminder_eightwater">八杯水提醒</string>
+    <string name="reminder_mianmo">敷面膜提醒</string>
+    <string name="reminder_medical">吃药提醒</string>
+    <string name="my_topic">我的话题</string>
+    <string name="finish_task">完成任务</string>
+    <string name="mood">心情</string>
+    <string name="diary">日记</string>
+    <string name="mood_diary">日记</string>
+    <string name="pregnancy_diary">孕期日记</string>
+    <string name="task_detail">任务详情</string>
+    <string name="validate_password">验证密码</string>
+    <string name="my_reminder">我的提醒</string>
+    <string name="reminder">提醒</string>
+    <string name="pick_up_reminder_date">选择提醒日期</string>
+    <string name="baibaoxiang">百宝箱</string>
+    <string name="tianshubuguilv">天数不规律</string>
+    <string name="period_rhythm">安全期</string>
+    <string name="task">任务</string>
+    <string name="cannot_record_infuture">无法记录未来的日子</string>
+    <string name="no_calendar_record">还木有任何记录哦~</string>
+    <string name="add_circle_success">成功加入</string>
+    <string name="add_circle_ing">正在加入圈子</string>
+    <string name="quit_circle_success">成功退出</string>
+    <string name="quit_circle_fail">退出圈子失败</string>
+    <string name="my_ucoin">我的柚币</string>
+    <string name="lucky_draw">抽大奖</string>
+    <string name="lucky_draw_description">丰富大奖等你来拿</string>
+    <string name="coming_soon">即将上线</string>
+    <string name="many_skin">多款皮肤</string>
+    <string name="expression">表情</string>
+    <string name="expression_detail">详情</string>
+    <string name="no_convert_expression">您还未兑换下载过表情哦~</string>
+    <string name="recomend_goods">精选商品</string>
+    <string name="not_nickname_set_yet">还没设置昵称哦~</string>
+    <string name="tourists">游客</string>
+    <string name="click_to_login">点此登录</string>
+    <string name="sign_in_for">已签到%d天</string>
+    <string name="my_tool">小工具</string>
+    <string name="my_address">我的收货地址</string>
+    <string name="my_head_icon">我的头像</string>
+    <string name="my_city">城市</string>
+    <string name="habit">好习惯</string>
+    <string name="clear">清除</string>
+    <string name="clear_empty">清空</string>
+    <string name="determine">确定</string>
+    <string name="mode_normal">我要记经期</string>
+    <string name="mode_prepare_pregnancy">我在备孕</string>
+    <string name="mode_prepare_babyout">我怀孕了</string>
+    <string name="mode_mother">我是辣妈</string>
+
+    <string name="toast_no_period_yuchanqi_predict_fails">没有月经记录,美柚无法推算预产期,请手动输入预产期哦~</string>
+    <string name="set_up_baby_born">宝宝出生日</string>
+    <string name="set_up_birthday">生日</string>
+    <string name="set_up_yuchanqi">预产期</string>
+    <string name="task_comment_ui_changed">点击这里可以\n对任务评价哦！</string>
+    <string name="promote_address_leave_with_unsave">您的收货地址还未保存，是否放弃？</string>
+    <string name="planforums">待创建</string>
+    <string name="bind_prompt">发布同城圈需要绑定手机号哦～</string>
+    <string name="bind_now">立即绑定</string>
+    <string name="delete">删除</string>
+    <string name="deleting">正在删除</string>
+    <string name="exit">退出</string>
+    <string name="meetyou_notify">美柚通知</string>
+    <string name="notify_setting_no_disturb_des">开启后，将在23:00&#8211;8:00间不接收美柚的通知（不包含提醒）</string>
+    <string name="notify_setting_sound_zhendong_des">当美柚在运行时，您可以设置是否需要声音或者震动</string>
+    <string name="notify_setting_notify_des">关闭后，聊天的新消息将不会通知你</string>
+    <string name="notify_setting_title">消息通知</string>
+    <string name="email_register">邮箱注册</string>
+    <string name="email_check">邮箱验证</string>
+    <string name="new_product">新品上架</string>
+    <string name="open_disturb_promotion">已设置免打扰模式，取消可以及时收到消息哦~</string>
+    <string name="close_disturb_promotion">夜深了，设置免打扰模式睡个好觉咯~</string>
+    <string name="reminder_yesuan_content">每天记得补充叶酸片哦~</string>
+    <string name="reminder_gaipian_content">准妈妈在四个月后开始补钙片了</string>
+    <string name="reminder_pailuan_content">易孕期不要忘记监测排卵情况，科学使用排卵试纸，祝您好孕~</string>
+    <string name="feedback_sub">反馈</string>
+    <string name="register">注册</string>
+    <string name="login_qq_if_youwant_something">您需要使用QQ登录才能上传健康数据哦~</string>
+    <string name="login_qq_if_youwant_something2">您需要切换至手机QQ当前登录的帐号，才能在QQ健康中心看到数据哦~</string>
+    <string name="login_qq_if_youwant_something3">您需要到‘我>我的资料>账号绑定’绑定当前在线QQ账号才能上传健康数据哦~</string>
+    <string name="add_friend_deep">添加关注</string>
+    <string name="add_attention">添加关注</string>
+    <string name="add_photo">添加照片</string>
+    <string name="publish">发表</string>
+    <string name="publish_shuoshuo">发动态</string>
+    <string name="edit">编辑</string>
+    <string name="title_new_relation">新的好友</string>
+    <string name="cancle_notify">取消通知</string>
+    <string name="open_notify">开启通知</string>
+    <string name="cancle_notify_promotion">取消通知之后，当你不在使用美柚的时候\n将无法获得新的好友通知</string>
+
+    <!-- 个人主页 -->
+    <string name="personal_me">我的主页</string>
+    <string name="personal">个人主页</string>
+    <string name="personal_more_backlist">加入黑名单</string>
+    <string name="personal_more_report">举报</string>
+    <string name="personal_more_cancel">取消</string>
+    <string name="personal_attention">关注</string>
+    <string name="personal_delete_backlist">解除黑名单</string>
+    <string name="personal_editor">编辑资料</string>
+    <string name="personal_fans">粉丝</string>
+    <string name="personal_report_sure">确认举报</string>
+    <string name="personal_violation">违规</string>
+    <string name="personal_backlist_success">加入黑名单成功</string>
+    <string name="personal_backlist_fail">加入黑名单失败</string>
+    <string name="personal_removebacklist_success">解除黑名单成功</string>
+    <string name="personal_removebacklist_sure">确认解除黑名单?</string>
+    <string name="personal_removebacklist_fail">解除黑名单失败</string>
+    <string name="personal_report_fail">举报失败</string>
+    <string name="personal_attention_success">关注成功</string>
+    <string name="personal_attention_fail">关注失败</string>
+    <string name="personal_empty_hint">她还未发布任何动态哦~</string>
+    <string name="personal_empty_hint_isme">你还未发布任何动态哦~</string>
+    <string name="personal_empty_hint_opus">%1$s还未发布任何%2$s哦~</string>
+
+    <!-- 个人资料 -->
+
+    <string name="personal_info_address">地区</string>
+    <string name="personal_info_constellation">星座</string>
+    <string name="personal_info_marriage">婚姻状况</string>
+    <string name="personal_info_title">她的头衔</string>
+    <string name="personal_info_from">来源</string>
+    <string name="personal_info_marriage_yes">已婚</string>
+    <string name="personal_info_marriage_no">未婚</string>
+    <string name="attention">关注</string>
+    <string name="subscribe_tips">订阅贴士</string>
+    <string name="add_task">添加任务</string>
+    <string name="delete_success">删除成功</string>
+    <string name="delete_fail">删除失败</string>
+    <string name="message">消息</string>
+    <string name="send_message">发消息</string>
+    <string name="mode_weight_loss">我要减肥</string>
+    <string name="personality_skin">个性装扮</string>
+    <string name="already_convert">已兑换</string>
+    <string name="free">免费</string>
+    <string name="long_press_show_preview">长按表情可预览</string>
+    <string name="expression_address_error">表情包地址异常，请稍后重试</string>
+    <string name="skin_sort">分类</string>
+    <string name="special_topic">专题</string>
+    <string name="special_topic_detail">详情</string>
+    <string name="default_skin_name">默认</string>
+    <string name="recommend_me">向QQ和微博好友推荐我</string>
+    <string name="my_order">我的订单</string>
+    <string name="taobao_shopping_cart">淘宝购物车</string>
+    <string name="miyou_circle">关注</string>
+    <string name="opened_mode">已开启%1$s状态</string>
+    <string name="open_mode">进入%1$s状态</string>
+    <string name="mode_normal_des">下次月经来之前我们提前通知你哦~</string>
+    <string name="mode_prepare_pregnancy_des">贴心排卵日提醒助你实现造人计划~</string>
+    <string name="period_duration_and">设置经期、周期</string>
+    <string name="period_circle">周期天数</string>
+    <string name="period_duration_circle">经期%1$d天，周期%2$d天</string>
+    <string name="period_duration_circle_n">经期%1$d天\n周期%2$d天</string>
+    <string name="yuchanqi">预产期</string>
+    <string name="baby_birthday">宝宝出生日</string>
+    <string name="mode_prepare_babyout_des">让你掌握孕妈变化及胎儿成长发育情况哦~</string>
+    <string name="mode_mother_des">记录宝宝成长点滴，与你分享育儿心经~</string>
+    <string name="no_ucoin_task">没有柚币任务哦~</string>
+    <string name="no_ucoin_detail">没有柚币明细哦~</string>
+    <string name="no_ucoin_duihuan">您还没有兑换过商品哦~</string>
+    <string name="use_report">试用报告</string>
+    <string name="date">日期</string>
+    <string name="operate">操作</string>
+    <string name="ucoin">柚币</string>
+    <string name="paper_string">C代表对照线，T代表检测线</string>
+    <string name="paper_string_cancle">（再点击取消选择）</string>
+    <string name="paper_string_one">无效</string>
+    <string name="paper_string_two">阴性</string>
+    <string name="paper_string_three">弱阳</string>
+    <string name="paper_string_four">阳性</string>
+    <string name="paper_string_five">强阳</string>
+    <string name="paper_string_one_ex">（没有结果，再试试）</string>
+    <string name="paper_string_two_ex">（未到达高峰，坚持测试吧）</string>
+    <string name="paper_string_three_ex">（持续测试，不要错过强阳哦）</string>
+    <string name="paper_string_four_ex">（明后天会排卵）</string>
+    <string name="paper_string_five_ex">（明后天会排卵）</string>
+    <string name="paper_title">排卵试纸测试</string>
+    <string name="hospital_area">妇产医院所在地区</string>
+    <string name="select_area">选择地区</string>
+    <string name="select_hospital">选择医院</string>
+    <string name="same_city_hospital">同城医院信息</string>
+    <string name="change_city">切换城市</string>
+    <string name="symptom">症状</string>
+    <string name="unconfortable">不舒服</string>
+    <string name="baby_weight">宝宝体重</string>
+    <string name="baby_weight_unit">g</string>
+    <string name="baby_height">宝宝身长</string>
+    <string name="baby_height_unit">mm</string>
+    <string name="baby_pre">距离预产期</string>
+    <string name="baby_pre_unit">天</string>
+    <string name="baby_play_3G_hint">播放视频将会需要2M流量，您确定播放吗？</string>
+    <string name="baby_play_NONET_hint">无网络，请检查设置</string>
+
+    <!-- 点对点聊天 -->
+    <string name="chat_set">聊天设置</string>
+    <string name="not_network_and_try">网络出现问题了，请检查后再试</string>
+    <string name="resend_tip">重新发送消息？</string>
+    <string name="resend">重新发送</string>
+    <string name="send">发送</string>
+    <string name="input_new_msg">发送新消息</string>
+    <string name="input_new_msg_tip">请输入消息内容</string>
+    <string name="clear_chat_content">清除聊天内容</string>
+    <string name="clear_chat_content_verify">是否清除聊天记录？</string>
+    <string name="add_black_list_tip">加入黑名单-将清除聊天记录，屏蔽她所有的信息，要将她加入黑名单吗？</string>
+    <string name="adding_black_list">正在加入黑名单&#8230;</string>
+    <string name="removing_black_list">正在解除黑名单&#8230;</string>
+    <string name="reply_fail">回复失败</string>
+    <string name="cant_operate">由于对方的设置，您无法进行该操作！</string>
+    <string name="cancel_follow_tip">这里可以取消关注哦~</string>
+    <string name="network_broken_des_title">您的设备未启用移动网络或无限局域网</string>
+    <string name="network_broken_des_one">如需要连接到互联网，可以参考以下方法：</string>
+    <string name="network_broken_des_two">检查手机中的无线局域网（WLAN）设置，查看是否有可接入的无线局域网信号。</string>
+    <string name="network_broken_des_three">检查手机是否已接入移动网络、开启移动数据，并且手机没有被停机。</string>
+    <string name="network_broken_des_four">如果您已接入无线局域网：</string>
+    <string name="network_broken_des_five">请检查您所连接的无线局域网热点是否已接入互联网，或该热点是否已允许您的设备访问互联网。</string>
+    <string name="network_broken_title">网络连接失败</string>
+
+    <!-- taobao -->
+
+    <string name="register_fail">注册失败</string>
+    <string name="register_success">注册成功</string>
+    <!--  -->
+    <string name="earn_u_coin">赚柚币</string>
+
+    <!-- 引导用语 -->
+    <string name="leading_one">提前预测生理期\n重要日子不尴尬</string>
+    <string name="leading_two">美柚专享购不停\n特卖商品淘不尽</string>
+    <string name="leading_three">你想看的,才是推荐</string>
+    <string name="leading_four">柚姐现身说\n淘出你的心动宝贝</string>
+    <string name="tv_dynamic">动态</string>
+    <string name="tv_material">资料</string>
+    <string name="analyis">分析</string>
+    <string name="go_to_see">去购买</string>
+    <string name="pull_to_refresh_pull_label">下拉即可刷新…</string>
+    <string name="pull_to_refresh_release_label">松开即可刷新…</string>
+    <string name="pull_to_refresh_refreshing_label">正在刷新…</string>
+    <string name="publish_hint_title">标题，诱人的会有更多人看哦~</string>
+    <string name="publish_hint_content">内容，好内容上美柚头条赢柚币奖励哦！</string>
+    <string name="subscribe_content">您预约了美甲师</string>
+    <string name="service_item">其他服务</string>
+    <string name="select_item">选择方式</string>
+    <string name="you_name">您的称呼</string>
+    <string name="you_phone">您的电话</string>
+    <string name="you_adress">您的地址</string>
+    <string name="select_time">预约时间</string>
+    <string name="use_roll">柚券</string>
+    <string name="remark">备注</string>
+    <string name="my_date">我的预约</string>
+    <string name="my_srv">我的订单</string>
+    <string name="my_msg">消息中心</string>
+    <string name="my_ticket">我的柚券</string>
+    <string name="date_detail">订单详情</string>
+    <string name="cancel_date">取消预约</string>
+    <string name="comment">评价</string>
+    <string name="comment_hint">亲，您的评价对其他柚子有很大帮助哦</string>
+    <string name="select_city">选择城市</string>
+    <string name="has_open_city">目前开通的城市</string>
+    <string name="no_open_service">该服务还未开通哦！敬请期待！</string>
+    <string name="no_your_want">没有您要找的哦！</string>
+    <string name="customer_comment">顾客评价(%1$d)</string>
+    <string name="retrieve_account_pswd">找回账号或密码</string>
+    <string name="retrieve_pswd">找回密码</string>
+    <string name="retrieve_account">找回账号</string>
+    <string name="retrieve_phone_pswd">通过手机找回密码</string>
+    <string name="retrieve_Email_pswd">通过邮箱找回密码</string>
+    <string name="retrieve_nickname_account">通过昵称找回账号</string>
+    <string name="look_account">查看本机注册过的账号</string>
+    <string name="local_account">该设备注册过的账号</string>
+    <string name="look_local_account">查看本机注册账号</string>
+
+    <!-- 作品页面 -->
+    <string name="filter_category">分类</string>
+    <string name="filter_place">全城</string>
+    <string name="filter_sort">排序</string>
+    <string name="filter_filter">筛选</string>
+    <string name="price_range">价格区间</string>
+    <string name="service_way">服务方式</string>
+    <string name="filter_comprehensive">综合</string>
+    <string name="filter_sentiment">人气</string>
+    <string name="filter_search">找人</string>
+    <string name="filter_reset">重置</string>
+    <!-- 作品页面 -->
+
+
+    <!-- 技师页面 -->
+    <string name="technician_order">接单%1$d次</string>
+    <string name="technician_search_hint">通过工号查找%1$s</string>
+    <string name="technician_search_hint_no_input">请输入%1$s工号进行搜索</string>
+    <string name="search_bt">搜索</string>
+    <string name="technician_works">作品</string>
+    <string name="choose_technician">选择该美甲师</string>
+    <!-- <string name="service_evaluation_des">已服务%1$d人,退单率%2$s</string> -->
+    <string name="service_evaluation_des">已服务%1$d人</string>
+    <string name="employee_number">工号:%1$s</string>
+    <string name="comment_to_other_pro">其他作品评价</string>
+    <string name="filter_title">%1$s (%2$d)</string>
+    <!-- 技师页面 -->
+
+
+    <!-- 作品详情 -->
+    <string name="appointment_door">立即预约</string>
+    <string name="appointment_shop">预约到店</string>
+    <string name="price_door">上门:￥%1$s</string>
+    <string name="price_shop">到店:￥%1$s</string>
+    <string name="people_have_done">%1$d人做过</string>
+    <string name="no_comment_ye">暂时没有评论哦！</string>
+    <string name="no_products_ye">暂时没有该分类的作品哦！</string>
+
+    <!-- 作品详情 -->
+
+    <string name="my_favorite">喜欢</string>
+    <string name="u_redeem">柚券</string>
+    <string name="simple_number">1</string>
+    <string name="simple_string">美柚经期助手</string>
+    <string name="mylike">我喜欢的</string>
+    <string name="contact_seller">联系商家</string>
+    <string name="refund_desc">申请退款前建议先跟商家协商确认退款金额.</string>
+    <string name="refund_reason_hint">申请退款的原因（不少于10个字）</string>
+    <string name="repair_reason_hint">申请修补的原因（不少于10个字）</string>
+    <string name="refund_amount">退款金额</string>
+    <string name="send_request">提交申请</string>
+    <string name="refund_amount_desc">此订单最多退款50元</string>
+    <string name="home_page">主页</string>
+    <string name="make_call">致电</string>
+    <string name="solutions">服务方式</string>
+    <string name="server_date">服务时间</string>
+    <string name="order_phone">预约电话</string>
+    <string name="order_address">预约地址</string>
+    <string name="total_price">总价</string>
+    <string name="request_refund">申请退款</string>
+    <string name="schedule_track">订单跟踪</string>
+    <string name="my_task">我的任务</string>
+    <string name="my_orders">我的订单</string>
+    <string name="gouwudingdan">购物订单</string>
+    <string name="yuyuedingdan">预约订单</string>
+    <string name="shop_address">店铺地址</string>
+    <string name="redeem_ticket">兑换柚券</string>
+    <string name="confirm_cancel">确定要取消此订单吗？</string>
+
+    <!-- 收藏页 -->
+    <string name="user_favorite_activity_my_favorite">我的收藏</string>
+
+    <!-- 电商分类页、活动页 -->
+    <string name="already_end">已结束</string>
+    <string name="already_sold_out">已抢光</string>
+    <string name="load_to_the_end">到底啦</string>
+    <string name="before_start_remain">距开始</string>
+    <string name="before_end_remain">离结束</string>
+    <string name="title_activity_classify">ClassifyActivity</string>
+
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="identify_title_last_period">最近月经日期</string>
+    <string name="set_period_circle">设置经期、周期</string>
+
+
+    <string name="feedAnswer">反馈回复</string>
+
+    <string name="p_begin_day_delay">月经推迟</string>
+    <string name="p_begin_day_ahead">月经提前</string>
+    <string name="recovery_after_baby">产后月经恢复</string>
+    <string name="no_period_record">未记录</string>
+    <string name="no_period_record_2">经期未记录</string>
+    <string name="no_period_record_3">未记录月经</string>
+    <string name="two_week_left">已有2个周期</string>
+    <string name="last_period_2">上次月经时间</string>
+    <string name="selectfankui">请选择反馈类型</string>
+    <string name="period_no_come_yet">月经还没来哦</string>
+    <string name="no_period_record_after_baby">生完宝宝，还未记录月经</string>
+    <string name="no_record_anything">还未记录任何数据</string>
+
+    <!--记录-月经-end-->
+    <string name="no_update_password">第三方账号登录不允许修改密码哦~</string>
+    <string name="nickname_sub_number">请减少数字再设置看看哦~</string>
+    <string name="mode_detail_period_circle_hint">两次月经开始日大概间隔多久？</string>
+    <string name="mode_detail_period_duration_hint">您的月经大概持续几天？</string>
+    <string name="mode_detail_yuchan_hint">您的预产期是哪天？</string>
+    <string name="mode_detail_babyout_hint">宝宝是在哪天出生的？</string>
+    <string name="mode_detail_latest_period_hint">最近一次月经大概是哪天来的？</string>
+    <string name="mode_detail_desc_none">未选择</string>
+    <string name="mode_detail_field_babyout">宝宝出生日</string>
+    <string name="mode_detail_field_period_duration">经期长度</string>
+    <string name="mode_detail_field_period_circle">周期长度</string>
+    <string name="mode_detail_field_yuchan">预产期</string>
+    <string name="mode_detail_field_latest_period">月经开始日</string>
+    <string name="identify_title_duration">选择经期天数</string>
+    <string name="identify_title_circle">选择周期天数</string>
+    <string name="un_taobao_auth">淘宝账号未授权</string>
+    <string name="taobao_auth_ed">淘宝账号已授权</string>
+
+    <string name="no_relate_content">暂时没有找到相关内容哦~</string>
+    <string name="copy_click_board_success">复制成功</string>
+    <string name="copy_click_board_fail">复制失败</string>
+
+    <string name="quick_login">已有账号快速登录</string>
+
+    <string name="choose_phase_latest_period_hint">最近一次月经大概是哪天来的？</string>
+    <string name="choose_phase_latest_period_label">最近一次月经</string>
+    <string name="choose_phase_baby_gender_hint">选择宝宝性别</string>
+    <string name="choose_phase_baby_gender">宝宝性别</string>
+    <string name="choose_phase_boy">小王子</string>
+    <string name="choose_phase_girl">小公主</string>
+    <string name="choose_phase_calc_yuchan">不知道预产期?计算一下</string>
+    <string name="baby_gender">选择宝宝性别</string>
+    <string name="period_set">经期设置</string>
+    <string name="yuchanqi_set">预产期设置</string>
+    <string name="mother_set">辣妈设置</string>
+    <string name="unselect">未选择</string>
+
+    <!--日期的天数数据 iconfont-->
+    <string name="day_1">&#xe623;</string>
+    <string name="day_2">&#xe624;</string>
+    <string name="day_3">&#xe625;</string>
+    <string name="day_4">&#xe626;</string>
+    <string name="day_5">&#xe627;</string>
+    <string name="day_6">&#xe628;</string>
+    <string name="day_7">&#xe629;</string>
+    <string name="day_8">&#xe62a;</string>
+    <string name="day_9">&#xe62b;</string>
+    <string name="day_10">&#xe62c;</string>
+    <string name="day_11">&#xe62d;</string>
+    <string name="day_12">&#xe62e;</string>
+    <string name="day_13">&#xe62f;</string>
+    <string name="day_14">&#xe630;</string>
+    <string name="day_15">&#xe631;</string>
+    <string name="day_16">&#xe632;</string>
+    <string name="day_17">&#xe633;</string>
+    <string name="day_18">&#xe634;</string>
+    <string name="day_19">&#xe635;</string>
+    <string name="day_20">&#xe636;</string>
+    <string name="day_21">&#xe637;</string>
+    <string name="day_22">&#xe638;</string>
+    <string name="day_23">&#xe640;</string>
+    <string name="day_24">&#xe639;</string>
+    <string name="day_25">&#xe63a;</string>
+    <string name="day_26">&#xe641;</string>
+    <string name="day_27">&#xe63b;</string>
+    <string name="day_28">&#xe63c;</string>
+    <string name="day_29">&#xe63d;</string>
+    <string name="day_30">&#xe63e;</string>
+    <string name="day_31">&#xe63f;</string>
+    <string name="logging">正在登录&#8230;</string>
+    <string name="wrong_auth">授权错误&#8230;</string>
+    <string name="fail_auth">授权失败&#8230;</string>
+    <string name="cancel_loging">取消登录</string>
+    <string name="get_auth_info_fail">授权获取信息失败</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_fail">登录失败</string>
+    <string name="txt_change_phone">更换手机号</string>
+    <string name="txt_tips_change_phone_is_receive">请确认您的旧号码 %1$s 是否可以正常接收短信验证码</string>
+    <string name="txt_tips_change_phone_sendvalidate">我们会将含有验证码的短信发送到您的手机\n%1$s</string>
+    <string name="txt_send_sms_again">重新获取(%1$d)</string>
+    <string name="txt_get_sms">获取验证码</string>
+
+    <string name="set_item_share">分享美柚</string>
+    <string name="scan_down_app">扫一扫下载美柚</string>
+    <string name="share_no_like">不感兴趣</string>
+
+    <string name="meiyouaccount_read_count">阅读</string>
+    <string name="meiyouaccount_play_count">播放</string>
+
+    <string name="cancel_attention">取消关注</string>
+    <string name="put_black">拉黑</string>
+    <string name="put_black_on">取消拉黑</string>
+    <string name="tv_video">视频</string>
+    <string name="tv_photo_list">图集</string>
+
+    <string name="no_myh_account">抱歉，暂时没有符合的美柚号</string>
+    <string name="join_more_account">添加更多美柚号</string>
+    <string name="no_account_data">你还没关注美柚号</string>
 </resources>

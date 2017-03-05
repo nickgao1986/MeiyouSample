@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="gallery" type="id"/>
+    <item name="label" type="id"/>
+    <item name="indicator" type="id"/>
+    <!--    <item name="gridview" type="id"/>
+        <item name="webview" type="id"/>-->
+    <item name="selected_view" type="id"/>
+
+    <item name="today_sale_showcase_one" type="id"/>
+    <item name="today_sale_showcase_two" type="id"/>
+    <item name="today_sale_showcase_three" type="id"/>
+
+    <item name="tag_mine_grid_view_holder" type="id"/>
+    <item name="ll_title_tab" type="id"/>
+
+</resources>

@@ -2,109 +2,109 @@
 <items version="2" >
 
     <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="25.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_9f4550cf8087827a8dfda6a3d51a8aa1854dfdd9.jar" />
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_f4d575d575af22a79967dd4801c9f76e587c9dd5.jar" />
     </item>
     <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="25.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_b410b0b5dbd3dc8a7ed315f148e04588bf10f8f6.jar" />
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_a3f33f77f374ca6ef494cd7d9fddbf47c87c836e.jar" />
     </item>
     <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="25.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_9a15e37b5fbfde14581ed50d5ac56d4976c742ae.jar" />
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_a7dcf38f9e4513feed9be2ee06ea8567b28ba84e.jar" />
     </item>
     <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_537a66930a89bb2e50d907a9db5f90c81f8721fe.jar" />
+    </item>
+    <item
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_fdc5b40469f33b396a17d8561b0ad04b32fc6944.jar" />
+    </item>
+    <item
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="25.0.2"
         sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_eb43bcbf03e644f2ff0d087a6332296f0e9e47e6.jar" />
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_17454a14fa227705f380d8ad9c329872b4b98381.jar" />
+    </item>
+    <item
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_195b402f20bd718c1a2d5cd1d8787d6abebcd084.jar" />
+    </item>
+    <item
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_89d7adf9fb249d8ca5b9a96864e5b2ee74857c64.jar" />
     </item>
     <item
         jar="/Users/gaoyoujian/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
         jumboMode="false"
         revision="25.0.2"
         sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_4169d8f125216105764577dde1aaa10b98a2d95c.jar" />
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_4169d8f125216105764577dde1aaa10b98a2d95c.jar" />
     </item>
     <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_79216004b35731446d726249e070db89906772d8.jar" />
-    </item>
-    <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_e340607902c6c8db9edebca3876426e4cb29b74a.jar" />
-    </item>
-    <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="25.0.2"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_a2c423d3dee545615a4cf40cd23be121bd65df1d.jar" />
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_6202f8aa5abf90b6305f3866eb323d790e900c7f.jar" />
     </item>
     <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_f5260bffbc65a2ad906f22bf3cdd337d15a90545.jar" />
-    </item>
-    <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_40831a470b33bef6ded7801b64e0c9fd2ef98d2f.jar" />
-    </item>
-    <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
         jumboMode="false"
         revision="25.0.2"
         sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_9e03da6534cebe181b3d811ca08cc43242bce08c.jar" />
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_ebb9e8fe2d45c26fef49c1082f715ed5ebb1b353.jar" />
     </item>
     <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_d048b10a25c971a74137d440ead7fc85eb6f5373.jar" />
-    </item>
-    <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_69886dab75b403fc6853d1592a48a267f86b5ce7.jar" />
-    </item>
-    <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_d140e4327db30adfed89c8bca3a0a29bc2306b9b.jar" />
-    </item>
-    <item
-        jar="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
         jumboMode="false"
         revision="25.0.2"
         sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/Users/gaoyoujian/Desktop/github/MeiyouSample/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_32ffd49752359d4b41d7bef0fa57f2f20fe01776.jar" />
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_146ec19110ee99f7bab71883c2879d3ca54dbd23.jar" />
+    </item>
+    <item
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_fdc5dedad69cefc624ed51ad2dee80f09fc16cf7.jar" />
+    </item>
+    <item
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_40cc897c4a2fe7f86e9b6484302a3e7728d3a76c.jar" />
+    </item>
+    <item
+        jar="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        revision="25.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/gaoyoujian/Desktop/github/mysample/MeiyouSample/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_54164810f20b1757e41bd047cb5212d3af6f978f.jar" />
     </item>
 
 </items>
