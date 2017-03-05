@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_dynamic"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:id="@+id/tv_dynamic"
+        style="@style/meiyouaccounts_personal_head_tab_text"
+        android:text="@string/tv_dynamic"
+        />
+
+    <View
+        android:id="@+id/view_select_dynamic_1"
+        style="@style/meiyouaccounts_personal_head_tab_text_selector"
+        />
+</FrameLayout>

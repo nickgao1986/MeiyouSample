@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/actionbar_item_hight"
+    android:layout_below="@id/rlImgBg"
+    android:background="@color/white_an"
+    android:id="@id/ll_title_tab"
+    android:orientation="horizontal"
+    >
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/fl_dynamic"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_dynamic"-->
+            <!--style="@style/meiyouaccounts_personal_head_tab_text"-->
+            <!--android:text="@string/tv_dynamic"-->
+            <!--/>-->
+
+        <!--<View-->
+            <!--android:id="@+id/view_select_dynamic_1"-->
+            <!--style="@style/meiyouaccounts_personal_head_tab_text_selector"-->
+            <!--/>-->
+    <!--</FrameLayout>-->
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/fl_opus"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_opus"-->
+            <!--style="@style/meiyouaccounts_personal_head_tab_text"-->
+            <!--android:text="@string/technician_works"-->
+            <!--/>-->
+
+        <!--<View-->
+            <!--android:id="@+id/view_select_opus"-->
+            <!--style="@style/meiyouaccounts_personal_head_tab_text_selector"-->
+            <!--/>-->
+    <!--</FrameLayout>-->
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/fl_video"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:visibility="gone"-->
+        <!--&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_video"-->
+            <!--style="@style/meiyouaccounts_personal_head_tab_text"-->
+            <!--android:text="@string/tv_video"-->
+            <!--/>-->
+
+        <!--<View-->
+            <!--android:id="@+id/view_select_video"-->
+            <!--style="@style/meiyouaccounts_personal_head_tab_text_selector"-->
+            <!--/>-->
+    <!--</FrameLayout>-->
+
+    <!--<FrameLayout-->
+        <!--android:id="@+id/fl_photo_list"-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:visibility="gone"-->
+        <!--&gt;-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/tv_photo_list"-->
+            <!--style="@style/meiyouaccounts_personal_head_tab_text"-->
+            <!--android:text="@string/tv_photo_list"-->
+            <!--/>-->
+
+        <!--<View-->
+            <!--android:id="@+id/view_select_photo_list"-->
+            <!--style="@style/meiyouaccounts_personal_head_tab_text_selector"-->
+            <!--/>-->
+    <!--</FrameLayout>-->
+
+
+</LinearLayout>

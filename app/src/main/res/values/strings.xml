@@ -774,4 +774,12 @@
     <string name="no_myh_account">抱歉，暂时没有符合的美柚号</string>
     <string name="join_more_account">添加更多美柚号</string>
     <string name="no_account_data">你还没关注美柚号</string>
+
+
+    <string name="loading_error">加载失败！</string>
+    <string name="loading_more">正在加载更多&#8230;</string>
+    <string name="loading_complete">没有更多了哟~</string>
+    <string name="loading_for_more">上拉加载更多</string>
+    <string name="loading_ing">正在加载更多，稍后哦！</string>
+    <string name="favorites_shop_no_data">去逛逛~</string>
 </resources>

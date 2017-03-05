@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+    >
+
+    <RelativeLayout
+        android:id="@+id/rlImgBg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivPersonalBg"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/apk_first_banner"/>
+
+        <ImageView
+            android:id="@+id/ivCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_xxl"
+            android:layout_marginTop="-60dp"
+            android:src="@drawable/apk_rotate"
+            android:visibility="visible"/>
+
+        <!-- 关注，粉丝 -->
+        <FrameLayout
+            android:id="@+id/fl_rlAttentionOrFans_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ivPersonalBg"
+            >
+        <RelativeLayout
+            android:id="@+id/rlAttentionOrFans"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ivPersonalBg"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/imgLine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:shadowColor="@color/black_a"
+                android:shadowDx="1"
+                android:shadowDy="5"
+                android:shadowRadius="7"
+                android:text="|"
+                android:textColor="@color/white_a"
+                />
+
+            <TextView
+                android:id="@+id/tvAttention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@+id/imgLine"
+                android:padding="10dp"
+                android:shadowColor="@color/black_a"
+                android:shadowDx="1"
+                android:shadowDy="5"
+                android:shadowRadius="7"
+                android:textColor="@color/white_a"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/tvFans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imgLine"
+                android:padding="10dp"
+                android:shadowColor="@color/black_a"
+                android:shadowDx="1"
+                android:shadowDy="5"
+                android:shadowRadius="7"
+                android:textColor="@color/white_a"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_brand_fans_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ivPersonalBg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            >
+
+            <TextView
+                android:id="@+id/rl_brand_fans_banner_fanscount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                tools:text="粉丝 50000"
+                android:singleLine="true"
+                android:textColor="@color/white_a"
+                android:textSize="16sp"
+                android:shadowColor="@color/black_a"
+                android:shadowDx="1"
+                android:shadowDy="5"
+                android:shadowRadius="7"
+                android:padding="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:shadowColor="@color/black_a"
+                android:shadowDx="1"
+                android:shadowDy="5"
+                android:shadowRadius="7"
+                android:text="|"
+                android:textColor="@color/white_a"
+                />
+
+            <TextView
+                android:id="@+id/rl_brand_fans_banner_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imgLine"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:shadowColor="@color/black_a"
+                android:shadowDx="1"
+                android:shadowDy="5"
+                android:shadowRadius="7"
+                tools:text="阅读 5000"
+                android:textColor="@color/white_a"
+                android:textSize="16sp"
+                android:singleLine="true"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:shadowColor="@color/black_a"
+                android:shadowDx="1"
+                android:shadowDy="5"
+                android:shadowRadius="7"
+                android:text="|"
+                android:textColor="@color/white_a"
+                />
+
+            <TextView
+                android:id="@+id/rl_brand_fans_banner_favorite"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/imgLine"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:shadowColor="@color/black_a"
+                android:shadowDx="1"
+                android:shadowDy="5"
+                android:shadowRadius="7"
+                tools:text="收藏 5000"
+                android:textColor="@color/white_a"
+                android:textSize="16sp"
+                android:singleLine="true"
+                />
+        </LinearLayout>
+        </FrameLayout>
+        <RelativeLayout
+            android:id="@+id/rlPersonal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fl_rlAttentionOrFans_parent"
+            android:layout_marginBottom="10dp">
+
+            <RelativeLayout
+                android:id="@+id/rlPersonalPhotoBg"
+                android:layout_width="82dp"
+                android:layout_height="82dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/apk_personal_photobg"
+                android:gravity="center">
+
+                <com.meiyou.framework.ui.views.CircleShapeImageView
+                    android:id="@+id/ivPersonalHead"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_alignParentTop="true"
+                    android:src="@drawable/apk_mine_photo"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlPersonalPhotoBg"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tvPersonalName"
+                    style="@style/overText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="4dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_a"
+                    android:textSize="18sp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rlRank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tvPersonalName"
+                    android:background="@drawable/apk_rank_bg"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvRank"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:text="LV0"
+                        android:textColor="@color/white_a"
+                        android:textSize="@dimen/text_size_xs"
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvPersonalMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlName"
+                android:layout_centerHorizontal="true"
+                android:maxLines="2"
+                android:textColor="@color/white_a"
+                android:textSize="14sp"
+                android:gravity="center"
+                />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <!-- 动态 资料-->
+    <include layout="@layout/layout_activity_meiyouaccounts_personal_head_tab"
+             android:id="@id/ll_title_tab"
+        />
+
+    <View
+        android:id="@+id/view_yunqi_feeds"
+        style="@style/divider"
+        android:layout_below="@id/ll_title_tab"
+        />
+
+    <ImageView
+        android:id="@+id/ivWave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ptn_wavy_line"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rlNoMsg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_title_tab"
+        android:gravity="center"
+        android:visibility="visible"
+        >
+
+        <com.lingan.seeyou.ui.view.LoadingView
+            android:id="@+id/loadingView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>

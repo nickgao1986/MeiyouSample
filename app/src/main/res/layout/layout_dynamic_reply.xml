@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeTitle"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/apk_all_whitebottom_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:visibility="gone"
+    >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="@dimen/space_xxs">
+
+        <ImageButton
+            android:id="@+id/ibEmoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_xxs"
+            android:background="@drawable/btn_emoji_selector"
+            android:padding="@dimen/space_xxs" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <com.lingan.seeyou.ui.view.CursorWatcherEditText
+                android:id="@+id/editReply"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:background="@drawable/apk_input_redbg"
+                android:hint=" @楼主"
+                android:maxLines="4"
+                android:minHeight="35dip"
+                android:paddingLeft="@dimen/space_xxxs"
+                android:paddingRight="@dimen/space_xxxs"
+                android:text=""
+                android:textColor="@color/black_at"
+                android:textColorHint="@color/black_e"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvReply"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_weight="1"
+                android:background="@drawable/apk_input_redbg"
+                android:gravity="center_vertical"
+                android:hint=" @楼主"
+                android:maxLines="4"
+                android:minHeight="35dip"
+                android:text=""
+                android:textColor="@color/black_a"
+                android:textColorHint="@color/black_e"
+                android:textSize="@dimen/text_size_s"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tvSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_xxs"
+            android:padding="@dimen/space_xxs"
+            android:text="发送"
+            android:textColor="@color/red_a"
+            android:textSize="@dimen/text_size_s" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

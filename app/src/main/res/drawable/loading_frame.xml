@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/apk_loading_1fps" android:duration="150" />
+    <item android:drawable="@drawable/apk_loading_2fps" android:duration="150" />
+    <item android:drawable="@drawable/apk_loading_3fps" android:duration="150" />
+    <item android:drawable="@drawable/apk_loading_4fps" android:duration="150" />
+    <item android:drawable="@drawable/apk_loading_5fps" android:duration="150" />
+    <item android:drawable="@drawable/apk_loading_6fps" android:duration="150" />
+</animation-list>
