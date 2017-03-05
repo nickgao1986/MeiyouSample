@@ -91,7 +91,7 @@
     <dimen name="dp_value_12">12dip</dimen>
 
     <dimen name="dp_value_25">25dip</dimen>
-
+    <dimen name="dp_value_16">16dp</dimen>
     <dimen name="dp_value_32">32dip</dimen>
     <dimen name="dp_value_35">35dip</dimen>
     <dimen name="dp_value_38">38dip</dimen>

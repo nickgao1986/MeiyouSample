@@ -100,5 +100,7 @@
     <color name="bg_transparent">#00000000</color>
     <drawable name="bg_transparent">#00000000</drawable>
     <color name="white">#ffffff</color>
-
+    <color name="color_0">#000000</color>
+    <color name="xiyou_darker_red">#000000</color>
+    <color name="count_down_timer_item_background">#000000</color>
 </resources>

@@ -3,7 +3,7 @@
     <item android:state_focused="true"  android:drawable="@drawable/apk_all_kuang_up" />
   	<item android:state_pressed="true"  android:drawable="@drawable/apk_all_redbutton" />
    	<item android:state_enabled="false"  android:drawable="@drawable/apk_all_redbutton" />
-  	<item android:drawable="@drawable/all_whitebutton" />
+  	<item android:drawable="@drawable/apk_all_redbutton" />
 
 
 

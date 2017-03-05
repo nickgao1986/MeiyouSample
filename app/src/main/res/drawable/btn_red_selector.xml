@@ -14,7 +14,5 @@
         android:state_pressed="false"
         android:state_enabled="true"
         android:drawable="@drawable/btn_red_normal" />
-    <item
-        android:state_enabled="false"
-        android:drawable="@drawable/apk_all_brownbutton_up" />
+
 </selector>
