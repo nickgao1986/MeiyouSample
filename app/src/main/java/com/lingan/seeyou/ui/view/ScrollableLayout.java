@@ -338,13 +338,12 @@ public class ScrollableLayout extends RelativeLayout {
                     }
                     animationMove(ev, currentY);
                     //设置viewpager是否可以滑动
-                    if (isSticked()) {
-                        scrollbleDownUp = false;
-                        childViewPager.setScrollble(true);
-                    } else {
-                        scrollbleDownUp = true;
-                        childViewPager.setScrollble(false);
-                    }
+//                    if (isSticked()) {
+//                        childViewPager.setScrollble(true);
+//                    } else {
+//                        childViewPager.setScrollble(false);
+//                    }
+                    childViewPager.setScrollble(true);
                     if (scrollbleDownUp && (updown && shiftY > mTouchSlop && shiftY > shiftX
                             && (!isSticked() || mHelper.isTop() || isClickHeadExpand)
                             && (NewsHomeController.getInstance().isOnRefresh() || (rl_update == null ? true : rl_update.getHeight() == 0)))) {
