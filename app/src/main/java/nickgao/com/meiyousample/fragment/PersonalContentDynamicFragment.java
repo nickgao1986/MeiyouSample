@@ -39,7 +39,7 @@ public class PersonalContentDynamicFragment extends PersonalContentFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        initView();
+      //  initView();
     }
 
     private void initView() {
@@ -59,8 +59,6 @@ public class PersonalContentDynamicFragment extends PersonalContentFragment {
         }
 
         HomeDynamicAdapter adapter = new HomeDynamicAdapter(mActivity, models);
-        adapter.setHome(true);
-        adapter.setHome(true);
         mListview.setAdapter(adapter);
     }
 

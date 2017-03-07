@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import nickgao.com.meiyousample.fragment.PersonalContentFragment;
+import nickgao.com.meiyousample.fragment.TestFragment;
 import nickgao.com.meiyousample.model.PersonalTabModel;
 
 /**
@@ -29,7 +29,7 @@ public class PersonalFragmentPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         PersonalTabModel model = classifyModels.get(position);
-        return PersonalContentFragment.newInstance(model.id, model.type, model.name, position, currentSelectedPage, model.url);
+        return TestFragment.newInstance(model.id, model.type, model.name, position, currentSelectedPage, model.url);
     }
 
     public void changeCurrentSelectPage(int currentSelectedPage) {
