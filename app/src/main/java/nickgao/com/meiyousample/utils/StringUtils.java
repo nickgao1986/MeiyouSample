@@ -1,5 +1,8 @@
 package nickgao.com.meiyousample.utils;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 /**
  * Created by gaoyoujian on 2017/3/5.
  */
@@ -25,6 +28,113 @@ public class StringUtils {
         return isEmpty(str)?-1:str.indexOf(searchChar);
     }
 
+    public static String getJsonString(JSONObject jsonObject, String key) {
+        try {
+            if(jsonObject.has(key)) {
+                return jsonObject.getString(key);
+            }
+        } catch (Exception var3) {
+            var3.printStackTrace();
+        }
+
+        return "";
+    }
+
+    public static String getString(int value) {
+        try {
+            return String.valueOf(value);
+        } catch (Exception var2) {
+            var2.printStackTrace();
+            return "";
+        }
+    }
+
+    public static int getJsonInt(JSONObject jsonObject, String key) {
+        try {
+            if(isNull(key)) {
+                return 0;
+            }
+
+            if(jsonObject.has(key)) {
+                return jsonObject.getInt(key);
+            }
+        } catch (Exception var3) {
+            var3.printStackTrace();
+        }
+
+        return 0;
+    }
+
+    public static boolean getJsonBoolean(JSONObject object, String key) {
+        Boolean strValue = Boolean.valueOf(false);
+
+        try {
+            if(object != null && key != null) {
+                if(object.has(key)) {
+                    strValue = Boolean.valueOf(object.getBoolean(key));
+                }
+
+                return strValue.booleanValue();
+            } else {
+                return strValue.booleanValue();
+            }
+        } catch (Exception var4) {
+            var4.printStackTrace();
+            return strValue.booleanValue();
+        }
+    }
+
+
+    public static boolean isNull(String str) {
+        try {
+            return str == null?true:(str != null?(!str.equals("") && !str.equals("null") && !str.equals("[]")?str.trim().equals("") || str.trim().equals("null"):true):false);
+        } catch (Exception var2) {
+            var2.printStackTrace();
+            return true;
+        }
+    }
+
+    public static JSONObject getJsonObejct(JSONObject object, String key) {
+        JSONObject jsonObject = null;
+
+        try {
+            if(object == null || key == null) {
+                return null;
+            }
+
+            if(object.has(key)) {
+                JSONObject obj = object.getJSONObject(key);
+                if(obj != null) {
+                    jsonObject = (JSONObject)obj;
+                }
+            }
+        } catch (Exception var4) {
+            ;
+        }
+
+        return jsonObject;
+    }
+
+    public static JSONArray getJsonArray(JSONObject object, String key) {
+        JSONArray isonArray = new JSONArray();
+
+        try {
+            if(object == null || key == null) {
+                return null;
+            }
+
+            if(object.has(key)) {
+                JSONArray obj = object.getJSONArray(key);
+                if(obj != null) {
+                    isonArray = (JSONArray)obj;
+                }
+            }
+        } catch (Exception var4) {
+            ;
+        }
+
+        return isonArray;
+    }
 
     /**
      * Tests if a string is blank: null, emtpy, or only whitespace (" ", \r\n, \t, etc)

@@ -3,14 +3,13 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="@color/white_a"
+                android:background="@drawable/tata_me_img_defaultbackground"
     >
 
     <ImageView
         android:id="@+id/ivPersonalBg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@color/orange_bar_color"
         android:scaleType="centerCrop"
         />
 
@@ -19,7 +18,7 @@
         android:layout_height="66dp"
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="22dp"
         >
 
         <com.lingan.seeyou.ui.view.CircleShapeImageView
@@ -31,15 +30,17 @@
             />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_marginLeft="@dimen/dp_value_16"
             >
+
             <RelativeLayout
                 android:id="@+id/rlName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="4dp">
 
@@ -47,11 +48,13 @@
                     android:id="@+id/tvPersonalName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
+                    android:layout_toLeftOf="@+id/rlRank"
                     android:layout_centerVertical="true"
-                    android:background="#000000"
+                    android:layout_marginRight="4dp"
                     android:singleLine="true"
-                    android:text="你是最美的女孩子1111111111"
+                    android:ellipsize="end"
+                    android:text="你是最美的女dsfsdfdsfdsfdsfds"
+                    android:shadowRadius="7"
                     android:textColor="@color/white_a"
                     android:textSize="18sp" />
 
@@ -60,8 +63,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/tvPersonalName"
-                    android:background="@drawable/apk_rank_bg"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/apk_tag_pinpai"
+                    android:visibility="gone"
                     tools:visibility="visible"
                     >
 
@@ -74,87 +78,36 @@
                         android:text="LV0"
                         android:textColor="@color/white_a"
                         android:textSize="@dimen/text_size_xs"
-                        android:visibility="visible" />
+                        android:visibility="gone" />
                 </RelativeLayout>
             </RelativeLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="bottom"
-                >
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:id="@+id/ll_fragment_personal_head_atten"
-                    >
-                    <TextView
-                        android:id="@+id/tv_att_count"
-                        style="@style/fragment_personal_head_sub_txt"
-                        tools:text="13"
-                        android:text="13"
-                        />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                    <TextView
-                        android:layout_marginTop="@dimen/dp_value_5"
-                        style="@style/fragment_personal_head_sub_txt"
-                        android:text="关注"
-                        tools:text="关注"
-                        />
+                <include layout="@layout/layout_personal_other_info"></include>
 
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="18dp"
-                    android:id="@+id/ll_fragment_personal_head_fans"
-                    >
-                    <TextView
-                        android:id="@+id/tv_fans_count"
-                        tools:text="12345"
-                        android:text="0"
-                        style="@style/fragment_personal_head_sub_txt"
-                        />
+                <Button
+                    android:id="@+id/btn_personal_head_attention"
+                    android:layout_width="76dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="@dimen/dp_value_15"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:textColor="@color/white_a"
+                    android:textSize="@dimen/text_size_16"
+                    android:background="@drawable/personal_attention_btn_selector"
+                    android:text="关注"
+                    tools:text="关注"
+                    android:visibility="visible"
+                    tools:visibility="visible"
+                    />
 
-                    <TextView
-                        android:layout_marginTop="@dimen/dp_value_5"
-                        style="@style/fragment_personal_head_sub_txt"
-                        android:text="粉丝"
-                        tools:text="粉丝"
-                        />
-
-                </LinearLayout>
-            </LinearLayout>
-
+            </RelativeLayout>
 
         </LinearLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-            <Button
-                android:id="@+id/btn_personal_head_attention"
-                android:layout_width="76dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="@dimen/dp_value_15"
-                android:layout_gravity="bottom|right"
-                android:gravity="center"
-                android:textColor="@color/white_a"
-                android:textSize="@dimen/text_size_16"
-                android:background="@drawable/personal_attention_btn_selector"
-                android:text="关注"
-                tools:text="关注"
-                android:visibility="gone"
-                tools:visibility="visible"
-
-                />
-        </FrameLayout>
-
-
     </LinearLayout>
 
 </RelativeLayout>

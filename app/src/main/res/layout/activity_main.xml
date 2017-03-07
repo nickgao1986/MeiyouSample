@@ -1,15 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:background="@color/white_a">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/white_a"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical">
 
-    <com.lingan.seeyou.ui.view.TheBallLoaddingView
-        android:id="@+id/ballLoaddingView"
-        android:layout_width="24dip"
-        android:layout_height="24dip"
-        android:layout_centerInParent="true"
-        android:layout_marginRight="8dip"
-        android:alpha="0" />
+    <include layout="@layout/fragment_personal_head"></include>
 
-</RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DDDDDD"
+        android:paddingBottom="9.5dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="36dp"
+        android:paddingTop="9.5dp"
+        android:text="命名空间可以用来预览一些布局属性的添加和删除后的效果,可以看看以下文章 "
+        android:textColor="#323232"
+        android:visibility="gone"
+        tools:visibility="visible"
+        >
+    </TextView>
+
+    <RelativeLayout
+        android:id="@+id/rl_news_home_sliding_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_icon_height_44"
+        android:layout_below="@+id/rlHeader"
+        android:background="@color/white_a">
+
+        <com.lingan.seeyou.ui.view.HomeSlidingTabLayout
+            android:id="@+id/news_home_sliding_tab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/apk_all_white"
+            app:HomeCountPerScreen="5.4"
+            app:HomeSlidingTabIndicatorColor="@color/red_b"
+            app:HomeSlidingTabStyle="HomeTypeCust"
+            app:HomeSlidingTabTextColor="@color/black_at"
+            app:HomeSlidingTabTextSelectColor="@color/red_b"
+            app:HomeSlidingTabTextSelectSize="@dimen/text_size_19"
+            app:HomeSlidingTabTextSize="@dimen/text_size_17"/>
+
+        <View
+            style="@style/divider"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+    <com.lingan.seeyou.ui.view.NewsHomeParallaxListview
+        android:id="@+id/news_home_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:fadingEdge="none"
+        android:footerDividersEnabled="true"
+        android:listSelector="@color/trans_color"
+        android:scrollbars="none"
+        android:scrollingCache="false" />
+
+</LinearLayout>

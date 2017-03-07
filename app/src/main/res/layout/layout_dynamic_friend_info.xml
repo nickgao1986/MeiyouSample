@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/tvRecommendReason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/space_xxxs"
+            android:singleLine="true"
+            android:text="请给字段文案"
+            android:focusable="false"
+            android:textColor="@color/black_a"
+            android:textSize="@dimen/text_size_xs"/>
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:focusable="false"
+            android:orientation="horizontal">
+        <TextView
+                android:id="@+id/tvDynamicnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xxxs"
+                android:layout_marginRight="@dimen/space_xs"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:focusable="false"
+                android:text="动态：20"
+                android:textColor="@color/black_b"
+                android:textSize="@dimen/text_size_xs"/>
+        <TextView
+                android:id="@+id/tvFans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_xxxs"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:focusable="false"
+                android:text="粉丝：200"
+                android:textColor="@color/black_b"
+                android:textSize="@dimen/text_size_xs"/>
+    </LinearLayout>
+
+</LinearLayout>
