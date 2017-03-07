@@ -1,12 +1,19 @@
 package nickgao.com.meiyousample;
 
+import android.app.Activity;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lingan.seeyou.ui.view.HomeSlidingTabLayout;
@@ -20,6 +27,7 @@ import java.util.List;
 
 import nickgao.com.meiyousample.adapter.PersonalFragmentPagerAdapter;
 import nickgao.com.meiyousample.model.PersonalTabModel;
+import nickgao.com.meiyousample.utils.DeviceUtils;
 
 /**
  * Created by gaoyoujian on 2017/3/7.
@@ -33,6 +41,8 @@ public class MainFragment extends Fragment {
     PersonalFragmentPagerAdapter homePagerAdapter;
     private NewsHomeViewPager news_home_viewpager;
     private int mCurrentPosition;
+    private Activity mActivity;
+    private ImageView emptyView;
 
     @Nullable
     @Override
@@ -47,7 +57,14 @@ public class MainFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         initView();
         initTabModel();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showPromoteDialog();
+            }
+        },2000);
     }
+
 
     private void initView() {
         news_home_viewpager = (NewsHomeViewPager) mRootView.findViewById(R.id.news_home_viewpager);
@@ -55,8 +72,16 @@ public class MainFragment extends Fragment {
         news_home_sliding_tab = (HomeSlidingTabLayout) mRootView.findViewById(R.id.news_home_sliding_tab);
         news_home_sliding_tab.setCustomTabView(R.layout.layout_home_classify_tab_item, R.id.homeTab);
         news_home_sliding_tab.setIsDrawDiver(true);
-       // listView = (NewsHomeParallaxListview)mRootView.findViewById(R.id.news_home_listview);
+        emptyView = (ImageView)mRootView.findViewById(R.id.empty_view);
 
+        // listView = (NewsHomeParallaxListview)mRootView.findViewById(R.id.news_home_listview);
+
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mActivity = activity;
     }
 
     private void initTabModel() {
@@ -133,4 +158,37 @@ public class MainFragment extends Fragment {
             e.printStackTrace();
         }
     }
+
+    private void showPromoteDialog() {
+//        View viewGroup = findViewById(R.id.dialog_ucp_record_ll);
+//        ((TextView) viewGroup.findViewById(R.id.dialog_ucp_record_tv)).setText(resStr);
+//        viewGroup.setVisibility(View.VISIBLE);
+
+        View windowContentView = LayoutInflater.from(mActivity).inflate(R.layout.layout_personal_guide_popup_win, null);
+        final PopupWindow popupWindow = new PopupWindow(windowContentView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
+        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        View.OnTouchListener onTouchListener = new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                popupWindow.dismiss();
+                return true;
+            }
+        };
+        windowContentView.setOnTouchListener(onTouchListener);
+        popupWindow.setAnimationStyle(android.R.style.Animation);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+            }
+        });
+
+        View topView = windowContentView.findViewById(R.id.top_view);
+        RelativeLayout.LayoutParams topViewParams = (RelativeLayout.LayoutParams) topView.getLayoutParams();
+        topViewParams.topMargin = DeviceUtils.dip2px(mActivity, 9); //调整上边距
+        topView.setLayoutParams(topViewParams);
+
+        popupWindow.showAsDropDown(emptyView); //不要尝试使用showAtLocation去定位置，会对不准，有些popupWindow会占状态栏，而有些不会！
+    }
+
+
 }
