@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <com.lingan.seeyou.ui.view.ScrollableLayout
+        android:id="@+id/news_home_scroll_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/rlHeader"
+            layout="@layout/fragment_personal_head"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_news_home_sliding_tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_icon_height_44"
+            android:layout_below="@+id/rlHeader"
+            android:background="@color/white_a">
+
+            <com.lingan.seeyou.ui.view.HomeSlidingTabLayout
+                android:id="@+id/news_home_sliding_tab"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/apk_all_white"
+                app:HomeCountPerScreen="5.4"
+                app:HomeSlidingTabIndicatorColor="@color/red_b"
+                app:HomeSlidingTabStyle="HomeTypeCust"
+                app:HomeSlidingTabTextColor="@color/black_at"
+                app:HomeSlidingTabTextSelectColor="@color/red_b"
+                app:HomeSlidingTabTextSelectSize="@dimen/text_size_19"
+                app:HomeSlidingTabTextSize="@dimen/text_size_17"/>
+
+            <View
+                style="@style/divider"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+
+
+        <com.lingan.seeyou.ui.view.NewsHomeViewPager
+            android:id="@+id/news_home_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/llBottom"
+            android:layout_below="@+id/rl_news_home_sliding_tab"/>
+
+        <com.meiyou.framework.ui.views.LoadingView
+            android:id="@+id/globalloadingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"/>
+
+
+    </com.lingan.seeyou.ui.view.ScrollableLayout>
+
+</FrameLayout>
