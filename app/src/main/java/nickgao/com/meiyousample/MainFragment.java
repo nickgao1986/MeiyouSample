@@ -60,7 +60,7 @@ public class MainFragment extends Fragment {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                showPromoteDialog();
+              //  showPromoteDialog();
             }
         },2000);
     }
@@ -68,14 +68,10 @@ public class MainFragment extends Fragment {
 
     private void initView() {
         news_home_viewpager = (NewsHomeViewPager) mRootView.findViewById(R.id.news_home_viewpager);
-
         news_home_sliding_tab = (HomeSlidingTabLayout) mRootView.findViewById(R.id.news_home_sliding_tab);
         news_home_sliding_tab.setCustomTabView(R.layout.layout_home_classify_tab_item, R.id.homeTab);
         news_home_sliding_tab.setIsDrawDiver(true);
         emptyView = (ImageView)mRootView.findViewById(R.id.empty_view);
-
-        // listView = (NewsHomeParallaxListview)mRootView.findViewById(R.id.news_home_listview);
-
     }
 
     @Override
@@ -160,10 +156,6 @@ public class MainFragment extends Fragment {
     }
 
     private void showPromoteDialog() {
-//        View viewGroup = findViewById(R.id.dialog_ucp_record_ll);
-//        ((TextView) viewGroup.findViewById(R.id.dialog_ucp_record_tv)).setText(resStr);
-//        viewGroup.setVisibility(View.VISIBLE);
-
         View windowContentView = LayoutInflater.from(mActivity).inflate(R.layout.layout_personal_guide_popup_win, null);
         final PopupWindow popupWindow = new PopupWindow(windowContentView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
         popupWindow.setBackgroundDrawable(new BitmapDrawable());
