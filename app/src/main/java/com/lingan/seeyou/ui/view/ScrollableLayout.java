@@ -26,6 +26,7 @@ import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.controller.NewsHomeController;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.HomeType;
+import nickgao.com.meiyousample.utils.LogUtils;
 
 ;
 
@@ -156,9 +157,10 @@ public class ScrollableLayout extends RelativeLayout {
      */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        LogUtils.d("======ScrollableLayout onMeasure");
         mHeadView = getChildAt(0);
         measureChildWithMargins(mHeadView, widthMeasureSpec, 0, MeasureSpec.UNSPECIFIED, 0);
-        maxY = mHeadView.getMeasuredHeight() - DeviceUtils.dip2px(context, 50.0f);
+        maxY = mHeadView.getMeasuredHeight();
         mHeadHeight = mHeadView.getMeasuredHeight();
         if (!isMeasure) {
             isMeasure = true;

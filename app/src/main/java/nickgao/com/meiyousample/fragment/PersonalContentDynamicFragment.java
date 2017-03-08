@@ -39,7 +39,7 @@ public class PersonalContentDynamicFragment extends PersonalContentFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-      //  initView();
+        initView();
     }
 
     private void initView() {

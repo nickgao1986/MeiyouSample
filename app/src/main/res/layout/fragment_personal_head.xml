@@ -96,7 +96,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:gravity="center"
-                    android:textColor="@color/white_a"
+                    android:textColor="@drawable/personal_attention_word_selector"
                     android:textSize="@dimen/text_size_16"
                     android:background="@drawable/personal_attention_btn_selector"
                     android:text="关注"

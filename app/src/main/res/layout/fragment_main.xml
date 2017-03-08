@@ -15,10 +15,12 @@ android:layout_height="fill_parent">
     <include  android:id="@+id/rlHeader"
               layout="@layout/fragment_personal_head"></include>
 
-    <!--
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/rlHeader"
+        android:id="@+id/personal_description"
         android:background="#DDDDDD"
         android:paddingBottom="9.5dp"
         android:paddingLeft="15dp"
@@ -30,19 +32,19 @@ android:layout_height="fill_parent">
         tools:visibility="visible"
         >
     </TextView>
-    -->
+
     <RelativeLayout
         android:id="@+id/rl_news_home_sliding_tab"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_icon_height_44"
-        android:layout_below="@+id/rlHeader"
+        android:layout_below="@+id/personal_description"
         android:background="@color/white_a">
 
         <com.lingan.seeyou.ui.view.HomeSlidingTabLayout
             android:id="@+id/news_home_sliding_tab"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/apk_all_white"
+            android:background="@color/white_a"
             app:HomeCountPerScreen="5.4"
             app:HomeSlidingTabIndicatorColor="@color/red_b"
             app:HomeSlidingTabStyle="HomeTypeCust"
