@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/empty_container"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:paddingTop="46dip"
+              android:paddingBottom="46dip"
+              android:orientation="vertical">
+
+    <TextView
+            android:id="@+id/empty_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_xxs"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/black_b"
+            android:textSize="@dimen/space_m"
+            android:text="快去添加关注，看看大家都在说什么"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ 添加关注"
+            android:id="@+id/btnOperate"
+            android:textColor="@color/white_a"
+            android:textSize="@dimen/text_size_s"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/space_s"
+            android:background="@drawable/apk_all_greenbutton"
+            android:paddingLeft="@dimen/space_l"
+            android:paddingRight="@dimen/space_l"
+            android:paddingTop="@dimen/space_xs"
+            android:paddingBottom="@dimen/space_xs"
+            android:visibility="visible"/>
+</LinearLayout>

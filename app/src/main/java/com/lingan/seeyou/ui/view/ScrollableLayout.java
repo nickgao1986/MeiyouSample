@@ -160,7 +160,7 @@ public class ScrollableLayout extends RelativeLayout {
         LogUtils.d("======ScrollableLayout onMeasure");
         mHeadView = getChildAt(0);
         measureChildWithMargins(mHeadView, widthMeasureSpec, 0, MeasureSpec.UNSPECIFIED, 0);
-        maxY = mHeadView.getMeasuredHeight();
+        maxY = mHeadView.getMeasuredHeight() - DeviceUtils.dip2px(context, 50.0f);
         mHeadHeight = mHeadView.getMeasuredHeight();
         if (!isMeasure) {
             isMeasure = true;

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/apk_all_white"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/space_s">
+
+    <ImageView
+        android:id="@+id/ivBannerBg"
+        android:layout_width="match_parent"
+        android:layout_height="188dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/apk_first_banner" />
+
+    <!-- <ImageView
+             android:id="@+id/ivCircle"
+             android:layout_width="25dp"
+             android:layout_height="25dp"
+             android:layout_marginLeft="@dimen/space_xxl"
+             android:layout_marginTop="-25dp"
+             android:src="@drawable/apk_rotate"
+             android:visibility="visible"/>-->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ivBannerBg"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="-36dp"
+        android:layout_marginRight="16dp">
+
+        <com.lingan.seeyou.ui.view.RoundedImageView
+            android:id="@+id/ivHead"
+            android:layout_width="@dimen/list_icon_height_72"
+            android:layout_height="@dimen/list_icon_height_72"
+            android:src="@drawable/apk_mine_photo" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBannerBg"
+        android:layout_marginTop="@dimen/list_icon_height_40" />
+
+    <LinearLayout
+        android:id="@+id/llMsgTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBannerBg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/space_l"
+        android:layout_marginTop="@dimen/space_l"
+        android:background="@drawable/apk_all_blackbg"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/space_m"
+        android:visibility="gone">
+
+        <com.lingan.seeyou.ui.view.LoaderImageView
+            android:id="@+id/ivMsgIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/space_xxs" />
+
+        <TextView
+            android:id="@+id/tvMsgTip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="@dimen/space_xs"
+            android:drawableRight="@drawable/news_arrow_up"
+            android:text="1条新消息"
+            android:textColor="@color/white_a"
+            android:textSize="@dimen/text_size_s" />
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/emptyContainer"
+        layout="@layout/layout_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivBannerBg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>
