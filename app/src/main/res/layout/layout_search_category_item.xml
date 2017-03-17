@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/tvCategoryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/apk_all_white"
+        android:paddingLeft="@dimen/dp_value_12"
+        android:paddingTop="@dimen/dp_value_8"
+        android:paddingBottom="@dimen/dp_value_8"
+        android:paddingRight="@dimen/dp_value_12"
+        android:textColor="@color/black_b"
+        android:textSize="@dimen/text_size_xs_less" />
+
+    <ImageView
+        android:id="@+id/bottomLine"
+        style="@style/searchCircleOverAllLine" />
+
+    <nickgao.com.meiyousample.gridview.GridViewExx
+        android:id="@+id/gvCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/apk_all_white"
+        android:gravity="center"
+        android:horizontalSpacing="16dp"
+        android:listSelector="@color/trans_color"
+        android:numColumns="3"
+        android:paddingBottom="10dp"
+        android:paddingLeft="@dimen/dp_value_12"
+        android:paddingRight="@dimen/dp_value_12"
+        android:paddingTop="10dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="8dp">
+
+    </nickgao.com.meiyousample.gridview.GridViewExx>
+
+
+</LinearLayout>

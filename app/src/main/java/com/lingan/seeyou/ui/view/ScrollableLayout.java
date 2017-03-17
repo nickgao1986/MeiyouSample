@@ -25,10 +25,7 @@ import android.widget.TextView;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.controller.NewsHomeController;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.HomeType;
-import nickgao.com.meiyousample.utils.LogUtils;
 
-;
 
 /**
  * Created by wuminjian
@@ -45,8 +42,6 @@ public class ScrollableLayout extends RelativeLayout {
     private int shiftY = 0;
     private int mHeadHeight;
     private int mExpandHeight;
-    private boolean isMeasure;//是否测量过
-    private int headViewHeight;//整个头部的高度
     private int mTouchSlop;
     private int mMinimumVelocity;
     private int mMaximumVelocity;
@@ -58,7 +53,6 @@ public class ScrollableLayout extends RelativeLayout {
     private boolean mDisallowIntercept;
     private boolean isClickHead;
     private boolean isClickHeadExpand;
-    private boolean isOnTouch;
 
     private View mHeadView;
     private NewsHomeViewPager childViewPager;
@@ -88,8 +82,7 @@ public class ScrollableLayout extends RelativeLayout {
     //刷新回调
     private NewsHomeParallaxListview.OnRefreshListener mOnRefreshListener;
     private boolean isFirst = true;
-    private boolean scrollbleDownUp = true;//是否可以上下滑动了
-    private boolean mIsUsedInPersonalFragment = false;
+
     /**
      * 滑动方向 *
      */
@@ -140,7 +133,6 @@ public class ScrollableLayout extends RelativeLayout {
         mMinimumVelocity = configuration.getScaledMinimumFlingVelocity();
         mMaximumVelocity = configuration.getScaledMaximumFlingVelocity();
 
-        homeStyle = HomeType.HOME_STYLE_TWO_NAVIGATION_BAR;
         mOrigineLoaddingHeight = DeviceUtils.dip2px(context, 0);
         loaddingViewMaxHeight = DeviceUtils.dip2px(context, 40);
         mScollUpMinHeight = DeviceUtils.dip2px(context, 30);
@@ -157,18 +149,12 @@ public class ScrollableLayout extends RelativeLayout {
      */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        LogUtils.d("======ScrollableLayout onMeasure");
         mHeadView = getChildAt(0);
         measureChildWithMargins(mHeadView, widthMeasureSpec, 0, MeasureSpec.UNSPECIFIED, 0);
         maxY = mHeadView.getMeasuredHeight() - DeviceUtils.dip2px(context, 50.0f);
         mHeadHeight = mHeadView.getMeasuredHeight();
-        if (!isMeasure) {
-            isMeasure = true;
-            headViewHeight = mHeadView.getMeasuredHeight();
-        }
         super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(heightMeasureSpec) + maxY, MeasureSpec.EXACTLY));
     }
-
 
     /**
      * 页面绘制结束的回调
@@ -222,7 +208,6 @@ public class ScrollableLayout extends RelativeLayout {
      */
     public boolean isSticked() {
         return mCurY == maxY;
-
     }
 
     /**
@@ -231,7 +216,7 @@ public class ScrollableLayout extends RelativeLayout {
      * @return
      */
     public boolean isMove() {
-        return scrollbleDownUp ? mCurY != 0 : false;//卡住的时候，可以拉开间距，不是卡住的时候看情况
+        return mCurY != 0;
     }
 
     /**
@@ -241,7 +226,6 @@ public class ScrollableLayout extends RelativeLayout {
      */
     private boolean isLocationHead() {
         return mDownY <= maxY;
-
     }
 
     /**
@@ -250,14 +234,7 @@ public class ScrollableLayout extends RelativeLayout {
      * @return
      */
     private boolean isHeadViewScoll() {
-        if (homeStyle != HomeType.HOME_STYLE_TWO_NAVIGATION_BAR) {
-            return true;
-        } else {
-            if (isHeadViewScroll()) {
-                return true;
-            }
-        }
-        return false;
+        return true;
     }
 
     /**
@@ -271,11 +248,6 @@ public class ScrollableLayout extends RelativeLayout {
         mScaleView.setLayoutParams(lp);
     }
 
-    /**
-     * 当前移动的距离
-     *
-     * @return
-     */
     public int getCurY() {
         return mCurY;
     }
@@ -307,7 +279,6 @@ public class ScrollableLayout extends RelativeLayout {
             shiftY = (int) Math.abs(currentY - mDownY);
             switch (ev.getAction()) {
                 case MotionEvent.ACTION_DOWN:
-                    isOnTouch = false;
                     mDisallowIntercept = false;
                     needCheckUpdown = true;
                     updown = true;
@@ -322,7 +293,6 @@ public class ScrollableLayout extends RelativeLayout {
                     animationDown();
                     break;
                 case MotionEvent.ACTION_MOVE:
-                    isOnTouch = false;
                     if (mDisallowIntercept) {
                         break;
                     }
@@ -339,16 +309,9 @@ public class ScrollableLayout extends RelativeLayout {
                         }
                     }
                     animationMove(ev, currentY);
-                    //设置viewpager是否可以滑动
-//                    if (isSticked()) {
-//                        childViewPager.setScrollble(true);
-//                    } else {
-//                        childViewPager.setScrollble(false);
-//                    }
                     childViewPager.setScrollble(true);
-                    if (scrollbleDownUp && (updown && shiftY > mTouchSlop && shiftY > shiftX
-                            && (!isSticked() || mHelper.isTop() || isClickHeadExpand)
-                            && (NewsHomeController.getInstance().isOnRefresh() || (rl_update == null ? true : rl_update.getHeight() == 0)))) {
+                    if (updown && shiftY > mTouchSlop && shiftY > shiftX &&
+                            (!isSticked() || mHelper.isTop() || isClickHeadExpand) && (NewsHomeController.getInstance().isOnRefresh() || (rl_update == null ? true : rl_update.getHeight() == 0))) {
                         if (childViewPager != null) {
                             childViewPager.requestDisallowInterceptTouchEvent(true);
                         }
@@ -357,7 +320,6 @@ public class ScrollableLayout extends RelativeLayout {
                     mLastY = currentY;
                     break;
                 case MotionEvent.ACTION_UP:
-                    isOnTouch = true;
                     isFirst = true;
                     animationUp();
                     if (updown && shiftY > shiftX && shiftY > mTouchSlop) {
@@ -392,9 +354,6 @@ public class ScrollableLayout extends RelativeLayout {
             e.printStackTrace();
         }
         super.dispatchTouchEvent(ev);
-//        if (rl_update.getHeight() != 0) {
-//            return false;
-//        }
         return true;
     }
 
@@ -419,7 +378,7 @@ public class ScrollableLayout extends RelativeLayout {
      * 移动的效果
      */
     private void animationMove(MotionEvent ev, float currentY) {
-        if (NewsHomeController.getInstance().isOnRefresh() || isMove() || isSticked())
+        if (NewsHomeController.getInstance().isOnRefresh() || isMove())
             return;
         if (mLastY > 0 && isFirst) {
             isFirst = false;
@@ -873,7 +832,6 @@ public class ScrollableLayout extends RelativeLayout {
 
     public void setScrollBy() {
         scrollTo(0, 0);
-        scrollbleDownUp = true;
     }
 
     @Override
@@ -893,7 +851,7 @@ public class ScrollableLayout extends RelativeLayout {
                 }
             } else {
                 // 手势向下划
-                if ((mHelper.isTop() || isClickHeadExpand) && scrollbleDownUp) {
+                if (mHelper.isTop() || isClickHeadExpand) {
                     int deltaY = (currY - mLastScrollerY);
                     int toY = getScrollY() + deltaY;
                     scrollTo(0, toY);

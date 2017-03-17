@@ -36,6 +36,11 @@ public class LogUtils {
         Log.d(tag, checkEmpty(content),tr);
     }
 
+    public static void d(String tag,String content, String tr) {
+        Log.d(tag, checkEmpty(content));
+    }
+
+
     public static void e(String tag,String content, Throwable tr) {
         Log.e(tag, checkEmpty(content),tr);
     }

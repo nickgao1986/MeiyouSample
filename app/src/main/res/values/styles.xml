@@ -724,4 +724,13 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:textColor">@color/red_b</item>
     </style>
+
+    <style name="searchCircleOverAllLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:paddingLeft">@dimen/dp_value_12</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:background">@drawable/apk_all_white</item>
+        <item name="android:src">@color/black_e</item>
+    </style>
 </resources>

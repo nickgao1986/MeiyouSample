@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:background="@color/white_a"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical">
+
+    <nickgao.com.meiyousample.gridview.LinearGrid
+        android:id="@+id/lv_faq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.lingan.seeyou.ui.view.LinearListView
+        android:id="@+id/llType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xs"
+        android:orientation="vertical"
+        android:visibility="visible" />
+
+</LinearLayout>

@@ -16,6 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -111,28 +112,6 @@ public class HomeDynamicActivity extends Activity {
 
 
 
-
-    private void initView() {
-        String str = getFromAssets("dynamic.txt");
-        LogUtils.d(str);
-        List<HomeDynamicModel> models = new ArrayList<HomeDynamicModel>();
-        try {
-            JSONArray jsonArray = new JSONArray(str);
-            if (null != jsonArray && jsonArray.length() > 0) {
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    HomeDynamicModel homeDynamicModel = new HomeDynamicModel(jsonArray.getJSONObject(i));
-                    models.add(homeDynamicModel);
-                }
-            }
-        }catch (JSONException ex) {
-            ex.printStackTrace();
-        }
-
-        HomeDynamicAdapter adapter = new HomeDynamicAdapter(this, models);
-        parallaxListview.setAdapter(adapter);
-    }
-
-
     public String getFromAssets(String fileName){
         try {
             InputStreamReader inputReader = new InputStreamReader( getResources().getAssets().open(fileName) );
@@ -142,7 +121,7 @@ public class HomeDynamicActivity extends Activity {
             while((line = bufReader.readLine()) != null)
                 Result += line;
             return Result;
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
