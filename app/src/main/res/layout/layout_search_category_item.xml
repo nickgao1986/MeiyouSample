@@ -5,21 +5,37 @@
     android:orientation="vertical"
     android:paddingBottom="10dp">
 
-    <TextView
-        android:id="@+id/tvCategoryTitle"
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/apk_all_white"
-        android:paddingLeft="@dimen/dp_value_12"
-        android:paddingTop="@dimen/dp_value_8"
-        android:paddingBottom="@dimen/dp_value_8"
-        android:paddingRight="@dimen/dp_value_12"
-        android:textColor="@color/black_b"
-        android:textSize="@dimen/text_size_xs_less" />
+        >
 
-    <ImageView
-        android:id="@+id/bottomLine"
-        style="@style/searchCircleOverAllLine" />
+        <View
+            android:id="@+id/redView"
+            android:background="@drawable/redview_background"
+            android:layout_width="3dp"
+            android:layout_height="17dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
+            ></View>
+
+        <TextView
+            android:id="@+id/tvCategoryTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/redView"
+            android:background="@drawable/apk_all_white"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black_b"
+            android:textSize="@dimen/text_size_xs_less" />
+
+    </RelativeLayout>
+
 
     <nickgao.com.meiyousample.gridview.GridViewExx
         android:id="@+id/gvCategory"
@@ -31,8 +47,8 @@
         android:listSelector="@color/trans_color"
         android:numColumns="3"
         android:paddingBottom="10dp"
-        android:paddingLeft="@dimen/dp_value_12"
-        android:paddingRight="@dimen/dp_value_12"
+        android:paddingLeft="@dimen/search_item_margin_left_right"
+        android:paddingRight="@dimen/search_item_margin_left_right"
         android:paddingTop="10dp"
         android:stretchMode="columnWidth"
         android:verticalSpacing="8dp">

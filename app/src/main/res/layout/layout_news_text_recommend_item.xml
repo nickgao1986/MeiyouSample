@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_value_12"
+        android:paddingRight="@dimen/dp_value_12"
+        android:textColor="@color/black_at"
+        android:textSize="17sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:background="@drawable/apk_all_white_selector"
+        tools:text="标题标题标题标题"/>
+
+    <ImageView
+        android:id="@+id/iv_divider"
+        style="@style/new_divider"/>
+
+</LinearLayout>

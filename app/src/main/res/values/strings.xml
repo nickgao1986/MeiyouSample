@@ -782,4 +782,46 @@
     <string name="loading_for_more">上拉加载更多</string>
     <string name="loading_ing">正在加载更多，稍后哦！</string>
     <string name="favorites_shop_no_data">去逛逛~</string>
+
+
+
+    <string name="news_review_expand_all">查看全部</string>
+    <string name="more_n_reviews">查看更多%1$d条回复</string>
+
+    <string name="deleting_review">正在删除回复</string>
+    <string name="delete_review_success">删除回复成功</string>
+    <string name="delete_review_failed">删除回复失败</string>
+    <string name="posting_review">正在发送...</string>
+    <string name="post_review_success">评论成功</string>
+    <string name="post_review_failed">评论失败</string>
+    <string name="collect_news_success">收藏成功</string>
+    <string name="collect_news_failed">收藏失败，稍后再试</string>
+    <string name="not_collect_news_success">取消收藏成功</string>
+    <string name="not_collect_news_failed">取消收藏失败，稍后再试</string>
+    <string name="reporting_news_review">正在举报</string>
+    <string name="report_news_review_success">谢谢支持，美柚会尽快受理您的举报哦~</string>
+    <string name="report_news_review_failed">举报失败</string>
+    <string name="this_review_has_been_deleted">该回复已被删除</string>
+    <string name="no_news_review_tip">评论还是空的，快来说两句吧~</string>
+
+    <string name="dialog_post_news_review">评论</string>
+    <string name="dialog_collect_news">收藏</string>
+    <string name="dialog_cancel_collect_new">取消收藏</string>
+    <string name="dialog_copy_news_url">复制链接</string>
+    <string name="share_report">举报</string>
+    <string name="write_news_review">写评论...</string>
+    <string name="should_have_nickname">设置昵称后才能操作哦</string>
+    <string name="reply">回复</string>
+    <string name="news_review_hint">优质评论将会被优先展示</string>
+    <string name="news_review_limit">内容最多%s字哦~</string>
+    <string name="reply_to">回复 %s :</string>
+    <string name="reply_to_with_content">回复 %1$s :%2$s</string>
+    <string name="load_no_more">哇，都看完啦～</string>
+    <string name="sub_review_content">%1$s: %2$s</string>
+    <string name="sub_review_content_with_reference">%1$s 回复 %2$s: %3$s</string>
+    <string name="follow">关注</string>
+    <string name="has_followed">已关注</string>
+    <string name="some_recommend">相关推荐</string>
+    <string name="report">举报</string>
+    <string name="news_review_detail">详情</string>
 </resources>

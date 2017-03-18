@@ -1,18 +1,29 @@
 package nickgao.com.meiyousample;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 
+import com.alibaba.fastjson.JSON;
 import com.lingan.seeyou.ui.view.LinearListView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import nickgao.com.meiyousample.gridview.LinearGrid;
 import nickgao.com.meiyousample.gridview.SearchCircleOverAllFaqAdapter;
 import nickgao.com.meiyousample.gridview.SearchCircleOverAllPhraseAdapter;
+import nickgao.com.meiyousample.model.NewsDetailReviewListModel;
 import nickgao.com.meiyousample.model.SearchCircleHomeModel.SearchCircleHomeItemModel;
+import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/3/15.
@@ -86,6 +97,8 @@ public class SeeyouActivity extends FragmentActivity {
         contructPhraseList();
         mPhraseAdapter = new SearchCircleOverAllPhraseAdapter(this, mPhraseList);
         mllPhrase.setAdapter(mPhraseAdapter);
+
+        new LoadFileTask().execute();
 
     }
 
@@ -163,5 +176,53 @@ public class SeeyouActivity extends FragmentActivity {
 
     }
 
+
+    class LoadFileTask extends AsyncTask<Void, Void, NewsDetailReviewListModel> {
+
+        @Override
+        protected NewsDetailReviewListModel doInBackground(Void... params) {
+            String str = getFromAssets("news.txt");
+            NewsDetailReviewListModel data = null;
+            String errorMsg = null;
+            try {
+                JSONObject jsonObject = new JSONObject(str);
+                int code = jsonObject.getInt("code");
+                if (code == 0) {
+                    String dataString = jsonObject.optString("data");
+                    if (!StringUtils.isNull(dataString)) {
+                        data = JSON.parseObject(dataString, NewsDetailReviewListModel.class);
+                    }
+                } else {
+                    errorMsg = jsonObject.getString("message");
+                }
+
+            } catch (JSONException ex) {
+                ex.printStackTrace();
+            }
+            LogUtils.d("=====str="+data.publisher.avatar);
+            return data;
+        }
+
+        @Override
+        protected void onPostExecute(NewsDetailReviewListModel homeDynamicModels) {
+
+        }
+
+    }
+
+    public String getFromAssets(String fileName) {
+        try {
+            InputStreamReader inputReader = new InputStreamReader(getResources().getAssets().open(fileName));
+            BufferedReader bufReader = new BufferedReader(inputReader);
+            String line = "";
+            String Result = "";
+            while ((line = bufReader.readLine()) != null)
+                Result += line;
+            return Result;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }

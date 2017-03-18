@@ -10,7 +10,7 @@
         android:theme="@style/ApplicationTheme"
 
         >
-        <activity android:name=".SeeyouActivity" >
+        <activity android:name=".NewsListActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

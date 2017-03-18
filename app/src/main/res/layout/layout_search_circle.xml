@@ -7,6 +7,37 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_xxl"
+        android:background="@drawable/apk_all_white"
+        >
+
+        <View
+              android:id="@+id/redView"
+              android:background="@drawable/redview_background"
+              android:layout_width="3dp"
+              android:layout_height="17dp"
+              android:layout_centerVertical="true"
+              android:layout_alignParentLeft="true"
+              android:layout_marginLeft="15dp"
+            ></View>
+
+        <TextView
+            android:id="@+id/tvFaq"
+            android:layout_toRightOf="@+id/redView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/apk_all_white"
+            android:layout_centerVertical="true"
+            android:gravity="start|center_vertical"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/black_b"
+            android:textSize="@dimen/text_size_xs_less"
+            android:text="孕晚期大家都在问" />
+
+    </RelativeLayout>
+
     <nickgao.com.meiyousample.gridview.LinearGrid
         android:id="@+id/lv_faq"
         android:layout_width="match_parent"

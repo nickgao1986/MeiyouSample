@@ -1,6 +1,9 @@
 package nickgao.com.meiyousample.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Rect;
+import android.view.Window;
 
 /**
  * Created by gaoyoujian on 2017/3/5.
@@ -30,5 +33,28 @@ public class DeviceUtils {
             var2.printStackTrace();
             return 800;
         }
+    }
+
+    public static int getStatusBarHeight(Activity activity) {
+        int statusBarHeight = 0;
+        int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if(resourceId > 0) {
+            statusBarHeight = activity.getResources().getDimensionPixelSize(resourceId);
+            if(statusBarHeight > 0) {
+                return statusBarHeight;
+            }
+        }
+
+        if(statusBarHeight <= 0) {
+            Rect rectangle = new Rect();
+            Window window = activity.getWindow();
+            window.getDecorView().getWindowVisibleDisplayFrame(rectangle);
+            statusBarHeight = rectangle.top;
+            if(statusBarHeight > 0) {
+                return statusBarHeight;
+            }
+        }
+
+        return dip2px(activity, 20.0F);
     }
 }
