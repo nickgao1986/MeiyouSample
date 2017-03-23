@@ -24,7 +24,6 @@ import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.listener.OnItemTextExpandListener;
 import nickgao.com.meiyousample.model.HomeDynamicModel;
 import nickgao.com.meiyousample.model.IHomeDynamicType;
-import nickgao.com.meiyousample.utils.CalendarUtil;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.StringUtils;
 
@@ -244,10 +243,10 @@ public class HomeDynamicAdapter extends BaseAdapter {
                         viewHolder.vsImages = (ViewStub) view.findViewById(R.id.vsImages);
                         viewHolder.vsImageGrid = (ViewStub) view.findViewById(R.id.vsImagesGrid);
                         viewHolder.tvContent = (CustomUrlTextView) view.findViewById(R.id.tvContent);
-                        viewHolder.tvDelete = (TextView) view.findViewById(R.id.tvDelete);
+                       // viewHolder.tvDelete = (TextView) view.findViewById(R.id.tvDelete);
                         viewHolder.tvWatchMore = (TextView) view.findViewById(R.id.tvWatchMore);
-                        viewHolder.ivFollow = (ImageView) view.findViewById(R.id.ivFollow);
-                        viewHolder.vsFriendInfo = (ViewStub) view.findViewById(R.id.vsFriendInfo);
+                        //viewHolder.ivFollow = (ImageView) view.findViewById(R.id.ivFollow);
+                      //  viewHolder.vsFriendInfo = (ViewStub) view.findViewById(R.id.vsFriendInfo);
                         viewHolder.llDynamicContent = (LinearLayout) view.findViewById(R.id.llDynamicContent);
                         viewHolder.ivMoreItem = (ImageView)view.findViewById(R.id.ivItemMore);
                         break;
@@ -258,14 +257,14 @@ public class HomeDynamicAdapter extends BaseAdapter {
                 viewHolder.ivAvatar = (ImageView) view.findViewById(R.id.ivAvatar);
                 viewHolder.tvNickname = (TextView) view.findViewById(R.id.tvNickname);
                 viewHolder.tvTypeFrom = (TextView) view.findViewById(R.id.tvTypeFrom);
-                viewHolder.tvPublishTime = (TextView) view.findViewById(R.id.tvPublishTime);
+              //  viewHolder.tvPublishTime = (TextView) view.findViewById(R.id.tvPublishTime);
 
                 viewHolder.llZan = (LinearLayout) view.findViewById(R.id.llZan);
                 viewHolder.ivZan = (ImageView) view.findViewById(R.id.ivZanImage);
                 viewHolder.tvZan = (TextView) view.findViewById(R.id.tvZan);
                 viewHolder.tvReply = (TextView) view.findViewById(R.id.tvReply);
                 viewHolder.llZanReply = (LinearLayout) view.findViewById(R.id.llZanReply);
-                viewHolder.ivLeftTopBadge = (ImageView) view.findViewById(R.id.ivLeftTopBadge);
+                //viewHolder.ivLeftTopBadge = (ImageView) view.findViewById(R.id.ivLeftTopBadge);
                 viewHolder.divider = view.findViewById(R.id.divider);
                 viewHolder.tvReply.setCompoundDrawablesWithIntrinsicBounds(context.getResources().getDrawable(R.drawable.apk_tata_comment_gray),
                         null, null, null);
@@ -276,15 +275,15 @@ public class HomeDynamicAdapter extends BaseAdapter {
 
             final HomeDynamicModel homeDynamicModel = models.get(position);
 
-            if (!StringUtils.isNull(homeDynamicModel.createTime)) {
-                viewHolder.tvPublishTime.setText(CalendarUtil.convertUtcTime(homeDynamicModel.createTime));
-                viewHolder.tvPublishTime.setVisibility(View.VISIBLE);
-            } else if (!StringUtils.isNull(homeDynamicModel.updateTime)) {
-                viewHolder.tvPublishTime.setText(CalendarUtil.convertUtcTime(homeDynamicModel.updateTime));
-                viewHolder.tvPublishTime.setVisibility(View.VISIBLE);
-            } else {
-                viewHolder.tvPublishTime.setVisibility(View.GONE);
-            }
+//            if (!StringUtils.isNull(homeDynamicModel.createTime)) {
+//                viewHolder.tvPublishTime.setText(CalendarUtil.convertUtcTime(homeDynamicModel.createTime));
+//                viewHolder.tvPublishTime.setVisibility(View.VISIBLE);
+//            } else if (!StringUtils.isNull(homeDynamicModel.updateTime)) {
+//                viewHolder.tvPublishTime.setText(CalendarUtil.convertUtcTime(homeDynamicModel.updateTime));
+//                viewHolder.tvPublishTime.setVisibility(View.VISIBLE);
+//            } else {
+//                viewHolder.tvPublishTime.setVisibility(View.GONE);
+//            }
 
             //赞和回复
             if (homeDynamicModel.isAllowOperate) {
@@ -304,15 +303,7 @@ public class HomeDynamicAdapter extends BaseAdapter {
                 viewHolder.vsComment.setVisibility(View.GONE);
             }
 
-            if (homeDynamicModel.isExpand == 1) {
-                viewHolder.ivLeftTopBadge.setVisibility(View.VISIBLE);
-                viewHolder.ivLeftTopBadge.setImageResource(R.drawable.apk_first_add);
-            } else if (homeDynamicModel.isRecommend == 1 || homeDynamicModel.type == IHomeDynamicType.FRIEND_RECOMMEND) {
-                viewHolder.ivLeftTopBadge.setVisibility(View.VISIBLE);
-                viewHolder.ivLeftTopBadge.setImageResource(R.drawable.apk_first_recomment);
-            } else {
-                viewHolder.ivLeftTopBadge.setVisibility(View.GONE);
-            }
+
 
             switch (layoutType) {
                 case LAYOUT_TYPE_DEFAULT:
@@ -331,12 +322,6 @@ public class HomeDynamicAdapter extends BaseAdapter {
                         viewHolder.tvTypeFrom.setText(homeDynamicModel.recommType);
                     }
                     viewHolder.tvTypeFrom.setText("");
-                    viewHolder.tvDelete.setVisibility(View.GONE);
-
-
-                    //推荐的说说，好友的关注按钮
-                    viewHolder.ivFollow.setVisibility(View.GONE);
-                    viewHolder.vsFriendInfo.setVisibility(View.GONE);
 
                     break;
 
@@ -386,8 +371,8 @@ public class HomeDynamicAdapter extends BaseAdapter {
         ImageView ivAvatar;
         TextView tvNickname;
         TextView tvTypeFrom;
-        TextView tvPublishTime;
-        TextView tvDelete;
+        //TextView tvPublishTime;
+       // TextView tvDelete;
         CustomUrlTextView tvContent;
         TextView tvWatchMore;
         LinearLayout llDynamicContent;
@@ -401,7 +386,7 @@ public class HomeDynamicAdapter extends BaseAdapter {
         ViewStub vsComment;
         ViewStub vsImages;
         ViewStub vsImageGrid;
-        ViewStub vsFriendInfo;
+        //ViewStub vsFriendInfo;
 
         TextView tvRecommendResoan;
 
@@ -413,8 +398,8 @@ public class HomeDynamicAdapter extends BaseAdapter {
         TextView tv_video_time;
 
         ImageView bvVerify;
-        ImageView ivLeftTopBadge;
-        ImageView ivFollow;
+       // ImageView ivLeftTopBadge;
+        //ImageView ivFollow;
         ImageView ivMoreItem;
 
         View divider;

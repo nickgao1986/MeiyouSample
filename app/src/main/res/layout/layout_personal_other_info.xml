@@ -17,7 +17,6 @@
         <TextView
             android:id="@+id/tv_att_count"
             style="@style/fragment_personal_head_sub_txt"
-            android:text="13"
             tools:text="13"
             />
 
@@ -41,14 +40,38 @@
         <TextView
             android:id="@+id/tv_fans_count"
             style="@style/fragment_personal_head_sub_txt"
-            android:text="0"
+            tools:text="12345"
+            />
+
+        <TextView
+            style="@style/fragment_personal_head_sub_txt"
+            android:id="@+id/header_fans_text"
+            android:layout_marginTop="@dimen/dp_value_5"
+            android:text="粉丝"
+            tools:text="粉丝"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_fragment_personal_head_collection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="39dp"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/tv_collection_count"
+            style="@style/fragment_personal_head_sub_txt"
             tools:text="12345"
             />
 
         <TextView
             style="@style/fragment_personal_head_sub_txt"
             android:layout_marginTop="@dimen/dp_value_5"
-            android:text="粉丝"
+            android:text="收藏"
             tools:text="粉丝"
             />
 

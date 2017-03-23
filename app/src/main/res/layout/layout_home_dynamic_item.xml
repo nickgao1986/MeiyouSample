@@ -1,240 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/llItemContainer"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/apk_all_white_selector"
-    android:descendantFocusability="blocksDescendants"
-    android:orientation="vertical">
+                android:id="@+id/llItemContainer"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/apk_all_white_selector"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/ivLeftTopBadge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/apk_first_add" />
 
     <LinearLayout
         android:id="@+id/llItemContent"
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/space_s_new"
-        android:paddingLeft="@dimen/space_s_new"
-        android:paddingRight="@dimen/space_s_new"
-        android:paddingTop="@dimen/space_m"
-        >
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/ivAvatar"
-            android:layout_width="@dimen/list_icon_height_40"
-            android:layout_height="@dimen/list_icon_height_40"
-            android:layout_marginRight="@dimen/space_s_new"
-            android:layout_marginTop="1.0dip" />
+        <include layout="@layout/layout_home_dynamic_name_and_time"/>
+
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:id="@+id/llDynamicContent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="57dp"
+            android:layout_marginRight="15dp"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/nameLayout"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tvNickname"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="@dimen/space_xxs"
-                        android:ellipsize="end"
-                        android:gravity="center_vertical"
-                        android:singleLine="true"
-                        android:text="小柚子"
-                        android:textColor="@color/black_a"
-                        android:textSize="@dimen/text_size_xs"
-                        android:textStyle="bold" />
-
-                    <!--android:background="@drawable/apk_all_white_selector"-->
-                    <TextView
-                        android:id="@+id/tvTypeFrom"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/tvNickname"
-                        android:singleLine="true"
-                        android:text=""
-                        android:textColor="@color/black_b"
-                        android:textSize="@dimen/text_size_xs" />
-
-                    <ViewStub
-                        android:id="@+id/vsFriendInfo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tvNickname"
-                        android:layout_marginTop="@dimen/space_xs"
-                        android:layout="@layout/layout_dynamic_friend_info" />
-
-                    <ImageView
-                        android:id="@+id/ivFollow"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/apk_friend_addher"
-                        android:visibility="gone" />
-
-                </RelativeLayout>
-
-
-                <LinearLayout
-                    android:id="@+id/llDynamicContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nameLayout"
-                    android:orientation="vertical">
-
-                    <com.lingan.seeyou.ui.view.CustomUrlTextView
-                        android:id="@+id/tvContent"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/space_s_new"
-                        android:text="小柚子分享话题"
-                        android:textColor="@color/black_at"
-                        android:textSize="@dimen/text_size_s" />
-                    <TextView
-                        android:id="@+id/tvWatchMore"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/apk_all_white_selector"
-                        android:text="全文"
-                        android:textColor="@color/colour_a"
-                        android:textSize="@dimen/text_size_xs"
-                        android:visibility="gone" />
-
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/ivItemMore"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/all_btn_more"/>
-
-            </RelativeLayout>
-
-            <ViewStub
-                android:id="@+id/vsImages"
+            <com.lingan.seeyou.ui.view.CustomUrlTextView
+                android:id="@+id/tvContent"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_s_new"
-                android:layout="@layout/layout_home_dynamic_images" />
+                android:text="小柚子分享话题"
+                android:textColor="@color/black_at"
+                android:textSize="17sp"/>
 
-            <ViewStub
-                android:id="@+id/vsImagesGrid"
-                android:layout_width="fill_parent"
+            <TextView
+                android:id="@+id/tvWatchMore"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_s_new"
-                android:layout="@layout/layout_home_dynamic_imagegrid" />
-
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_xs">
-
-                <TextView
-                    android:id="@+id/tvPublishTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="@dimen/space_xs"
-                    android:gravity="right"
-                    android:singleLine="true"
-                    android:text="刚刚"
-                    android:textColor="@color/black_b"
-                    android:textSize="@dimen/text_size_xs" />
-
-                <TextView
-                    android:id="@+id/tvDelete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@+id/tvPublishTime"
-                    android:background="@drawable/apk_all_white_selector"
-                    android:text="@string/delete"
-                    android:textColor="@color/black_b"
-                    android:textSize="@dimen/text_size_xs" />
-
-                <LinearLayout
-                    android:id="@+id/llZanReply"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tvReply"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:drawableLeft="@drawable/apk_tata_comment_gray"
-                        android:drawablePadding="@dimen/space_xxs"
-                        android:gravity="center"
-                        android:padding="1dip"
-                        android:text="回复"
-                        android:textColor="@color/black_c"
-                        android:textSize="@dimen/text_size_xs" />
-
-
-                    <ImageView
-                        android:id="@+id/ivLineTow"
-                        android:layout_width="1px"
-                        android:layout_height="@dimen/space_m"
-                        android:layout_marginLeft="@dimen/space_s"
-                        android:layout_marginRight="@dimen/space_s"
-                        />
-
-
-                    <LinearLayout
-                        android:id="@+id/llZan"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:id="@+id/ivZanImage"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/space_xxs"
-                            android:src="@drawable/apk_tata_good" />
-
-                        <TextView
-                            android:id="@+id/tvZan"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:gravity="center"
-                            android:padding="1dip"
-                            android:text="125"
-                            android:textColor="@color/black_c"
-                            android:textSize="@dimen/text_size_xs" />
-                    </LinearLayout>
-                    <!--android:background="@drawable/apk_all_white_selector"-->
-                </LinearLayout>
-            </RelativeLayout>
-
+                android:layout_centerVertical="true"
+                android:background="@drawable/apk_all_white_selector"
+                android:text="全文"
+                android:textColor="@color/colour_a"
+                android:textSize="@dimen/text_size_xs"
+                android:visibility="gone"/>
 
         </LinearLayout>
+
+        <ViewStub
+            android:id="@+id/vsImages"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="57dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="@dimen/space_s_new"
+            android:layout="@layout/layout_home_dynamic_images"/>
+
+        <ViewStub
+            android:id="@+id/vsImagesGrid"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="57dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="@dimen/space_s_new"
+            android:layout="@layout/layout_home_dynamic_imagegrid"/>
+
+        <include layout="@layout/layout_home_dynamic_reply_and_zan"/>
+
     </LinearLayout>
 
     <ImageView
         android:id="@+id/divider"
         style="@style/divider"
         android:layout_below="@+id/llItemContent"
-        android:visibility="visible" />
+        android:visibility="visible"/>
 
 </RelativeLayout>

@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nickgao.com.meiyousample" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MeiyouApplication"
         android:allowBackup="true"
@@ -10,7 +12,7 @@
         android:theme="@style/ApplicationTheme"
 
         >
-        <activity android:name=".NewsListActivity" >
+        <activity android:name=".TestNetworkActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

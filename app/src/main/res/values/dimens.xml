@@ -102,4 +102,14 @@
 
     <dimen name="dp_value_80">80dip</dimen>
     <dimen name="dp_value_86">86dip</dimen>
+
+    <dimen name="text_size_19">19sp</dimen>
+    <dimen name="text_size_17">17sp</dimen>
+    <dimen name="list_icon_height_22">22dip</dimen>
+    <dimen name="search_item_margin_left_right">15dp</dimen>
+    <dimen name="personal_header_with_personal_info_height">236dp</dimen>
+    <dimen name="personal_header_with_one_line_personal_info_height">200dp</dimen>
+    <dimen name="personal_header_with_two_line_personal_info_height">180dp</dimen>
+    <dimen name="personal_header_info_margin_left_right">15dp</dimen>
+    <dimen name="search_bar_right_button_margin_left_right">12dp</dimen>
 </resources>

@@ -73,7 +73,6 @@
     <dimen name="title_height_double">75dp</dimen>
     <dimen name="title_height_half">25dp</dimen>
     <dimen name="titlebar_height">48dip</dimen>
-    <dimen name="search_bar_right_button_margin_left_right">9dp</dimen>
     <dimen name="search_bar_right_button_margin_top_bottom">13dp</dimen>
 
 </resources>

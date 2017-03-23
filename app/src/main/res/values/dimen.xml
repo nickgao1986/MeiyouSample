@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="text_size_19">19sp</dimen>
-    <dimen name="text_size_17">17sp</dimen>
-    <dimen name="list_icon_height_22">22dip</dimen>
-    <dimen name="search_item_margin_left_right">15dp</dimen>
-
-</resources>
