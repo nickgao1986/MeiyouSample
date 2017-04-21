@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_mine"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_mine_banner_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/apk_all_white"
+        >
+
+        <com.lingan.seeyou.ui.view.LoaderImageView
+            android:id="@+id/iv_layoutminelist_icon"
+            android:layout_width="@dimen/dp_value_30"
+            android:layout_height="@dimen/dp_value_30"
+            tools:background="@color/red_b"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_value_15"
+            android:layout_marginTop="@dimen/dp_value_7"
+            android:layout_marginBottom="@dimen/dp_value_7"
+            />
+
+        <TextView
+            android:layout_toRightOf="@id/iv_layoutminelist_icon"
+            android:id="@+id/tv_mine"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/list_icon_height_44"
+            android:layout_marginLeft="@dimen/dp_value_15"
+            android:gravity="center_vertical"
+            android:text="我的"
+            android:textColor="@color/black_a"
+            android:textSize="@dimen/text_size_16"
+            android:layout_centerVertical="true"
+            />
+
+
+        <ImageView
+            android:id="@+id/iv_mine_banner_rightarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/all_icon_arrow"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_value_10"
+            />
+
+        <TextView
+            android:id="@+id/tv_mine_banner_rightarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="更多"
+            android:layout_toLeftOf="@id/iv_mine_banner_rightarrow"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="@dimen/dp_value_6"
+            android:textSize="@dimen/text_size_14"
+            android:textColor="@color/black_b"
+            />
+
+        <View
+            android:id="@+id/mine_line"
+            style="@style/divider"
+            android:layout_alignParentBottom="true"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_mine_banner_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+</LinearLayout>
+

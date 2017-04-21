@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_item_mine"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="@drawable/apk_all_white_selector"
+    android:orientation="horizontal">
+
+
+    <com.lingan.seeyou.ui.view.LoaderImageView
+        android:id="@+id/im_mineIcon"
+        android:layout_width="@dimen/list_icon_height_30"
+        android:layout_height="@dimen/list_icon_height_30"
+        android:layout_centerVertical="true"
+        android:src="@drawable/apk_share_weixin"
+        android:layout_marginBottom="@dimen/dp_value_7"
+        android:layout_marginLeft="@dimen/dp_value_15"
+        android:layout_marginRight="@dimen/dp_value_15"
+        android:layout_marginTop="@dimen/dp_value_7"
+         />
+
+    <TextView
+        android:id="@+id/tvPromotion"
+        android:layout_width="9dp"
+        android:layout_height="9dp"
+        android:layout_marginLeft="-25dip"
+        android:layout_marginTop="@dimen/space_xs"
+        android:layout_toRightOf="@+id/im_mineIcon"
+        android:background="@drawable/apk_all_newsbg"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textSize="@dimen/text_size_xxs" />
+
+    <TextView
+        android:id="@+id/tx_itemName"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/list_icon_height_44"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/im_mineIcon"
+        android:gravity="center_vertical"
+        android:textColor="@color/black_a"
+        android:textSize="@dimen/text_size_17"
+        tools:text="经期设置" />
+
+    <View
+        android:id="@+id/v_itemminelist_line"
+        style="@style/divider"
+        android:layout_alignLeft="@id/tx_itemName"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/apk_all_lineone" />
+
+
+    <ImageView
+        android:id="@+id/iv_itemminelist_rightarrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_value_15"
+        android:background="@drawable/all_icon_arrow" />
+
+    <com.lingan.seeyou.ui.view.LoaderImageView
+        android:id="@+id/li_itemminelist_tips"
+        android:layout_width="@dimen/list_icon_height_30"
+        android:layout_height="@dimen/list_icon_height_30"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_value_10"
+        android:layout_toLeftOf="@id/iv_itemminelist_rightarrow"
+        android:visibility="gone"
+        tools:src="@color/red_b"
+        tools:visibility="visible" />
+
+    <FrameLayout
+        android:id="@+id/fl_itemminelist_headimg"
+        android:layout_width="@dimen/list_icon_height_30"
+        android:layout_height="@dimen/list_icon_height_30"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_value_10"
+        android:layout_toLeftOf="@id/iv_itemminelist_rightarrow"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.lingan.seeyou.ui.view.LoaderImageView
+            android:id="@+id/ri_itemminelist_headimg"
+            android:layout_width="@dimen/list_icon_height_30"
+            android:layout_height="@dimen/list_icon_height_30"
+            android:background="@drawable/shape_cricle" />
+
+        <TextView
+            android:layout_width="@dimen/dp_value_8"
+            android:layout_height="@dimen/dp_value_8"
+            android:layout_gravity="right"
+            android:background="@drawable/apk_all_newsbg"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_10" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_itemminelist_tips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_value_10"
+        android:layout_toLeftOf="@id/li_itemminelist_tips"
+        android:textColor="@color/black_b"
+        android:textSize="@dimen/text_size_14"
+        android:visibility="gone"
+        tools:text="收藏"
+        tools:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/tv_my_newdot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/tx_itemName"
+        android:background="@drawable/bg_round_red_new"
+        android:gravity="center"
+        android:text="new"
+        android:textColor="@color/white_a"
+        android:textSize="@dimen/text_size_xxs"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/prompt_new"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="@dimen/dp_value_6"
+        android:layout_toRightOf="@id/tx_itemName"
+        android:background="@drawable/apk_all_newsbg"
+        android:gravity="center"
+        android:text="99+"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_10"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</RelativeLayout>

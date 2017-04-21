@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -60,7 +61,12 @@ public class MainFragment extends Fragment {
     private ImageView iv_custom_iv_left, iv_custom_iv_right;
     private TextView tv_PersonalDescription;
     private Button btn_personal_head_attention;
-
+    private RelativeLayout rl_personal_header_without_info_layout;
+    private RelativeLayout ll_personal_header_with_info_layout;
+    private LinearLayout ll_header_layout;
+    boolean isShowPersonalInfo = true;
+    private RelativeLayout personal_header_layout;
+   // private Button btn_personal_title_attention;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -85,12 +91,16 @@ public class MainFragment extends Fragment {
     }
 
     private boolean mIsSelected = false;
+    private int preCurrentY = 0;
+
     private void initView() {
         news_home_viewpager = (NewsHomeViewPager) mRootView.findViewById(R.id.news_home_viewpager);
+        personal_header_layout = (RelativeLayout)mRootView.findViewById(R.id.personal_header_layout);
         news_home_sliding_tab = (HomeSlidingTabLayout) mRootView.findViewById(R.id.news_home_sliding_tab);
         news_home_sliding_tab.setCustomTabView(R.layout.layout_home_classify_tab_item, R.id.homeTab);
         news_home_sliding_tab.setIsDrawDiver(true);
         emptyView = (ImageView)mRootView.findViewById(R.id.empty_view);
+
         btn_personal_head_attention = (Button)mRootView.findViewById(R.id.btn_personal_head_attention);
         btn_personal_head_attention.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,8 +112,13 @@ public class MainFragment extends Fragment {
                 }
             }
         });
+        btn_personal_head_attention.setAlpha(0);
+        ll_personal_header_with_info_layout = (RelativeLayout)mRootView.findViewById(R.id.rlHeader);
+        rl_personal_header_without_info_layout = (RelativeLayout)mRootView.findViewById(R.id.personal_header_without_info_layout);
+        ll_header_layout = (LinearLayout)mRootView.findViewById(R.id.ll_header_layout);
         //透明titleBar
         rl_custom_title_bar = (RelativeLayout) mRootView.findViewById(R.id.rl_custom_title_bar);
+        rl_custom_title_bar.setAlpha(0);
         rl_custom_title_bar.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -123,32 +138,53 @@ public class MainFragment extends Fragment {
         news_home_scroll_layout.setOnScrollListener(new ScrollableLayout.OnScrollListener() {
             @Override
             public void onScroll(int currentY, int maxY) {
+                int headHeight = 0;
+                if(isShowPersonalInfo) {
+                    headHeight = mActivity.getResources().getDimensionPixelOffset(R.dimen.personal_header_with_personal_info_height);
+                }else{
+                    headHeight = mActivity.getResources().getDimensionPixelOffset(R.dimen.personal_header_with_one_line_personal_info_height);
+                }
+                int titleBarHeight = mActivity.getResources().getDimensionPixelSize(R.dimen.personal_titlebar_height);
 
-                int headHeight = DeviceUtils.dip2px(mActivity, 200.0f);
-                int titleBarHeight = DeviceUtils.dip2px(mActivity, 50.0f);
-                float distance = headHeight - currentY;//curentY是已经向下滑动的距离，headHeight-currentY是还露出的head的距离，然后这个距离小于两倍titlebar的距离
-                //的时候开始渐变titlebar
-                float f = titleBarHeight*2;
-                int height = tv_PersonalDescription.getMeasuredHeight();
-                if (distance < f) {
-                    //f-distance是大概是200-distance ，所以barAlpha从0增长到1，因为最开始200-200=0
-                    float barAlpha = (f-distance)/100.0f;
-                    if (barAlpha > 1) {
-                        barAlpha = 1;
-                    }
-                   // rl_custom_title_bar.setAlpha(barAlpha);
-//                    if(barAlpha > 0.9) {
-//                        tv_publish_dynamic.setBackgroundResource(R.drawable.personal_attention_btn_normal);
-//                    }
+
+                int max = headHeight - titleBarHeight;
+                int half = max / 2;
+                if(currentY < half) {
+                    //在下一半
+
+                    float f1 = (currentY*1.0f/half);
+                    personal_header_layout.setAlpha(1-f1);
+
+                    rl_custom_title_bar.setAlpha(0);
+                    btn_personal_head_attention.setAlpha(0);
                 }else{
 
-//                    if (Build.VERSION.SDK_INT > Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-//                        rl_custom_title_bar.setAlpha(0f);
-//                    }
+                    float f2 = (currentY-half)*1.0f/half;
+                    rl_custom_title_bar.setAlpha(f2);
+                    btn_personal_head_attention.setAlpha(f2);
                 }
+
             }
         });
     }
+
+
+    private void showTitleBar(float barAlpha) {
+        rl_custom_title_bar.setAlpha(barAlpha);
+      //  updateTitleBarButton();
+    }
+
+//    private void updateTitleBarButton() {
+//        if(!isMe) {
+//            if(personalModel.isfollow == NOATTENTION) {
+//                btn_personal_head_attention.setVisibility(View.VISIBLE);
+//                btn_personal_title_attention.setText("关注");
+//            }else{
+//                btn_personal_head_attention.setVisibility(View.VISIBLE);
+//                btn_personal_title_attention.setText("已关注");
+//            }
+//        }
+//    }
 
     @Override
     public void onAttach(Activity activity) {

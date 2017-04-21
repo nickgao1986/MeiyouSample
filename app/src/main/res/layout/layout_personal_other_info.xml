@@ -17,6 +17,7 @@
         <TextView
             android:id="@+id/tv_att_count"
             style="@style/fragment_personal_head_sub_txt"
+            android:text="13"
             tools:text="13"
             />
 
@@ -40,6 +41,7 @@
         <TextView
             android:id="@+id/tv_fans_count"
             style="@style/fragment_personal_head_sub_txt"
+            android:text="12345"
             tools:text="12345"
             />
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/rl_my_header"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="90dip"
+    android:layout_marginTop="@dimen/dp_10"
+    android:background="@drawable/apk_all_white"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    tools:showIn="@layout/my_layout">
+
+    <RelativeLayout
+        android:id="@+id/rl_my_head_image"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/space_m"
+        >
+
+        <com.lingan.seeyou.ui.view.CircleShapeImageView
+            android:id="@+id/iv_my_avatar"
+            android:layout_width="60dip"
+            android:layout_height="60dip"
+            android:background="@drawable/apk_mine_photo"
+            />
+
+        <ImageView
+            android:id="@+id/iv_my_head_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/apk_mine_addphoto"
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/rl_my_head_image">
+
+        <TextView
+            android:id="@+id/tv_my_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未登录"
+            android:textColor="@color/black_b"
+            android:textSize="@dimen/text_size_17"/>
+
+        <TextView
+            android:id="@+id/tv_my_head_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_my_username"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="人生阶段"
+            android:textColor="@color/black_at"
+            android:textSize="@dimen/text_size_14"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivArrow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/space_m"
+        android:src="@drawable/all_icon_arrow"
+        android:visibility="visible"
+        tools:visibility="visible"
+        />
+
+    <View
+        android:id="@+id/divider1"
+        style="@style/divider"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp_15"/>
+
+</RelativeLayout>

@@ -12,7 +12,7 @@
         android:theme="@style/ApplicationTheme"
 
         >
-        <activity android:name=".TestNetworkActivity" >
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

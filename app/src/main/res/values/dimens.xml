@@ -106,6 +106,8 @@
     <dimen name="text_size_19">19sp</dimen>
     <dimen name="text_size_17">17sp</dimen>
     <dimen name="list_icon_height_22">22dip</dimen>
+    <dimen name="personal_titlebar_height">44dp</dimen>
+
     <dimen name="search_item_margin_left_right">15dp</dimen>
     <dimen name="personal_header_with_personal_info_height">236dp</dimen>
     <dimen name="personal_header_with_one_line_personal_info_height">200dp</dimen>
