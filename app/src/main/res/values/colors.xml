@@ -104,4 +104,6 @@
     <color name="xiyou_darker_red">#000000</color>
     <color name="count_down_timer_item_background">#000000</color>
     <color name="personal_title_background">#33000000</color>
+    <color name="percent_8_black">#14000000</color> <!-- 8% 000000-->
+
 </resources>

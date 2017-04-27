@@ -22,14 +22,13 @@ import nickgao.com.meiyousample.gridview.SearchCircleOverAllFaqAdapter;
 import nickgao.com.meiyousample.gridview.SearchCircleOverAllPhraseAdapter;
 import nickgao.com.meiyousample.model.NewsDetailReviewListModel;
 import nickgao.com.meiyousample.model.SearchCircleHomeModel.SearchCircleHomeItemModel;
-import nickgao.com.meiyousample.utils.LogUtils;
 import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/3/15.
  */
 
-public class SeeyouActivity extends FragmentActivity {
+public class SearchTaTaActivity extends FragmentActivity {
 
 
     private LinearGrid mLvFaq;  //大家都在问
@@ -199,7 +198,7 @@ public class SeeyouActivity extends FragmentActivity {
             } catch (JSONException ex) {
                 ex.printStackTrace();
             }
-            LogUtils.d("=====str="+data.publisher.avatar);
+          //  LogUtils.d("=====str="+data.publisher.avatar);
             return data;
         }
 

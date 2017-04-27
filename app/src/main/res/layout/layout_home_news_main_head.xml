@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlHeader"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivBannerBg"
+        android:layout_width="fill_parent"
+        android:layout_height="160dip"
+        android:background="@drawable/apk_first_banner"
+        android:scaleType="centerCrop" />
+
+    <RelativeLayout
+        android:id="@+id/rlContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/ivBannerBg"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/rlHomePeriod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="23dip"
+            android:layout_toLeftOf="@+id/fl_home_hua_love"
+            android:layout_alignParentLeft="true"
+            >
+
+            <TextView
+                android:id="@+id/tvHomePeriodTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="大姨妈推迟了7天"
+                android:textColor="@color/black_at"
+                android:textSize="@dimen/dp_22" />
+
+            <TextView
+                android:id="@+id/tvHomePeriodSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvHomePeriodTitle"
+                android:layout_marginTop="11dip"
+                android:text="预计11月10日来"
+                android:textColor="@color/black_at"
+                android:textSize="@dimen/dp_18"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/fl_home_hua_love"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="21dip"
+            android:orientation="vertical"
+            android:visibility="visible"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

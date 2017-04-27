@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_news_home_sliding_tab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@drawable/apk_all_white_selector"
+        android:visibility="gone">
+
+        <com.lingan.seeyou.ui.view.HomeSlidingTabLayout
+            android:id="@+id/news_home_sliding_tab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:layout_toLeftOf="@+id/rlMoreClassify"
+            android:layout_toRightOf="@+id/rlHomeBack"
+            android:background="@drawable/apk_all_white"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            app:HomeCountPerScreen="5.4"
+            app:HomeSlidingTabIndicatorColor="@color/red_b"
+            app:HomeSlidingTabStyle="HomeTypeCust"
+            app:HomeSlidingTabTextColor="@color/black_at"
+            app:HomeSlidingTabTextSelectColor="@color/red_b"
+            app:HomeSlidingTabTextSelectSize="@dimen/text_size_19"
+            app:HomeSlidingTabTextSize="@dimen/text_size_18" />
+
+        <RelativeLayout
+            android:id="@+id/rlHomeBack"
+            android:layout_width="35dip"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true">
+
+            <ImageView
+                android:id="@+id/ivHomeBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/space_s_new"
+                android:src="@drawable/nav_btn_back_black" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_gradient_trans_left"
+            android:layout_width="20dp"
+            android:layout_height="42dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/rlHomeBack"
+            android:background="@drawable/shape_gradient_transparent" />
+
+        <RelativeLayout
+            android:id="@+id/rlMoreClassify"
+            android:layout_width="45dip"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/ivMoreClassify"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/news_btn_allsort" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_gradient_trans_right"
+            android:layout_width="24dp"
+            android:layout_height="42dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/rlMoreClassify"
+            android:background="@drawable/shape_gradient_transparent" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlHomeTitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@drawable/apk_default_titlebar_bg"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/rlLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/title_height"
+            android:background="@drawable/selector_trans_grey_bg"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <ImageView
+                android:id="@+id/iv_left_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:src="@drawable/nav_btn_message"
+                android:text=""
+                android:textColor="@color/white_a"
+                android:textSize="@dimen/text_size_s"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvMsgPromotionHome"
+                android:layout_width="13dip"
+                android:layout_height="13dip"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="-5dip"
+                android:layout_marginTop="13dip"
+                android:layout_toRightOf="@+id/iv_left_home"
+                android:background="@drawable/apk_all_newsbg"
+                android:duplicateParentState="true"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textSize="@dimen/space_xs"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/home_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:maxWidth="240dip"
+            android:singleLine="true"
+            android:text="美柚"
+            android:textColor="@color/white_a"
+            android:textSize="@dimen/text_size_20" />
+
+        <RelativeLayout
+            android:id="@+id/rlQian"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_trans_grey_bg"
+            android:paddingLeft="12dip"
+            android:paddingRight="12dip">
+
+            <TextView
+                android:id="@+id/tvQian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/checkin"
+                android:textColor="@color/white_a"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/ivQian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dip"
+                android:layout_toRightOf="@+id/tvQian" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

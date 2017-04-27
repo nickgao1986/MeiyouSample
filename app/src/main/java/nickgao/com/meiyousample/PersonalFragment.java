@@ -37,7 +37,7 @@ import nickgao.com.meiyousample.utils.LogUtils;
  * Created by gaoyoujian on 2017/3/7.
  */
 
-public class MainFragment extends Fragment {
+public class PersonalFragment extends Fragment {
 
     private View mRootView;
     HomeSlidingTabLayout news_home_sliding_tab;
