@@ -1,5 +1,6 @@
 package com.lingan.seeyou.ui.view;
 
+
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
@@ -23,7 +24,6 @@ import android.widget.Scroller;
 import android.widget.TextView;
 
 import nickgao.com.meiyousample.R;
-import nickgao.com.meiyousample.controller.NewsHomeController;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 
 
@@ -151,7 +151,7 @@ public class ScrollableLayout extends RelativeLayout {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         mHeadView = getChildAt(0);
         measureChildWithMargins(mHeadView, widthMeasureSpec, 0, MeasureSpec.UNSPECIFIED, 0);
-        maxY = mHeadView.getMeasuredHeight() - DeviceUtils.dip2px(context, 50.0f);
+        maxY = mHeadView.getMeasuredHeight() - context.getResources().getDimensionPixelSize(R.dimen.personal_titlebar_height);
         mHeadHeight = mHeadView.getMeasuredHeight();
         super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(heightMeasureSpec) + maxY, MeasureSpec.EXACTLY));
     }
@@ -311,7 +311,7 @@ public class ScrollableLayout extends RelativeLayout {
                     animationMove(ev, currentY);
                     childViewPager.setScrollble(true);
                     if (updown && shiftY > mTouchSlop && shiftY > shiftX &&
-                            (!isSticked() || mHelper.isTop() || isClickHeadExpand) && (NewsHomeController.getInstance().isOnRefresh() || (rl_update == null ? true : rl_update.getHeight() == 0))) {
+                            (!isSticked() || mHelper.isTop() || isClickHeadExpand)) {
                         if (childViewPager != null) {
                             childViewPager.requestDisallowInterceptTouchEvent(true);
                         }
@@ -362,7 +362,7 @@ public class ScrollableLayout extends RelativeLayout {
      */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void animationDown() {
-        if (NewsHomeController.getInstance().isOnRefresh() || isMove())
+        if (isMove())
             return;
         cleanAnimation();
         if (rl_loadding == null)
@@ -378,7 +378,7 @@ public class ScrollableLayout extends RelativeLayout {
      * 移动的效果
      */
     private void animationMove(MotionEvent ev, float currentY) {
-        if (NewsHomeController.getInstance().isOnRefresh() || isMove())
+        if (isMove())
             return;
         if (mLastY > 0 && isFirst) {
             isFirst = false;
@@ -417,11 +417,10 @@ public class ScrollableLayout extends RelativeLayout {
     private void animationUp() {
         headBgSpringBack();//头部回弹上去的效果
         middleFaultSpringBack(false);
-        if (NewsHomeController.getInstance().isOnRefresh())
-            return;
+
         if (rl_update != null && rl_update.getHeight() >= loaddingViewMaxHeight && rl_update.getHeight() != 0) {
             requestScrollableLayoutDisallowInterceptTouchEvent(true);
-            NewsHomeController.getInstance().setOnRefresh(true);
+
             loadOnRefresh();
             if (tvLoadding != null) {
                 tvLoadding.setText("正在刷新列表");
@@ -465,7 +464,7 @@ public class ScrollableLayout extends RelativeLayout {
      */
     private void middleFaultSpringBack(final boolean isUpdate) {
         try {
-            if (rl_update != null && (!NewsHomeController.getInstance().isOnRefresh() || isUpdate)) {
+            if (rl_update != null && (isUpdate)) {
                 final int loaddingHeight = rl_update.getHeight() + (isUpdate ? 1 : 0);
                 final int toScollUpY = loaddingHeight >= loaddingViewMaxHeight ? mScollUpMinHeight : mOrigineLoaddingHeight;
                 mLoaddingResizeAnim = ValueAnimator.ofInt(loaddingHeight, toScollUpY);
@@ -529,7 +528,6 @@ public class ScrollableLayout extends RelativeLayout {
                             rotationAnimator.start();
                         } else {
                             if (isUpdate) {
-                                NewsHomeController.getInstance().setOnRefresh(false);
                                 requestScrollableLayoutDisallowInterceptTouchEvent(false);
                             }
                         }
@@ -559,8 +557,7 @@ public class ScrollableLayout extends RelativeLayout {
      * @param topHeight
      */
     private void downAnimation(int topHeight) {
-        if (NewsHomeController.getInstance().isOnRefresh())
-            return;
+
         rl_update.setVisibility(View.VISIBLE);
         rl_loadding.setVisibility(View.GONE);
         int loaddingOrgHeight = rl_update.getHeight() + topHeight;
@@ -588,8 +585,7 @@ public class ScrollableLayout extends RelativeLayout {
      * @param topHeight
      */
     private void upAnimation(int topHeight) {
-        if (NewsHomeController.getInstance().isOnRefresh())
-            return;
+
         rl_update.setVisibility(View.VISIBLE);
         rl_loadding.setVisibility(View.GONE);
         int loaddingOrgHeight = rl_update.getHeight() - topHeight;
@@ -633,9 +629,7 @@ public class ScrollableLayout extends RelativeLayout {
         cleanAnimation();
         ballLoaddingView.setRotation(0f);
         ballLoaddingView.setIsRotate(false);
-        if (NewsHomeController.getInstance().isOnRefresh()) {//有自己执行下拉刷新的操作 才要执行 刷新之后的效果
-            ballHomingAnimation(msgHint, isHasData);
-        }
+
     }
 
     /**
@@ -678,7 +672,6 @@ public class ScrollableLayout extends RelativeLayout {
                     rl_update.setLayoutParams(layoutParams);
                     tvLoadding.setAlpha(0);
                     ballLoaddingView.setAlpha(0);
-                    NewsHomeController.getInstance().setOnRefresh(false);
                     requestScrollableLayoutDisallowInterceptTouchEvent(false);
                 } else {
                     rl_loadding.setVisibility(View.VISIBLE);
@@ -791,7 +784,6 @@ public class ScrollableLayout extends RelativeLayout {
                 rl_loadding.setLayoutParams(layoutParams);
                 rl_loadding.setAlpha(1);
                 rl_loadding.setVisibility(View.GONE);
-                NewsHomeController.getInstance().setOnRefresh(false);
                 requestScrollableLayoutDisallowInterceptTouchEvent(false);
             }
 
