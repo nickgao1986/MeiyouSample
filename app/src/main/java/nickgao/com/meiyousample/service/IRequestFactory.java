@@ -3,6 +3,7 @@ package nickgao.com.meiyousample.service;
 
 import nickgao.com.meiyousample.model.UserHomePage.UserHomePage;
 import nickgao.com.meiyousample.model.dynamicModel.DynamicData;
+import nickgao.com.meiyousample.model.reply.ReplyData;
 import nickgao.com.meiyousample.model.topic.TopicData;
 import nickgao.com.meiyousample.network.RcRestRequest;
 
@@ -23,5 +24,5 @@ public interface IRequestFactory {
 
     RcRestRequest<TopicData> createTopicListRequest(String last);
 
-    RcRestRequest<TopicData> createReplyListRequest(String last);
+    RcRestRequest<ReplyData> createReplyListRequest(String last);
 }

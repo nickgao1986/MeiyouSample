@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nickgao.com.meiyousample.adapter.MyPersonalTopicListAdapter;
+import nickgao.com.meiyousample.model.reply.ReplyData;
+import nickgao.com.meiyousample.model.reply.TopicModel;
 import nickgao.com.meiyousample.model.topic.MyTopicModel;
-import nickgao.com.meiyousample.model.topic.TopicData;
-import nickgao.com.meiyousample.model.topic.TopicModel;
-import nickgao.com.meiyousample.personal.TopicListener;
+import nickgao.com.meiyousample.personal.ReplyListener;
 import nickgao.com.meiyousample.service.ReplyService;
 import nickgao.com.meiyousample.service.ServiceFactory;
 import nickgao.com.meiyousample.utils.LogUtils;
@@ -19,7 +19,7 @@ import nickgao.com.meiyousample.utils.LogUtils;
  * Created by gaoyoujian on 2017/4/28.
  */
 
-public class ReplyFragment extends PersonalContentFragment implements TopicListener {
+public class ReplyFragment extends PersonalContentFragment implements ReplyListener {
 
 
     private Handler mHandler = new Handler();
@@ -50,7 +50,7 @@ public class ReplyFragment extends PersonalContentFragment implements TopicListe
     }
 
     @Override
-    public void onSuccess(TopicData response, final boolean isLoadMore) {
+    public void onSuccess(ReplyData response, final boolean isLoadMore) {
         TopicModel[] contents = response.data.topics;
         final ArrayList<MyTopicModel> myList = new ArrayList<MyTopicModel>();
         for (int i=0; i < contents.length; i++) {

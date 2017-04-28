@@ -8,6 +8,7 @@ import java.lang.reflect.Type;
 
 import nickgao.com.meiyousample.model.UserHomePage.UserHomePage;
 import nickgao.com.meiyousample.model.dynamicModel.DynamicData;
+import nickgao.com.meiyousample.model.reply.ReplyData;
 import nickgao.com.meiyousample.model.topic.TopicData;
 import nickgao.com.meiyousample.network.RcRestRequest;
 import nickgao.com.meiyousample.network.RestRequest;
@@ -57,14 +58,14 @@ public class RestRequestFactory implements IRequestFactory {
     }
 
     @Override
-    public RcRestRequest<TopicData> createReplyListRequest(String last) {
-        Type type = new TypeToken<TopicData>() {
+    public RcRestRequest<ReplyData> createReplyListRequest(String last) {
+        Type type = new TypeToken<ReplyData>() {
         }.getType();
 
         String url = UrlList.REPLY_LIST;
         if(!TextUtils.isEmpty(last)) {
             url += "&"+"last="+last;
         }
-        return new RestListRequest<TopicData>(url, type, RestRequest.HttpMethod.GET, TAG_REPLY_LIST);
+        return new RestListRequest<ReplyData>(url, type, RestRequest.HttpMethod.GET, TAG_REPLY_LIST);
     }
 }

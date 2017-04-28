@@ -325,6 +325,7 @@ public class PersonalFragment extends Fragment implements UserDataListener {
             model.index = i;
             model.name = tabs[i].name;
             model.url = tabs[i].url;
+            model.type = tabs[i].type;
             tabModels.add(model);
         }
         updateViewPager(tabModels);

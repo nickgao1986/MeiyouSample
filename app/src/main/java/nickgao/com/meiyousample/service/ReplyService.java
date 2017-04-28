@@ -4,9 +4,9 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import nickgao.com.meiyousample.MeiyouApplication;
-import nickgao.com.meiyousample.model.topic.TopicData;
+import nickgao.com.meiyousample.model.reply.ReplyData;
 import nickgao.com.meiyousample.network.RcRestRequest;
-import nickgao.com.meiyousample.personal.TopicListener;
+import nickgao.com.meiyousample.personal.ReplyListener;
 
 /**
  * Created by gaoyoujian on 2017/3/23.
@@ -15,29 +15,29 @@ import nickgao.com.meiyousample.personal.TopicListener;
 public class ReplyService extends AbstractService {
 
     private IRequestFactory requestFactory;
-    private TopicListener mListener;
+    private ReplyListener mListener;
     public ReplyService(IRequestFactory requestFactory) {
         super(requestFactory);
     }
 
 
-    public void sendRequest(TopicListener listener, final String last) {
+    public void sendRequest(ReplyListener listener, final String last) {
         Context context = MeiyouApplication.getContext();
-        RcRestRequest<TopicData> request = this.mRequestFactory.createReplyListRequest(last);
+        RcRestRequest<ReplyData> request = this.mRequestFactory.createReplyListRequest(last);
         mListener = listener;
-        request.registerOnRequestListener(new RcRestRequest.OnRequestListener<TopicData>() {
+        request.registerOnRequestListener(new RcRestRequest.OnRequestListener<ReplyData>() {
             @Override
-            public void onSuccess(RcRestRequest<TopicData> request, TopicData response) {
-                mListener.onSuccess(response, !TextUtils.isEmpty(last));
+            public void onSuccess(RcRestRequest<ReplyData> request, ReplyData response) {
+                mListener.onSuccess(response,!TextUtils.isEmpty(last));
             }
 
             @Override
-            public void onFail(RcRestRequest<TopicData> request, int errorCode) {
-                mListener.onFail();
+            public void onFail(RcRestRequest<ReplyData> request, int errorCode) {
+
             }
 
             @Override
-            public void onComplete(RcRestRequest<TopicData> request) {
+            public void onComplete(RcRestRequest<ReplyData> request) {
 
             }
         });
