@@ -6,14 +6,17 @@ package nickgao.com.meiyousample.model.UserHomePage;
 
 public class UserHomePage {
 
-    int id;
-    String avatars;
-    String screen_name;
-    int follows;
-    int isfollow;
-    String reason;
-    int status_code;
-    Tabs[] tabs;
-    String banner;
-    boolean forum_admin;
+    public int id;
+    public String avatars;
+    public String screen_name;
+    public int isfollow;
+    public String reason;
+    public int status_code;
+    public Tabs[] tabs;
+    public String banner;
+    public boolean forum_admin;
+    public int fans;
+    public int follows;
+    public int isvip;
+    public int userrank;
 }

@@ -9,12 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.Toast;
 
+import com.lingan.seeyou.ui.view.ListFooterUtil;
 import com.lingan.seeyou.ui.view.LoadingView;
-import com.lingan.seeyou.ui.view.NewsHomeParallaxListview;
 import com.lingan.seeyou.ui.view.ScrollableLayout;
+import com.lingan.seeyou.ui.view.skin.ViewFactory;
 
 import nickgao.com.meiyousample.R;
 
@@ -27,11 +29,11 @@ import nickgao.com.meiyousample.R;
  * @date 2017/2/24
  * @Description
  */
-public class PersonalContentFragment extends Fragment {
+public abstract class PersonalContentFragment extends Fragment {
 
 
     protected Activity mActivity;
-    protected NewsHomeParallaxListview mListview;
+    protected ListView mListview;
     protected int activityObjectId;
     protected int userId;
     protected View footer;
@@ -45,6 +47,10 @@ public class PersonalContentFragment extends Fragment {
     protected boolean mIsRefreshHeader;
     private View rootView;
 
+    public boolean bLoading = false;//是不是在加载
+    enum LoadingState {
+        LOADING_NEW_DATA,LOADING_MORE,NO_DATA,LOADING_COMPLETE,NO_NETWORK,FOOTER_COMPLETE,NETWORK_ERROR,PULL_BLACK
+    }
 
     public static Fragment newInstance(int id, int type, String name, int position, int currentSelectedPage, String url) {
         PersonalContentFragment classifyFragment = create(type);
@@ -75,16 +81,30 @@ public class PersonalContentFragment extends Fragment {
     }
 
     private static PersonalContentFragment create(int type) {
-        PersonalContentFragment fragment = new PersonalContentDynamicFragment();
+        PersonalContentFragment fragment = null;
+        if(type == -1) {
+            fragment = new PersonalContentDynamicFragment();
+        }else if(type == 7) {
+            fragment = new TopicFragment();
+        }else if(type == 8) {
+            fragment = new ReplyFragment();
+        }else if(type == 9) {
+            fragment = new PersonalContentDynamicFragment();
+        }
         return fragment;
     }
+
+
+    abstract void sendRequest();
+    abstract void subClassLoadMore();
+
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         init();
         initView();
-        initHeadUI();
+
     }
 
     private void init() {
@@ -94,16 +114,25 @@ public class PersonalContentFragment extends Fragment {
 
 
     private void initView() {
-        mListview = (NewsHomeParallaxListview) rootView.findViewById(R.id.news_home_listview);
+        mListview = (ListView) rootView.findViewById(R.id.news_home_listview);
+        footer = ListFooterUtil.getInstance().getListViewFooter(ViewFactory.from(mActivity.getApplicationContext()).getLayoutInflater());
+        mListview.addFooterView(footer);
 
         loadingView = (LoadingView) rootView.findViewById(R.id.news_home_loadingView);
+        loadingView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendRequest();
+            }
+        });
         mListview.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView view, int scrollState) {
+
                 //没在滚动，并且到底，触发获取更多
                 if (scrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE
-                        && view.getLastVisiblePosition() == (view
-                        .getCount() - 1)) {
+                        && !bLoading && view.getLastVisiblePosition() != 0 && view.getLastVisiblePosition() == (view.getCount() - 1)) {
+                    loadMore();
                 }
             }
 
@@ -116,47 +145,57 @@ public class PersonalContentFragment extends Fragment {
 
     }
 
+    protected void loadMore() {
+        if (bLoading)
+            return;
+        bLoading = true;
+        subClassLoadMore();
+    }
 
-    private void initHeadUI() {
-        mListViewHeader = LayoutInflater.from(getActivity()).inflate(R.layout.layout_news_home_head_animation, null);
-        mListview.addHeaderView(mListViewHeader);
-        RelativeLayout rlSelectCity = (RelativeLayout) mListViewHeader.findViewById(R.id.rlSelectCity);
-        TextView tvSelectCity = (TextView) mListViewHeader.findViewById(R.id.tvSelectCity);
-        rlSelectCity.setVisibility(View.GONE);
+    protected void setLoadingState(LoadingState state) {
+        switch (state) {
+            case LOADING_NEW_DATA:
+                loadingView.setStatus(LoadingView.STATUS_LOADING);
+                ListFooterUtil.getInstance().hideListViewFooter(footer);
+                break;
+            case LOADING_MORE:
+                loadingView.setStatus(LoadingView.STATUS_HIDDEN);
+                ListFooterUtil.getInstance().updateListViewFooter(footer, ListFooterUtil.ListViewFooterState.LOADING, "正在加载更多...");
+                break;
+            case NO_DATA:
+                loadingView.setStatus(LoadingView.STATUS_NODATA);
+                loadingView.setContent(mActivity, LoadingView.STATUS_NODATA,"她还未发布任何动态哦~");
+                ListFooterUtil.getInstance().hideListViewFooter(footer);
+                break;
+            case LOADING_COMPLETE: //一次请求完
+                loadingView.setStatus(LoadingView.STATUS_HIDDEN);
+                break;
+            case FOOTER_COMPLETE: //当拉more的时候没获取数据
+                loadingView.setStatus(LoadingView.STATUS_HIDDEN);
+                ListFooterUtil.getInstance().updateListViewFooter(footer, ListFooterUtil.ListViewFooterState.COMPLETE, "没有更多数据啦~~~");
+                break;
+            case NETWORK_ERROR:
+                Toast.makeText(mActivity,"亲，这次请求数据失败了",Toast.LENGTH_SHORT).show();
+                break;
+            case NO_NETWORK:
+                loadingView.setStatus(LoadingView.STATUS_NONETWORK);
+                ListFooterUtil.getInstance().hideListViewFooter(footer);
+                break;
+            case PULL_BLACK:
+                loadingView.setStatus(LoadingView.STATUS_NODATA);
+                loadingView.setContent(mActivity, LoadingView.STATUS_NODATA, "你没有权限查看~");
+                ListFooterUtil.getInstance().hideListViewFooter(footer);
 
-        // 加入头部
-        rl_loadding = (RelativeLayout) mListViewHeader.findViewById(R.id.rl_loadding);
-        rl_update = (RelativeLayout) mListViewHeader.findViewById(R.id.rl_update);
-        mListview.setScaleView(ivPersonalBg);
-        mListview.setLoaddingView(rl_update, rl_loadding, news_home_scroll_layout);
-        if (isVisible) {
-            setViews();
+                break;
+
         }
     }
+
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
-        if (isVisibleToUser) {
-            isVisible = true;
-            setViews();
-        } else {
-            isVisible = false;
-        }
+
     }
 
-    /**
-     * listview头部的控件传到外层去做
-     */
-    private void setViews() {
-        if (news_home_scroll_layout == null || rl_update == null || rl_loadding == null || ivPersonalBg == null)
-            return;
-        news_home_scroll_layout.setLoaddingView(rl_update, rl_loadding, ivPersonalBg);
-        news_home_scroll_layout.setOnRefreshListener(new NewsHomeParallaxListview.OnRefreshListener() {
-            @Override
-            public void OnRefresh() {
-                //pullDownRefresh();//下拉刷新
-            }
-        });
-    }
 
 }

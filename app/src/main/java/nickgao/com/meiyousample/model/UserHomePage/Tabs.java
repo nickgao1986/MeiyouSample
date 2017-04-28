@@ -6,7 +6,7 @@ package nickgao.com.meiyousample.model.UserHomePage;
 
 public class Tabs {
 
-    String type;
-    String name;
-    String url;
+    public String type;
+    public String name;
+    public String url;
 }

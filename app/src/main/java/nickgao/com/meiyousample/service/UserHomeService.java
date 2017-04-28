@@ -5,6 +5,7 @@ import android.content.Context;
 import nickgao.com.meiyousample.MeiyouApplication;
 import nickgao.com.meiyousample.model.UserHomePage.UserHomePage;
 import nickgao.com.meiyousample.network.RcRestRequest;
+import nickgao.com.meiyousample.personal.UserDataListener;
 import nickgao.com.meiyousample.utils.LogUtils;
 
 /**
@@ -13,27 +14,28 @@ import nickgao.com.meiyousample.utils.LogUtils;
 
 public class UserHomeService extends AbstractService {
 
-    private  IRequestFactory requestFactory;
-
+    private IRequestFactory requestFactory;
+    private UserDataListener mListener;
     public UserHomeService(IRequestFactory requestFactory) {
         super(requestFactory);
     }
 
 
-    public void sendRequest() {
+    public void sendRequest(UserDataListener listener) {
         Context context = MeiyouApplication.getContext();
         RcRestRequest<UserHomePage> request = this.mRequestFactory.createUserHomeRequest();
-
+        mListener = listener;
         request.registerOnRequestListener(new RcRestRequest.OnRequestListener<UserHomePage>() {
             @Override
             public void onSuccess(RcRestRequest<UserHomePage> request, UserHomePage response) {
                 LogUtils.d("====UserHomeServices success="+response);
-
+                mListener.onSuccess(response);
             }
 
             @Override
             public void onFail(RcRestRequest<UserHomePage> request, int errorCode) {
                 LogUtils.d("====UserHomeServices fail="+errorCode);
+                mListener.onFail();
 
             }
 

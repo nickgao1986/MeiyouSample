@@ -28,6 +28,7 @@
             android:gravity="center"
             android:layout_marginRight="@dimen/dp_value_15"
             android:layout_marginBottom="@dimen/dp_value_10"
+            android:visibility="gone"
             android:textSize="@dimen/text_size_10"
             android:textColor="@color/white_a"
             android:paddingLeft="@dimen/dp_value_5"

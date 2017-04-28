@@ -16,6 +16,7 @@
     <color name="black_i">#e5e5e5</color>
     <color name="black_j">#cccccc</color>
     <color name="black_test">#000000</color>
+    <color name="white_a_alpha_50">#80ffffff</color>
 
     <color name="white_a">#ffffff</color>
     <color name="white_a_alpha_70">#b2ffffff</color>
@@ -105,5 +106,9 @@
     <color name="count_down_timer_item_background">#000000</color>
     <color name="personal_title_background">#33000000</color>
     <color name="percent_8_black">#14000000</color> <!-- 8% 000000-->
-
+    <color name="tag_elite">#B2FFAE41</color>
+    <color name="tag_expert">#B2FFAB30</color>
+    <color name="tag_floor_host">#B2C295FF</color>
+    <color name="tag_recommend">#B2D095FF</color>
+    <color name="tag_shou">#B2FF5BAB</color>
 </resources>

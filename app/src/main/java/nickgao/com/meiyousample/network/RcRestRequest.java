@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import org.apache.http.Header;
 import org.apache.http.HttpMessage;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
@@ -176,25 +177,26 @@ public class RcRestRequest<T> extends RestRequest {
                 }
             }
         }
-        onParse(response);
        // printString(response);
+        onParse(response);
+
     }
 
-//    private void printString(Reader responseReader) {
-//        BufferedReader reader = new BufferedReader(responseReader);
-//        String content = "";
-//
-//        String str = "";
-//        try {
-//            while ((str = reader.readLine()) != null) {
-//                content += str;
-//            }
-//
-//            LogUtils.d(content);
-//        }catch (IOException ex) {
-//            LogUtils.e("====ex="+ex);
-//        }
-//    }
+    private void printString(Reader responseReader) {
+        BufferedReader reader = new BufferedReader(responseReader);
+        String content = "";
+
+        String str = "";
+        try {
+            while ((str = reader.readLine()) != null) {
+                content += str;
+            }
+
+            LogUtils.d(content);
+        }catch (IOException ex) {
+            LogUtils.e("====ex="+ex);
+        }
+    }
 
 //    protected AbstractResponse parserResponse(Reader responseReader, Type type) {
 //        AbstractResponse response = null;

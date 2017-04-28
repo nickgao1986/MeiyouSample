@@ -6,11 +6,17 @@ package nickgao.com.meiyousample.model.dynamicModel;
 
 public class DynamicContent {
 
-    int id;
-    String avatar;
-    String created_time;
-    String[] images;
-    int praise_num;
-    int comment_num;
-    int type;
+    public int id;
+    public String avatar;
+    public String created_time;
+    public String screen_name;
+    public boolean allow_operate;
+    public int is_praise;
+    public String[] images;
+    public int praise_num;
+    public int comment_num;
+    public int type;
+    public int sort;
+    public String content;
+
 }

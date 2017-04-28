@@ -81,11 +81,11 @@ public class LoadingView extends LinearLayout {
         mButton = new Button(context);
         mButton.setText(getResources().getString(R.string.favorites_shop_no_data));
 //        mButton.setBackgroundResource(R.drawable.btn_red_selector);
-        SkinManager.getInstance().setDrawableBackground(mButton, R.drawable.btn_red_selector);
+//        SkinManager.getInstance().setDrawableBackground(mButton, R.drawable.btn_red_selector);
         mButton.setPadding(DeviceUtils.dip2px(context, 20), DeviceUtils.dip2px(context, 10), DeviceUtils.dip2px(context, 20), DeviceUtils.dip2px(context, 10));
         mButton.setTextSize(16);
 //        mButton.setTextColor(getResources().getColor(R.color.white_a));
-        SkinManager.getInstance().setTextColor(mButton, R.color.white_a);
+    //    SkinManager.getInstance().setTextColor(mButton, R.color.white_a);
         mButton.setGravity(Gravity.CENTER);
         LayoutParams param_button = new LayoutParams(LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT);

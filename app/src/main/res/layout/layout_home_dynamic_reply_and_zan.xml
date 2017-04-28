@@ -21,7 +21,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/tata_icon_commentthick"
-
             android:drawablePadding="@dimen/space_xxs"
             android:gravity="center"
             android:padding="1dip"
@@ -30,35 +29,20 @@
             android:textSize="@dimen/text_size_xs"/>
 
         <ImageView
+            android:id="@+id/zanDivider"
             android:layout_width="1px"
             android:layout_height="@dimen/space_m"
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
             />
 
-        <LinearLayout
-            android:id="@+id/llZan"
+        <!-- 点赞-->
+        <com.lingan.seeyou.ui.view.PraiseButton
+            android:id="@+id/btn_praise"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            />
 
-            <ImageView
-                android:id="@+id/ivZanImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/space_xxs"
-                android:src="@drawable/tata_btn_like_selector"/>
-
-            <TextView
-                android:id="@+id/tvZan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:padding="1dip"
-                android:text="125"
-                android:textColor="@color/black_c"
-                android:textSize="@dimen/text_size_xs"/>
-        </LinearLayout>
         <!--android:background="@drawable/apk_all_white_selector"-->
     </LinearLayout>
 </RelativeLayout>

@@ -5,5 +5,5 @@ package nickgao.com.meiyousample.model.dynamicModel;
  */
 
 public class DynamicData {
-    DynamicContent[] content;
+    public DynamicContent[] content;
 }

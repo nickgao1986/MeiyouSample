@@ -1,7 +1,5 @@
 package nickgao.com.meiyousample.model;
 
-import android.content.Context;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.meiyousample.adapter.DynamicImageApdater;
 import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
@@ -26,6 +24,7 @@ public class HomeDynamicModel implements Serializable {
     public int type = 1;
     public boolean isSendFail;
     public int originalId;
+    public transient DynamicImageApdater imagesListAdapter;//图片列表adapter
 
     public int userId;
     public String screenName;      //发布者昵称

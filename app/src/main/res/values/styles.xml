@@ -617,7 +617,6 @@
     <style name="AppBaseTheme" parent="android:Theme.Light.NoTitleBar">
         <!-- Customize your theme here. -->
         <item name="android:windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
     <style name="ApplicationTheme" parent="AppBaseTheme">

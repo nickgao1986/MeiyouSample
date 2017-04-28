@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llItemContainer"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/apk_all_white_selector"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llItemContent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include layout="@layout/layout_home_dynamic_name_and_time"/>
+
+        <LinearLayout
+            android:id="@+id/llDynamicContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="57dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical">
+
+            <com.lingan.seeyou.ui.view.CustomUrlTextView
+                android:id="@+id/tvContent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="分享了文章"
+                android:textColor="@color/black_at"
+                android:textSize="17sp"/>
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/llShareContent"
+            layout="@layout/layout_home_dynamic_share"
+            android:layout_width="fill_parent"
+            android:layout_height="64dp"
+            android:layout_marginBottom="@dimen/space_xs_new"
+            android:layout_marginTop="@dimen/space_xs_new"
+            android:layout_marginLeft="57dp"
+            android:layout_marginRight="15dp"
+            />
+
+        <include layout="@layout/layout_home_dynamic_reply_and_zan"/>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/divider"
+        style="@style/divider"
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_below="@+id/llItemContent"
+        android:visibility="visible"/>
+</RelativeLayout>

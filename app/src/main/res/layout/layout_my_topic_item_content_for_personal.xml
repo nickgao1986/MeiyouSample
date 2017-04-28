@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/llContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/apk_all_white_selector"
+                android:orientation="horizontal"
+                android:paddingLeft="15dip"
+                android:paddingTop="11dp"
+                android:visibility="visible">
+
+<com.lingan.seeyou.ui.view.BageImageView
+    android:id="@+id/iv_image"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_marginTop="4dip"
+    android:visibility="gone"
+    tools:visibility="visible"
+    tools:layout_width="70dp"
+    tools:layout_height="70dp"
+    />
+
+<LinearLayout
+    android:id="@+id/ll_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_toLeftOf="@+id/iv_image"
+    android:paddingRight="15dip"
+    android:gravity="left"
+    android:orientation="vertical">
+
+    <com.lingan.seeyou.ui.view.CustomUrlTextView
+        android:id="@+id/tvTopicTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:ellipsize="end"
+        android:lineSpacingExtra="6dip"
+        android:maxLines="3"
+        tools:text="产后如何瘦身点击返回首都家里看"
+        android:textColor="@color/black_at"
+        android:textSize="18sp" />
+
+
+    <com.lingan.seeyou.ui.view.MultiImageView
+        android:id="@+id/iv_multi_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_value_4"
+        android:visibility="gone" />
+
+</LinearLayout>
+
+<RelativeLayout
+    android:id="@+id/rlBottomContent"
+    android:layout_width="wrap_content"
+    android:layout_height="28dip"
+    android:paddingRight="15dip"
+    android:layout_marginTop="6dip"
+    android:layout_below="@+id/ll_content"
+    android:layout_toLeftOf="@+id/iv_image"
+    >
+
+    <TextView
+        android:id="@+id/tvCircleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxWidth="120dp"
+        android:layout_centerVertical="true"
+        android:gravity="left|center_vertical"
+        android:maxLines="1"
+        android:textColor="@color/black_c"
+        android:textSize="@dimen/text_size_xxs_more"
+        tools:text="地域小风情dsffsdfsdfdsfdsfds" />
+
+    <TextView
+        android:id="@+id/tvCommentCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="20回复"
+        android:gravity="center"
+        android:maxLines="1"
+        android:textSize="@dimen/text_size_xxs_more"
+        android:textColor="@color/black_c"
+        android:layout_alignBottom="@id/tvCircleName"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/tvCircleName"/>
+
+    <ImageView
+        android:id="@+id/ivItemMore"
+        android:layout_width="wrap_content"
+        android:layout_height="28dip"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/all_btn_more" />
+
+
+</RelativeLayout>
+
+<View
+    android:id="@+id/publish_line"
+    style="@style/divider"
+    android:layout_marginTop="5dip"
+    android:layout_below="@id/rlBottomContent"
+    />
+</RelativeLayout>
+

@@ -26,6 +26,11 @@ dependencies {
     //dagger start
     //dagger end
     compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.facebook.fresco:imagepipeline-okhttp3:1.1.0'
+    compile 'com.facebook.fresco:fresco:1.1.0'
+    compile ('com.facebook.fresco:animated-base-support:1.1.0'){
+        exclude group: 'com.nineoldandroids'
+    }
 
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:design:23.2.0'

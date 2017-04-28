@@ -51,7 +51,7 @@ public class HttpRequestFactory {
     private static final AtomicLong sLockNumber = new AtomicLong(0);
 
     private static final int MAX_BODY_LENGTH_FOR_LOGGING = 10 * 1024;
-
+    private static final String AUTHENTICATION = "XDS 3.y3XoQIQaP+UgRMDq6/Q/8v9qEguoU7gNbujmOVNMeg8=";
     /**
      * Keeps current authorization context.
      */
@@ -67,7 +67,7 @@ public class HttpRequestFactory {
     public HttpRequestFactory() {
         mFactoryId = sFactoryId.get();
         AuthContext authContext = new AuthContext();
-        authContext.accessToken = "XDS 3.aWYo/aOKM/9AiiQHr4k54df7iVLm+k6Qobe6Gqw/tS8=";
+        authContext.accessToken = AUTHENTICATION;
         authContext.authId = getSequenceNumber();
 
         if (mHttpClient == null) {
@@ -366,7 +366,7 @@ public class HttpRequestFactory {
             }
 
             //authorization
-            http.addHeader("Authorization", "XDS 3.7U0bft2lLT7aivwQSSXwrrOR4+VSLbl2D+2/ErvWmU4=");
+            http.addHeader("Authorization", AUTHENTICATION);
 
             http.addHeader("Accept",        HttpUtils.JSON_CONTENT_TYPE);
 
@@ -441,9 +441,10 @@ public class HttpRequestFactory {
                     Reader iReader = null;
 
                     boolean streamedLogging = false;
+                    GZIPInputStream gis = new GZIPInputStream(respInpStream);
+
 
 //                    iReader = new InputStreamReader(respInpStream, "gbk");
-                    GZIPInputStream gis = new GZIPInputStream(respInpStream);
 //                    int l;
 //                    byte[] tmp = new byte[4096];
 //                    while ((l=gis.read(tmp))!=-1){

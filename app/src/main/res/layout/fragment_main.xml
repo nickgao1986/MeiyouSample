@@ -16,28 +16,12 @@ android:layout_height="fill_parent">
               layout="@layout/fragment_personal_head"></include>
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/rlHeader"
-        android:id="@+id/personal_description"
-        android:background="#DDDDDD"
-        android:paddingBottom="9.5dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="36dp"
-        android:paddingTop="9.5dp"
-        android:text="命名空间可以用来预览一些布局属性的添加和删除后的效果,可以看看以下文章 "
-        android:textColor="#323232"
-        android:visibility="gone"
-        tools:visibility="visible"
-        >
-    </TextView>
 
     <RelativeLayout
         android:id="@+id/rl_news_home_sliding_tab"
         android:layout_width="match_parent"
         android:layout_height="@dimen/list_icon_height_44"
-        android:layout_below="@+id/personal_description"
+        android:layout_below="@+id/rlHeader"
         android:background="@color/white_a">
 
         <com.lingan.seeyou.ui.view.HomeSlidingTabLayout

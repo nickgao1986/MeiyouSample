@@ -1,20 +1,18 @@
 package nickgao.com.meiyousample.fragment;
 
 import android.os.Bundle;
-import android.widget.LinearLayout;
+import android.os.Handler;
 
-import com.lingan.seeyou.ui.view.CursorWatcherEditText;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
 import nickgao.com.meiyousample.adapter.HomeDynamicAdapter;
 import nickgao.com.meiyousample.model.HomeDynamicModel;
+import nickgao.com.meiyousample.model.dynamicModel.DynamicContent;
+import nickgao.com.meiyousample.model.dynamicModel.DynamicData;
+import nickgao.com.meiyousample.personal.PersonalListener;
+import nickgao.com.meiyousample.service.DynamicService;
+import nickgao.com.meiyousample.service.ServiceFactory;
 import nickgao.com.meiyousample.utils.LogUtils;
 
 
@@ -26,63 +24,91 @@ import nickgao.com.meiyousample.utils.LogUtils;
  * @date 2017/2/24
  * @Description
  */
-public class PersonalContentDynamicFragment extends PersonalContentFragment {
-
-    private LinearLayout linearReply;
-    private CursorWatcherEditText editReply;
+public class PersonalContentDynamicFragment extends PersonalContentFragment implements PersonalListener {
 
 
-    HomeDynamicAdapter adapter = null;
-
-    private List<HomeDynamicModel> list;
+    private Handler mHandler = new Handler();
+    HomeDynamicAdapter mAdapter = null;
+    private List<HomeDynamicModel> models = new ArrayList<HomeDynamicModel>();
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        sendRequest();
         initView();
     }
 
+
     private void initView() {
-        String str = getFromAssets("dynamic.txt");
-        LogUtils.d(str);
-        List<HomeDynamicModel> models = new ArrayList<HomeDynamicModel>();
-        try {
-            JSONArray jsonArray = new JSONArray(str);
-            if (null != jsonArray && jsonArray.length() > 0) {
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    HomeDynamicModel homeDynamicModel = new HomeDynamicModel(jsonArray.getJSONObject(i));
-                    models.add(homeDynamicModel);
-                }
+        mAdapter = new HomeDynamicAdapter(mActivity, models);
+        mListview.setAdapter(mAdapter);
+    }
+
+    @Override
+    public void subClassLoadMore() {
+        if(models != null && models.size() > 0) {
+            setLoadingState(LoadingState.LOADING_MORE);
+            LogUtils.d("======dynamic subclassLoadmore");
+            DynamicService service = (DynamicService) ServiceFactory.getInstance().getService(DynamicService.class.getName());
+            service.sendRequest(this,models.get(models.size() - 1).sort);
+        }
+    }
+
+    @Override
+    public void onSuccess(DynamicData response,final boolean isLoadMore) {
+        DynamicContent[] contents = response.content;
+        final ArrayList<HomeDynamicModel> myList = new ArrayList<HomeDynamicModel>();
+        for (int i=0; i < contents.length; i++) {
+            DynamicContent dynamicContent = contents[i];
+            HomeDynamicModel model = new HomeDynamicModel();
+            model.screenName = dynamicContent.screen_name;
+            model.isAllowOperate = dynamicContent.allow_operate;
+            model.iconUrl = dynamicContent.avatar;
+            model.content = dynamicContent.content;
+            model.type = dynamicContent.type;
+            model.imagesList  = new ArrayList<String>();
+            for (int j=0; j < dynamicContent.images.length; j++) {
+                model.imagesList.add(dynamicContent.images[j]);
             }
-        }catch (JSONException ex) {
-            ex.printStackTrace();
+            myList.add(model);
         }
 
-        HomeDynamicAdapter adapter = new HomeDynamicAdapter(mActivity, models);
-        mListview.setAdapter(adapter);
-    }
+        if(!isLoadMore) {
+            models.clear();
+            models.addAll(myList);
 
-
-    public String getFromAssets(String fileName){
-        try {
-            InputStreamReader inputReader = new InputStreamReader( getResources().getAssets().open(fileName) );
-            BufferedReader bufReader = new BufferedReader(inputReader);
-            String line="";
-            String Result="";
-            while((line = bufReader.readLine()) != null)
-                Result += line;
-            return Result;
-        } catch (Exception e) {
-            e.printStackTrace();
+        }else{
+            models.addAll(myList);
         }
-        return null;
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                if(!isLoadMore) {
+                    if(myList.size() == 0) {
+                        setLoadingState(LoadingState.NO_DATA);
+                    }else{
+                        setLoadingState(LoadingState.LOADING_COMPLETE);
+                    }
+                }else{
+                    setLoadingState(LoadingState.FOOTER_COMPLETE);
+                }
+                mAdapter.notifyDataSetChanged();
+
+            }
+        });
+
     }
 
+    @Override
+    void sendRequest() {
+        setLoadingState(LoadingState.LOADING_NEW_DATA);
 
-    public List<HomeDynamicModel> getList() {
-        return list;
+        DynamicService service = (DynamicService) ServiceFactory.getInstance().getService(DynamicService.class.getName());
+        service.sendRequest(this,0);
     }
 
+    @Override
+    public void onFail() {
 
-
+    }
 }

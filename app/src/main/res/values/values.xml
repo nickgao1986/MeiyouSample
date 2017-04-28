@@ -39,6 +39,8 @@
     <dimen name="space_list_item_small">3dip</dimen>
     <dimen name="space_list_top_withoutwave">20dip</dimen>
     <dimen name="space_list_top_withwave">4dip</dimen>
+    <dimen name="text_size_xm">17sp</dimen>
+
     <dimen name="space_m">15dip</dimen>
     <dimen name="space_s">10dip</dimen>
     <dimen name="space_s_new">12dip</dimen>
