@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+import com.lingan.seeyou.ui.view.skin.SkinManager;
+
 import nickgao.com.meiyousample.R;
 
 /**
@@ -22,6 +24,15 @@ public class SeeyouActivity extends FragmentActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_seeyou_fragment);
         switchPage();
+
+//        String str = getFromAssets("talk.txt");
+//        try {
+//            JSONObject object = new JSONObject(str);
+//            RecommendTopicResponeModel model = new RecommendTopicResponeModel(this, object);
+//            LogUtils.d("===size=" + model.list);
+//        }catch (Exception ex) {
+//
+//        }
     }
 
     private void switchPage() {
@@ -41,6 +52,16 @@ public class SeeyouActivity extends FragmentActivity{
         }
         fragmentTransaction.commitAllowingStateLoss();
 
+    }
+
+    private void initSkin() {
+        try {
+            //初始化皮肤
+            SkinManager.getInstance().init(this, this.getResources(), this.getAssets());
+            SkinManager.getInstance().setApply(true);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
 }

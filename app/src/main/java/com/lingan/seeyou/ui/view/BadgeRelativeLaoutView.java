@@ -9,8 +9,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import fresco.view.ImageLoadParams;
+import fresco.view.ImageLoader;
 import nickgao.com.meiyousample.R;
+import nickgao.com.meiyousample.firstPage.NewsType;
 import nickgao.com.meiyousample.utils.DeviceUtils;
+import nickgao.com.meiyousample.utils.StringUtils;
 
 
 /**
@@ -74,43 +78,43 @@ public class BadgeRelativeLaoutView extends RelativeLayout {
         addView(imageView);
     }
 
-//    /**
-//     * 显示图片
-//     */
-//    public void displayImage(String imageUrl, ImageLoadParams imageLoadParams, MultiImageView.DisplayImageModel displayImageModel) {
-//        displayImage(imageUrl, imageLoadParams, displayImageModel, true);
-//    }
+    /**
+     * 显示图片
+     */
+    public void displayImage(String imageUrl, ImageLoadParams imageLoadParams, MultiImageView.DisplayImageModel displayImageModel) {
+        displayImage(imageUrl, imageLoadParams, displayImageModel, true);
+    }
 
-//    /**
-//     * 显示图片
-//     */
-//    public void displayImage(String imageUrl, ImageLoadParams imageLoadParams, MultiImageView.DisplayImageModel displayImageModel, boolean isShowVideoPlayButton) {
-//        ImageLoader.getInstance().displayImage(context, loaderImageView, URLEncoderUtils.encode(imageUrl, "UTF-8"), imageLoadParams, null);
-//        textView.setVisibility(View.GONE);
-//        imageView.setVisibility(View.GONE);
-//        //设置角标
-//        if (displayImageModel == null || (!displayImageModel.isShowNewsTopic))
-//            return;
-//        if (!StringUtils.isNull(displayImageModel.video_time) && displayImageModel.news_type == NewsType.NEWS_VIDEO.getNewsType()) {//视频角标
-//            textView.setText(displayImageModel.video_time);
-////            textView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.apk_ic_feeds_video, 0, 0, 0);
-//            textView.setCompoundDrawablePadding(2);
-//            textView.setVisibility(View.VISIBLE);
-//            if(isShowVideoPlayButton) {
-//                imageView.setVisibility(View.VISIBLE);
-//            } else {
-//                imageView.setVisibility(View.GONE);
-//            }
-//            textView.setBackgroundResource(R.drawable.btn_black_transparent_normal);
-//        } else if (displayImageModel.imgs_count > 0) {//图集角标
-//            textView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
-//            if (displayImageModel.news_type == NewsType.NEWS_IMAGE.getNewsType()) {
-//                textView.setText(displayImageModel.imgs_count + "图");
-//                textView.setBackgroundResource(R.drawable.btn_black_transparent_normal);
-//                textView.setVisibility(View.VISIBLE);
-//            }
-//        }
-//
-//    }
+    /**
+     * 显示图片
+     */
+    public void displayImage(String imageUrl, ImageLoadParams imageLoadParams, MultiImageView.DisplayImageModel displayImageModel, boolean isShowVideoPlayButton) {
+        ImageLoader.getInstance().displayImage(context, loaderImageView, imageUrl, imageLoadParams, null);
+        textView.setVisibility(View.GONE);
+        imageView.setVisibility(View.GONE);
+        //设置角标
+        if (displayImageModel == null || (!displayImageModel.isShowNewsTopic))
+            return;
+        if (!StringUtils.isNull(displayImageModel.video_time) && displayImageModel.news_type == NewsType.NEWS_VIDEO.getNewsType()) {//视频角标
+            textView.setText(displayImageModel.video_time);
+//            textView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.apk_ic_feeds_video, 0, 0, 0);
+            textView.setCompoundDrawablePadding(2);
+            textView.setVisibility(View.VISIBLE);
+            if(isShowVideoPlayButton) {
+                imageView.setVisibility(View.VISIBLE);
+            } else {
+                imageView.setVisibility(View.GONE);
+            }
+            textView.setBackgroundResource(R.drawable.btn_black_transparent_normal);
+        } else if (displayImageModel.imgs_count > 0) {//图集角标
+            textView.setCompoundDrawablesWithIntrinsicBounds(0, 0, 0, 0);
+            if (displayImageModel.news_type == NewsType.NEWS_IMAGE.getNewsType()) {
+                textView.setText(displayImageModel.imgs_count + "图");
+                textView.setBackgroundResource(R.drawable.btn_black_transparent_normal);
+                textView.setVisibility(View.VISIBLE);
+            }
+        }
+
+    }
 }
 

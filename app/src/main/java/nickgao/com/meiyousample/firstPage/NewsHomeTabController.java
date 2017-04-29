@@ -16,6 +16,7 @@ import com.nineoldandroids.animation.ObjectAnimator;
 import java.util.List;
 
 import nickgao.com.meiyousample.R;
+import nickgao.com.meiyousample.controller.NewsHomeController;
 
 /**
  * Created by gaoyoujian on 2017/4/27.

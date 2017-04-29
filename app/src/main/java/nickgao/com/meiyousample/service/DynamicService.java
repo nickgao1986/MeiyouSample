@@ -2,7 +2,7 @@ package nickgao.com.meiyousample.service;
 
 import android.content.Context;
 
-import nickgao.com.meiyousample.MeiyouApplication;
+import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.model.dynamicModel.DynamicData;
 import nickgao.com.meiyousample.network.RcRestRequest;
 import nickgao.com.meiyousample.personal.PersonalListener;
@@ -27,7 +27,7 @@ public class DynamicService extends AbstractService {
 
 
     public void sendRequest(PersonalListener listener,final int sort) {
-        Context context = MeiyouApplication.getContext();
+        Context context = SeeyouApplication.getContext();
         RcRestRequest<DynamicData> request = this.mRequestFactory.createDynamicListRequest(sort);
         mListener = listener;
         request.registerOnRequestListener(new RcRestRequest.OnRequestListener<DynamicData>() {

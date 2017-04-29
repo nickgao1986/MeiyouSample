@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlSeparatorBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_bg"
+    android:descendantFocusability="blocksDescendants"
+    android:visibility="visible">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dip"
+        android:layout_centerInParent="true"
+        android:drawablePadding="6dip"
+        android:drawableRight="@drawable/news_icon_refresh"
+        android:gravity="center"
+        android:text="上次看到这里，点击刷新"
+        android:textColor="@color/red_b"
+        android:textSize="@dimen/text_size_15"
+        android:visibility="visible" />
+</RelativeLayout>

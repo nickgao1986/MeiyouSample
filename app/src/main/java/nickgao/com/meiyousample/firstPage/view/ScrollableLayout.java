@@ -27,8 +27,8 @@ import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.ValueAnimator;
 
 import nickgao.com.meiyousample.R;
+import nickgao.com.meiyousample.controller.NewsHomeController;
 import nickgao.com.meiyousample.firstPage.HomeType;
-import nickgao.com.meiyousample.firstPage.NewsHomeController;
 import nickgao.com.meiyousample.firstPage.NewsHomeViewPager;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 

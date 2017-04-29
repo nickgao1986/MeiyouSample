@@ -12,6 +12,7 @@ import fresco.painter.FrescoPainter;
 import fresco.painter.ImageLoaderConfigure;
 import fresco.painter.PainterCallBack;
 import fresco.volley.OKHttpClientUtil;
+import nickgao.com.meiyousample.R;
 
 
 /**
@@ -260,4 +261,11 @@ public class ImageLoader {
         chooseLoader(icf).displayImage(context, imageView, res, icf, callBack);
     }
 
+    public static int getChatImageWH(Context context) {
+        return (int) context.getApplicationContext().getResources().getDimension(R.dimen.list_icon_height_40);
+    }
+
+    public static int getBlockListIconWH(Context context) {
+        return (int) context.getApplicationContext().getResources().getDimension(R.dimen.list_icon_height_8);
+    }
 }

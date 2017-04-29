@@ -2,7 +2,7 @@ package nickgao.com.meiyousample.service;
 
 import android.content.Context;
 
-import nickgao.com.meiyousample.MeiyouApplication;
+import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.model.UserHomePage.UserHomePage;
 import nickgao.com.meiyousample.network.RcRestRequest;
 import nickgao.com.meiyousample.personal.UserDataListener;
@@ -22,7 +22,7 @@ public class UserHomeService extends AbstractService {
 
 
     public void sendRequest(UserDataListener listener) {
-        Context context = MeiyouApplication.getContext();
+        Context context = SeeyouApplication.getContext();
         RcRestRequest<UserHomePage> request = this.mRequestFactory.createUserHomeRequest();
         mListener = listener;
         request.registerOnRequestListener(new RcRestRequest.OnRequestListener<UserHomePage>() {

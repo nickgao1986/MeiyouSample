@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_home_yima"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/apk_all_white_selector"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            tools:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/rl_layout_yima"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_yima_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/radiogroup_yima"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:textColor="@color/black_at"
+                android:textSize="@dimen/text_size_19"
+                tools:text="大姨妈来了!" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup_yima"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/selector_home_yima_unchecked"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radiobtn_yima_start"
+                    android:layout_width="44dp"
+                    android:layout_height="32dip"
+                    android:background="@drawable/selector_home_yima"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="是"
+                    android:textColor="@color/white_a" />
+
+                <RadioButton
+                    android:id="@+id/radiobtn_yima_over"
+                    android:layout_width="44dp"
+                    android:layout_height="32dip"
+                    android:background="@drawable/selector_home_yima"
+                    android:button="@null"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="否"
+                    android:textColor="@color/white_a" />
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/card_bottom_margin"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/ll_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            tools:visibility="visible">
+
+            <com.lingan.seeyou.ui.view.LoaderImageView
+                android:id="@+id/liv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
+            <com.lingan.seeyou.ui.view.LoaderImageView
+                android:id="@+id/liv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
+            <com.lingan.seeyou.ui.view.LoaderImageView
+                android:id="@+id/liv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/margin_image_divider"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        tools:visibility="visible" />
+
+    <View
+        style="@style/divider"
+        android:layout_marginLeft="15dp" />
+</LinearLayout>

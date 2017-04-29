@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout
+
+<nickgao.com.meiyousample.firstPage.view.ScrollableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/news_home_scroll_layout"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-
-    <nickgao.com.meiyousample.firstPage.view.ScrollableLayout
-        android:id="@+id/news_home_scroll_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical">
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
 
-        <include layout="@layout/layout_home_news_main_head"/>
+    <include layout="@layout/layout_home_news_main_head"/>
 
-        <View
-            android:id="@+id/view_home_divider"
-            style="@style/divider"
-            android:layout_below="@+id/rlHeader"/>
+    <View
+        android:id="@+id/view_home_divider"
+        style="@style/divider"
+        android:layout_below="@+id/rlHeader"/>
 
-        <nickgao.com.meiyousample.firstPage.NewsHomeViewPager
-            android:id="@+id/news_home_viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/view_home_divider"/>
-        <!-- 点"↓"展开的内容 -->
-        <include layout="@layout/layout_special_category_list"/>
-    </nickgao.com.meiyousample.firstPage.view.ScrollableLayout>
+    <nickgao.com.meiyousample.firstPage.NewsHomeViewPager
+        android:id="@+id/news_home_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_home_divider"/>
+    <!-- 点"↓"展开的内容 -->
+    <include layout="@layout/layout_special_category_list"/>
+</nickgao.com.meiyousample.firstPage.view.ScrollableLayout>
 
-    <include layout="@layout/layout_home_title"
-        />
-</FrameLayout>
 

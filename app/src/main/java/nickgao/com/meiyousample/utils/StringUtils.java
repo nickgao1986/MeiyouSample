@@ -153,4 +153,13 @@ public class StringUtils {
         return true;
     }
 
+    public static int getInt(String value) {
+        try {
+            return value != null && !value.equals("") && !value.equals("null")?Integer.valueOf(value).intValue():0;
+        } catch (Exception var2) {
+            var2.printStackTrace();
+            return 0;
+        }
+    }
+
 }

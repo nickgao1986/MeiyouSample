@@ -24,9 +24,9 @@ import com.lingan.seeyou.ui.view.skin.SkinManager;
 
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.controller.NewsHomeController;
+import nickgao.com.meiyousample.firstPage.HomeType;
+import nickgao.com.meiyousample.firstPage.view.ScrollableLayout;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.HomeType;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 
 /**
@@ -58,7 +58,6 @@ public class NewsHomeParallaxListview extends ListView implements AbsListView.On
     private TextView tvLoadding, tvLoaddingFinish;
     private ImageView ivLoaddingBg;
     private TheBallLoaddingView ballLoaddingView;
-    private boolean isFirst = true;
     private Context context;
     private boolean isUpMove;//是否往上移动
 
@@ -83,7 +82,7 @@ public class NewsHomeParallaxListview extends ListView implements AbsListView.On
 
     void initWithContext(Context context) {
         this.context = context;
-        homeStyle = HomeType.HOME_STYLE_TWO_NAVIGATION_BAR;
+        homeStyle = 3;
         mOrigineLoaddingHeight = DeviceUtils.dip2px(context, 0);
         ballAlpaLoaddingHeight = DeviceUtils.dip2px(context, 5);
         loaddingViewMaxHeight = DeviceUtils.dip2px(context, 40);
@@ -190,14 +189,8 @@ public class NewsHomeParallaxListview extends ListView implements AbsListView.On
                     isUpMove = false;
                     if (!NewsHomeController.getInstance().isOnRefresh() && !scrollableLayout.isMove()) {
                         cleanAnimation();
-                        if (mOldY > 0 && isFirst) {
-                            isFirst = false;
-                            mOldY = ev.getY();
-                        }
-                        LogUtils.d("zzzz", "rl_update.getHeight():    " + rl_update.getHeight() + "   scrollableLayout.getHelper().isTop():    " + scrollableLayout.getHelper().isTop());
-                        if ((getChildCount() > 0 /*&& scrollableLayout.getHelper().isTop()*/)) {
+                        if ((getChildCount() > 0 && scrollableLayout.getHelper().isTop())) {
                             if (mOldY < ev.getY()) {
-                                LogUtils.d("zzzz", "listview  向下滑动");
                                 isUpMove = false;
                                 int differenceY = (int) (Math.abs(mOldY - ev.getY()));
                                 int topHeight = differenceY > 2 ? differenceY / 2 : differenceY;
@@ -206,11 +199,11 @@ public class NewsHomeParallaxListview extends ListView implements AbsListView.On
                                 }
                                 downAnimation(topHeight);//下拉的效果
                                 mOldY = ev.getY();
+
                             } else if (mOldY > ev.getY() && rl_update.getHeight() > 0) {//有拉开的时候 到这里可以往回滑
                                 isUpMove = true;
                                 int differenceY = (int) (Math.abs(mOldY - ev.getY()));
                                 int topHeight = differenceY > 2 ? differenceY / 2 : differenceY;
-                                LogUtils.d("zzzz", "listview 向上滑动:      " + topHeight + "      differenceY: " + differenceY);
                                 if (isHeadViewScoll() && mScaleView.getHeight() > mOrigineHeadViewHeight) {
                                     mOldY = ev.getY();
                                     setRequestLayout(mScaleView.getHeight() - topHeight);
@@ -219,14 +212,13 @@ public class NewsHomeParallaxListview extends ListView implements AbsListView.On
                                     upAnimation(topHeight);//上拉的效果
                                 }
                                 mOldY = ev.getY();
-                                return true;
                             }
+                            return true;
                         }
                     }
                     break;
                 case MotionEvent.ACTION_UP:
                     isUpMove = false;
-                    isFirst = true;
                     mOldY = 0;
                     animationUp();
                     break;
@@ -327,7 +319,6 @@ public class NewsHomeParallaxListview extends ListView implements AbsListView.On
         //刷新改变高度
         ViewGroup.LayoutParams layoutParams = rl_update.getLayoutParams();
         layoutParams.height = loaddingOrgHeight < mOrigineLoaddingHeight ? mOrigineLoaddingHeight : loaddingOrgHeight;
-        LogUtils.d("zzzz", "loaddingOrgHeight:     " + loaddingOrgHeight);
         rl_update.setLayoutParams(layoutParams);
     }
 
@@ -503,9 +494,6 @@ public class NewsHomeParallaxListview extends ListView implements AbsListView.On
 
             @Override
             public void onAnimationEnd(Animator animation) {
-//                new Handler().postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
                 ballLoaddingView.setAlpha(0.2f);
                 tvLoadding.setVisibility(View.VISIBLE);
 
@@ -523,8 +511,6 @@ public class NewsHomeParallaxListview extends ListView implements AbsListView.On
                     tvLoaddingFinish.setText(msgHint);
                     handleUpdateFinishAnimation();
                 }
-//                    }
-//                }, 10);
             }
 
             @Override
@@ -730,7 +716,7 @@ public class NewsHomeParallaxListview extends ListView implements AbsListView.On
 
     public void updateUI() {
         SkinManager.getInstance().setTextColor(tvLoaddingFinish, R.color.red_b);
-        ballLoaddingView.setBallColor(SkinManager.getInstance().getAdapterColor(R.color.red_b));
+//        ballLoaddingView.setBallColor(SkinManager.getInstance().getAdapterColor(R.color.red_b));
         SkinManager.getInstance().setDrawableBackground(rl_loadding, R.drawable.bottom_bg);
         SkinManager.getInstance().setDrawableBackground(rl_update, R.drawable.bottom_bg);
     }
@@ -770,7 +756,7 @@ public class NewsHomeParallaxListview extends ListView implements AbsListView.On
      * @return
      */
     private boolean isHeadViewScoll() {
-        if (true) {
+        if (homeStyle != HomeType.HOME_STYLE_TWO_NAVIGATION_BAR) {
             return true;
         } else {
             if (scrollableLayout != null && scrollableLayout.isHeadViewScroll()) {

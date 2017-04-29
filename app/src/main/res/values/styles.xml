@@ -732,4 +732,21 @@
         <item name="android:background">@drawable/apk_all_white</item>
         <item name="android:src">@color/black_e</item>
     </style>
+
+    <style name="head_common_iv_left">
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dp_value_50</item>
+        <item name="android:background">@drawable/selector_trans_grey_bg</item>
+    </style>
+
+
+    <style name="title_bar_common_style">
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/title_height</item>
+        <item name="android:background">@drawable/selector_trans_grey_bg</item>
+    </style>
 </resources>

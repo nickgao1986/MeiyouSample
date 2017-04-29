@@ -4,12 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,14 +20,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import fragment.PeriodBaseFragment;
 import nickgao.com.meiyousample.R;
+import nickgao.com.meiyousample.controller.NewsHomeController;
 import nickgao.com.meiyousample.firstPage.view.ScrollableLayout;
 
 /**
  * Created by gaoyoujian on 2017/3/15.
  */
 
-public class NewsHomeFragment extends Fragment implements View.OnClickListener{
+public class NewsHomeFragment extends PeriodBaseFragment implements View.OnClickListener{
     private String TAG = "NewsHomeFragment";
     private Activity mActivity;
     private int homeStyleType;
@@ -64,19 +63,18 @@ public class NewsHomeFragment extends Fragment implements View.OnClickListener{
     private NewsHomeTabController newsHomeTabController;
     private View rootView;
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.layout_news_home_main,null);
-        return rootView;
-
+    protected int getLayout() {
+        return R.layout.layout_news_home_main;
     }
+
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initUI();
         initLogic();
+        setLisenner();
     }
 
 
@@ -85,7 +83,8 @@ public class NewsHomeFragment extends Fragment implements View.OnClickListener{
      */
     private void initLogic() {
         try {
-             loadFragmentPager();
+            NewsHomeController.getInstance().loadHomeCatIdCache(getActivity().getApplicationContext(), HomeType.RECOMMEND_ID);
+            loadFragmentPager();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -120,7 +119,8 @@ public class NewsHomeFragment extends Fragment implements View.OnClickListener{
 
 
     private void initUI() {
-
+        getTitleBar().setCustomTitleBar(R.layout.layout_home_title);
+        rootView = getRootView();
         news_home_viewpager = (NewsHomeViewPager) rootView.findViewById(R.id.news_home_viewpager);
         news_home_scroll_layout = (ScrollableLayout) rootView.findViewById(R.id.news_home_scroll_layout);
         rl_news_home_sliding_tab = (RelativeLayout) rootView.findViewById(R.id.rl_news_home_sliding_tab);
@@ -242,19 +242,19 @@ public class NewsHomeFragment extends Fragment implements View.OnClickListener{
         news_home_scroll_layout.setOnScrollListener(new ScrollableLayout.OnScrollListener() {
             @Override
             public void onScroll(int currentY, int maxY) {
-//                NewsHomeController.getInstance().setCurrentScrollY(currentY);
-//                if (ivBannerBg != null) {//首页滑动titlebar跟tab的交互
-//                    int halfHeight = maxY / 2;
-//                    NewsHomeController.getInstance().handleAlpha(getActivity(), news_home_scroll_layout, rl_news_home_sliding_tab, rlHomeTitleBar, rlLeft, rlQian, home_title, halfHeight);
-//                }
-//                if (news_home_scroll_layout.isSticked()) {
+                NewsHomeController.getInstance().setCurrentScrollY(currentY);
+                if (ivBannerBg != null) {//首页滑动titlebar跟tab的交互
+                    int halfHeight = maxY / 2;
+                    NewsHomeController.getInstance().handleAlpha(getActivity(), news_home_scroll_layout, rl_news_home_sliding_tab, rlHomeTitleBar, rlLeft, rlQian, home_title, halfHeight);
+                }
+                if (news_home_scroll_layout.isSticked()) {
 //                    if (DataSaveHelper.getInstance(getActivity().getApplicationContext()).isShowHomeGuideDialog()) {
 //                        NewsHomeController.getInstance().showHomeGuideDialog(getActivity());
 //                    }
-//                    homeMsgHelper.isShowMsgBox((PeriodBaseActivity) getActivity());
-//                } else {
-//                    homeMsgHelper.hideWmMessageBox((PeriodBaseActivity) getActivity());
-//                }
+                //    homeMsgHelper.isShowMsgBox((PeriodBaseActivity) getActivity());
+                } else {
+                //    homeMsgHelper.hideWmMessageBox((PeriodBaseActivity) getActivity());
+                }
             }
         });
 
@@ -299,12 +299,12 @@ public class NewsHomeFragment extends Fragment implements View.OnClickListener{
         if (news_home_scroll_layout != null && news_home_scroll_layout.isSticked()) {
             news_home_scroll_layout.setScrollBy();
         }
-        if (homePagerAdapter != null) {
-            NewsHomeClassifyFragment classifyFragment = homePagerAdapter.getPositionFragment();
-            if (classifyFragment != null) {
-                classifyFragment.pressBack();
-            }
-        }
+//        if (homePagerAdapter != null) {
+//            NewsHomeClassifyFragment classifyFragment = homePagerAdapter.getPositionFragment();
+//            if (classifyFragment != null) {
+//                classifyFragment.pressBack();
+//            }
+//        }
     }
 
     private void updateData() {
@@ -327,10 +327,11 @@ public class NewsHomeFragment extends Fragment implements View.OnClickListener{
             NewsHomeController.getInstance().setClassifySelect(mCurrentPosition);
             if (homePagerAdapter == null) {
                 homePagerAdapter = new NewsHomePagerAdapter(getChildFragmentManager(), classifyModels, classifyFragmentsIsLoadingNetDatas, mRoundLists);
+
                 news_home_viewpager.setAdapter(homePagerAdapter);
             } else {
-                homePagerAdapter.setLoadingNetData(classifyFragmentsIsLoadingNetDatas);
-                homePagerAdapter.setRoundData(mRoundLists);
+//                homePagerAdapter.setLoadingNetData(classifyFragmentsIsLoadingNetDatas);
+//                homePagerAdapter.setRoundData(mRoundLists);
                 homePagerAdapter.notifyDataSetChanged();
             }
             news_home_sliding_tab.setViewPager(news_home_viewpager);
@@ -340,7 +341,7 @@ public class NewsHomeFragment extends Fragment implements View.OnClickListener{
                 @Override
                 public void run() {
                     //很重要
-                    news_home_scroll_layout.getHelper().setCurrentScrollableContainer(homePagerAdapter.getPositionFragment());
+                   // news_home_scroll_layout.getHelper().setCurrentScrollableContainer(homePagerAdapter.getPositionFragment());
                 }
             }, 500);
             setTabSelect();
@@ -348,6 +349,7 @@ public class NewsHomeFragment extends Fragment implements View.OnClickListener{
             e.printStackTrace();
         }
     }
+
 
     /**
      * 选中tab的颜色变化

@@ -3,7 +3,7 @@ package nickgao.com.meiyousample.service;
 import android.content.Context;
 import android.text.TextUtils;
 
-import nickgao.com.meiyousample.MeiyouApplication;
+import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.model.reply.ReplyData;
 import nickgao.com.meiyousample.network.RcRestRequest;
 import nickgao.com.meiyousample.personal.ReplyListener;
@@ -22,7 +22,7 @@ public class ReplyService extends AbstractService {
 
 
     public void sendRequest(ReplyListener listener, final String last) {
-        Context context = MeiyouApplication.getContext();
+        Context context = SeeyouApplication.getContext();
         RcRestRequest<ReplyData> request = this.mRequestFactory.createReplyListRequest(last);
         mListener = listener;
         request.registerOnRequestListener(new RcRestRequest.OnRequestListener<ReplyData>() {

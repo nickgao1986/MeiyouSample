@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_style_two"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/apk_all_white_selector"
+    android:orientation="horizontal"
+    android:paddingLeft="15dip"
+    android:paddingTop="11dp"
+    android:visibility="visible">
+
+    <com.lingan.seeyou.ui.view.BadgeRelativeLaoutView
+        android:id="@+id/iv_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dip"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_image"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:paddingRight="15dip">
+
+        <TextView
+            android:id="@+id/tv_topic_title_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:lineSpacingExtra="6dip"
+            android:paddingBottom="0dp"
+            android:maxLines="3"
+            android:text="产后如何瘦身点击返回首都弗里敦福利大家快来发给家里看书的风景广泛的圣诞节好处就是电话即可获得世界咖啡黄金时代和福建省地方黄金时代"
+            android:textColor="@color/black_at"
+            android:textSize="19sp" />
+
+        <com.lingan.seeyou.ui.view.BadgeRelativeLaoutView
+            android:id="@+id/iv_image_video_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_value_4"
+            android:visibility="gone" />
+
+        <com.lingan.seeyou.ui.view.MultiImageView
+            android:id="@+id/iv_multi_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_value_4"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlBottomContent"
+        android:layout_width="wrap_content"
+        android:layout_height="28dip"
+        android:layout_below="@+id/ll_content"
+        android:layout_marginTop="6dip"
+        android:layout_toLeftOf="@+id/iv_image"
+        android:paddingRight="15dip">
+
+        <TextView
+            android:id="@+id/tv_block_name_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_value_10"
+            android:drawablePadding="3dip"
+            android:drawableRight="@drawable/feed_icon_meiyou"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/black_c"
+            android:textSize="@dimen/text_size_xxs_more"
+            tools:text="地域小风情" />
+
+        <TextView
+            android:id="@+id/tv_comment_count_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/tv_block_name_two"
+            android:layout_toRightOf="@id/tv_block_name_two"
+            android:maxLines="1"
+            android:textColor="@color/black_c"
+            android:textSize="@dimen/text_size_xxs_more"
+            tools:text="73回复" />
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="wrap_content"
+            android:layout_height="28dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/all_btn_close" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/view_yunqi_feeds"
+        style="@style/divider"
+        android:layout_below="@id/rlBottomContent"
+        android:layout_marginTop="5dip" />
+</RelativeLayout>

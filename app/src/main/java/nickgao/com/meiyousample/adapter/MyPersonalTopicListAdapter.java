@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fresco.view.ImageLoadParams;
-import nickgao.com.meiyousample.MeiyouApplication;
+import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.model.topic.MyTopicModel;
 import nickgao.com.meiyousample.utils.DeviceUtils;
@@ -72,11 +72,11 @@ public class MyPersonalTopicListAdapter extends BaseAdapter {
         mScreenWidth = DeviceUtils.getScreenWidth(mActivity.getApplicationContext());
         mImageSize = (mScreenWidth - DeviceUtils.dip2px(mActivity, 20) - DeviceUtils.dip2px(mActivity, 6 * 2)) / 3;
         leftViewWidth = (int) mActivity.getApplicationContext().getResources().getDimension(R.dimen.list_icon_height_50);
-        bottomSpace10 = DeviceUtils.dip2px(MeiyouApplication.getContext(), 10);
-        leftSpace12 = DeviceUtils.dip2px(MeiyouApplication.getContext(), 12);
+        bottomSpace10 = DeviceUtils.dip2px(SeeyouApplication.getContext(), 10);
+        leftSpace12 = DeviceUtils.dip2px(SeeyouApplication.getContext(), 12);
 
-        this.imageWidth = (mScreenWidth - DeviceUtils.dip2px(MeiyouApplication.getContext(), 24) - DeviceUtils.dip2px(MeiyouApplication.getContext(), 3 * 2)) / 3;
-        bottomHeight = mScreenWidth - DeviceUtils.dip2px(MeiyouApplication.getContext(), 39) - imageWidth - leftSpace12;
+        this.imageWidth = (mScreenWidth - DeviceUtils.dip2px(SeeyouApplication.getContext(), 24) - DeviceUtils.dip2px(SeeyouApplication.getContext(), 3 * 2)) / 3;
+        bottomHeight = mScreenWidth - DeviceUtils.dip2px(SeeyouApplication.getContext(), 39) - imageWidth - leftSpace12;
 
     }
 
@@ -247,7 +247,7 @@ public class MyPersonalTopicListAdapter extends BaseAdapter {
      * 代码计算布局 太坑了这个布局设计的
      */
     private void handleSetWidthAndHeight(MyTopicModel model, ViewHolder vHolder) {
-        int feedBackHeight = DeviceUtils.dip2px(MeiyouApplication.getContext(), 28);
+        int feedBackHeight = DeviceUtils.dip2px(SeeyouApplication.getContext(), 28);
 
         RelativeLayout.LayoutParams ll_contentParams = (RelativeLayout.LayoutParams) vHolder.ll_content.getLayoutParams();
         ll_contentParams.width = RelativeLayout.LayoutParams.MATCH_PARENT;
@@ -272,18 +272,18 @@ public class MyPersonalTopicListAdapter extends BaseAdapter {
                             model.title, bottomHeight) >= 3) {//超过三行字体的时候扁图的时候要换行显示底部布局
                         RelativeLayout.LayoutParams rlBottomContentParamsTwo = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, feedBackHeight);
                         rlBottomContentParamsTwo.addRule(RelativeLayout.BELOW, vHolder.ll_content.getId());
-                        rlBottomContentParams.topMargin = DeviceUtils.dip2px(MeiyouApplication.getContext(), 6);
+                        rlBottomContentParams.topMargin = DeviceUtils.dip2px(SeeyouApplication.getContext(), 6);
                         vHolder.rlBottomContent.setLayoutParams(rlBottomContentParamsTwo);
 
                         ll_contentParams.width = RelativeLayout.LayoutParams.MATCH_PARENT;
                         ll_contentParams.height = height + bottomSpace10;
                         vHolder.ll_content.requestLayout();
                     } else {
-                        rlBottomContentParams.topMargin = DeviceUtils.dip2px(MeiyouApplication.getContext(), 6);
+                        rlBottomContentParams.topMargin = DeviceUtils.dip2px(SeeyouApplication.getContext(), 6);
                         vHolder.rlBottomContent.setLayoutParams(rlBottomContentParams);
 
                         ll_contentParams.width = RelativeLayout.LayoutParams.MATCH_PARENT;
-                        ll_contentParams.height = height - feedBackHeight + DeviceUtils.dip2px(MeiyouApplication.getContext(), 6);
+                        ll_contentParams.height = height - feedBackHeight + DeviceUtils.dip2px(SeeyouApplication.getContext(), 6);
                         vHolder.ll_content.requestLayout();
                     }
                     RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) vHolder.iv_image.getLayoutParams();
@@ -291,7 +291,7 @@ public class MyPersonalTopicListAdapter extends BaseAdapter {
                     layoutParams.width = imageWidth;
                     vHolder.iv_image.setLayoutParams(layoutParams);
                 } else {//有3个图片和没有开启省流量模式的时候
-                    rlBottomContentParams.topMargin = DeviceUtils.dip2px(MeiyouApplication.getContext(), 3);
+                    rlBottomContentParams.topMargin = DeviceUtils.dip2px(SeeyouApplication.getContext(), 3);
                     vHolder.rlBottomContent.setLayoutParams(rlBottomContentParams);
                 }
             } else {

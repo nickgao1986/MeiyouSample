@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/base_layout"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <fragment.TitleBarCommon
+        android:id="@+id/head_common_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_value_44"
+        android:background="@color/red_bn"
+        android:gravity="center_vertical"/>
+    <!-- SwipeBackLayout must contains only one direct child -->
+</RelativeLayout>
+

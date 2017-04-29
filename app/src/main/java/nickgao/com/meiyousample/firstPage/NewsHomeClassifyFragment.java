@@ -12,17 +12,21 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.lingan.seeyou.ui.view.ListFooterUtil;
 import com.lingan.seeyou.ui.view.LoadingView;
 import com.lingan.seeyou.ui.view.NewsHomeParallaxListview;
 import com.lingan.seeyou.ui.view.ScrollableHelper;
-import com.lingan.seeyou.ui.view.ScrollableLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import nickgao.com.meiyousample.R;
+import nickgao.com.meiyousample.controller.NewsHomeController;
+import nickgao.com.meiyousample.firstPage.module.IOnExcuteListener;
+import nickgao.com.meiyousample.firstPage.module.RecommendTopicResponeModel;
 import nickgao.com.meiyousample.utils.LogUtils;
-
+import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.meiyousample.firstPage.view.ScrollableLayout;
 /**
  * Created by gaoyoujian on 2017/4/24.
  */
@@ -100,15 +104,26 @@ public class NewsHomeClassifyFragment extends Fragment implements View.OnClickLi
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.layout_new_home_classify_fragment,null);
-        return rootView;    }
+        return rootView;
+    }
 
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         init();
+        initView();
+        intLogic();
     }
 
+    private void intLogic() {
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                loadHomeTabData();
+            }
+        }, 2000);
+    }
 
     private void init() {
         Bundle bundle = getArguments();
@@ -134,6 +149,31 @@ public class NewsHomeClassifyFragment extends Fragment implements View.OnClickLi
 //                NewsHomeController.getInstance().setEnablePullToFlip(true);
 //            }
 //        }
+    }
+
+    private void initView() {
+        //这三个是外部的控件
+        news_home_scroll_layout = (ScrollableLayout) rootView.findViewById(R.id.news_home_scroll_layout);
+        ivBannerBg = (ImageView) rootView.findViewById(R.id.ivBannerBg);
+        layoutInflater = getActivity().getLayoutInflater();
+        mListview = (NewsHomeParallaxListview) rootView.findViewById(R.id.news_home_listview);
+        loadingView = (LoadingView) rootView.findViewById(R.id.news_home_loadingView);
+        rlManSelectCity = (RelativeLayout) rootView.findViewById(R.id.rlManSelectCity);
+        if (first_requst == 0) {
+            loadingView.setStatus(LoadingView.STATUS_LOADING);
+        }
+//        if (classifyId != HomeType.RECOMMEND_ID || news_home_scroll_layout.isSticked()) {
+//            NewsHomeController.getInstance().handlePosition(getActivity().getApplicationContext(), loadingView);//loadingview的位置
+//        }
+        initHeadUI();
+        //加入底部布局
+        topicFooter = ListFooterUtil.getInstance().getListViewFooter(layoutInflater);
+        mListview.addFooterView(topicFooter);
+        View emptySpaceView = layoutInflater.inflate(R.layout.layout_home_empty_space, null);
+        emptySpaceView.setVisibility(View.VISIBLE);
+        mListview.addFooterView(emptySpaceView);
+        ListFooterUtil.getInstance().hideListViewFooter(topicFooter);
+        mListview.updateUI();
     }
 
     private void initHeadUI() {
@@ -187,4 +227,86 @@ public class NewsHomeClassifyFragment extends Fragment implements View.OnClickLi
     public void onClick(View v) {
 
     }
+
+
+    private void loadHomeTabData() {
+        //本地tab下需要判断当前有没选择城市，没有城市的话显示定位服务不可以用
+        if (classifyId == HomeType.CITY_ID && StringUtils.getInt(cityId) == 0) {//本地tab类
+            rlManSelectCity.setVisibility(View.VISIBLE);
+            loadingView.setContent(LoadingView.STATUS_NODATA, "定位服务不可用");
+            return;
+        } else {
+            rlManSelectCity.setVisibility(View.GONE);
+        }
+        isTopicLoading = true;
+        NewsHomeController.getInstance().loadCommunityDataFromCache(getActivity(), classifyId, new IOnExcuteListener() {
+            @Override
+            public void onResult(Object object) {
+                boolean isHasCacheData;
+                if (object == null) {
+                    isHasCacheData = false;
+                } else {
+                    RecommendTopicResponeModel communityResponeModel = (RecommendTopicResponeModel) object;
+                    if (null != communityResponeModel && null != communityResponeModel.list && communityResponeModel.list.size() > 0) {
+                        isHasCacheData = true;
+                        recommendTopicList.clear();
+                        recommendTopicList.addAll(communityResponeModel.list);
+                        updateList();
+                        loadingView.hide();
+                    } else {
+                        isHasCacheData = false;
+                    }
+                }
+                if (isLoadingNetWokeData || !isHasCacheData) {//没有缓存数据的时候 和 强制需要加载网络数据的时候去加载网络数据
+                   // loadRecommend(cityId, true, true);//加载网络数据
+                } else {
+                    isTopicLoading = false;
+
+                }
+            }
+        });
+    }
+
+    private BaseAdapter getAdapter() {
+        if (classifyAdAdapter != null) {
+            return classifyAdAdapter;
+        }
+        return classifyAdapter;
+    }
+
+    private NewsHomeClassifyAdapter.OnRealPositionListener mOnRealPositionListener = new NewsHomeClassifyAdapter.OnRealPositionListener() {
+        @Override
+        public int getRealPosition(int position) {
+            if (null == classifyAdAdapter) {
+                return position;
+            } else {
+//                if (classifyAdAdapter instanceof FeedsAdapter) {
+//                    return ((FeedsAdapter) classifyAdAdapter).getRealPosition(position);
+//                }
+                return position;
+            }
+        }
+    };
+
+    /**
+     * 数据加载完之后刷新数据
+     */
+    public void updateList() {
+        try {
+            mListview.setVisibility(View.VISIBLE);
+            if (null == classifyAdapter) {
+                classifyAdapter = new NewsHomeClassifyAdapter(getActivity(), layoutInflater, recommendTopicList, mListview, classifyId, classifyName, mOnRealPositionListener);
+                ((NewsHomeClassifyAdapter) classifyAdapter).setOnlyVideoIdAndVisible(onlyVideoId, isVisible);
+                /*ListViewAnimationAdapter listViewAnimationAdapter= new ListViewAnimationAdapter(classifyAdapter);
+                listViewAnimationAdapter.setDebug(true);*/
+                mListview.setAdapter(getAdapter());
+            } else {
+                ((NewsHomeClassifyAdapter) classifyAdapter).setOnlyVideoIdAndVisible(onlyVideoId, isVisible);
+                getAdapter().notifyDataSetChanged();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

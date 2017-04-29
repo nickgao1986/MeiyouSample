@@ -1,8 +1,16 @@
 package nickgao.com.meiyousample.firstPage;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import nickgao.com.meiyousample.firstPage.module.PublisherModel;
+import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/27.
@@ -35,7 +43,8 @@ public class TalkModel implements Serializable {
     //标题
     public String title;
 
-
+    //发布者
+    public PublisherModel publisher;
 
     //时间
     public String updated_date;
@@ -91,6 +100,7 @@ public class TalkModel implements Serializable {
 
     public String video_time;//视频时间
 
+//    public List<CloseFeedBackModel> label = new ArrayList<>();//反馈的数据
 
     public String redirect_url;//5.7新增加的字断 用来协议跳转的 只要这个字段有给值的话，那就走协议跳转否则还是走以前老得跳转
 
@@ -110,11 +120,122 @@ public class TalkModel implements Serializable {
 
     //卡片字段用来标识title所用
     public String r_text;
-
+    //专题卡片数据集合
+   // public List<SpecialHomeModel> specialHomeModels = new ArrayList<>();
 
     public String sd_size;//视频大小
 
     public int has_data;//卡片更新的时候 1-有数据  0-无数据
 
     public int review_count;//回复数
+
+    public TalkModel() {
+    }
+
+
+    public TalkModel(JSONObject jsonObject) {
+
+        content = StringUtils.getJsonString(jsonObject, "content");
+        forum_id = StringUtils.getJsonInt(jsonObject, "forum_id");
+        skin_id = StringUtils.getJsonInt(jsonObject, "skin_id");
+        keyword = StringUtils.getJsonString(jsonObject, "keyword");
+        id = StringUtils.getJsonInt(jsonObject, "id");
+        title = StringUtils.getJsonString(jsonObject, "title");
+        updated_date = StringUtils.getJsonString(jsonObject, "updated_date");
+        circle_icon = StringUtils.getJsonString(jsonObject, "circle_icon");
+        circle_name = StringUtils.getJsonString(jsonObject, "circle_name");
+        type = StringUtils.getJsonInt(jsonObject, "type");
+        recomm_type = StringUtils.getJsonInt(jsonObject, "recomm_type");
+        switch_type = StringUtils.getJsonInt(jsonObject, "switch_type");
+        switch_value = StringUtils.getJsonInt(jsonObject, "switch_value");
+        is_fold = StringUtils.getJsonInt(jsonObject, "is_fold");
+        user_id = StringUtils.getJsonInt(jsonObject, "user_id");
+        topic_id = StringUtils.getJsonInt(jsonObject, "topic_id");
+        total_review = StringUtils.getJsonInt(jsonObject, "total_review");
+
+        attr_id = StringUtils.getJsonInt(jsonObject, "attr_id");
+        attr_text = StringUtils.getJsonString(jsonObject, "attr_text");
+        attr_type = StringUtils.getJsonInt(jsonObject, "attr_type");
+
+        ordinal = StringUtils.getJsonInt(jsonObject, "ordinal");
+        url = StringUtils.getJsonString(jsonObject, "url");
+//        if (!StringUtils.isNull(url)) {//拼接预加载的url
+//            preloadingUrl = url + WebViewController.getInstance().getWebUrlParams(url, BeanManager.getUtilSaver().getUserIdentify(BeanManager.getUtilSaver().getContext()));
+//        }
+        r_text = StringUtils.getJsonString(jsonObject, "r_text");
+        sd_size = StringUtils.getJsonString(jsonObject, "sd_size");
+        has_data = StringUtils.getJsonInt(jsonObject, "has_data");
+
+        JSONObject publisherObj = StringUtils.getJsonObejct(jsonObject, "publisher");
+        if (null != publisherObj) {
+            publisher = new PublisherModel(publisherObj);
+        }
+
+        //5.8新增的字断
+        feeds_play = StringUtils.getJsonInt(jsonObject, "feeds_play");
+        is_favorite = StringUtils.getJsonInt(jsonObject, "is_favorite");
+        view_times = StringUtils.getJsonInt(jsonObject, "view_times");
+        if (jsonObject.has("video_url")) {
+            JSONObject videoObj = StringUtils.getJsonObejct(jsonObject, "video_url");
+            nd_url = StringUtils.getJsonString(videoObj, "nd_url");
+            hd_url = StringUtils.getJsonString(videoObj, "hd_url");
+            sd_url = StringUtils.getJsonString(videoObj, "sd_url");
+        }
+
+        //新增的资讯贴子的字断
+        news_type = StringUtils.getJsonInt(jsonObject, "news_type");
+        imgs_count = StringUtils.getJsonInt(jsonObject, "imgs_count");
+        video_time = StringUtils.getJsonString(jsonObject, "video_time");
+
+        review_count = StringUtils.getJsonInt(jsonObject, "review_count");
+        LogUtils.d("=====review_count=" + review_count);
+        //协议字段
+        redirect_url = StringUtils.getJsonString(jsonObject, "redirect_url");
+
+        try {
+//            if (jsonObject.has("items")) {//专题卡片混合的类型数据解析
+//                //卡片数据
+//                JSONArray itemArray = StringUtils.getJsonArray(jsonObject, "items");
+//                if (null != itemArray) {
+//                    int len = itemArray.length();
+//                    for (int i = 0; i < len; i++) {
+//                        JSONObject obj = itemArray.getJSONObject(i);
+//                        SpecialHomeModel talkModel = new SpecialHomeModel(obj);
+//                        specialHomeModels.add(talkModel);
+//                    }
+//                }
+//            }
+//            if (jsonObject.has("label")) {//反馈的数据
+//                JSONArray array = StringUtils.getJsonArray(jsonObject, "label");
+//                int labelLen = array.length();
+//                if (array != null && labelLen > 0) {
+//                    for (int i = 0; i < labelLen; i++) {
+//                        JSONObject obj = array.getJSONObject(i);
+//                        CloseFeedBackModel model = new CloseFeedBackModel(obj);
+//                        label.add(model);
+//                    }
+//                }
+//            }
+
+            if (jsonObject.has("images")) {
+                JSONArray array = StringUtils.getJsonArray(jsonObject, "images");
+                if (array != null && array.length() > 0) {
+                    for (int i = 0; i < array.length(); i++) {
+                        images.add(array.getString(i));
+                    }
+                }
+            }
+
+            if (jsonObject.has("images_night")) {
+                JSONArray array = StringUtils.getJsonArray(jsonObject, "images_night");
+                if (array != null && array.length() > 0) {
+                    for (int i = 0; i < array.length(); i++) {
+                        images_night.add(array.getString(i));
+                    }
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 }

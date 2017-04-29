@@ -6,7 +6,7 @@ import android.text.TextUtils;
 
 import java.util.ArrayList;
 
-import nickgao.com.meiyousample.MeiyouApplication;
+import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.utils.LogUtils;
 import nickgao.com.meiyousample.utils.UrlUtil;
 
@@ -45,7 +45,7 @@ public class WebCacheHelper {
 
 
     public WebCacheHelper() {
-        Context context = MeiyouApplication.getContext();
+        Context context = SeeyouApplication.getContext();
         cacheManager = WebViewCacheManager.getInstance(context);
     }
 

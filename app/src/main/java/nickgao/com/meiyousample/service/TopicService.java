@@ -3,7 +3,7 @@ package nickgao.com.meiyousample.service;
 import android.content.Context;
 import android.text.TextUtils;
 
-import nickgao.com.meiyousample.MeiyouApplication;
+import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.model.topic.TopicData;
 import nickgao.com.meiyousample.network.RcRestRequest;
 import nickgao.com.meiyousample.personal.TopicListener;
@@ -22,7 +22,7 @@ public class TopicService extends AbstractService {
 
 
     public void sendRequest(TopicListener listener, final String last) {
-        Context context = MeiyouApplication.getContext();
+        Context context = SeeyouApplication.getContext();
         RcRestRequest<TopicData> request = this.mRequestFactory.createTopicListRequest(last);
         mListener = listener;
         request.registerOnRequestListener(new RcRestRequest.OnRequestListener<TopicData>() {
