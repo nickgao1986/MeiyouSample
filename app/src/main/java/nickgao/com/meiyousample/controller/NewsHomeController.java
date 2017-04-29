@@ -271,4 +271,20 @@ public class NewsHomeController extends LinganController {
         }
         return alpha;
     }
+
+    /**
+     * 花朵和几率翻转的逻辑 只翻转两次就不在翻转了
+     */
+    public void handleFlip(Context context) {
+        //下拉次数统计
+        pullDownCount++;
+        flipCount++;
+        /*//头两次允许Fliper
+        if (enablePullToFlip) {
+            EventBus.getDefault().post(new NewsHomeFlipEvent());
+        }*/
+        if (flipCount >= 2) {
+            enablePullToFlip = false;
+        }
+    }
 }

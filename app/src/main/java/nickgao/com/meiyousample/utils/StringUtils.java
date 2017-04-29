@@ -1,5 +1,7 @@
 package nickgao.com.meiyousample.utils;
 
+import android.graphics.Paint;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -160,6 +162,13 @@ public class StringUtils {
             var2.printStackTrace();
             return 0;
         }
+    }
+
+    public static int getFontHeight(float fontSize) {
+        Paint paint = new Paint();
+        paint.setTextSize(fontSize);
+        Paint.FontMetrics fm = paint.getFontMetrics();
+        return (int)Math.ceil((double)(fm.descent - fm.top)) + 2;
     }
 
 }

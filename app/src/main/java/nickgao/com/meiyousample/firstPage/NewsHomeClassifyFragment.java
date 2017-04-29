@@ -70,7 +70,7 @@ public class NewsHomeClassifyFragment extends Fragment implements View.OnClickLi
     private int feedsImageType;//图片样式
     private int feedbackButton;//反馈开关
     private int feedsIconViewType;//底部icon是不是要显示
-    private boolean isVisible;//当前fragment是否可见
+    private boolean isVisible= true;//当前fragment是否可见
     private int first_requst;
     private int round;//当前刷新次数
     private Handler mHandler = new Handler();
@@ -153,8 +153,8 @@ public class NewsHomeClassifyFragment extends Fragment implements View.OnClickLi
 
     private void initView() {
         //这三个是外部的控件
-        news_home_scroll_layout = (ScrollableLayout) rootView.findViewById(R.id.news_home_scroll_layout);
-        ivBannerBg = (ImageView) rootView.findViewById(R.id.ivBannerBg);
+        news_home_scroll_layout = (ScrollableLayout) getActivity().findViewById(R.id.news_home_scroll_layout);
+        ivBannerBg = (ImageView) getActivity().findViewById(R.id.ivBannerBg);
         layoutInflater = getActivity().getLayoutInflater();
         mListview = (NewsHomeParallaxListview) rootView.findViewById(R.id.news_home_listview);
         loadingView = (LoadingView) rootView.findViewById(R.id.news_home_loadingView);
@@ -208,10 +208,24 @@ public class NewsHomeClassifyFragment extends Fragment implements View.OnClickLi
         news_home_scroll_layout.setOnRefreshListener(new NewsHomeParallaxListview.OnRefreshListener() {
             @Override
             public void OnRefresh() {
-//                HomeRecommendCacheController.getInstance().handlePostYoumentSysxTime(classifyId, "下拉刷新");
-//                pullDownRefresh();//下拉刷新
+                pullDownRefresh();//下拉刷新
             }
         });
+    }
+
+    /**
+     * 下拉刷新
+     */
+    private void pullDownRefresh() {
+        try {
+            NewsHomeController.getInstance().handleFlip(getActivity().getApplicationContext());//翻转的逻辑
+            loadingView.hide();
+            if (!isTopicLoading) {
+                //loadRecommend(cityId, true, false);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
