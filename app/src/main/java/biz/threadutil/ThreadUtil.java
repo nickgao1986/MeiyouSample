@@ -19,7 +19,11 @@ public class ThreadUtil {
         //TaskManager.getInstance().sumbit(task);
     }
 
-
+    public static void addTask(final Context context, final ITasker iHttpTasker) {
+        TaskForAll task = new TaskForAll(context,"",iHttpTasker);
+        task.execute();
+        //TaskManager.getInstance().sumbit(task);
+    }
 
     public interface ITasker {
         // 执行

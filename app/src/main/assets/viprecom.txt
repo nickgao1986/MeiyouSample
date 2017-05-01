@@ -1,0 +1,225 @@
+{
+  "page": 1,
+  "data": [
+    {
+      "id": 125910019,
+      "screen_name": "校园小管家",
+      "isvip": 1,
+      "dynamicstr": "",
+      "dynamicnum": 0,
+      "fans": "3990",
+      "avatars": "http://sc.seeyouyima.com/avatar_125910019",
+      "isfollow": 0,
+      "reason": "她她圈管理员"
+    },
+    {
+      "id": 125909836,
+      "screen_name": "星座小管家",
+      "isvip": 1,
+      "dynamicnum": 4,
+      "dynamicstr": "我是水瓶座招圈主啦，欢迎喜欢星座的你来加入哈[冒心心][飞吻][爱心][气球]",
+      "fans": "7335",
+      "avatars": "http://sc.seeyouyima.com/avatar_125909836",
+      "isfollow": 0,
+      "reason": "她她圈管理员"
+    },
+    {
+      "id": 125909709,
+      "screen_name": "兴趣小管家",
+      "isvip": 1,
+      "dynamicstr": "",
+      "dynamicnum": 0,
+      "fans": "4347",
+      "avatars": "http://sc.seeyouyima.com/avatar_125909709",
+      "isfollow": 0,
+      "reason": "她她圈管理员"
+    },
+    {
+      "id": 125909177,
+      "screen_name": "生活小管家",
+      "isvip": 1,
+      "dynamicstr": "",
+      "dynamicnum": 0,
+      "fans": "9273",
+      "avatars": "http://sc.seeyouyima.com/avatar_125909177",
+      "isfollow": 0,
+      "reason": "她她圈管理员"
+    },
+    {
+      "id": 125908659,
+      "screen_name": "时尚小管家",
+      "isvip": 1,
+      "dynamicstr": "",
+      "dynamicnum": 0,
+      "fans": "9503",
+      "avatars": "http://sc.seeyouyima.com/avatar_125908659",
+      "isfollow": 0,
+      "reason": "她她圈管理员"
+    },
+    {
+      "id": 125908076,
+      "screen_name": "备孕小管家",
+      "isvip": 1,
+      "dynamicstr": "",
+      "dynamicnum": 0,
+      "fans": "9129",
+      "avatars": "http://sc.seeyouyima.com/avatar_125908076",
+      "isfollow": 0,
+      "reason": "她她圈管理员"
+    },
+    {
+      "id": 125906574,
+      "screen_name": "情感小管家",
+      "isvip": 1,
+      "dynamicnum": 3,
+      "dynamicstr": "分享了文章",
+      "fans": "9432",
+      "avatars": "http://sc.seeyouyima.com/avatar_125906574",
+      "isfollow": 0,
+      "reason": "她她圈管理员"
+    },
+    {
+      "id": 125906136,
+      "screen_name": "育儿小管家",
+      "isvip": 1,
+      "dynamicstr": "",
+      "dynamicnum": 0,
+      "fans": "8154",
+      "avatars": "http://sc.seeyouyima.com/avatar_125906136",
+      "isfollow": 0,
+      "reason": "她她圈管理员"
+    },
+    {
+      "id": 125905733,
+      "screen_name": "孕育小管家",
+      "isvip": 1,
+      "dynamicnum": 4,
+      "dynamicstr": "分享了文章",
+      "fans": "8722",
+      "avatars": "http://sc.seeyouyima.com/avatar_125905733",
+      "isfollow": 0,
+      "reason": "她她圈管理员"
+    },
+    {
+      "id": 112238270,
+      "screen_name": "柚宝妈妈说",
+      "isvip": 1,
+      "dynamicstr": "",
+      "dynamicnum": 0,
+      "fans": "31636",
+      "avatars": "http://sc.seeyouyima.com/avatar_112238270",
+      "isfollow": 0,
+      "reason": "柚宝宝原创专辑"
+    },
+    {
+      "id": 102072998,
+      "screen_name": "她她圈活动大使",
+      "isvip": 1,
+      "dynamicnum": 863,
+      "dynamicstr": "分享了文章",
+      "fans": "28648",
+      "avatars": "http://sc.seeyouyima.com/avatar_102072998",
+      "isfollow": 0,
+      "reason": "柚宝宝活动大使"
+    },
+    {
+      "id": 74011756,
+      "screen_name": "天一神",
+      "isvip": 1,
+      "dynamicnum": 19,
+      "dynamicstr": "发布了文章",
+      "fans": "11197",
+      "avatars": "http://sc.seeyouyima.com/avatar_74011756",
+      "isfollow": 0,
+      "reason": "柚子妈妈团 16060101"
+    },
+    {
+      "id": 22353144,
+      "screen_name": "健康小管家",
+      "isvip": 1,
+      "dynamicstr": "",
+      "dynamicnum": 0,
+      "fans": "2628",
+      "avatars": "http://sc.seeyouyima.com/avatar_22353144",
+      "isfollow": 0,
+      "reason": "她她圈管理员"
+    },
+    {
+      "id": 19012559,
+      "screen_name": "柚小研",
+      "isvip": 6,
+      "dynamicnum": 3,
+      "dynamicstr": "试试看",
+      "fans": "64295",
+      "avatars": "http://sc.seeyouyima.com/avatar_19012559",
+      "isfollow": 0,
+      "reason": "美柚官方调查员"
+    },
+    {
+      "id": 15925136,
+      "screen_name": "卫薇儿",
+      "isvip": 1,
+      "dynamicnum": 454,
+      "dynamicstr": "我与樱的世界！来来来，转一个圈～就不能以高冷的姿态结束嘛？😳😳😝",
+      "fans": "95593",
+      "avatars": "http://sc.seeyouyima.com/avatar_15925136",
+      "isfollow": 0,
+      "reason": "内地女艺人 音乐代表作《飞贼》《Just Do It》"
+    },
+    {
+      "id": 15921268,
+      "screen_name": "肖三爷",
+      "isvip": 7,
+      "dynamicnum": 45,
+      "dynamicstr": "新年自拍 猴年快乐哟",
+      "fans": "58005",
+      "avatars": "http://sc.seeyouyima.com/avatar_15921268",
+      "isfollow": 0,
+      "reason": "知名平面模特"
+    },
+    {
+      "id": 15855752,
+      "screen_name": "贾伊始",
+      "isvip": 7,
+      "dynamicnum": 24,
+      "dynamicstr": "晚安！",
+      "fans": "66082",
+      "avatars": "http://sc.seeyouyima.com/avatar_15855752",
+      "isfollow": 0,
+      "reason": "esee英模签约模特"
+    },
+    {
+      "id": 15849776,
+      "screen_name": "目光烁烁",
+      "isvip": 7,
+      "dynamicnum": 188,
+      "dynamicstr": "🌸好久不见呐",
+      "fans": "57328",
+      "avatars": "http://sc.seeyouyima.com/avatar_15849776",
+      "isfollow": 0,
+      "reason": "模特"
+    },
+    {
+      "id": 15848989,
+      "screen_name": "D调塔罗占卜师",
+      "isvip": 7,
+      "dynamicnum": 48,
+      "dynamicstr": "呵呵！真成",
+      "fans": 74552,
+      "avatars": "http://sc.seeyouyima.com/avatar_15848989",
+      "isfollow": 0,
+      "reason": "治愈系塔罗师，撰稿人"
+    },
+    {
+      "id": 15695510,
+      "screen_name": "LEESHA吴语晴",
+      "isvip": 7,
+      "dynamicnum": 13,
+      "dynamicstr": "减肥，美妆心得什么的根本不是重点，重点是：挖掘机汽修技术究竟哪家强？！",
+      "fans": 56944,
+      "avatars": "http://sc.seeyouyima.com/avatar_15695510",
+      "isfollow": 0,
+      "reason": "第九届瑞丽模特十佳"
+    }
+  ]
+}

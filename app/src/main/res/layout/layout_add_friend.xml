@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bottom_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/rl_type"
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:background="@drawable/apk_all_spread_kuang_bottom_selector"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:id="@+id/rl_type_notable"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_type_notable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="名人"
+                android:textColor="@color/textview_color_topic"
+                android:textSize="@dimen/text_size_s" />
+
+            <View
+                android:id="@+id/view_select_one"
+                android:layout_width="40dip"
+                android:layout_height="3dip"
+                android:layout_below="@id/tv_type_notable"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/btn_friend_recommend_selector" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_driver_one"
+            android:layout_width="1dip"
+            android:layout_height="13dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/apk_all_linetow"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <RelativeLayout
+            android:id="@+id/rl_type_interest"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_type_interest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="兴趣"
+                android:textColor="@color/textview_color_topic"
+                android:textSize="@dimen/text_size_s" />
+
+            <View
+                android:id="@+id/view_select_two"
+                android:layout_width="40dip"
+                android:layout_height="3dip"
+                android:layout_below="@id/tv_type_interest"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dip"
+                android:background="@drawable/btn_friend_recommend_selector" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <View
+            android:id="@+id/view_driver_two"
+            android:layout_width="1dip"
+            android:layout_height="13dip"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/apk_all_linetow"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/rl_type_friend"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_type_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="好友"
+                android:textColor="@color/textview_color_topic"
+                android:textSize="@dimen/text_size_s" />
+
+            <View
+                android:id="@+id/view_select_three"
+                android:layout_width="40dip"
+                android:layout_height="3dip"
+                android:layout_below="@id/tv_type_friend"
+                android:layout_centerInParent="true"
+                android:background="@drawable/btn_friend_recommend_selector" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/flContainers"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/rl_type">
+
+
+    </FrameLayout>
+</RelativeLayout>

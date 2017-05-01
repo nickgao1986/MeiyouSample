@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/empty_container"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="46dip"
+    android:paddingTop="46dip">
+
+    <ImageView
+        android:id="@+id/iv_girl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/apk_girlone" />
+
+    <TextView
+        android:id="@+id/empty_des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_xxs"
+        android:gravity="center"
+        android:text="还没有完整地记录一个月经周期\n美柚不知道该怎么分析哦！"
+        android:textColor="@color/black_b"
+        android:textSize="@dimen/space_m" />
+
+    <Button
+        android:id="@+id/btn_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/space_s"
+        android:background="@drawable/btn_red_selector"
+        android:paddingBottom="@dimen/space_xs"
+        android:paddingLeft="@dimen/space_l"
+        android:paddingRight="@dimen/space_l"
+        android:paddingTop="@dimen/space_xs"
+        android:text="马上记录"
+        android:textColor="@color/white_a"
+        android:textSize="@dimen/text_size_s"
+        android:visibility="visible" />
+</LinearLayout>

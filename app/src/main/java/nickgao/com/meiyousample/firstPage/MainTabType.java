@@ -7,12 +7,12 @@ package nickgao.com.meiyousample.firstPage;
 public class MainTabType {
 
     public static final String TAB_HOME = "/home";
-    public static final String TAB_NEWS_HOME = "/newshome";
+    public static final String TAB_NEWS_HOME = "/newshome";  //NewsHomeFragment
     public static final String TAB_PREGNANCY_HOME = "/pregnancyhome";
-    public static final String TAB_CALENDAR = "/record";
-    public static final String TAB_COMMUNITY = "/circles";
-    public static final String TAB_TODAYSALE = "/sale";
-    public static final String TAB_MINE = "/mine";
+    public static final String TAB_CALENDAR = "/record";  //DynamicHomeFragment
+    public static final String TAB_COMMUNITY = "/circles";  //PersonalFragment
+    public static final String TAB_TODAYSALE = "/sale";  //AddFriendFragment
+    public static final String TAB_MINE = "/mine";  //MyFragment
 
     private static MainTabType mInstance;
 

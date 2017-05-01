@@ -226,4 +226,12 @@ public class MyFragment extends PeriodBaseFragment {
     }
 
 
+    public void handleHideFragment() {
+
+    }
+
+    public void handleShowFragment() {
+
+    }
+
 }

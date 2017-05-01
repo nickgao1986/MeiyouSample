@@ -277,5 +277,8 @@ public class ImageLoader {
         mAbstractImageLoader.resume(context, tag);
     }
 
+    public static int getBuckImageWH(Context context) {
+        return (int) context.getApplicationContext().getResources().getDimension(R.dimen.list_icon_height_64);
+    }
 
 }

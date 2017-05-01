@@ -379,6 +379,23 @@ public class NewsHomeFragment extends PeriodBaseFragment implements View.OnClick
     }
 
 
+    public void handleHideFragment() {
+
+    }
+
+    public void handleShowFragment() {
+
+    }
+
+    public void updateFragment(boolean isSamePage, boolean isFromNotify) {
+        if (isSamePage) {//点击同一个tab
+            if (newsHomeTabController != null && newsHomeTabController.bTopMenuShowed) {
+                newsHomeTabController.hide();
+            }
+        }
+    }
+
+
     private  List<HomeClassifyModel> getClassifyModels() {
         List<HomeClassifyModel> models = new ArrayList<HomeClassifyModel>();
         HomeClassifyModel model = new HomeClassifyModel();

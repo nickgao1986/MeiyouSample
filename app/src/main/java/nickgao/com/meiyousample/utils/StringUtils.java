@@ -171,4 +171,23 @@ public class StringUtils {
         return (int)Math.ceil((double)(fm.descent - fm.top)) + 2;
     }
 
+    public static String getDynamicnum(int dynamicnum) {
+        if (StringUtils.sizeOfInt(dynamicnum) > 5) {
+            int value = dynamicnum / 10000;
+            return value + "w";
+        } else {
+            return dynamicnum + "";
+        }
+    }
+
+    public static int sizeOfInt(int x) {
+        for (int i = 0; ; i++)
+            if (x <= sizeTable[i])
+                return i + 1;
+    }
+
+    final static int[] sizeTable = {9, 99, 999, 9999, 99999, 999999, 9999999,
+            99999999, 999999999, Integer.MAX_VALUE};
+
+
 }

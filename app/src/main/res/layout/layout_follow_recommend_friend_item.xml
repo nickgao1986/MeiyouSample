@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlBase"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/apk_all_white_selector">
+
+        <LinearLayout
+            android:id="@+id/llHeadPic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/space_s">
+
+            <com.lingan.seeyou.ui.view.LoaderImageView
+                android:id="@+id/ivHeadPic"
+                android:layout_width="@dimen/list_icon_height_50"
+                android:layout_height="@dimen/list_icon_height_50" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearCenter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/llHeadPic"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:focusable="false"
+            android:orientation="vertical"
+            android:paddingBottom="13dip"
+            android:paddingTop="13dip">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:paddingBottom="@dimen/space_xxxs"
+                android:singleLine="true"
+                android:text="一米阳光"
+                android:textColor="@color/black_a"
+                android:textSize="@dimen/text_size_s" />
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:paddingBottom="@dimen/space_xxxs"
+                android:singleLine="true"
+                android:text="请给字段文案"
+                android:textColor="@color/black_a"
+                android:textSize="@dimen/text_size_xs" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvDynamicnum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:singleLine="true"
+                    android:text="56 动态"
+                    android:textColor="@color/black_b"
+                    android:textSize="@dimen/text_size_xs" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="1px"
+                    android:layout_height="12dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/space_xs"
+                    android:layout_marginRight="@dimen/space_xs"
+                    android:background="@drawable/apk_all_linetwo"
+                    android:focusable="false"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tvFans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:singleLine="true"
+                    android:text="2674 粉丝"
+                    android:textColor="@color/black_b"
+                    android:textSize="@dimen/text_size_xs" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvFollow"
+            android:layout_width="70dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_xs"
+            android:background="@drawable/apk_graybg_selector"
+            android:gravity="center"
+            android:paddingBottom="@dimen/space_xxs_less"
+            android:paddingTop="@dimen/space_xxs_less"
+            android:text="关注"
+            android:textColor="@color/item_search_tags_text_color_selector"
+            android:textSize="@dimen/text_size_xs" />
+        <ImageView
+            android:id="@+id/friend_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_xs"
+            android:visibility="gone"
+            android:src="@drawable/all_icon_arrow"/>
+
+        <View
+            android:id="@+id/divider"
+            style="@style/divider"
+            android:layout_alignBottom="@+id/linearCenter"
+            android:layout_marginLeft="15dip" />
+    </RelativeLayout>
+</RelativeLayout>

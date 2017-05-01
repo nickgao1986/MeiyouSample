@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+                android:oneshot="true">
+    <item
+        android:drawable="@drawable/apk_refresh_1fps"
+        android:duration="100"></item>
+    <item
+        android:drawable="@drawable/apk_refresh_2fps"
+        android:duration="100"></item>
+    <item
+        android:drawable="@drawable/apk_refresh_3fps"
+        android:duration="100"></item>
+    <item
+        android:drawable="@drawable/apk_refresh_4fps"
+        android:duration="100"></item>
+    <item
+        android:drawable="@drawable/apk_refresh_5fps"
+        android:duration="100"></item>
+    <item
+        android:drawable="@drawable/apk_refresh_6fps"
+        android:duration="100"></item>
+    <item
+        android:drawable="@drawable/apk_refresh_7fps"
+        android:duration="100"></item>
+    <item
+        android:drawable="@drawable/apk_refresh_8fps"
+        android:duration="100"></item>
+    <item
+        android:drawable="@drawable/apk_refresh_9fps"
+        android:duration="100"></item>
+    <item
+        android:drawable="@drawable/apk_refresh_10fps"
+        android:duration="100"></item>
+
+</animation-list>
