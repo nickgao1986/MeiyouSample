@@ -65,6 +65,7 @@ public class SeeyouActivity extends FragmentActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_seeyou_fragment);
+        initSkin();
         switchPage();
         //初始化UI
         initBottomIconHeight();

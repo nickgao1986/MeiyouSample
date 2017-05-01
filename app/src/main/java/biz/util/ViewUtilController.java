@@ -1,6 +1,7 @@
 package biz.util;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -60,6 +61,29 @@ public class ViewUtilController {
 
             //setDotAnimation(tvPromotion);
         }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+    public static void setTextDrawalbe(TextView textView, Drawable DrawableLeft, Drawable DrawableTop, Drawable DrawableRight, Drawable DrawableBottom) {
+        try {
+            //Drawable drawable= getResources().getDrawable(R.drawable.drawable);
+            //clear first ,or Sony lt26i doesn't work
+            textView.setCompoundDrawablePadding(0);
+            textView.setCompoundDrawables(null, null, null, null);
+            //DrawableLeft.setBounds(0, 0, DrawableLeft.getMinimumWidth(), DrawableLeft.getMinimumHeight());
+            /// 这一步必须要做,否则不会显示.
+            if (DrawableLeft != null)
+                DrawableLeft.setBounds(0, 0, DrawableLeft.getIntrinsicWidth(), DrawableLeft.getIntrinsicHeight());
+            if (DrawableTop != null)
+                DrawableTop.setBounds(0, 0, DrawableTop.getIntrinsicWidth(), DrawableTop.getIntrinsicHeight());
+            if (DrawableRight != null)
+                DrawableRight.setBounds(0, 0, DrawableRight.getIntrinsicWidth(), DrawableRight.getIntrinsicHeight());
+            if (DrawableBottom != null)
+                DrawableBottom.setBounds(0, 0, DrawableBottom.getIntrinsicWidth(), DrawableBottom.getIntrinsicHeight());
+
+            textView.setCompoundDrawables(DrawableLeft, DrawableTop, DrawableRight, DrawableBottom);
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }

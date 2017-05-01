@@ -30,6 +30,16 @@ public class StringUtils {
         return isEmpty(str)?-1:str.indexOf(searchChar);
     }
 
+    public static float getFloat(String value) {
+        try {
+            return Float.valueOf(value);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return 0;
+    }
+
+
     public static String getJsonString(JSONObject jsonObject, String key) {
         try {
             if(jsonObject.has(key)) {
@@ -41,6 +51,23 @@ public class StringUtils {
 
         return "";
     }
+
+    public static double getJsonDouble(JSONObject object, String key) {
+        double strValue = 0d;
+        try {
+            if (object == null || key == null)
+                return strValue;
+            if (object.has(key)) {
+                strValue = object.getDouble(key);
+            }
+
+            return strValue;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return strValue;
+    }
+
 
     public static String getString(int value) {
         try {

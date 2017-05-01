@@ -33,6 +33,12 @@ public class ThreadUtil {
 
     }
 
+    public static void addTaskForIO(final Context context, final String msg,final ITasker iHttpTasker) {
+        TaskForAll task = new TaskForAll(context,msg,iHttpTasker);
+        task.execute();
+    }
+
+
 
     private static class TaskForAll extends AsyncTask<Void, Void, Object> {
 

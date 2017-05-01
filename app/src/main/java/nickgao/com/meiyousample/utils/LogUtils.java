@@ -40,6 +40,10 @@ public class LogUtils {
         Log.d(tag, checkEmpty(content),tr);
     }
 
+    public static void i(String tag,String content) {
+        Log.d(tag, checkEmpty(content));
+    }
+
     public static void d(String tag,String content, String tr) {
         Log.d(tag, checkEmpty(content));
     }

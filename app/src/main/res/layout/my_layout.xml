@@ -58,7 +58,7 @@
                 android:id="@+id/view_meiyou_family"
                 style="@style/divider" />
 
-            <nickgao.com.meiyousample.gridview.GridViewExx
+            <nickgao.com.meiyousample.mypage.module.GridViewEx
                 android:id="@+id/gvMeiYouFamily"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

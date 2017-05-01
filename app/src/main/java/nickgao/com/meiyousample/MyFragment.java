@@ -51,6 +51,14 @@ public class MyFragment extends PeriodBaseFragment {
         //setAvatar(false);
     }
 
+    private void initController() {
+        ViewGroup rootView = getRootView();
+        myFamilyController = new MyFamilyController(mActivity, rootView);
+        myNightController = new MyNightController(mActivity, rootView);
+        myHeaderController = new MyHeaderController(mActivity, rootView);
+    }
+
+
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -60,8 +68,11 @@ public class MyFragment extends PeriodBaseFragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        initController();
         findView();
         init();
+
+
     }
 
     @Override
@@ -72,17 +83,17 @@ public class MyFragment extends PeriodBaseFragment {
 
 
     private void init() {
-//        myFamilyController.initMeiyouFamilyData();
+        myFamilyController.initMeiyouFamilyData();
         initMyDataFromLocal();
-       // myNightController.initSkinSwitch();
+        myNightController.initSkinSwitch();
     }
 
     private void findView() {
         getTitleBar().setCustomTitleBar(R.layout.layout_my_titlebar);
 //        myHeaderController.findView();
-//        myNightController.findView();
+        myNightController.findView();
         //美柚家族
-//        myFamilyController.findView();
+        myFamilyController.findView();
 
         //我的动态布局
         llContent = (LinearLayout) getRootView().findViewById(R.id.ll_my_datacontent);
@@ -108,6 +119,12 @@ public class MyFragment extends PeriodBaseFragment {
             ex.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        myNightController.destroy();
     }
 
     private void fillResourceMyLayout() {

@@ -1,0 +1,29 @@
+{
+    "id": 21,
+    "name": "夜间模式",
+    "tradition_name": "夜間模式",
+    "description": "璀璨的星光洒满大地，静谧的深夜，感受那份独特的迷人情调~",
+    "tradition_description": "璀璨的星光灑滿大地，靜謐的深夜，感受那份獨特的迷人情調~",
+    "images": "http://sc.seeyouyima.com/forum/58c90a982122d_435_300.png",
+    "preview": [
+        "http://sc.seeyouyima.com/forum/556522edb873e_540_958.png",
+        "http://sc.seeyouyima.com/forum/556522f17def2_540_958.png",
+        "http://sc.seeyouyima.com/forum/556522f5a93ee_540_958.png"
+    ],
+    "in_image": "http://sc.seeyouyima.com/forum/58c90a982122d_435_300.png",
+    "ios_imgs": "http://sc.seeyouyima.com/forum/556522e1ec88a_540_958.png\nhttp://sc.seeyouyima.com/forum/556522e540b17_540_958.png\nhttp://sc.seeyouyima.com/forum/556522e8b882a_540_958.png",
+    "skin_type": 1,
+    "style": 1,
+    "task_count": 0,
+    "original_price": 0,
+    "package": "com.meetyou.skin.night",
+    "label": 0,
+    "download_url": "http://sc.seeyouyima.com/ft3urnkcesdj7.zip",
+    "file_size": 1230394.88,
+    "version": 61,
+    "updated_time": "2017-04-19 14:12:50",
+    "is_exchanged": true,
+    "is_prize": true,
+    "tag_icon": "",
+    "my_coin": 2
+}
