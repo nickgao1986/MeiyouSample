@@ -11,6 +11,7 @@ import com.lingan.seeyou.ui.view.AKeyTopView;
 import com.lingan.seeyou.ui.view.skin.SkinManager;
 import com.lingan.seeyou.ui.view.skin.ViewFactory;
 
+import de.greenrobot.event.EventBus;
 import nickgao.com.meiyousample.R;
 
 /**
@@ -34,7 +35,7 @@ public class PeriodBaseFragment extends LinganFragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-       // EventBus.getDefault().register(this);
+        EventBus.getDefault().register(this);
     }
 
     @Override
@@ -92,7 +93,7 @@ public class PeriodBaseFragment extends LinganFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-       // EventBus.getDefault().unregister(this);
+        EventBus.getDefault().unregister(this);
     }
 
 

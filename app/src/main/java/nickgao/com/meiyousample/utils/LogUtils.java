@@ -18,6 +18,10 @@ public class LogUtils {
         Log.e(TAG, checkEmpty(content));
     }
 
+    public static void i(String content) {
+        Log.i(TAG, checkEmpty(content));
+    }
+
 
     @Deprecated
     public static void d(String content) {

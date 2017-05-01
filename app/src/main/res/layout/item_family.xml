@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_item_mine"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black_e">
+
+    <LinearLayout
+        android:id="@+id/ll_item_mine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/apk_all_white_selector"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        >
+
+        <com.lingan.seeyou.ui.view.LoaderImageView
+            android:id="@+id/icon_family"
+            android:layout_width="@dimen/list_icon_height_44"
+            android:layout_height="@dimen/list_icon_height_44"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/space_xxs" />
+
+        <TextView
+            android:id="@+id/tx_familyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_value_2"
+            android:textColor="@color/black_a"
+            android:textSize="@dimen/text_size_13"
+            android:singleLine="true"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/app_name"
                     android:textColor="@color/red_a"
-                    android:textSize="@dimen/text_size_xxs_more" />
+                    android:textSize="@dimen/text_size_xxs" />
             </LinearLayout>
 
             <TextView
@@ -79,30 +79,18 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/day_1"
-                    android:gravity="top"
-                    android:textColor="@color/colour_j"
-                    android:layout_marginBottom="3dip"
-                    android:textSize="@dimen/text_size_22"
-                    android:visibility="visible"
-                    />
-
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/apk_all_bottommeetyou_up"
-                    android:visibility="gone"
+                    android:src="@drawable/apk_all_bottomrili"
                     />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_name"
+                    android:text="记录"
                     android:textColor="@color/red_a"
-                    android:textSize="@dimen/text_size_xxs_more" />
+                    android:textSize="@dimen/text_size_xxs" />
             </LinearLayout>
 
 
@@ -125,15 +113,15 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/apk_all_bottommeetyou_up" />
+                    android:src="@drawable/apk_all_bottomta" />
 
                 <TextView
                     android:id="@+id/tv_community_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/app_name"
+                    android:text="她她圈"
                     android:textColor="@color/red_a"
-                    android:textSize="@dimen/text_size_xxs_more" />
+                    android:textSize="@dimen/text_size_xxs" />
             </LinearLayout>
 
             <TextView
@@ -170,14 +158,14 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/apk_all_bottomfind_up" />
+                    android:src="@drawable/apk_all_bottomb2c" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/find"
+                    android:text="柚子街"
                     android:textColor="@color/red_a"
-                    android:textSize="@dimen/text_size_xxs_more" />
+                    android:textSize="@dimen/text_size_xxs" />
             </LinearLayout>
 
             <TextView
@@ -216,7 +204,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:src="@drawable/apk_all_bottommine_up" />
+                    android:src="@drawable/apk_all_bottommine" />
 
                 <TextView
                     android:id="@+id/tvOne"
@@ -226,7 +214,7 @@
                     android:layout_centerHorizontal="true"
                     android:text="@string/app_name"
                     android:textColor="@color/red_a"
-                    android:textSize="@dimen/text_size_xxs_more" />
+                    android:textSize="@dimen/text_size_xxs" />
             </LinearLayout>
 
             <TextView

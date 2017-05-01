@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/title_container"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_height"
+                android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title_my"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/title_height"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:maxWidth="240dip"
+        android:singleLine="true"
+        android:text="我"
+        android:textColor="@color/white_a"
+        android:textSize="@dimen/text_size_l"
+        tools:visibility="visible"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_my_night"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/title_height"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/space_xs"
+        android:gravity="center">
+
+        <ProgressBar
+            android:id="@+id/pbGrogress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tvRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dip"
+            android:clickable="true"
+            android:drawableLeft="@drawable/apk_all_top_night"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text=" 夜间"
+            android:textColor="@color/white_a"
+            android:textSize="@dimen/text_size_s"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tvNeightProgress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_xxs"
+            android:duplicateParentState="true"
+            android:gravity="center"
+            android:text="55%"
+            android:textColor="@color/white_a"
+            android:textSize="@dimen/text_size_xs"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+    </LinearLayout>
+</RelativeLayout>

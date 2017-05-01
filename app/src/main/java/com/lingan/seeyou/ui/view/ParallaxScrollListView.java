@@ -16,6 +16,8 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import nickgao.com.meiyousample.personal.ImageViewWithMask;
+
 
 /**
  * 下拉刷新的view
@@ -24,7 +26,7 @@ import android.widget.RelativeLayout;
 public class ParallaxScrollListView extends ListView implements AbsListView.OnScrollListener {
     private static final int sDURATION = 500;//回弹速度控制，数值越大，速度越慢
     private static final float s_REFRESH_WIDTH_AND_HEIGHT = 25.0f;//dip
-    private ImageView mImageView;
+    private ImageViewWithMask mImageView;
     private int mDrawableMaxHeight = -1;
     private int mImageViewHeight = -1;//拉伸的背景图初始化高度
     private int mDefaultImageViewHeight = 0;
@@ -96,14 +98,6 @@ public class ParallaxScrollListView extends ListView implements AbsListView.OnSc
         addHeaderView(mScaleView);
     }
 
-    /**
-     * 设置背景显示的子view
-     *
-     * @param iv
-     */
-    public void setParallaxImageView(ImageView iv) {
-        setParallaxImageView(iv, -1);
-    }
 
     /**
      * 设置背景的子view
@@ -111,10 +105,10 @@ public class ParallaxScrollListView extends ListView implements AbsListView.OnSc
      * @param iv
      * @param height iv 的高度 单位是dp
      */
-    public void setParallaxImageView(ImageView iv, int height) {
+    public void setParallaxImageView(ImageViewWithMask iv, int height) {
         mImageView = iv;
         mRefreshHeight =  dp2px(height) / 4 * 1;
-        mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        //  mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
     }
 
     /**
@@ -349,7 +343,7 @@ public class ParallaxScrollListView extends ListView implements AbsListView.OnSc
                 mImageViewHeight = mDefaultImageViewHeight;
             }
             if (mRefreshHeight==-1)
-            mRefreshHeight = mImageViewHeight / 4 * 1;
+                mRefreshHeight = mImageViewHeight / 4 * 1;
         }
         //
         if (mImageView != null && mDrawableMaxHeight == -1) {
@@ -418,9 +412,9 @@ public class ParallaxScrollListView extends ListView implements AbsListView.OnSc
                 lastY = ev.getRawY();
                 //footer 弹性变化
                 if (footerView.getBottomMargin() > -1 && getLastVisiblePosition() == (mItemsCount - 1) && (mVisibleItemCount < mItemsCount || deltaY < 0) && mImageView.getHeight() == mImageViewHeight) {
-                   if (!isFootCanPull){
-                       return super.onTouchEvent(ev);
-                   }
+                    if (!isFootCanPull){
+                        return super.onTouchEvent(ev);
+                    }
                     int OFFSET_RADIO = 2;
                     if (deltaY > 0)
                         OFFSET_RADIO = 1;

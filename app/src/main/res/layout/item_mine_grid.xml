@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_item_mine"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black_e">
+
+    <LinearLayout
+        android:id="@+id/ll_item_mine"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/apk_all_white_selector"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_value_2"
+            android:layout_gravity="center"
+            >
+
+            <com.lingan.seeyou.ui.view.LoaderImageView
+                android:id="@+id/im_mineIcon"
+                android:layout_width="@dimen/list_icon_height_44"
+                android:layout_height="@dimen/list_icon_height_44"
+                android:layout_centerHorizontal="true"
+                />
+
+            <TextView
+                android:id="@+id/prompt_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dp_value_6"
+                android:layout_toRightOf="@id/im_mineIcon"
+                android:background="@drawable/apk_all_newsbg"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                android:text="99+"
+                android:textSize="@dimen/text_size_10"
+                />
+
+            <TextView
+                android:id="@+id/tv_my_newdot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/im_mineIcon"
+                android:background="@drawable/bg_round_red_new"
+                android:gravity="center"
+                android:text="new"
+                android:textColor="@color/white_a"
+                android:textIsSelectable="false"
+                android:textSize="@dimen/text_size_xxs"
+                android:visibility="gone"
+                android:layout_alignParentTop="true"
+                tools:visibility="visible"
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tx_itemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_value_2"
+            android:textColor="@color/black_a"
+            android:textSize="@dimen/text_size_13"
+            android:singleLine="true"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+</RelativeLayout>

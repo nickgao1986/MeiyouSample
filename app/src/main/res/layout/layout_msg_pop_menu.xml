@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/linearMsgTopMenu"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+
+
+              android:orientation="vertical">
+            <!--  android:background="@drawable/yindao_bg" -->
+
+
+    <LinearLayout
+            android:id="@+id/linearMenu"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            >
+        <ImageView
+                android:id="@+id/ivTopSanjiao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/apk_dropdown_top_bg"
+                android:layout_gravity="right"
+                android:layout_marginBottom="-3dip"
+                android:layout_marginRight="5dip"
+                />
+
+
+        <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:background="@drawable/apk_dropdown_bottom_bg"
+                android:orientation="vertical"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/space_xxxs">
+
+            <LinearLayout
+                    android:id="@+id/linearLastReply"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:background="@drawable/apk_menu_selector"
+                    android:paddingTop="@dimen/space_xxs"
+                    android:paddingBottom="@dimen/space_xxs"
+                    android:layout_margin="@dimen/space_xxxs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/behind_list_height" android:layout_gravity="center_horizontal"
+                  >
+
+                <ImageView
+                        android:layout_marginLeft="@dimen/space_xl"
+                        android:id="@+id/ivLastReply"
+                        android:src="@drawable/apk_tata_xiala_all_up"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginRight="@dimen/space_xxs"/>
+
+                <TextView
+                        android:layout_marginRight="@dimen/space_xl"
+                        android:id="@+id/tvLastReply"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="全部"
+                        android:textColor="@color/red_a"
+                        android:textSize="@dimen/text_size_s" />
+            </LinearLayout>
+
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="#848082" />
+
+            <LinearLayout
+                    android:id="@+id/linearNewestPublish"
+                    android:orientation="horizontal"
+                    android:layout_margin="@dimen/space_xxxs"
+                    android:background="@drawable/apk_menu_selector"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/behind_list_height" android:layout_gravity="center_horizontal"
+                  >
+
+                <ImageView
+                        android:id="@+id/ivNewestPublish"
+                        android:src="@drawable/apk_tata_xiala_owner"
+                        android:layout_marginLeft="@dimen/space_xl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginRight="@dimen/space_xxs"/>
+
+                <TextView
+                        android:id="@+id/tvNewestPublish"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="只看楼主"
+                        android:layout_marginRight="@dimen/space_xl"
+                        android:textColor="@color/black_b"
+                        android:textSize="@dimen/text_size_s" android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+            <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="1px"
+                    android:background="#848082"  />
+
+            <LinearLayout
+                    android:layout_margin="@dimen/space_xxxs"
+                    android:background="@drawable/apk_menu_selector"
+                    android:id="@+id/linearSearchTopic"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/behind_list_height" android:layout_gravity="center_horizontal"
+                   >
+
+                <ImageView
+                        android:id="@+id/ivSearchTopic"
+                        android:src="@drawable/apk_tata_xiala_reply"
+                        android:layout_marginLeft="@dimen/space_xl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:layout_marginRight="@dimen/space_xxs"/>
+
+                <TextView
+                        android:id="@+id/tvSearchTopic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="最新回复"
+                        android:textColor="@color/black_b"
+                        android:layout_marginRight="@dimen/space_xl"
+                        android:textSize="@dimen/text_size_s" android:layout_gravity="center_vertical"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

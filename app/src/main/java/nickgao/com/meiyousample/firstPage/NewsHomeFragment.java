@@ -372,6 +372,12 @@ public class NewsHomeFragment extends PeriodBaseFragment implements View.OnClick
         }
     }
 
+    public void onEventMainThread(NewsHomeSucessEvent event) {
+        if (classifyFragmentsIsLoadingNetDatas.size() == 0)
+            return;
+        classifyFragmentsIsLoadingNetDatas.put(event.classifyId, false);
+    }
+
 
     private  List<HomeClassifyModel> getClassifyModels() {
         List<HomeClassifyModel> models = new ArrayList<HomeClassifyModel>();

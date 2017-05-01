@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--我的界面，九宫格补位视图，当九宫格一行不满时，使用该视图填充剩余视图，新建xml主要是为了换肤-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black_e">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/white_an"
+        android:gravity="center"
+        android:orientation="vertical">
+    </LinearLayout>
+
+</RelativeLayout>

@@ -12,7 +12,7 @@
         android:theme="@style/ApplicationTheme"
 
         >
-        <activity android:name=".firstPage.SeeyouActivity" >
+        <activity android:name=".PersonalActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

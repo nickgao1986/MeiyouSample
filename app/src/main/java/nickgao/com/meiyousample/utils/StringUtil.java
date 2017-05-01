@@ -20,4 +20,26 @@ public class StringUtil {
 
         return num;
     }
+
+    public static boolean isNull(String str) {
+        try {
+            if (str == null) {
+                return true;
+            } else if (str != null) {
+                if (str.equals("") || str.equals("null") || str.equals("[]")) {
+                    return true;
+                } else if (str.trim().equals("") || str.trim().equals("null")) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return true;
+
+    }
 }

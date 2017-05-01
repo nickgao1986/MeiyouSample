@@ -268,4 +268,14 @@ public class ImageLoader {
     public static int getBlockListIconWH(Context context) {
         return (int) context.getApplicationContext().getResources().getDimension(R.dimen.list_icon_height_8);
     }
+
+    public void pause(Context context, Object tag) {
+        mAbstractImageLoader.pause(context, tag);
+    }
+
+    public void resume(Context context, Object tag) {
+        mAbstractImageLoader.resume(context, tag);
+    }
+
+
 }

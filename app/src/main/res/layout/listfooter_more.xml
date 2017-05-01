@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="@dimen/dp_value_6"
+
+        >
+    <LinearLayout
+            android:id="@+id/linearTop"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="15dip"
+            android:layout_marginBottom="15dip"
+            android:orientation="horizontal"
+            >
+        <ProgressBar
+                android:id="@+id/pull_to_refresh_progress"
+                style="@android:style/Widget.ProgressBar.Small.Inverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:indeterminate="true">
+        </ProgressBar>
+
+        <TextView
+                android:id="@+id/load_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="10.0dip"
+                android:gravity="center"
+                android:text="正在加载更多... "
+                android:textSize="@dimen/text_size_13"
+                android:textColor="@color/black_b">
+        </TextView>
+
+    </LinearLayout>
+
+
+    <TextView
+
+            android:id="@+id/tvShowAll"
+
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="查看更早的消息..."
+            android:gravity="center"
+            android:padding="@dimen/dp_value_6"
+            android:textSize="16sp"
+            android:textColor="@color/colour_e"
+            />
+
+    <TextView
+            android:layout_height="@dimen/dp_value_10"
+            android:layout_width="wrap_content"
+            android:id="@+id/tvInvisible"
+            android:visibility="gone"
+            />
+
+
+    <View
+
+        android:id="@+id/viewBottomSpace"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"/>
+
+</LinearLayout>

@@ -14,10 +14,10 @@ import com.lingan.seeyou.ui.view.LoaderImageView;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.meiyousample.mypage.module.ViewHolder;
 import nickgao.com.meiyousample.settings.MineControl;
 import nickgao.com.meiyousample.settings.MineItemModel;
 import nickgao.com.meiyousample.settings.MineSection;
-import nickgao.com.meiyousample.settings.ViewHolder;
 
 /**
  * Created by gaoyoujian on 2017/3/25.
@@ -100,7 +100,7 @@ public class MineListViewHolder extends ViewHolder {
         String url = mineItemModel.icon;
 
         //加载图片
-//        loadImg(viewHolder.icon_family, url, mineItemModel.asso_id, 30, mActivity.getApplicationContext());
+        loadImg(viewHolder.icon_family, url, mineItemModel.asso_id, 30, mActivity.getApplicationContext());
 //        setTips(viewHolder, mineItemModel);
 //        setListener(mActivity, banner, mineItemModel);
 //        showNew(viewHolder, mineItemModel);
