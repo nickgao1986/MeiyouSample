@@ -3,7 +3,6 @@ package nickgao.com.meiyousample.firstPage;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
@@ -14,10 +13,12 @@ import android.widget.TextView;
 
 import com.lingan.seeyou.ui.view.skin.SkinManager;
 
+import activity.PeriodBaseActivity;
 import biz.util.ViewUtilController;
 import nickgao.com.meiyousample.MyFragment;
 import nickgao.com.meiyousample.PersonalFragment;
 import nickgao.com.meiyousample.R;
+import nickgao.com.meiyousample.event.NewsWebViewEvent;
 import nickgao.com.meiyousample.friend.AddFriendFragment;
 import nickgao.com.meiyousample.myfragment.DynamicHomeFragment;
 import nickgao.com.meiyousample.utils.DeviceUtils;
@@ -27,7 +28,7 @@ import nickgao.com.meiyousample.utils.StringUtils;
  * Created by gaoyoujian on 2017/4/21.
  */
 
-public class SeeyouActivity extends FragmentActivity{
+public class SeeyouActivity extends PeriodBaseActivity {
 
     private LinearLayout llSeeyouBottom;
 
@@ -63,16 +64,18 @@ public class SeeyouActivity extends FragmentActivity{
     private LinearLayout linearMengban;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        SeeyouController.getInstance().initBeforeOnCreate(this, savedInstanceState);
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_seeyou_fragment);
-        initSkin();
+        //setContentView(R.layout.layout_seeyou_fragment);
+        //initSkin();
         switchPage();
         //初始化UI
         initBottomIconHeight();
         //switchIcon(0);
         initBottom();
         updateUI();
-
+        getTitleBar().setCustomTitleBar(-1);
         initFindPromotion();
         initHomePromotion();
         initMyPromotion();
@@ -485,4 +488,13 @@ public class SeeyouActivity extends FragmentActivity{
         }
     }
 
+    @Override
+    protected int getLayoutId() {
+        return R.layout.layout_seeyou_fragment;
+    }
+
+
+    public void onEventMainThread(NewsWebViewEvent webViewEvent) {
+
+    }
 }

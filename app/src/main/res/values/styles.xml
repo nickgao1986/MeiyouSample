@@ -749,4 +749,10 @@
         <item name="android:layout_height">@dimen/title_height</item>
         <item name="android:background">@drawable/selector_trans_grey_bg</item>
     </style>
+
+    <style name="alertDialogWindowAnimation" parent="android:Animation" >
+        <item name="android:windowEnterAnimation">@anim/dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_out</item>
+    </style>
+
 </resources>

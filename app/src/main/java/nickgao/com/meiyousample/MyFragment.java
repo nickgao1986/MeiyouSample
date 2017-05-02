@@ -17,20 +17,25 @@ import java.util.List;
 
 import fragment.PeriodBaseFragment;
 import nickgao.com.meiyousample.mypage.module.DynamicNewRedHotEvent;
+import nickgao.com.meiyousample.mypage.module.MineGridViewViewHolder;
 import nickgao.com.meiyousample.mypage.module.MyFamilyController;
 import nickgao.com.meiyousample.mypage.module.MyHeaderController;
 import nickgao.com.meiyousample.mypage.module.MyNightController;
 import nickgao.com.meiyousample.mypage.module.ViewHolder;
+import nickgao.com.meiyousample.personal.ExtendOperationController;
+import nickgao.com.meiyousample.personal.ExtendOperationListener;
 import nickgao.com.meiyousample.settings.MineControl;
 import nickgao.com.meiyousample.settings.MineModel;
 import nickgao.com.meiyousample.settings.MineSection;
+import nickgao.com.meiyousample.skin.OperationKey;
 import nickgao.com.meiyousample.utils.DeviceUtils;
+import nickgao.com.meiyousample.utils.LogUtils;
 
 /**
  * Created by gaoyoujian on 2017/3/25.
  */
 
-public class MyFragment extends PeriodBaseFragment {
+public class MyFragment extends PeriodBaseFragment implements ExtendOperationListener {
 
 
     private Activity mActivity;
@@ -71,7 +76,7 @@ public class MyFragment extends PeriodBaseFragment {
         initController();
         findView();
         init();
-
+        ExtendOperationController.getInstance().register(this);
 
     }
 
@@ -111,7 +116,7 @@ public class MyFragment extends PeriodBaseFragment {
 
             //美柚家族
             myFamilyController.fillResource();
-            //myNightController.fillResource();
+            myNightController.fillResource();
             myHeaderController.fillResource();
 
             fillResourceMyLayout();
@@ -251,4 +256,55 @@ public class MyFragment extends PeriodBaseFragment {
 
     }
 
+
+    @Override
+    public void excuteExtendOperation(int operationKey, Object data) {
+        // 同步成功
+        if (operationKey == OperationKey.UPDATE_UI) {
+            LogUtils.d("======operationKey == OperationKey.UPDATE_UI");
+            fillResource();
+            refreshMyUI(MineControl.MY_SKIN);
+        }
+    }
+
+    private void refreshMyUI(int itemAssoId) {
+        //id为-1,则刷新全部
+        if (itemAssoId == MineControl.MY_REFRESH_ALL_MINE_UI) {
+            refreshMyUI();
+            return;
+        }
+
+        if (llContent != null && llContent.getChildCount() > 0) {
+            if (mViewHolderList != null && mViewHolderList.size() > 0) {
+                for (ViewHolder vh : mViewHolderList) {
+                    //FIXME XXX 我的界面有推送消息时,刷新视图列表.暂时需要推送的消息控件只有蜜友圈和设置(蜜友圈为动态更新和回复.设置为反馈更新),因此只更新九宫格视图
+                    if (vh != null) {
+                        if (vh instanceof MineGridViewViewHolder || vh instanceof MineListViewHolder) {
+                            vh.notifyDataSetChanged(itemAssoId);
+                        }
+
+
+                    }
+                }
+            }
+        }
+
+    }
+
+    /**
+     * 刷新我的布局
+     */
+    private void refreshMyUI() {
+        if (llContent != null && llContent.getChildCount() > 0) {
+            if (mViewHolderList != null && mViewHolderList.size() > 0) {
+                for (ViewHolder vh : mViewHolderList) {
+                    //F我的界面有推送消息时,刷新视图列表.暂时需要推送的消息控件只有蜜友圈和设置(蜜友圈为动态更新和回复.设置为反馈更新),因此只更新九宫格视图
+                    if (vh != null && (vh instanceof MineGridViewViewHolder || vh instanceof MineListViewHolder)) {
+                        vh.notifyDataSetChanged();
+                    }
+                }
+            }
+        }
+
+    }
 }

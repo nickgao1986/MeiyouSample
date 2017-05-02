@@ -102,7 +102,7 @@ public class SkinController {
                     DataSaveHelper.getInstance(mContext.getApplicationContext()).saveNightSkinApkName(model.getFileName());
                     DataSaveHelper.getInstance(mContext.getApplicationContext()).saveSkinNightName(model.skinName);
                     SkinEngine.getInstance().initResources();
-                    ExtendOperationController.getInstance().notify(-1060003, Integer.valueOf(0));
+                    ExtendOperationController.getInstance().notify(OperationKey.UPDATE_UI, Integer.valueOf(0));
                     if(listener != null) {
                         listener.onNitifation(Boolean.valueOf(true));
                     }

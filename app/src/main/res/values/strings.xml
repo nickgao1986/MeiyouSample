@@ -824,4 +824,6 @@
     <string name="some_recommend">相关推荐</string>
     <string name="report">举报</string>
     <string name="news_review_detail">详情</string>
+    <string name="text_DynamicDetailActivity">nickgao.com.meiyousample.myfragment.DynamicDetailActivity</string>
+
 </resources>

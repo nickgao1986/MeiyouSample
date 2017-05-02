@@ -358,7 +358,10 @@ public class DynamicHomeFragment extends PeriodBaseFragment implements OnClickLi
 
                         if (mAdapter != null && null != homeDynamicModel) {
 
-                            //mAdapter.onItemClick(homeDynamicModel,false);
+//                            mAdapter.onItemClick(homeDynamicModel,false);
+                            Intent intent = new Intent();
+                            intent.setClass(getActivity(),DynamicDetailActivity.class);
+                            startActivity(intent);
                         }
 
                     }

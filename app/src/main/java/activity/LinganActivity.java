@@ -12,6 +12,7 @@ import com.lingan.seeyou.ui.view.skin.ViewFactory;
 
 import fragment.TitleBarCommon;
 import nickgao.com.meiyousample.R;
+import nickgao.com.meiyousample.statusbar.StatusBarController;
 
 /**
  * Created by gaoyoujian on 2017/4/30.
@@ -51,7 +52,18 @@ public class LinganActivity extends FragmentActivity {
         initLayoutInflater();
         initBaseView();
         initTitleBar();
+        initStatusBar();
     }
+
+    private void initStatusBar() {
+        try {
+            StatusBarController.getInstance().handleSetStatusColor(this);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
     //重写方法实现自定义需求
     protected void initTitleBar() {
         setTitlebarAction();

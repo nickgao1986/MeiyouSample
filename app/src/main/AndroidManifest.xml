@@ -36,6 +36,8 @@
         </activity>
         <service android:name=".skin.SkinDownloadService" />
 
+        <activity android:name=".myfragment.DynamicDetailActivity"></activity>
+
     </application>
 
 </manifest>

@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.lingan.seeyou.ui.view.skin.SkinManager;
 
+import biz.XiuAlertDialog;
 import biz.threadutil.ThreadUtil;
 import biz.util.ViewUtilController;
 import nickgao.com.meiyousample.R;
@@ -184,7 +185,6 @@ public class MyNightController implements View.OnClickListener {
     }
 
 
-
     class UpdateMyNightReceiver extends BroadcastReceiver
 
     {
@@ -194,81 +194,80 @@ public class MyNightController implements View.OnClickListener {
             this.context = context;
         }
 
-    public void registerAction(String action) {
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(action);
-        context.registerReceiver(this, intentFilter);
-    }
+        public void registerAction(String action) {
+            IntentFilter intentFilter = new IntentFilter();
+            intentFilter.addAction(action);
+            context.registerReceiver(this, intentFilter);
+        }
 
-    public void unregister() {
-        context.unregisterReceiver(this);
-    }
+        public void unregister() {
+            context.unregisterReceiver(this);
+        }
 
-    @Override
-    public void onReceive(final Context context, Intent intent) {
-        //接收来自DownloadService传送过来的数据,并且更新进度条
-        if (intent.getAction().equals(SkinDownloadType.UPDATE_SKIN_ACTION)) {
-            int skinId = intent.getIntExtra("skinId", 0);
-            boolean isSucess = intent.getBooleanExtra("flag", false);
-            int completeSize = intent.getIntExtra("completeSize", 0);
-            boolean isPause = intent.getBooleanExtra("pause", false);
-            boolean is_int_Pause = intent.getBooleanExtra("int_pause", false);//初始化文件大小时
-            if (model != null) {
-                if (model.skinId == skinId) {
-                    if (isSucess) {
-                        model.updateStastus = SkinDownloadType.SKIN_COMPLETE;
-                        model.completeSize = completeSize;
-                        handleUpdataUI();
+        @Override
+        public void onReceive(final Context context, Intent intent) {
+            //接收来自DownloadService传送过来的数据,并且更新进度条
+            if (intent.getAction().equals(SkinDownloadType.UPDATE_SKIN_ACTION)) {
+                int skinId = intent.getIntExtra("skinId", 0);
+                boolean isSucess = intent.getBooleanExtra("flag", false);
+                int completeSize = intent.getIntExtra("completeSize", 0);
+                boolean isPause = intent.getBooleanExtra("pause", false);
+                boolean is_int_Pause = intent.getBooleanExtra("int_pause", false);//初始化文件大小时
+                if (model != null) {
+                    if (model.skinId == skinId) {
+                        if (isSucess) {
+                            model.updateStastus = SkinDownloadType.SKIN_COMPLETE;
+                            model.completeSize = completeSize;
+                            handleUpdataUI();
 
-                        pbGrogress.setVisibility(View.GONE);
-                        tvNeightProgress.setVisibility(View.GONE);
-                        //自动使用夜间模式
-                        SkinController.getInstance(context).copyFileAndUseThemeNight(activity, model, true, new OnNotifationListener() {
-                            @Override
-                            public void onNitifation(Object object) {
-                                ActivityUtil.backToMainActivity(context);
-                                model.updateStastus = SkinDownloadType.SKIN_APPLY;
-                                stastusDataBase.updateStatusModel(model, model.updateStastus);
-                                tvNeightProgress.setVisibility(View.GONE);
-                                pbGrogress.setVisibility(View.GONE);
-                                setSkinTitle();
+                            pbGrogress.setVisibility(View.GONE);
+                            tvNeightProgress.setVisibility(View.GONE);
+                            //自动使用夜间模式
+                            SkinController.getInstance(context).copyFileAndUseThemeNight(activity, model, true, new OnNotifationListener() {
+                                @Override
+                                public void onNitifation(Object object) {
+                                    ActivityUtil.backToMainActivity(context);
+                                    model.updateStastus = SkinDownloadType.SKIN_APPLY;
+                                    stastusDataBase.updateStatusModel(model, model.updateStastus);
+                                    tvNeightProgress.setVisibility(View.GONE);
+                                    pbGrogress.setVisibility(View.GONE);
+                                    setSkinTitle();
 
-//                                XiuAlertDialog xiuAlertDialog=new XiuAlertDialog(activity,"提示", "您已成功切换夜间模式，可以查看更多精美主题哦！");
-//                                xiuAlertDialog.setButtonOkText("查看主题");
-//                                xiuAlertDialog.setOnClickListener(new XiuAlertDialog.onDialogClickListener() {
-//                                    @Override
-//                                    public void onOk() {
-//                                        context.startActivity(SkinHomeActivity.getNotifyIntent(context, SkinController.FROM_BLACK_SKIN));
-//                                        AnalysisClickAgent.onEvent(context, "yjms-ckzt");
-//                                    }
-//
-//                                    @Override
-//                                    public void onCancle() {
-//                                        tvNeightProgress.setVisibility(View.GONE);
-//                                        pbGrogress.setVisibility(View.GONE);
-//                                    }
-//                                });
-//                                xiuAlertDialog.show();
+                                    XiuAlertDialog xiuAlertDialog = new XiuAlertDialog(activity, "提示", "您已成功切换夜间模式，可以查看更多精美主题哦！");
+                                    xiuAlertDialog.setButtonOkText("查看主题");
+                                    xiuAlertDialog.setOnClickListener(new XiuAlertDialog.onDialogClickListener() {
+                                        @Override
+                                        public void onOk() {
+                                            // context.startActivity(SkinHomeActivity.getNotifyIntent(context, SkinController.FROM_BLACK_SKIN));
+                                        }
 
-                            }
-                        });
-                    } else if (isPause) {
-                        model.updateStastus = SkinDownloadType.SKIN_NO_NETWORK;
-                        ToastUtils.showToast(context, "咦？网络不见了，请检查网络连接");
-                        pbGrogress.setVisibility(View.GONE);
-                    } else if (is_int_Pause) {
-                        model.updateStastus = SkinDownloadType.SKIN_INT_NO_NETWORK;
-                        ToastUtils.showToast(context, "初始化网络文件大小失败，请检查网络连接~");
-                        pbGrogress.setVisibility(View.GONE);
-                    } else {
-                        model.completeSize = completeSize;
-                        handleUpdataUI();
+                                        @Override
+                                        public void onCancle() {
+                                            tvNeightProgress.setVisibility(View.GONE);
+                                            pbGrogress.setVisibility(View.GONE);
+                                        }
+                                    });
+                                    xiuAlertDialog.show();
+
+                                }
+                            });
+                        } else if (isPause) {
+                            model.updateStastus = SkinDownloadType.SKIN_NO_NETWORK;
+                            ToastUtils.showToast(context, "咦？网络不见了，请检查网络连接");
+                            pbGrogress.setVisibility(View.GONE);
+                        } else if (is_int_Pause) {
+                            model.updateStastus = SkinDownloadType.SKIN_INT_NO_NETWORK;
+                            ToastUtils.showToast(context, "初始化网络文件大小失败，请检查网络连接~");
+                            pbGrogress.setVisibility(View.GONE);
+                        } else {
+                            model.completeSize = completeSize;
+                            handleUpdataUI();
+                        }
                     }
                 }
             }
         }
     }
-}
 
     /**
      * 更新夜间模式的UI
@@ -331,7 +330,6 @@ public class MyNightController implements View.OnClickListener {
         stastusDataBase.addStatusModel(model, SkinDownloadType.SKIN_INIT, 0);
         SkinDownloadService.doIntent(activity, model, "startDownload", null);
     }
-
 
 
 }
