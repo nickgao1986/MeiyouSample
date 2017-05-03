@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_a"
+    android:orientation="vertical">
+
+
+    <com.meiyou.framework.ui.views.CustomViewPager
+        android:id="@+id/pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+    <!--    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    -->
+
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="48dip"
+        android:background="@drawable/apk_all_spreadkuang">
+
+        <TextView
+            android:id="@+id/btnOk"
+            android:gravity="center"
+            android:layout_width="96dp"
+            android:layout_height="38dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_m"
+            android:background="@drawable/btn_red_selector"
+            android:text="完成"
+            android:textColor="@color/white_a" />
+
+        <RelativeLayout
+            android:id="@+id/rlBadge"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignTop="@id/btnOk"
+            android:layout_toLeftOf="@id/btnOk"
+            android:layout_marginRight="-9.5dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/ivBadge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/apk_photo_picker_greendot" />
+
+            <TextView
+                android:id="@+id/tvBadge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/white_a"
+                android:text="1"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

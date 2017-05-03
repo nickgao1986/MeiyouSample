@@ -280,5 +280,9 @@ public class ImageLoader {
     public static int getBuckImageWH(Context context) {
         return (int) context.getApplicationContext().getResources().getDimension(R.dimen.list_icon_height_64);
     }
+    public static int getRoundImageWH(Context context) {
+        return (int)context.getApplicationContext().getResources().getDimension(R.dimen.list_icon_height_50);
+    }
+
 
 }

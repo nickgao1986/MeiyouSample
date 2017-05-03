@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_mode_change_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:layout_marginLeft="@dimen/dp_value_15"
+        android:layout_marginTop="@dimen/dp_value_12"
+        android:text="人生阶段："
+        android:textColor="@color/black_at"
+        android:textSize="@dimen/text_size_18" />
+
+    <LinearLayout
+        android:id="@+id/rl_mode_change_period_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/apk_all_white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_mode_change_period"
+            style="@style/mode_change_rl">
+
+            <LinearLayout style="@style/mode_change_ll">
+
+                <TextView
+                    android:id="@+id/tv_mode_period_title"
+                    style="@style/mode_change_tv_title"
+                    android:textSize="@dimen/text_size_17"
+                    android:text="只记经期" />
+
+                <TextView
+                    android:id="@+id/tv_mode_period_subtitle"
+                    style="@style/mode_change_tv_subtitle"
+                    tools:text="周期：XX" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_mode_period_check"
+                style="@style/mode_change_iv_check" />
+
+            <ImageView
+                style="@style/mode_change_iv_title"
+                android:src="@drawable/data_icon_yuejing" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_nomal"
+            style="@style/divider"
+            android:layout_marginLeft="60dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_mode_change_beiyun"
+            style="@style/mode_change_rl">
+
+            <LinearLayout style="@style/mode_change_ll">
+
+                <TextView
+                    android:id="@+id/tv_mode_beiyun_title"
+                    style="@style/mode_change_tv_title"
+                    android:textSize="@dimen/text_size_17"
+                    android:text="我在备孕" />
+
+                <TextView
+                    android:id="@+id/tv_mode_beiyun_subtitle"
+                    style="@style/mode_change_tv_subtitle"
+                    tools:text="周期：XX" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_mode_beiyun_check"
+                style="@style/mode_change_iv_check" />
+
+            <ImageView
+                style="@style/mode_change_iv_title"
+                android:src="@drawable/data_icon_sex" />
+
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/view_beiyun"
+            style="@style/divider"
+            android:layout_marginLeft="60dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_mode_change_pregnancy"
+            style="@style/mode_change_rl">
+
+            <LinearLayout style="@style/mode_change_ll">
+
+                <TextView
+                    android:id="@+id/tv_mode_pregnancy_title"
+                    style="@style/mode_change_tv_title"
+                    android:textSize="@dimen/text_size_17"
+                    android:text="我怀孕了" />
+
+                <TextView
+                    android:id="@+id/tv_mode_pregnancy_subtitle"
+                    style="@style/mode_change_tv_subtitle"
+                    tools:text="预产期：XX" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_mode_pregnancy_check"
+                style="@style/mode_change_iv_check" />
+
+            <ImageView
+                style="@style/mode_change_iv_title"
+                android:src="@drawable/data_icon_beiyun" />
+
+
+        </RelativeLayout>
+        <!--android:layout_alignLeft="@id/tv_mode_pregnancy_title"-->
+        <View
+            android:id="@+id/view_huaiyun"
+            style="@style/divider"
+            android:layout_marginLeft="60dp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_mode_change_mother"
+            style="@style/mode_change_rl">
+
+            <LinearLayout style="@style/mode_change_ll">
+
+                <TextView
+                    android:id="@+id/tv_mode_mother_title"
+                    style="@style/mode_change_tv_title"
+                    android:textSize="@dimen/text_size_17"
+                    android:text="我是辣妈" />
+
+                <TextView
+                    android:id="@+id/tv_mode_mother_subtitle"
+                    style="@style/mode_change_tv_subtitle"
+                    tools:text="宝宝出生日：XX" />
+            </LinearLayout>
+            <ImageView
+                style="@style/mode_change_iv_title"
+                android:src="@drawable/data_icon_baby" />
+            <ImageView
+                android:id="@+id/iv_mode_mother_check"
+                style="@style/mode_change_iv_check" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

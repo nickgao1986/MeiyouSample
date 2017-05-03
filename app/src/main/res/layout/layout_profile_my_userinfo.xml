@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/layout_profile_my">
+
+    <RelativeLayout
+        android:id="@+id/rl_my_avatar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"
+        android:background="@drawable/apk_all_white_selector"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_my_avatar_title"
+            style="@style/layout_profile_tv_title"
+            android:textSize="@dimen/text_size_17"
+            android:text="@string/my_head_icon" />
+
+        <ImageView
+            android:id="@+id/iv_hd_promotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/iv_my_avatar"
+            android:src="@drawable/apk_data_photo_update"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/profile_right_arrow_0"
+            style="@style/layout_profile_iv_arrow" />
+
+        <com.lingan.seeyou.ui.view.RoundedImageView
+            android:id="@+id/iv_my_avatar"
+            android:layout_width="@dimen/list_icon_height_30"
+            android:layout_height="@dimen/list_icon_height_30"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@+id/profile_right_arrow_0"
+            android:background="@drawable/apk_mine_photo"
+            />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/divider1"
+        style="@style/new_divider"
+        android:paddingLeft="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_nickname"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/apk_all_white_selector"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_nickname_title"
+            style="@style/layout_profile_tv_title"
+            android:textSize="@dimen/text_size_17"
+            android:text="@string/my_nickname" />
+
+        <TextView
+            android:id="@+id/tv_nickname_hint"
+            style="@style/layout_profile_tv_hint"
+            android:textSize="@dimen/text_size_17"
+            android:textColor="@color/black_d"
+            android:hint="@string/what_is_your_name" />
+
+        <ImageView
+            android:id="@+id/profile_right_arrow_1"
+            style="@style/layout_profile_iv_arrow" />
+
+        <ImageView
+            android:id="@+id/divider2"
+            android:layout_alignParentBottom="true"
+            style="@style/new_divider"
+            android:paddingLeft="15dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_account_safe"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_value_44"
+        android:background="@drawable/apk_all_white_selector"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_account_safe_title"
+            style="@style/layout_profile_tv_title_44"
+            android:text="@string/user_safe"
+            android:textSize="@dimen/text_size_17" />
+
+        <TextView
+            android:id="@+id/tv_account_safe_hint"
+            style="@style/layout_profile_tv_hint_44"
+            tools:text="shenallan@163.com"
+            android:textColor="@color/black_d" />
+
+        <ImageView
+            android:id="@+id/profile_fight_arrow_1"
+            style="@style/layout_profile_iv_arrow"
+            android:src="@drawable/all_icon_arrow" />
+    </RelativeLayout>
+
+    <ImageView
+        style="@style/new_divider"
+        android:paddingLeft="15dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_my_more"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/apk_all_white_selector"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_my_more"
+            style="@style/layout_profile_tv_title"
+            android:textSize="@dimen/text_size_17"
+            android:text="更多资料" />
+
+        <ImageView
+            android:id="@+id/profile_right_arrow_2"
+            style="@style/layout_profile_iv_arrow" />
+
+    </RelativeLayout>
+</merge>

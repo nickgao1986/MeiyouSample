@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:indicator="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rootView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#000000">
+
+        <com.lingan.seeyou.ui.view.CustomViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+            />
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/banner_dian_bg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1/1"
+                android:textColor="@color/white_a"
+                android:textSize="@dimen/text_size_m"
+                android:visibility="gone" />
+
+            <com.meiyou.framework.ui.views.YiPageIndicator
+                android:id="@+id/indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dip"
+                android:gravity="center"
+                indicator:icon_w_h="5dip"
+                indicator:normalColor="@color/white_a"
+                indicator:selectColor="@color/red_b" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/rlTitle"
+        layout="@layout/layout_preview_image_title" />
+
+</RelativeLayout><!-- From: file:/E:/myproject/SeeyouClient4.3.4/res/layout/layout_image_preview_new_new.xml -->

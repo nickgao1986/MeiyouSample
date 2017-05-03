@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black_a"
+     >
+
+    <com.lingan.seeyou.ui.view.photo.BizcardImageView
+        android:id="@+id/photoView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        />
+
+    <com.lingan.seeyou.ui.view.photo.ClipView
+        android:id="@+id/clipView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/apk_all_white"
+        android:padding="@dimen/space_xs" >
+
+        <TextView
+            android:id="@+id/btnNO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/apk_all_kuang_selector"
+            android:paddingBottom="@dimen/space_xs"
+            android:paddingLeft="@dimen/space_l"
+            android:paddingRight="@dimen/space_l"
+            android:paddingTop="@dimen/space_xs"
+            android:text="重拍"
+            android:textColor="@color/red_b"
+            android:textSize="@dimen/text_size_s" />
+
+        <TextView
+            android:id="@+id/btnOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dip"
+            android:background="@drawable/apk_all_kuang_selector"
+            android:paddingBottom="@dimen/space_xs"
+            android:paddingLeft="@dimen/space_s"
+            android:paddingRight="@dimen/space_s"
+            android:paddingTop="@dimen/space_xs"
+            android:text="使用照片"
+            android:textColor="@color/red_b"
+            android:textSize="@dimen/text_size_s" />
+    </RelativeLayout>
+
+</RelativeLayout>

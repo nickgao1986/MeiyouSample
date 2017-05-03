@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view_gallery"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bottom_bg"
+    android:orientation="vertical">
+
+    <GridView
+        android:id="@+id/gv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/space_list_top_withoutwave"
+        android:layout_weight="1"
+        android:fadingEdge="none"
+        android:horizontalSpacing="@dimen/space_xxxs"
+        android:listSelector="@null"
+        android:numColumns="4"
+        android:verticalSpacing="@dimen/space_xxxs" />
+
+    <RelativeLayout
+        android:id="@+id/bottom_view"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/apk_all_spreadkuang">
+
+        <Button
+            android:id="@+id/btnReview"
+            android:layout_width="@dimen/dp_value_86"
+            android:layout_height="@dimen/dp_value_38"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/space_s"
+            android:background="@drawable/btn_transparent_reb_selector"
+            android:text="预览"
+            android:textSize="17sp"
+            android:textColor="@color/btn_red_to_white_color_selector" />
+
+        <TextView
+            android:id="@+id/tvState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="最多9张，已选0张"
+            android:textColor="@color/black_at" />
+
+
+        <TextView
+            android:id="@+id/btnOk"
+            android:gravity="center"
+            android:layout_width="@dimen/dp_value_86"
+            android:layout_height="@dimen/dp_value_38"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/space_s"
+            android:background="@drawable/btn_red_selector"
+            android:text="完成"
+            android:textSize="17sp"
+            android:textColor="@color/white_a" />
+
+        <RelativeLayout
+            android:id="@+id/rlBadge"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignTop="@id/btnOk"
+            android:layout_alignRight="@id/btnOk"
+            android:layout_marginRight="-9.5dp">
+
+            <ImageView
+                android:id="@+id/ivBadge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/apk_photo_picker_greendot" />
+
+            <TextView
+                android:id="@+id/tvBadge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textColor="@color/white_a"
+                android:text="1"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/apk_all_white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_value_15"
+            android:gravity="center"
+            android:textColor="@color/black_b"
+            android:textSize="@dimen/text_size_14" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_value_15"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="是陈冠蒲演唱的一首歌曲，由李岩修作词，徐嘉良作曲。收录在《就让你走》专辑中"
+            android:textColor="@color/black_b"
+            android:textSize="@dimen/text_size_14" />
+        <View
+            android:id="@+id/lineView"
+            android:background="@color/black_e"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/dp_value_15"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:id="@+id/linearContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_transparent"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+</LinearLayout>

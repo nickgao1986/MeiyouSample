@@ -18,6 +18,8 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:name=".SeeyouApplication"
@@ -27,7 +29,7 @@
         android:theme="@style/ApplicationTheme"
 
         >
-        <activity android:name=".firstPage.SeeyouActivity" >
+        <activity android:name="com.lingan.seeyou.ui.view.photo.MyProfileActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,7 +39,9 @@
         <service android:name=".skin.SkinDownloadService" />
 
         <activity android:name=".myfragment.DynamicDetailActivity"></activity>
-
+        <activity android:name="com.lingan.seeyou.ui.view.photo.PhotoActivity"/>
+        <activity android:name="com.lingan.seeyou.ui.view.photo.ClipImageActivity"/>
+        <activity android:name="com.lingan.seeyou.ui.view.photo.BucketOverviewActivity"/>
     </application>
 
 </manifest>

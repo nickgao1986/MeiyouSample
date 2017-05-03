@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_height"
+        android:id="@+id/rlTitleBar"
+        android:background="@drawable/apk_default_titlebar_bg">
+
+    <ImageView
+            android:id="@+id/ivLeft"
+            android:layout_width="@dimen/title_height"
+            android:layout_height="@dimen/title_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/back_layout"/>
+
+
+    <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="Title"
+            android:textColor="@color/white_a"
+            android:textSize="@dimen/text_size_l"/>
+
+
+    <ImageView
+            android:id="@+id/ivRight"
+            android:layout_width="@dimen/title_height"
+            android:layout_height="@dimen/title_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleType="center"
+            android:src="@drawable/delete_selector"
+            />
+
+
+</RelativeLayout>
+
+
+<!-- From: file:/E:/myproject/SeeyouClient4.3.4/res/layout/layout_preview_image_title.xml -->
