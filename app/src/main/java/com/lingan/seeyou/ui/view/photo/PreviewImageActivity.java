@@ -37,11 +37,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import activity.LinganActivity;
-import fresco.view.ImageLoadParams;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.LogUtils;
 import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.okhttpexample.view.ImageLoadParams;
 
 /**
  * 通用大图预览

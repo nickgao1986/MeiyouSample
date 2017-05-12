@@ -11,15 +11,14 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lingan.seeyou.ui.view.CustomUrlTextView;
-import com.lingan.seeyou.ui.view.LoaderImageView;
 import com.lingan.seeyou.ui.view.MeasureGridView;
 import com.lingan.seeyou.ui.view.PraiseButton;
+import com.meetyou.crsdk.util.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import fresco.view.ImageLoader;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.listener.OnItemTextExpandListener;
 import nickgao.com.meiyousample.model.HomeDynamicModel;
@@ -27,6 +26,7 @@ import nickgao.com.meiyousample.model.IHomeDynamicType;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.LogUtils;
 import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.okhttpexample.view.LoaderImageView;
 
 import static nickgao.com.meiyousample.utils.CalendarUtil.convertTime;
 

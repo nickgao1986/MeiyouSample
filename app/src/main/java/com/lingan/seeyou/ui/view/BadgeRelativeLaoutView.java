@@ -9,12 +9,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import fresco.view.ImageLoadParams;
-import fresco.view.ImageLoader;
+import com.meetyou.crsdk.util.ImageLoader;
+
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.firstPage.NewsType;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.okhttpexample.view.ImageLoadParams;
+import nickgao.com.okhttpexample.view.LoaderImageView;
 
 
 /**

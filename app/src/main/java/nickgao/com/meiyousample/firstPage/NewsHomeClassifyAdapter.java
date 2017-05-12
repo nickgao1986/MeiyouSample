@@ -14,7 +14,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lingan.seeyou.ui.view.BadgeRelativeLaoutView;
-import com.lingan.seeyou.ui.view.LoaderImageView;
 import com.lingan.seeyou.ui.view.MultiImageView;
 import com.lingan.seeyou.ui.view.skin.SkinManager;
 
@@ -23,13 +22,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-import fresco.view.ImageLoadParams;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.controller.NewsHomeController;
 import nickgao.com.meiyousample.firstPage.module.OnListViewStatusListener;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.StringUtil;
+import nickgao.com.okhttpexample.view.ImageLoadParams;
+import nickgao.com.okhttpexample.view.LoaderImageView;
 
 /**
  * 新的首页适配器

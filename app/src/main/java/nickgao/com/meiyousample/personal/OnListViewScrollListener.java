@@ -3,7 +3,8 @@ package nickgao.com.meiyousample.personal;
 import android.content.Context;
 import android.widget.AbsListView;
 
-import fresco.view.ImageLoader;
+import com.meetyou.crsdk.util.ImageLoader;
+
 
 /**
  * Created by gaoyoujian on 2017/4/30.

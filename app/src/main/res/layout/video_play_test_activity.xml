@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/activity_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+
+    <com.meetyou.crsdk.video.view.JCTopicVideoView
+        android:id="@+id/jctVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="405dp"
+        android:background="@color/black_a"
+        android:layout_centerInParent="true"
+        >
+    </com.meetyou.crsdk.video.view.JCTopicVideoView>
+</RelativeLayout>

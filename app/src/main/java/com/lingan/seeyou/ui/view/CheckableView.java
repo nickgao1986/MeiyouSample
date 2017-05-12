@@ -5,11 +5,13 @@ import android.util.AttributeSet;
 import android.view.Display;
 import android.view.WindowManager;
 
+import nickgao.com.okhttpexample.view.FrescoImageView;
+
 /**
  * Created with IntelliJ IDEA. R
  * Date: 14-7-4
  */
-public class CheckableView extends LoaderImageView {
+public class CheckableView extends FrescoImageView {
     protected boolean mChecked = false;
     protected int mViewSize;
     protected OnCheckedChangeListener mCheckedChangeListener;

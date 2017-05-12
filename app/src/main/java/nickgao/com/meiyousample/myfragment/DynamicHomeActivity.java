@@ -25,7 +25,6 @@ import android.widget.TextView;
 
 import com.lingan.seeyou.ui.view.AKeyTopView;
 import com.lingan.seeyou.ui.view.BadgeImageView;
-import com.lingan.seeyou.ui.view.LoaderImageView;
 import com.lingan.seeyou.ui.view.ParallaxScrollListView;
 import com.lingan.seeyou.ui.view.ResizeLayout;
 import com.lingan.seeyou.ui.view.RoundedImageView;
@@ -50,6 +49,7 @@ import nickgao.com.meiyousample.service.DynamicService;
 import nickgao.com.meiyousample.service.ServiceFactory;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.okhttpexample.view.LoaderImageView;
 
 
 /**

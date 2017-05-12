@@ -6,9 +6,9 @@ import android.graphics.Bitmap;
 import android.widget.ImageView;
 
 import com.lingan.seeyou.ui.view.RoundedImageView;
+import com.meetyou.crsdk.util.ImageLoader;
 
 import biz.util.BitmapUtil;
-import fresco.view.ImageLoader;
 import nickgao.com.meiyousample.statusbar.Pref;
 import nickgao.com.meiyousample.utils.LogUtils;
 import nickgao.com.meiyousample.utils.StringUtils;

@@ -6,7 +6,7 @@ import android.os.StatFs;
 
 import java.io.File;
 
-import fresco.view.AbstractImageLoader;
+import nickgao.com.okhttpexample.view.AbstractImageLoader;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 

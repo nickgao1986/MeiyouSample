@@ -24,6 +24,7 @@ import com.lingan.seeyou.ui.view.dialog.bottomdialog.BottomMenuModel;
 import com.lingan.seeyou.ui.view.dialog.bottomdialog.PhoneProgressDialog;
 import com.lingan.seeyou.ui.view.photo.model.PhotoConfig;
 import com.lingan.seeyou.ui.view.photo.model.PhotoModel;
+import com.meetyou.crsdk.util.ImageLoader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -32,14 +33,13 @@ import java.util.List;
 
 import activity.LinganActivity;
 import biz.util.BitmapUtil;
-import fresco.view.AbstractImageLoader;
-import fresco.view.ImageLoadParams;
-import fresco.view.ImageLoader;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.skin.CacheDisc;
 import nickgao.com.meiyousample.skin.ToastUtils;
 import nickgao.com.meiyousample.utils.LogUtils;
 import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.okhttpexample.view.AbstractImageLoader;
+import nickgao.com.okhttpexample.view.ImageLoadParams;
 
 /**
  * 通用获取图片入口

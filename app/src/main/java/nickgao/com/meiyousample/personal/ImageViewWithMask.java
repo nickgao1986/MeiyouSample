@@ -7,9 +7,8 @@ import android.util.AttributeSet;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.lingan.seeyou.ui.view.LoaderImageView;
-
 import nickgao.com.meiyousample.R;
+import nickgao.com.okhttpexample.view.LoaderImageView;
 
 /**
  * Created by gaoyoujian on 2017/4/30.

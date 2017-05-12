@@ -30,17 +30,17 @@ import com.lingan.seeyou.ui.view.CheckableView;
 import com.lingan.seeyou.ui.view.photo.model.BucketModel;
 import com.lingan.seeyou.ui.view.photo.model.PhotoModel;
 import com.lingan.seeyou.ui.view.skin.SkinManager;
+import com.meetyou.crsdk.util.ImageLoader;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
 
 import java.util.List;
 
-import fresco.view.ImageLoadParams;
-import fresco.view.ImageLoader;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.skin.ToastUtils;
 import nickgao.com.meiyousample.utils.DeviceUtils;
+import nickgao.com.okhttpexample.view.ImageLoadParams;
 
 public class BucketOverviewActivity extends BasePhotoActivity {
     private TextView btnOk;

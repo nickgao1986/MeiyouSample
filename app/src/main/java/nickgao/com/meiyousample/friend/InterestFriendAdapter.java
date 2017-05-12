@@ -11,15 +11,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lingan.seeyou.ui.view.BadgeImageView;
-import com.lingan.seeyou.ui.view.LoaderImageView;
 import com.lingan.seeyou.ui.view.skin.ViewFactory;
+import com.meetyou.crsdk.util.ImageLoader;
 
 import java.util.List;
 
-import fresco.view.ImageLoader;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.okhttpexample.view.LoaderImageView;
 
 /**
  * 名人列表适配器

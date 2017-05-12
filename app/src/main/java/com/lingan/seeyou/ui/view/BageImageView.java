@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import fresco.view.ImageLoadParams;
-import fresco.view.ImageLoader;
+import com.meetyou.crsdk.util.ImageLoader;
+
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.utils.DeviceUtils;
+import nickgao.com.okhttpexample.view.ImageLoadParams;
+import nickgao.com.okhttpexample.view.LoaderImageView;
 
 /**
  * Created by gaoyoujian on 2017/4/28.

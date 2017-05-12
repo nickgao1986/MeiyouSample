@@ -14,18 +14,18 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.lingan.seeyou.ui.view.LoaderImageView;
 import com.lingan.seeyou.ui.view.PraiseButton;
 import com.lingan.seeyou.ui.view.skin.ViewFactory;
 
 import java.util.List;
 
-import fresco.view.ImageLoadParams;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.model.NewsReviewModel;
 import nickgao.com.meiyousample.utils.CalendarUtil;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.EmojiConversionUtil;
+import nickgao.com.okhttpexample.view.ImageLoadParams;
+import nickgao.com.okhttpexample.view.LoaderImageView;
 
 /**
  * 资讯详情回复Adapter

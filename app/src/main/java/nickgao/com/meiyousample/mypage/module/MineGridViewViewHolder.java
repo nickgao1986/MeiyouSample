@@ -9,7 +9,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.lingan.seeyou.ui.view.LoaderImageView;
 import com.lingan.seeyou.ui.view.skin.ViewFactory;
 
 import java.util.ArrayList;
@@ -19,6 +18,7 @@ import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.settings.MineItemModel;
 import nickgao.com.meiyousample.settings.MineSection;
 import nickgao.com.meiyousample.utils.DeviceUtils;
+import nickgao.com.okhttpexample.view.LoaderImageView;
 
 /**
  * Created by gaoyoujian on 2017/5/1.

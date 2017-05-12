@@ -14,15 +14,15 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.lingan.seeyou.ui.view.LoaderImageView;
 import com.lingan.seeyou.ui.view.photo.model.BucketModel;
 import com.lingan.seeyou.ui.view.skin.ViewFactory;
+import com.meetyou.crsdk.util.ImageLoader;
 
 import java.util.List;
 
-import fresco.view.ImageLoadParams;
-import fresco.view.ImageLoader;
 import nickgao.com.meiyousample.R;
+import nickgao.com.okhttpexample.view.ImageLoadParams;
+import nickgao.com.okhttpexample.view.LoaderImageView;
 
 
 /**

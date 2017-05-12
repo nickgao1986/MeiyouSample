@@ -18,12 +18,14 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.TabWidget;
 
+import nickgao.com.okhttpexample.view.FrescoImageView;
+
 
 /**
  * Created by Administrator on 2014/9/3.
  * 角标控件
  */
-public class BadgeImageView extends LoaderImageView {
+public class BadgeImageView extends FrescoImageView {
     public final int POSITION_TOP_LEFT = 1;
     public final int POSITION_TOP_RIGHT = 2;
     public final int POSITION_BOTTOM_LEFT = 3;

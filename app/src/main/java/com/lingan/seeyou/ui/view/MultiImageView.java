@@ -10,15 +10,17 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.meetyou.crsdk.util.ImageLoader;
+
 import java.util.List;
 
-import fresco.view.ImageLoadParams;
-import fresco.view.ImageLoader;
-import fresco.view.RichDrawable;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.StringUtils;
 import nickgao.com.meiyousample.utils.UrlUtil;
+import nickgao.com.okhttpexample.view.ImageLoadParams;
+import nickgao.com.okhttpexample.view.LoaderImageView;
+import nickgao.com.okhttpexample.view.RichDrawable;
 
 /**
  * 她她圈列表多图View

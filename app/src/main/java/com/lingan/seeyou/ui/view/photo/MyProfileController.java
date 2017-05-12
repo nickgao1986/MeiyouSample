@@ -16,13 +16,13 @@ import android.widget.TextView;
 import com.lingan.seeyou.ui.view.RoundedImageView;
 import com.lingan.seeyou.ui.view.photo.model.PhotoConfig;
 import com.lingan.seeyou.ui.view.photo.model.PhotoModel;
+import com.meetyou.crsdk.util.ImageLoader;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import biz.util.BitmapUtil;
-import fresco.view.ImageLoader;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.controller.UserController;
 import nickgao.com.meiyousample.mypage.module.MyHeaderController;

@@ -14,13 +14,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.lingan.seeyou.ui.view.OnSaveBitmapListener;
+import com.meetyou.crsdk.util.ImageLoader;
 
 import activity.LinganActivity;
-import fresco.view.AbstractImageLoader;
-import fresco.view.ImageLoadParams;
-import fresco.view.ImageLoader;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.skin.ToastUtils;
+import nickgao.com.okhttpexample.view.AbstractImageLoader;
+import nickgao.com.okhttpexample.view.ImageLoadParams;
 
 
 /**
