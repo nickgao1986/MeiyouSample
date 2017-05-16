@@ -29,11 +29,11 @@ import java.util.List;
 
 import biz.threadutil.ThreadUtil;
 import fragment.PeriodBaseFragment;
+import nickgao.com.framework.utils.StringUtil;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.event.NewsWebViewEvent;
 import nickgao.com.meiyousample.personal.ILoadMoreViewState;
-import nickgao.com.meiyousample.utils.StringUtil;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * 感兴趣好友界面

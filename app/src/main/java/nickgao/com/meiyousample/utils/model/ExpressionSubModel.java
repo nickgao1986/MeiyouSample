@@ -5,7 +5,7 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 /**
  * 单个表情

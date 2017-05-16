@@ -16,8 +16,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.database.DecorationStatusDatabase;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 /**
  * 下载服务，皮肤和表情

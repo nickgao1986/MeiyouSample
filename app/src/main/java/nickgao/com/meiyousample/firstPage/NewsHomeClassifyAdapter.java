@@ -16,18 +16,20 @@ import android.widget.TextView;
 import com.lingan.seeyou.ui.view.BadgeRelativeLaoutView;
 import com.lingan.seeyou.ui.view.MultiImageView;
 import com.lingan.seeyou.ui.view.skin.SkinManager;
+import com.meetyou.crsdk.listener.OnListViewStatusListener;
+import com.meetyou.crsdk.video.view.JCTopicVideoView;
+import com.meetyou.crsdk.video.view.VideoPlayStatus;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import nickgao.com.framework.utils.StringUtil;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.controller.NewsHomeController;
-import nickgao.com.meiyousample.firstPage.module.OnListViewStatusListener;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.StringUtil;
 import nickgao.com.okhttpexample.view.ImageLoadParams;
 import nickgao.com.okhttpexample.view.LoaderImageView;
 
@@ -188,6 +190,9 @@ public class NewsHomeClassifyAdapter extends BaseAdapter {
                 case HomeType.HOME_LAYOUT_TYPE_NORMAL://资讯和话题,专题大图小图，公用的类型逻辑
                     handleTopicType(vHolder, talk, position);
                     break;
+                case HomeType.HOME_LAYOUT_TYPE_VIDEO://在列表中可播放的视频样式
+                    handlePlayVideo(vHolder, talk, position);
+                    break;
 
             }
             setListener(vHolder, talk, position, layoutType);//点击事件
@@ -219,20 +224,13 @@ public class NewsHomeClassifyAdapter extends BaseAdapter {
     private void handlePlayVideo(final ViewHolder viewHolder, final TalkModel talkModel, final int position) {
         if (mContext == null)
             return;
-//        NewsHomeVideoController.getInstance().handleVideo(mContext, this, viewHolder, talkModel, getVideoPlayStatus(mContext, talkModel, onlyVideoId), mOnRealPositionListener != null ? mOnRealPositionListener.getRealPosition(position) : position, new OnHomeCallBackListener() {
-//            @Override
-//            public void OnUpdateCollect(Object object) {
-//                int is_favorite = (int) object;
-//                handleUpdateCollectData(talkModel, is_favorite);
-//            }
-//
-//            @Override
-//            public void OnUpdateNoLike(Object object) {
-//                closeFeedBack(viewHolder, talkModel, position);
-//            }
-//
-//        });
+
+        final VideoPlayStatus videoPlayStatus = new VideoPlayStatus(mContext, onlyVideoId);
+
+        NewsHomeVideoController.getInstance().handleVideo(mContext, this, viewHolder, talkModel, videoPlayStatus);
     }
+
+
 
     /**
      * 收藏的时候刷新数据
@@ -605,6 +603,8 @@ public class NewsHomeClassifyAdapter extends BaseAdapter {
         switch (layoutType) {
             case HomeType.HOME_LAYOUT_TYPE_NORMAL:
                 return inflater.inflate(R.layout.layout_period_home_feed_normal, arg2, false);
+            case HomeType.HOME_LAYOUT_TYPE_VIDEO:
+                return inflater.inflate(R.layout.layout_news_home_video_item, arg2, false);
             default:
                 return inflater.inflate(R.layout.layout_period_home_feed_normal, arg2, false);
         }
@@ -656,6 +656,7 @@ public class NewsHomeClassifyAdapter extends BaseAdapter {
         public TextView tvSpecialNameOne, tvSpecialNameTwo;
         public TextView tvSpecialCommentCountOne, tvSpecialCommentCountTwo;
         public RelativeLayout rlSpecialMore;
+        public JCTopicVideoView jctVideoView;
 
 
         void init(View view, int layoutType) {
@@ -675,7 +676,16 @@ public class NewsHomeClassifyAdapter extends BaseAdapter {
                     view_yunqi_feeds = view.findViewById(R.id.view_yunqi_feeds);
                     break;
 
-
+                case HomeType.HOME_LAYOUT_TYPE_VIDEO:
+                    ll_news_home_video = (LinearLayout) view.findViewById(R.id.ll_news_home_video);
+                    jctVideoView = (JCTopicVideoView) view.findViewById(R.id.jctVideoView);
+                    tv_video_name = (TextView) view.findViewById(R.id.tv_video_name);
+                    ic_video_comment = (ImageView) view.findViewById(R.id.ic_video_comment);
+                    tv_video_comment_count = (TextView) view.findViewById(R.id.tv_video_comment_count);
+                    ivShare = (ImageView) view.findViewById(R.id.ivShare);
+                    view_video_space = view.findViewById(R.id.view_video_space);
+                    tv_video_play_time = (TextView) view.findViewById(R.id.tv_video_play_time);
+                    break;
             }
         }
     }

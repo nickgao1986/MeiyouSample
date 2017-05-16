@@ -8,7 +8,7 @@ import android.text.style.ClickableSpan;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 
 /**

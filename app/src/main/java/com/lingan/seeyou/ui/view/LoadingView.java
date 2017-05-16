@@ -13,10 +13,10 @@ import android.widget.TextView;
 
 import com.lingan.seeyou.ui.view.skin.SkinManager;
 
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * 加载视图 有三种状态，加载中，无数据，无网络 Created by Administrator on 13-8-7.

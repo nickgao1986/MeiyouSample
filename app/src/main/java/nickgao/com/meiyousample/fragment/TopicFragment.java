@@ -6,6 +6,7 @@ import android.os.Handler;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.adapter.MyPersonalTopicListAdapter;
 import nickgao.com.meiyousample.model.reply.TopicModel;
 import nickgao.com.meiyousample.model.topic.MyTopicModel;
@@ -13,7 +14,6 @@ import nickgao.com.meiyousample.model.topic.TopicData;
 import nickgao.com.meiyousample.personal.TopicListener;
 import nickgao.com.meiyousample.service.ServiceFactory;
 import nickgao.com.meiyousample.service.TopicService;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/28.

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fragment.PeriodBaseFragment;
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.mypage.module.DynamicNewRedHotEvent;
 import nickgao.com.meiyousample.mypage.module.MineGridViewViewHolder;
 import nickgao.com.meiyousample.mypage.module.MyFamilyController;
@@ -29,7 +30,6 @@ import nickgao.com.meiyousample.settings.MineModel;
 import nickgao.com.meiyousample.settings.MineSection;
 import nickgao.com.meiyousample.skin.OperationKey;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 /**
  * Created by gaoyoujian on 2017/3/25.
@@ -79,6 +79,7 @@ public class MyFragment extends PeriodBaseFragment implements ExtendOperationLis
         ExtendOperationController.getInstance().register(this);
 
     }
+
 
     @Override
     protected int getLayout() {

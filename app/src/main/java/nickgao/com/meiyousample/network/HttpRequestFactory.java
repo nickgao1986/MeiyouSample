@@ -32,7 +32,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.zip.GZIPInputStream;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 
 /**

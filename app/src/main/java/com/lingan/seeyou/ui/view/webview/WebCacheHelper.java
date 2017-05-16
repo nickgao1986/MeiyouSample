@@ -6,8 +6,8 @@ import android.text.TextUtils;
 
 import java.util.ArrayList;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.SeeyouApplication;
-import nickgao.com.meiyousample.utils.LogUtils;
 import nickgao.com.meiyousample.utils.UrlUtil;
 
 /**

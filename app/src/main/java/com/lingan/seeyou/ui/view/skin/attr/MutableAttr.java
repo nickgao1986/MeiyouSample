@@ -2,7 +2,7 @@ package com.lingan.seeyou.ui.view.skin.attr;
 
 import android.view.View;
 
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 
 /**

@@ -8,8 +8,8 @@ import java.io.File;
 import java.util.Calendar;
 import java.util.Random;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.skin.CacheDisc;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 /**
  * 图片上传辅助工具类

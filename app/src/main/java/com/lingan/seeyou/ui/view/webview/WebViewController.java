@@ -7,7 +7,7 @@ import com.tencent.smtt.sdk.QbSdk;
 import java.util.HashMap;
 import java.util.List;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 /**
  * Created by lwh on 2015/11/3.

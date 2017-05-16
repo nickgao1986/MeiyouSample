@@ -15,8 +15,8 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/29.

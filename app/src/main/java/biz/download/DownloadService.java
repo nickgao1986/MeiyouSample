@@ -10,7 +10,7 @@ import android.os.IBinder;
 import android.os.Message;
 import android.util.Log;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 /**
  * 下载服务

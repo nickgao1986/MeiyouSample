@@ -10,8 +10,8 @@ import android.text.TextPaint;
 import android.text.style.ReplacementSpan;
 import android.util.TypedValue;
 
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/28.

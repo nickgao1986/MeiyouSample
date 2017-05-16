@@ -9,7 +9,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 /**
  * Created by gaoyoujian on 2017/5/1.

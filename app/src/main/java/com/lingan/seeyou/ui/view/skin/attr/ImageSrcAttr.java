@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 import com.lingan.seeyou.ui.view.skin.SkinManager;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 
 /**

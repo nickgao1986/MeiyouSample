@@ -1,6 +1,8 @@
 package nickgao.com.meiyousample.utils;
 
 
+import nickgao.com.framework.utils.StringUtils;
+
 /**
  * <p>Operations on char primitives and Character objects.</p>
  *

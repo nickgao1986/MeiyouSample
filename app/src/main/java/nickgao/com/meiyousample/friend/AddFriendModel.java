@@ -9,8 +9,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.adapter.DynamicImageApdater;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * 所有跟好友有关的model

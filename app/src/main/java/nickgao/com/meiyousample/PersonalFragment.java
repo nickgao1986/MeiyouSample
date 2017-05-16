@@ -29,6 +29,8 @@ import com.meetyou.crsdk.util.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.adapter.PersonalFragmentPagerAdapter;
 import nickgao.com.meiyousample.model.PersonalTabModel;
 import nickgao.com.meiyousample.model.UserHomePage.Tabs;
@@ -37,8 +39,6 @@ import nickgao.com.meiyousample.personal.UserDataListener;
 import nickgao.com.meiyousample.service.ServiceFactory;
 import nickgao.com.meiyousample.service.UserHomeService;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 import nickgao.com.okhttpexample.view.LoaderImageView;
 
 

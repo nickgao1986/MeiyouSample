@@ -3,7 +3,7 @@ package com.lingan.seeyou.ui.view.webview;
 
 import android.webkit.JavascriptInterface;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 /**
  * Author: lwh

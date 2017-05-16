@@ -13,9 +13,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.database.DecorationStatusDatabase;
 import nickgao.com.meiyousample.database.SkinStastus_DataBase;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 public class Downloader {
     private String downPath;//下载路径

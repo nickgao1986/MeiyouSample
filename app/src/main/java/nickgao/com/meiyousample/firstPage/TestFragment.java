@@ -25,11 +25,11 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.firstPage.module.RecommendTopicResponeModel;
 import nickgao.com.meiyousample.firstPage.view.ScrollableLayout;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/29.

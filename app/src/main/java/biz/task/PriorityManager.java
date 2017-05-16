@@ -8,8 +8,8 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Future;
 
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/29.

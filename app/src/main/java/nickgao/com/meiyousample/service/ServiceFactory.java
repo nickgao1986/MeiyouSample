@@ -2,7 +2,7 @@ package nickgao.com.meiyousample.service;
 
 import java.lang.reflect.InvocationTargetException;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 /**
  * Created by gaoyoujian on 2017/3/23.

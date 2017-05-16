@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.utils.UrlUtil;
 
 /**

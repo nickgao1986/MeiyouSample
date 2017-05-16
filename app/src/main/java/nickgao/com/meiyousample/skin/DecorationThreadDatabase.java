@@ -8,8 +8,8 @@ import android.database.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.database.BaseDatabase;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 /**
  * 个性装扮线程数据库类，子类:SkinThread_DataBase和ExpressionThreadDatabase

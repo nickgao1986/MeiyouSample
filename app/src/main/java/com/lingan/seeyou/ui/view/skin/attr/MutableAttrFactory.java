@@ -1,7 +1,7 @@
 package com.lingan.seeyou.ui.view.skin.attr;
 
 
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 /**
  * for create attr

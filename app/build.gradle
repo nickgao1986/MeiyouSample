@@ -5,6 +5,9 @@ android {
     useLibrary 'org.apache.http.legacy'
     compileSdkVersion 23
     buildToolsVersion "25.0.2"
+    freeline {
+        hack true
+    }
     defaultConfig {
         applicationId "nickgao.com.meiyousample"
         minSdkVersion 16
@@ -19,7 +22,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
+    };
 }
 
 dependencies {
@@ -27,12 +30,12 @@ dependencies {
     //dagger start
     //dagger end
     compile 'de.greenrobot:eventbus:2.4.0'
+    compile project(':messages')
 
     compile 'com.google.code.gson:gson:2.2.4'
-
+    compile 'com.antfortune.freeline:runtime:0.7.2'
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:design:23.2.0'
     compile 'com.android.support:multidex:1.0.0'
     compile project(':playerui')
-
 }

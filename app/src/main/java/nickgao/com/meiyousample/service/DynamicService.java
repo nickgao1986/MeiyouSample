@@ -2,11 +2,11 @@ package nickgao.com.meiyousample.service;
 
 import android.content.Context;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.model.dynamicModel.DynamicData;
 import nickgao.com.meiyousample.network.RcRestRequest;
 import nickgao.com.meiyousample.personal.PersonalListener;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 
 /**

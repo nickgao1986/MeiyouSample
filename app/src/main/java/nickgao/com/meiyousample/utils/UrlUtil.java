@@ -14,6 +14,9 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
+
 /**
  * URL处理工具类；
  * 新增通过URL获取 文件名

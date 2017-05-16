@@ -15,6 +15,7 @@ import com.lingan.seeyou.ui.view.skin.SkinManager;
 
 import activity.PeriodBaseActivity;
 import biz.util.ViewUtilController;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.MyFragment;
 import nickgao.com.meiyousample.PersonalFragment;
 import nickgao.com.meiyousample.R;
@@ -22,7 +23,6 @@ import nickgao.com.meiyousample.event.NewsWebViewEvent;
 import nickgao.com.meiyousample.friend.AddFriendFragment;
 import nickgao.com.meiyousample.myfragment.DynamicHomeFragment;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/21.

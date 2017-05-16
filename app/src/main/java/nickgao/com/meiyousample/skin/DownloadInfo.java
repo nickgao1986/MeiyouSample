@@ -1,7 +1,7 @@
 package nickgao.com.meiyousample.skin;
 
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 /**
  * 创建一个下载信息的实体类,每一个DownloadInfo保存这1个线程的下载信息

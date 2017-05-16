@@ -37,10 +37,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import activity.LinganActivity;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 import nickgao.com.okhttpexample.view.ImageLoadParams;
 
 /**

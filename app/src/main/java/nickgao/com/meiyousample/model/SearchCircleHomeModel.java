@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 
 // 搜索首页数据

@@ -9,9 +9,9 @@ import com.lingan.seeyou.ui.view.RoundedImageView;
 import com.meetyou.crsdk.util.ImageLoader;
 
 import biz.util.BitmapUtil;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.statusbar.Pref;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/5/3.

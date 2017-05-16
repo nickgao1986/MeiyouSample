@@ -11,8 +11,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 /**
  * Created by Administrator on 2014/9/23.

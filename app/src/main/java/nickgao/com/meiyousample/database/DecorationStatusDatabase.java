@@ -6,8 +6,8 @@ import android.database.Cursor;
 
 import java.util.List;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.skin.DecorationModel;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 /**
  * Created by gaoyoujian on 2017/5/1.

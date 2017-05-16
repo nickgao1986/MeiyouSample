@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.model.UserHomePage.UserHomePage;
 import nickgao.com.meiyousample.model.dynamicModel.DynamicData;
 import nickgao.com.meiyousample.model.reply.ReplyData;
@@ -14,7 +15,6 @@ import nickgao.com.meiyousample.network.RcRestRequest;
 import nickgao.com.meiyousample.network.RestRequest;
 import nickgao.com.meiyousample.network.UrlList;
 import nickgao.com.meiyousample.request.RestListRequest;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 
 /**

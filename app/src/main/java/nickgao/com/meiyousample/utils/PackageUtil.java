@@ -5,6 +5,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 
+import nickgao.com.framework.utils.LogUtils;
+
 /**
  * Created by gaoyoujian on 2017/3/5.
  */

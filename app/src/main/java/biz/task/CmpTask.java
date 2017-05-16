@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/29.

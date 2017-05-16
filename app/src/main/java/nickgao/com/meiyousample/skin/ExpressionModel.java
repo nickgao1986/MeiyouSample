@@ -2,7 +2,7 @@ package nickgao.com.meiyousample.skin;
 
 import org.json.JSONObject;
 
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 /**
  * 表情Model

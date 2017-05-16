@@ -27,8 +27,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 /**
  * warn :LayoutInflater.from(this.context); 并不总是同一个对象

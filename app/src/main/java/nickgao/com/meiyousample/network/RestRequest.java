@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 
 /**

@@ -23,12 +23,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import biz.util.BitmapUtil;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.controller.UserController;
 import nickgao.com.meiyousample.mypage.module.MyHeaderController;
 import nickgao.com.meiyousample.settings.DataSaveHelper;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * 我的资料--底部 用户信息控制逻辑

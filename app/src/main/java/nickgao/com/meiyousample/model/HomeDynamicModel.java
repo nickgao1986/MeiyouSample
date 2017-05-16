@@ -8,8 +8,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.adapter.DynamicImageApdater;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * 注意：该对象已序列化，请不要传未序列化的对象进来，以免影响缓存

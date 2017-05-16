@@ -15,12 +15,12 @@ import java.util.List;
 
 import biz.threadutil.FileUtils;
 import biz.threadutil.ThreadUtil;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.controller.UserController;
 import nickgao.com.meiyousample.database.SkinStastus_DataBase;
 import nickgao.com.meiyousample.personal.ExtendOperationController;
 import nickgao.com.meiyousample.settings.DataSaveHelper;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/5/1.

@@ -11,10 +11,10 @@ import android.widget.TextView;
 
 import com.meetyou.crsdk.util.ImageLoader;
 
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.firstPage.NewsType;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 import nickgao.com.okhttpexample.view.ImageLoadParams;
 import nickgao.com.okhttpexample.view.LoaderImageView;
 

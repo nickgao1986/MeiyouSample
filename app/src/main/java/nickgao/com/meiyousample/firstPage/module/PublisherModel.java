@@ -4,7 +4,7 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/29.

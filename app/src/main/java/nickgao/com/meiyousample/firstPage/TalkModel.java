@@ -8,9 +8,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.firstPage.module.PublisherModel;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/27.

@@ -1,7 +1,7 @@
 package nickgao.com.meiyousample.controller;
 
 import biz.task.TaskManager;
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/29.

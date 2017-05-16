@@ -13,9 +13,9 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.utils.EmojiConversionUtil;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 
 /**

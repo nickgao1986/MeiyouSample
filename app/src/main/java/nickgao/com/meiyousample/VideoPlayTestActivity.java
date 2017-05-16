@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.meetyou.crsdk.util.DeviceUtils;
 import com.meetyou.crsdk.util.VideoPlayUtil;
@@ -13,6 +14,10 @@ import com.meetyou.crsdk.video.view.JCTopicVideoView;
 import com.meetyou.crsdk.video.view.VideoPlayStatus;
 import com.meetyou.crsdk.video.view.VideoViewInfo;
 import com.meetyou.crsdk.video.view.VideoViewSetInfo;
+
+import java.lang.reflect.Constructor;
+
+import nickgao.com.meiyousample.adapter.TopicFullScreenController;
 
 /**
  * Created by gaoyoujian on 2017/5/11.
@@ -32,8 +37,23 @@ public class VideoPlayTestActivity extends Activity {
 
         mJcTopicVideoView = (JCTopicVideoView) findViewById(R.id.jctVideoView);
         videoPlayInit(this);
+        test();
     }
 
+    //(Context context, int mNewsId, String mClassName, String time,String uniqueVideoListId,boolean isPlaying,int progress)
+
+    private void test() {
+        try {
+            Class clazz = Class.forName("nickgao.com.meiyousample.adapter.TopicFullScreenController");
+            Constructor c = clazz.getConstructor(int.class,String.class,String.class,String.class,boolean.class,int.class);
+            TopicFullScreenController student = (TopicFullScreenController)c.newInstance(23,"aa","bb","cc",true,3);
+            student.setContext(this);
+            student.getContext();
+        }catch (Exception ex) {
+            Log.d("TAG","====test ex="+ex);
+            ex.printStackTrace();
+        }
+    }
     /**
      * 视频播放
      */

@@ -8,8 +8,8 @@ import android.widget.ImageView;
 
 import com.lingan.seeyou.ui.view.skin.ViewFactory;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.R;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 
 @SuppressLint("ViewConstructor")

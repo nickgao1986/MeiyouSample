@@ -10,9 +10,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ListView;
 
-import nickgao.com.meiyousample.utils.LogUtils;
-
-import static android.content.ContentValues.TAG;
+import nickgao.com.framework.utils.LogUtils;
 
 
 public class PullToRefreshListView extends PullToRefreshAdapterViewBase<ListView> {

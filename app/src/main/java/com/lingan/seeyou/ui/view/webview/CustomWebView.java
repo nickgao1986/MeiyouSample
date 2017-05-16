@@ -9,7 +9,7 @@ import com.tencent.smtt.sdk.WebSettings;
 
 import java.util.Map;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 /**
  * 自定义webview，用于监听滑动的事件

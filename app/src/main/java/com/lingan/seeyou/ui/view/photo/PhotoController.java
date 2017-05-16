@@ -35,11 +35,11 @@ import java.util.List;
 import biz.threadutil.ThreadUtil;
 import biz.util.BitmapUtil;
 import de.greenrobot.event.EventBus;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.controller.LinganController;
 import nickgao.com.meiyousample.skin.CacheDisc;
 import nickgao.com.meiyousample.utils.FileUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 
 public class PhotoController extends LinganController {

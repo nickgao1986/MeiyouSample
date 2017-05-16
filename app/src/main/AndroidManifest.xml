@@ -27,7 +27,11 @@
         <activity android:name="com.lingan.seeyou.ui.view.photo.ClipImageActivity"/>
         <activity android:name="com.lingan.seeyou.ui.view.photo.BucketOverviewActivity"/>
         <activity android:name="com.meetyou.crsdk.video.JCFullScreenActivity"/>
-
+        <provider
+            android:name=".contentprovider.SeeyouContentProvider"
+            android:authorities="com.lingan.seeyou"
+            android:exported="false"
+            android:permission="com.lingan.seeyou.permission.meiyou_data"></provider>
     </application>
 
 </manifest>

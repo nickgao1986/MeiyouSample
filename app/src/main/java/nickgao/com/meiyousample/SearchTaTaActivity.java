@@ -17,12 +17,12 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.gridview.LinearGrid;
 import nickgao.com.meiyousample.gridview.SearchCircleOverAllFaqAdapter;
 import nickgao.com.meiyousample.gridview.SearchCircleOverAllPhraseAdapter;
 import nickgao.com.meiyousample.model.NewsDetailReviewListModel;
 import nickgao.com.meiyousample.model.SearchCircleHomeModel.SearchCircleHomeItemModel;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/3/15.

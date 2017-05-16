@@ -18,7 +18,7 @@ import org.apache.http.params.HttpProtocolParams;
 
 import java.util.concurrent.TimeUnit;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 
 /**

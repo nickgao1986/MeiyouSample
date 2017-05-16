@@ -16,12 +16,12 @@ import android.widget.TextView;
 import com.lingan.seeyou.ui.view.RoundedImageView;
 import com.meetyou.crsdk.util.ImageLoader;
 
+import nickgao.com.framework.utils.StringUtil;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.settings.MineItemModel;
 import nickgao.com.meiyousample.settings.MineSection;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.StringUtil;
-import nickgao.com.meiyousample.utils.StringUtils;
 import nickgao.com.okhttpexample.view.AbstractImageLoader;
 import nickgao.com.okhttpexample.view.ImageLoadParams;
 import nickgao.com.okhttpexample.view.LoaderImageView;

@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import nickgao.com.meiyousample.utils.LogUtils;
+import nickgao.com.framework.utils.LogUtils;
 
 
 /**

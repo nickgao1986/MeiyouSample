@@ -23,9 +23,9 @@ import biz.download.DownloadConfig;
 import biz.download.DownloadManager;
 import biz.download.DownloadReceiver;
 import biz.download.DownloadStatus;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.skin.ToastUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * 预览图 逻辑控制

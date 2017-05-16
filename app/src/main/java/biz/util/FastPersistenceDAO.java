@@ -10,7 +10,7 @@ import com.alibaba.fastjson.JSON;
 import java.io.Serializable;
 import java.util.List;
 
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 /**
  * 保存文件类

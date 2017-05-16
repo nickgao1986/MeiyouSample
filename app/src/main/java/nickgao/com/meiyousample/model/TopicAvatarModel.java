@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 public class TopicAvatarModel implements Serializable {
     private static final long serialVersionUID = 12308L;

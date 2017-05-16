@@ -107,7 +107,7 @@ public class NewsHomeController extends LinganController {
 //            ex.printStackTrace();
 //        }
 //        return new ArrayList<>();
-        String str = getFromAssets("talk.txt",context);
+        String str = getFromAssets("firstpage_video_list.txt",context);
         try {
             JSONObject object = new JSONObject(str);
             RecommendTopicResponeModel model = new RecommendTopicResponeModel(context, object);
@@ -209,7 +209,7 @@ public class NewsHomeController extends LinganController {
             }
         } else {
           //  RecommendTopicResponeModel recommendTopicResponeModel = classifyFragmentsIsLoadingDatas.get(HomeType.RECOMMEND_ID);
-            String str = getFromAssets("talk.txt",context);
+            String str = getFromAssets("firstpage_video_list.txt",context);
             RecommendTopicResponeModel recommendTopicResponeModel = null;
             try {
                 JSONObject object = new JSONObject(str);

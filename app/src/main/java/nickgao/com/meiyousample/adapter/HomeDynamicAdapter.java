@@ -19,13 +19,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.listener.OnItemTextExpandListener;
 import nickgao.com.meiyousample.model.HomeDynamicModel;
 import nickgao.com.meiyousample.model.IHomeDynamicType;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 import nickgao.com.okhttpexample.view.LoaderImageView;
 
 import static nickgao.com.meiyousample.utils.CalendarUtil.convertTime;

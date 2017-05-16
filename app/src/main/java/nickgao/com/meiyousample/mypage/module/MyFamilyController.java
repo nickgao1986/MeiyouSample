@@ -10,8 +10,8 @@ import com.lingan.seeyou.ui.view.skin.SkinManager;
 import java.util.List;
 
 import biz.threadutil.FileUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/30.

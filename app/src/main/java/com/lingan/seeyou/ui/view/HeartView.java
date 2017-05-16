@@ -12,9 +12,9 @@ import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 
 /**

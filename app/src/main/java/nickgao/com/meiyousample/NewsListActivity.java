@@ -35,6 +35,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.adapter.NewsDetailAdapter;
 import nickgao.com.meiyousample.adapter.NewsTextRecommendAdapter;
 import nickgao.com.meiyousample.event.NewsWebViewEvent;
@@ -43,8 +45,6 @@ import nickgao.com.meiyousample.model.NewsDetailReviewListModel;
 import nickgao.com.meiyousample.model.NewsDetailShareBodyModel;
 import nickgao.com.meiyousample.model.NewsReviewModel;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 import nickgao.com.okhttpexample.view.LoaderImageView;
 
 /**

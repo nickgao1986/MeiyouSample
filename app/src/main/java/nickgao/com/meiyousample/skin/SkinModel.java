@@ -7,7 +7,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import nickgao.com.meiyousample.utils.StringUtils;
+import nickgao.com.framework.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/5/1.

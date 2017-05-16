@@ -6,6 +6,11 @@ import android.support.multidex.MultiDex;
 
 import com.meetyou.crsdk.util.ImageLoader;
 import com.meetyou.media.player.client.MeetyouPlayerEngine;
+import com.meiyou.sdk.common.database.BaseContentResolver;
+
+import nickgao.com.framework.utils.BeanManager;
+import nickgao.com.framework.utils.SeeyouBeanFactory;
+import nickgao.com.meiyousample.contentprovider.SeeyouContentProvider;
 
 
 /**
@@ -22,8 +27,11 @@ public class SeeyouApplication extends Application {
         mContext = this;
         MultiDex.install(this);
         MeetyouPlayerEngine.Instance().init(this,true);
-
+       // FreelineCore.init(this);
         ImageLoader.initialize(this, false);
+        SeeyouBeanFactory.init();
+        BeanManager.getUtilSaver().setContext(mContext);
+        new BaseContentResolver(this, SeeyouContentProvider.SEEYOU_AUTHORITY);
 
     }
 

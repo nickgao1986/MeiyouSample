@@ -16,10 +16,10 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.mypage.module.MineLayoutFactory;
 import nickgao.com.meiyousample.mypage.module.ViewHolder;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/3/25.

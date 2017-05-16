@@ -1,0 +1,297 @@
+{
+    "time": false,
+    "news_time": 1492767107,
+    "nums": 0,
+    "page": 0,
+    "items": [
+        {
+            "id": 1571010,
+            "title": "品牌号图集",
+            "images": [
+                "http://mycdn.seeyouyima.com/news/img/af9b84a5e8c39302754d5d4b4e8c11b6_1242_828.png"
+            ],
+            "news_type": 3,
+            "imgs_count": 4,
+            "video_time": "",
+            "total_review": 9,
+            "avatar": "",
+            "updated_date": "2017-03-28 07:57:03",
+            "recomm_type": 6,
+            "publisher": {
+                "screen_name": "小鱼儿品牌号",
+                "avatar": "http://sc.seeyouyima.com/audio_cover/data/57c916a53a8f5_150_150.png"
+            },
+            "circle_name": "小鱼儿品牌号",
+            "circle_icon": "http://sc.seeyouyima.com/audio_cover/data/57c916a53a8f5_150_150.png",
+            "type": 1,
+            "redirect_url": "meiyou:///news/photos?params=eyJuZXdzSWQiOjE1NzEwMTAsImF1dGhvciI6MiwicmVkaXJlY3QtdHlwZSI6MywiYWxnb3JpdGhtIjoiMTQiLCJuZXdzX3R5cGUiOjMsImFsX3NvdXJjZSI6MCwiY2F0aWQiOjR9",
+            "label": [
+                {
+                    "id": "2",
+                    "val": "重复、旧闻",
+                    "type": 1
+                },
+                {
+                    "id": "3",
+                    "val": "内容质量低",
+                    "type": 1
+                }
+            ],
+            "attr_type": 5
+        },
+        {
+            "id": 1564944,
+            "title": "美柚号纯视频测试",
+            "images": [
+                "https://sc.seeyouyima.com/mp_131305811_1490235028.JPG"
+            ],
+            "news_type": 4,
+            "video_time": "09:28",
+            "total_review": 27,
+            "avatar": "",
+            "updated_date": "2017-03-23 02:10:56",
+            "recomm_type": 6,
+            "publisher": {
+                "screen_name": "米奇多啦",
+                "avatar": "http://sc.seeyouyima.com/audio_cover/data/57c916a53a8f5_150_150.png"
+            },
+            "circle_name": "米奇多啦",
+            "circle_icon": "http://sc.seeyouyima.com/audio_cover/data/57c916a53a8f5_150_150.png",
+            "type": 4,
+            "redirect_url": "meiyou:///news/video?params=eyJuZXdzSWQiOjE1NjQ5NDQsInByb2plY3RfaWQiOjAsImF1dGhvciI6MSwicmVkaXJlY3QtdHlwZSI6MywiYWxnb3JpdGhtIjoiMTQiLCJuZXdzX3R5cGUiOjQsImFsX3NvdXJjZSI6MCwiY2F0aWQiOjR9",
+            "url": "http://test-news-node.seeyouyima.com/news?_is_share=1&news_id=1564944&news_type=4&appid=1&v=6.1.0&news_source=0",
+            "feeds_play": 1,
+            "is_favorite": 0,
+            "view_times": 595,
+            "label": [
+                {
+                    "id": "2",
+                    "val": "重复、旧闻",
+                    "type": 1
+                },
+                {
+                    "id": "3",
+                    "val": "内容质量低",
+                    "type": 1
+                }
+            ],
+            "attr_type": 1,
+            "video_url": {
+                "nd_url": "https://sc.seeyouyima.com/news/vod/a710747b514921490234989634672207.mp4",
+                "sd_url": "https://sc.seeyouyima.com/news/vod/a710747b514921490234989634672207.mp4",
+                "hd_url": "https://sc.seeyouyima.com/news/vod/a710747b514921490234989634672207.mp4"
+            },
+            "sd_size": "0M"
+        },
+        {
+            "id": 1564943,
+            "title": "美柚号纯图模式",
+            "images": [
+                "http://mycdn.seeyouyima.com/news/img/2c1ea9fb3b0a51c2dbe6b725f0f4fccf_1242_828.png"
+            ],
+            "news_type": 3,
+            "imgs_count": 6,
+            "video_time": "",
+            "total_review": 5,
+            "avatar": "",
+            "updated_date": "2017-03-23 02:09:37",
+            "recomm_type": 6,
+            "publisher": {
+                "screen_name": "米奇多啦",
+                "avatar": "http://sc.seeyouyima.com/audio_cover/data/57c916a53a8f5_150_150.png"
+            },
+            "circle_name": "米奇多啦",
+            "circle_icon": "http://sc.seeyouyima.com/audio_cover/data/57c916a53a8f5_150_150.png",
+            "type": 1,
+            "redirect_url": "meiyou:///news/photos?params=eyJuZXdzSWQiOjE1NjQ5NDMsImF1dGhvciI6MSwicmVkaXJlY3QtdHlwZSI6MywiYWxnb3JpdGhtIjoiMTQiLCJuZXdzX3R5cGUiOjMsImFsX3NvdXJjZSI6MCwiY2F0aWQiOjR9",
+            "label": [
+                {
+                    "id": "2",
+                    "val": "重复、旧闻",
+                    "type": 1
+                },
+                {
+                    "id": "3",
+                    "val": "内容质量低",
+                    "type": 1
+                }
+            ],
+            "attr_type": 1
+        },
+        {
+            "id": 1564941,
+            "title": "纯文字-内容较短--钙",
+            "images": [],
+            "news_type": 2,
+            "video_time": "",
+            "total_review": 12,
+            "avatar": "",
+            "updated_date": "2017-03-23 02:06:47",
+            "recomm_type": 6,
+            "publisher": {
+                "screen_name": "米奇多啦",
+                "avatar": "http://sc.seeyouyima.com/audio_cover/data/57c916a53a8f5_150_150.png"
+            },
+            "circle_name": "米奇多啦",
+            "circle_icon": "http://sc.seeyouyima.com/audio_cover/data/57c916a53a8f5_150_150.png",
+            "type": 4,
+            "redirect_url": "meiyou:///news/text?params=eyJ1cmwiOiJodHRwOlwvXC90ZXN0LW5ld3Mtbm9kZS5zZWV5b3V5aW1hLmNvbVwvbmV3cz9uZXdzX2lkPTE1NjQ5NDEmbmV3c19zb3VyY2U9MCIsIm5ld3NJZCI6MTU2NDk0MSwicHJvamVjdF9pZCI6MCwiYXV0aG9yIjoxLCJyZWRpcmVjdC10eXBlIjozLCJhbGdvcml0aG0iOiIxNCIsIm5ld3NfdHlwZSI6MiwiYWxfc291cmNlIjowLCJjYXRpZCI6NH0=",
+            "url": "http://test-news-node.seeyouyima.com/news?news_id=1564941&news_source=0",
+            "label": [
+                {
+                    "id": "2",
+                    "val": "重复、旧闻",
+                    "type": 1
+                },
+                {
+                    "id": "3",
+                    "val": "内容质量低",
+                    "type": 1
+                }
+            ],
+            "attr_type": 1
+        },
+        {
+            "recomm_type": 12,
+            "redirect_url": "meiyou:///news/special?params=eyJjYXRpZCI6NCwic3BlY2lhbF9pZCI6MjQzLCJwcm9qZWN0X2lkIjoiNzgiLCJyZWRpcmVjdC10eXBlIjo5LCJhbGdvcml0aG0iOiIxNCIsImFsX3NvdXJjZSI6MH0=",
+            "attr_type": 3,
+            "title": "kk",
+            "images": [
+                "http://sc.seeyouyima.com/forum/data/58cfd1cceb94e_176_176.png"
+            ]
+        },
+        {
+            "recomm_type": 12,
+            "redirect_url": "meiyou:///news/special?params=eyJjYXRpZCI6NCwic3BlY2lhbF9pZCI6MjQ0LCJwcm9qZWN0X2lkIjoiNzkiLCJyZWRpcmVjdC10eXBlIjo5LCJhbGdvcml0aG0iOiIxNCIsImFsX3NvdXJjZSI6MH0=",
+            "attr_type": 3,
+            "title": "ll",
+            "images": [
+                "http://sc.seeyouyima.com/forum/data/58cfd1cceb94e_176_176.png"
+            ]
+        },
+        {
+            "recomm_type": 12,
+            "redirect_url": "meiyou:///news/special?params=eyJjYXRpZCI6NCwic3BlY2lhbF9pZCI6MjQ1LCJwcm9qZWN0X2lkIjoiODAiLCJyZWRpcmVjdC10eXBlIjo5LCJhbGdvcml0aG0iOiIxNCIsImFsX3NvdXJjZSI6MH0=",
+            "attr_type": 4,
+            "title": "专题同步测试",
+            "r_text": "进入专题",
+            "items": [
+                {
+                    "id": "34921256",
+                    "type": 1,
+                    "recomm_type": 1,
+                    "title": "swallow发帖",
+                    "images": [
+                        ""
+                    ],
+                    "publisher": {
+                        "screen_name": "",
+                        "avatar": "http://sc.seeyouyima.com/avatar_107992611?imageView/1/w/120/h/120/q/100/107992611"
+                    },
+                    "total_review": 7,
+                    "redirect_url": "meiyou:///circles/group/topic?params=eyJ0b3BpY0lEIjozNDkyMTI1NiwicHJvamVjdF9pZCI6IjgwIiwicmVkaXJlY3QtdHlwZSI6MTIsImFsZ29yaXRobSI6IjE0IiwiYWxfc291cmNlIjowLCJjYXRpZCI6NH0="
+                },
+                {
+                    "id": "1585805",
+                    "type": 4,
+                    "recomm_type": 6,
+                    "title": "我叫林文书，家里兄弟俩",
+                    "images": [
+                        "https://mycdn.seeyouyima.com/news/img/e323767d61e53bae7787cbe799d24cc7_509_339.jpg"
+                    ],
+                    "publisher": {
+                        "screen_name": "美柚号04KF",
+                        "avatar": "http://sc.seeyouyima.com/audio_cover/data/57c916a53a8f5_150_150.png"
+                    },
+                    "total_review": 0,
+                    "redirect_url": "meiyou:///news/text?params=eyJ1cmwiOiJodHRwOlwvXC90ZXN0LW5ld3Mtbm9kZS5zZWV5b3V5aW1hLmNvbVwvbmV3cz9uZXdzX2lkPTE1ODU4MDUmbmV3c19zb3VyY2U9NCIsIm5ld3NJZCI6MTU4NTgwNSwicHJvamVjdF9pZCI6IjgwIiwiYXV0aG9yIjoyLCJyZWRpcmVjdC10eXBlIjoxMywiYWxnb3JpdGhtIjoiMTQiLCJuZXdzX3R5cGUiOjIsImFsX3NvdXJjZSI6MCwiY2F0aWQiOjR9",
+                    "url": "http://test-news-node.seeyouyima.com/news?news_id=1585805&news_source=4"
+                }
+            ]
+        },
+        {
+            "recomm_type": 12,
+            "redirect_url": "meiyou:///news/special?params=eyJjYXRpZCI6NCwic3BlY2lhbF9pZCI6MjQ4LCJwcm9qZWN0X2lkIjoiODEiLCJyZWRpcmVjdC10eXBlIjo5LCJhbGdvcml0aG0iOiIxNCIsImFsX3NvdXJjZSI6MH0=",
+            "attr_type": 3,
+            "title": "ss",
+            "images": [
+                "http://sc.seeyouyima.com/forum/data/58cfd1cceb94e_176_176.png"
+            ]
+        },
+        {
+            "type": 1,
+            "recomm_type": 1,
+            "id": 12094715,
+            "title": "",
+            "images": [],
+            "forum_id": 0,
+            "updated_date": "1970-01-01 00:00:00",
+            "publisher": {
+                "screen_name": "",
+                "avatar": "http://sc.seeyouyima.com/avatar_2736082?imageView/1/w/120/h/120/q/100/2736082"
+            },
+            "total_review": 9,
+            "user_id": 2736082,
+            "circle_name": "",
+            "circle_icon": "",
+            "redirect_url": "meiyou:///circles/group/topic?params=eyJ0b3BpY0lEIjoxMjA5NDcxNSwicHJvamVjdF9pZCI6MCwicmVkaXJlY3QtdHlwZSI6MSwiYWxnb3JpdGhtIjoiMTQiLCJhbF9zb3VyY2UiOjAsImNhdGlkIjo0fQ==",
+            "label": [
+                {
+                    "id": "1",
+                    "val": "不感兴趣",
+                    "type": 1
+                },
+                {
+                    "id": "2",
+                    "val": "重复、旧闻",
+                    "type": 1
+                },
+                {
+                    "id": "3",
+                    "val": "内容质量低",
+                    "type": 1
+                }
+            ]
+        },
+        {
+            "type": 1,
+            "recomm_type": 1,
+            "id": 12094713,
+            "title": "",
+            "images": [],
+            "forum_id": 0,
+            "updated_date": "1970-01-01 00:00:00",
+            "publisher": {
+                "screen_name": "",
+                "avatar": "http://sc.seeyouyima.com/avatar_43583616?imageView/1/w/120/h/120/q/100/43583616"
+            },
+            "total_review": 11,
+            "user_id": 43583616,
+            "circle_name": "",
+            "circle_icon": "",
+            "redirect_url": "meiyou:///circles/group/topic?params=eyJ0b3BpY0lEIjoxMjA5NDcxMywicHJvamVjdF9pZCI6MCwicmVkaXJlY3QtdHlwZSI6MSwiYWxnb3JpdGhtIjoiMTQiLCJhbF9zb3VyY2UiOjAsImNhdGlkIjo0fQ==",
+            "label": [
+                {
+                    "id": "1",
+                    "val": "不感兴趣",
+                    "type": 1
+                },
+                {
+                    "id": "2",
+                    "val": "重复、旧闻",
+                    "type": 1
+                },
+                {
+                    "id": "3",
+                    "val": "内容质量低",
+                    "type": 1
+                }
+            ]
+        }
+    ],
+    "top_topic_cancle": [
+        34921339,
+        34921347
+    ],
+    "baby_img": "http://sc.seeyouyima.com/pregnancy_video/sin_2.png"
+}

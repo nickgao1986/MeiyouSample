@@ -9,9 +9,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.firstPage.HomeClassifyModel;
 import nickgao.com.meiyousample.firstPage.TalkModel;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/4/29.

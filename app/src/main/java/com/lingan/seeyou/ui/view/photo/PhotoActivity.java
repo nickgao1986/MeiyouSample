@@ -33,11 +33,11 @@ import java.util.List;
 
 import activity.LinganActivity;
 import biz.util.BitmapUtil;
+import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.skin.CacheDisc;
 import nickgao.com.meiyousample.skin.ToastUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
-import nickgao.com.meiyousample.utils.StringUtils;
 import nickgao.com.okhttpexample.view.AbstractImageLoader;
 import nickgao.com.okhttpexample.view.ImageLoadParams;
 

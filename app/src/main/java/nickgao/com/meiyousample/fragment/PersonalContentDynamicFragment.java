@@ -6,6 +6,7 @@ import android.os.Handler;
 import java.util.ArrayList;
 import java.util.List;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.adapter.HomeDynamicAdapter;
 import nickgao.com.meiyousample.model.HomeDynamicModel;
 import nickgao.com.meiyousample.model.dynamicModel.DynamicContent;
@@ -13,7 +14,6 @@ import nickgao.com.meiyousample.model.dynamicModel.DynamicData;
 import nickgao.com.meiyousample.personal.PersonalListener;
 import nickgao.com.meiyousample.service.DynamicService;
 import nickgao.com.meiyousample.service.ServiceFactory;
-import nickgao.com.meiyousample.utils.LogUtils;
 
 
 /**

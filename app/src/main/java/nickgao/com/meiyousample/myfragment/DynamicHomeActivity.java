@@ -34,6 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import activity.PeriodBaseActivity;
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.adapter.HomeDynamicAdapter;
 import nickgao.com.meiyousample.firstPage.DynamicDetailClickPraiseEvent;
@@ -48,7 +49,6 @@ import nickgao.com.meiyousample.personal.PersonalListener;
 import nickgao.com.meiyousample.service.DynamicService;
 import nickgao.com.meiyousample.service.ServiceFactory;
 import nickgao.com.meiyousample.utils.DeviceUtils;
-import nickgao.com.meiyousample.utils.LogUtils;
 import nickgao.com.okhttpexample.view.LoaderImageView;
 
 

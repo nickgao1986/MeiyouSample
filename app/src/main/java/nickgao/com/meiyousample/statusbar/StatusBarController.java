@@ -19,8 +19,8 @@ import java.util.Map;
 import java.util.Properties;
 
 import de.greenrobot.event.EventBus;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
-import nickgao.com.meiyousample.utils.StringUtils;
 
 /**
  * Created by gaoyoujian on 2017/5/2.
