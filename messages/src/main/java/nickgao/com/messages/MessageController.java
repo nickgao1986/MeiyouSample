@@ -104,6 +104,32 @@ public class MessageController {
         }
     }
 
+    private List<CommomCallBack> mReceiverDataCallBacke = new ArrayList<>();
+
+
+    public void addReceiverDataCallBack(CommomCallBack xiaomiRegCallback) {
+        if (xiaomiRegCallback != null && !mReceiverDataCallBacke.contains(xiaomiRegCallback)) {
+            mReceiverDataCallBacke.add(xiaomiRegCallback);
+        }
+    }
+
+    public void removeReceiverDataCallBack(CommomCallBack xiaomiRegCallback) {
+        if (xiaomiRegCallback != null && !mReceiverDataCallBacke.contains(xiaomiRegCallback)) {
+            mReceiverDataCallBacke.remove(xiaomiRegCallback);
+        }
+    }
+
+    public void notifyReceiverDataCallBack(Object object) {
+        for (CommomCallBack callback : mReceiverDataCallBacke) {
+            try {
+                callback.onResult(object);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+
     public MessageManager getMessageManager() {
         if(mMessageManager==null)
             mMessageManager = new MessageManager(mContext);

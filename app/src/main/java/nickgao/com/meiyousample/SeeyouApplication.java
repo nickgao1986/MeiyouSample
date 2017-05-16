@@ -6,11 +6,6 @@ import android.support.multidex.MultiDex;
 
 import com.meetyou.crsdk.util.ImageLoader;
 import com.meetyou.media.player.client.MeetyouPlayerEngine;
-import com.meiyou.sdk.common.database.BaseContentResolver;
-
-import nickgao.com.framework.utils.BeanManager;
-import nickgao.com.framework.utils.SeeyouBeanFactory;
-import nickgao.com.meiyousample.contentprovider.SeeyouContentProvider;
 
 
 /**
@@ -29,9 +24,13 @@ public class SeeyouApplication extends Application {
         MeetyouPlayerEngine.Instance().init(this,true);
        // FreelineCore.init(this);
         ImageLoader.initialize(this, false);
-        SeeyouBeanFactory.init();
-        BeanManager.getUtilSaver().setContext(mContext);
-        new BaseContentResolver(this, SeeyouContentProvider.SEEYOU_AUTHORITY);
+
+//        new BaseContentResolver(this, SeeyouContentProvider.SEEYOU_AUTHORITY);
+//        SeeyouBeanFactory.init();
+//        BeanManager.getUtilSaver().setContext(mContext);
+
+//        Bundle bundle = MiPushAdapter.getInitParams(GlobalConfig.XIAOMI_APP_KEY,GlobalConfig.XIAOMI_APP_ID);
+//        MessageController.getInstance().init(this, PushClientType.PUSH_TYPE_XIAOMI,bundle);
 
     }
 

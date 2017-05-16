@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.meetyou.crsdk.util.DeviceUtils;
 import com.meetyou.crsdk.util.VideoPlayUtil;
@@ -14,10 +15,12 @@ import com.meetyou.crsdk.video.view.JCTopicVideoView;
 import com.meetyou.crsdk.video.view.VideoPlayStatus;
 import com.meetyou.crsdk.video.view.VideoViewInfo;
 import com.meetyou.crsdk.video.view.VideoViewSetInfo;
+import com.meiyou.message.mipush.MiPushAdapter;
 
-import java.lang.reflect.Constructor;
-
-import nickgao.com.meiyousample.adapter.TopicFullScreenController;
+import nickgao.com.framework.utils.BeanManager;
+import nickgao.com.framework.utils.SeeyouBeanFactory;
+import nickgao.com.messages.MessageController;
+import nickgao.com.messages.PushClientType;
 
 /**
  * Created by gaoyoujian on 2017/5/11.
@@ -31,29 +34,39 @@ public class VideoPlayTestActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.video_play_test_activity);
-        onlyVideoId = getClass().getSimpleName() + "_" + System.currentTimeMillis() + "_" + Math.random();
-
-        mJcTopicVideoView = (JCTopicVideoView) findViewById(R.id.jctVideoView);
-        videoPlayInit(this);
-        test();
+        setContentView(R.layout.test_layout_with_button);
+        Button btn = (Button)findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SeeyouBeanFactory.init();
+                BeanManager.getUtilSaver().setContext(VideoPlayTestActivity.this);
+                Bundle bundle = MiPushAdapter.getInitParams(GlobalConfig.XIAOMI_APP_KEY,GlobalConfig.XIAOMI_APP_ID);
+                MessageController.getInstance().init(VideoPlayTestActivity.this, PushClientType.PUSH_TYPE_XIAOMI,bundle);
+            }
+        });
+//        setContentView(R.layout.video_play_test_activity);
+//        onlyVideoId = getClass().getSimpleName() + "_" + System.currentTimeMillis() + "_" + Math.random();
+//
+//        mJcTopicVideoView = (JCTopicVideoView) findViewById(R.id.jctVideoView);
+//        videoPlayInit(this);
+        //test();
     }
 
     //(Context context, int mNewsId, String mClassName, String time,String uniqueVideoListId,boolean isPlaying,int progress)
 
-    private void test() {
-        try {
-            Class clazz = Class.forName("nickgao.com.meiyousample.adapter.TopicFullScreenController");
-            Constructor c = clazz.getConstructor(int.class,String.class,String.class,String.class,boolean.class,int.class);
-            TopicFullScreenController student = (TopicFullScreenController)c.newInstance(23,"aa","bb","cc",true,3);
-            student.setContext(this);
-            student.getContext();
-        }catch (Exception ex) {
-            Log.d("TAG","====test ex="+ex);
-            ex.printStackTrace();
-        }
-    }
+//    private void test() {
+//        try {
+//            Class clazz = Class.forName("nickgao.com.meiyousample.adapter.TopicFullScreenController");
+//            Constructor c = clazz.getConstructor(int.class,String.class,String.class,String.class,boolean.class,int.class);
+//            TopicFullScreenController student = (TopicFullScreenController)c.newInstance(23,"aa","bb","cc",true,3);
+//            student.setContext(this);
+//            student.getContext();
+//        }catch (Exception ex) {
+//            Log.d("TAG","====test ex="+ex);
+//            ex.printStackTrace();
+//        }
+//    }
     /**
      * 视频播放
      */
