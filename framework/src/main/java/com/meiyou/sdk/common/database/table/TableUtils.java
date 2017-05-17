@@ -158,38 +158,40 @@ public class TableUtils {
         }
 
         //是否有自定义的主键
-        Field primaryKeyField = null;
-        Field[] fields = entityType.getDeclaredFields();
-        if (fields != null) {
-            for (Field field : fields) {
-                if (field.getAnnotation(com.meiyou.sdk.common.database.annotation.Id.class) != null) {
-                    primaryKeyField = field;
-                    break;
-                }
-            }
-
-            //默认columnId为主键
-            if (primaryKeyField == null) {
-                for (Field field : fields) {
-                    if ("columnId".equals(field.getName())) {
-                        primaryKeyField = field;
-                        break;
-                    }
-                }
-            }
-        }
-        //查找父类的主键
-        if (primaryKeyField == null) {
-            return getId(entityType.getSuperclass(), entityType.getName());
-        }
-
-        Id id = new Id(entityType, primaryKeyField);
-
-        synchronized (TableUtils.class) {
-            entityIdMap.put(entityName, id);
-        }
-        return id;
+//        Field primaryKeyField = null;
+//        Field[] fields = entityType.getDeclaredFields();
+//        if (fields != null) {
+//            for (Field field : fields) {
+//                if (field.getAnnotation(Id.class) != null) {
+//                    primaryKeyField = field;
+//                    break;
+//                }
+//            }
+//
+//            //默认columnId为主键
+//            if (primaryKeyField == null) {
+//                for (Field field : fields) {
+//                    if ("columnId".equals(field.getName())) {
+//                        primaryKeyField = field;
+//                        break;
+//                    }
+//                }
+//            }
+//        }
+//        //查找父类的主键
+//        if (primaryKeyField == null) {
+//            return getId(entityType.getSuperclass(), entityType.getName());
+//        }
+//
+//        Id id = new Id(entityType, primaryKeyField);
+//
+//        synchronized (TableUtils.class) {
+//            entityIdMap.put(entityName, id);
+//        }
+//        return id;
+        return null;
     }
+
 
     public static String getPrimaryKeyFieldName(Class<?> entityType) {
         Id id = getId(entityType, entityType.getName());

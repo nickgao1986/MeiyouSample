@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lingan.seeyou.ui.view.widget.EmojiLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:indicator="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/emojiLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/ll_emojichoose"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/apk_all_white"
+        >
+
+        <RelativeLayout
+            android:id="@+id/ll_emojichoose_main"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/emoji_layout_height"
+
+            >
+
+            <com.lingan.seeyou.ui.view.YiPageIndicator
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="10dip"
+                indicator:normalColor="@color/black_f"
+                indicator:selectColor="@color/red_b"
+                indicator:icon_w_h="5dip"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/space_xxs_less"
+                android:layout_marginBottom="@dimen/space_xxs_less"
+                >
+                <!--
+                indicator:currentIndicator="@drawable/banner_dot_up"
+                indicator:normalIndicator="@drawable/banner_dot"
+                -->
+            </com.lingan.seeyou.ui.view.YiPageIndicator>
+            <com.lingan.seeyou.ui.view.widget.ExpressionViewPager
+                android:id="@+id/vp_contains"
+                android:layout_above="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="180dip"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/space_xs"
+                android:layout_marginRight="@dimen/space_xs"
+                >
+            </com.lingan.seeyou.ui.view.widget.ExpressionViewPager>
+
+        </RelativeLayout>
+
+
+        <!--<RelativeLayout
+            android:id="@+id/rl_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="38dip"
+            android:layout_below="@+id/ll_emojichoose_main"
+            android:background="@drawable/apk_all_spread_kuang_top_selector"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/addFaceLayout"
+                android:layout_width="44dip"
+                android:layout_height="fill_parent"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/btn_add_face"
+                    android:textColor="@color/black_a"
+                    android:scaleType="center"
+                    android:textSize="@dimen/text_size_xs_less" />
+            </LinearLayout>
+            <TextView
+                android:layout_toRightOf="@+id/addFaceLayout"
+                android:layout_width="@dimen/divider_height_xxxxs"
+                android:layout_height="match_parent"
+                android:background="#dddddd" />
+            <LinearLayout
+                android:id="@+id/delFaceLayout"
+                android:layout_width="44dip"
+                android:layout_height="fill_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/btn_face_del_selector"
+                    android:textColor="@color/black_a"
+                    android:textSize="@dimen/text_size_xs_less" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_toLeftOf="@+id/delFaceLayout"
+                android:layout_width="@dimen/divider_height_xxxxs"
+                android:layout_height="match_parent"
+                android:background="#dddddd" />
+
+            <HorizontalScrollView
+                android:id="@+id/faceMenuHs"
+                android:layout_marginLeft="1px"
+                android:scrollbars="none"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/delFaceLayout"
+                android:layout_toRightOf="@id/addFaceLayout">
+
+                <LinearLayout
+                    android:id="@+id/faceMenuLayout"
+                    android:layout_marginTop="1px"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical">
+
+                    <include
+                        android:id="@+id/sysFaceLayout"
+                        layout="@layout/custom_face_menu" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+        </RelativeLayout>-->
+    </RelativeLayout>
+
+</com.lingan.seeyou.ui.view.widget.EmojiLayout>
