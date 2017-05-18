@@ -54,7 +54,6 @@ public class PublishShoushouActivity  extends PeriodBaseActivity{
 
     private static final String TAG = "PublishShoushouActivity";
 
-    private ImageView ivEmoji;
     private MeasureGridView gridViewPhoto;
     private GridViewImageApdater gridViewImageApdater;
     private List<GridViewImageModel> listPhoto = new ArrayList<GridViewImageModel>();
@@ -108,7 +107,7 @@ public class PublishShoushouActivity  extends PeriodBaseActivity{
         //头像限制
         MAX_PIC = 20;
 
-        ivEmoji = (ImageView) findViewById(R.id.ivEmoji);
+       // ivEmoji = (ImageView) findViewById(R.id.ivEmoji);
 
         linearGridViewPhoto = (LinearLayout) findViewById(R.id.linearGridViewPhoto);
 

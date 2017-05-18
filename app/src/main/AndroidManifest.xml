@@ -13,7 +13,7 @@
         android:theme="@style/ApplicationTheme"
 
         >
-        <activity android:name=".ShareMyTalkActivity" >
+        <activity android:name=".TestShoushouActivity" android:windowSoftInputMode="adjustResize|stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

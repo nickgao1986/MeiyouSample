@@ -77,7 +77,7 @@ public class ShareMyTalkActivity extends PeriodBaseActivity {
 
         tvShareCategoryTitle = (TextView) findViewById(R.id.tvShareCategoryTitle);
         tvShareContent = (TextView) findViewById(R.id.tvShareContent);
-        ivEmoji = (ImageView) findViewById(R.id.ivEmoji);
+        //ivEmoji = (ImageView) findViewById(R.id.ivEmoji);
         ivSharePic = (LoaderImageView) findViewById(R.id.ivSharePic);
         editContent = (CustomEditText) findViewById(R.id.publish_et_content);
         resizeLayout = (ResizeLayout) findViewById(R.id.rootContainer);
@@ -128,7 +128,7 @@ public class ShareMyTalkActivity extends PeriodBaseActivity {
             }
         });
 
-        emojiLayout.setIbEmojiKeyboard(ivEmoji);
+        //emojiLayout.setIbEmojiKeyboard(ivEmoji);
         emojiLayout.setEtContent(editContent);
         emojiLayout.setActivity(this);
         emojiLayout.setOnEmojiViewShowListener(new EmojiLayout.OnEmojiViewShowListener() {
