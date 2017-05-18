@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.lingan.seeyou.ui.view.ResizeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                            android:id="@+id/rootContainer"
-                                            android:layout_width="fill_parent"
-                                            android:layout_height="fill_parent"
-                                            android:background="@drawable/bottom_bg"
-                                            android:orientation="vertical">
+                                        android:id="@+id/rootContainer"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="fill_parent"
+                                        android:background="@drawable/bottom_bg"
+                                        android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/rlContainer"
@@ -48,7 +48,7 @@
                         android:padding="@dimen/space_xxs"
                         android:textColor="@color/black_a"
                         android:textColorHint="@color/black_e"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"/>
 
                     <ImageView
 
@@ -113,7 +113,7 @@
                                 android:maxLines="2"
                                 android:text="最近在追关之美少女，觉得还可以赞的么？到客服较深的咖啡机SD卡飞机少打飞机阿斯顿飞机上打发斯蒂芬卡死地方卡斯加对咖啡机阿斯顿开飞机啊是都打飞机的身份和到健身房和电视剧和的到和倒计时撒旦法"
                                 android:textColor="@color/black_a"
-                                android:textSize="@dimen/text_size_m" />
+                                android:textSize="@dimen/text_size_m"/>
 
                             <TextView
                                 android:id="@+id/tvShareCategoryTitle"
@@ -122,7 +122,7 @@
                                 android:layout_marginTop="@dimen/space_xxxs"
                                 android:text="瘦身美体"
                                 android:textColor="@color/black_b"
-                                android:textSize="@dimen/text_size_s" />
+                                android:textSize="@dimen/text_size_s"/>
                         </LinearLayout>
                     </RelativeLayout>
                 </LinearLayout>
@@ -130,7 +130,7 @@
                 <View
                     android:id="@+id/viewBottom"
                     android:layout_width="fill_parent"
-                    android:layout_height="600dip" />
+                    android:layout_height="600dip"/>
             </LinearLayout>
 
         </ScrollView>
@@ -140,7 +140,7 @@
             layout="@layout/custom_emoji_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true" />
+            android:layout_alignParentBottom="true"/>
     </RelativeLayout>
 
 
