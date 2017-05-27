@@ -1,10 +1,13 @@
-package nickgao.com.meiyousample.model;
+package com.com.meetyou.news.model;
 
 import java.io.Serializable;
 import java.util.List;
 
+import nickgao.com.meiyousample.model.NewsReviewReferenceModel;
+
 /**
- * Created by gaoyoujian on 2017/3/18.
+ * 资讯评论Model
+ * Created by huangyuxiang on 2016/11/14.
  */
 
 public class NewsReviewModel implements Serializable {
@@ -14,7 +17,7 @@ public class NewsReviewModel implements Serializable {
     public int review_count;
     public int praise_count;
     public boolean is_praise;
-
+    public boolean is_author;//是否是作者
     public NewsReviewPublisherModel publisher;
     public NewsReviewReferenceModel reference;
     public NewsDetailBean news_detail;

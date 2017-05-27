@@ -49,40 +49,7 @@
 
 
     </ScrollView>
-
     <View style="@style/divider"/>
-    <!-- 底部操作栏 未显示键盘时 -->
-    <com.lingan.seeyou.ui.view.publish.PublishThreeSwitchBar
-        android:id="@+id/no_keyboard_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical">
-
-        <LinearLayout
-            android:id="@+id/ll_emoji_switch"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/selector_btn_emoji"/>
-
-            <TextView
-                android:id="@+id/tv_emoji"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="表情"
-                android:textColor="@color/selector_publish_topic_bottom_text"
-                android:textSize="12sp"/>
-        </LinearLayout>
-
-    </com.lingan.seeyou.ui.view.publish.PublishThreeSwitchBar>
 
     <!-- 底部操作栏 显示键盘时，为解决底部bar闪动的问题才做两个类似布局 -->
     <com.lingan.seeyou.ui.view.publish.PublishFourSwitchBar

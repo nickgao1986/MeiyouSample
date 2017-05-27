@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/rl_habit_head"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/dp_value_15"
+    >
+
+    <TextView
+        android:id="@+id/tv_habit_head_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:paddingBottom="@dimen/dp_value_10"
+        android:paddingTop="@dimen/dp_value_10"
+        android:textColor="@color/black_a"
+        android:textSize="@dimen/text_size_17"
+        tool:text="习惯：不良" />
+
+    <ImageView
+        android:id="@+id/iv_habit_head_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/space_m"
+        android:layout_centerVertical="true"
+        android:src="@drawable/all_icon_arrow"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tv_habit_head_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/iv_habit_head_arrow"
+        android:layout_centerVertical="true"
+        android:layout_alignWithParentIfMissing="true"
+        tool:text="右边的 的的的的 "
+        android:paddingRight="@dimen/dp_value_15"
+        android:paddingLeft="@dimen/dp_value_10"
+        android:gravity="center"
+        android:textColor="@color/black_b"
+        android:textSize="@dimen/text_size_xs" />
+
+    <View
+        android:id="@+id/view_habit_divider"
+        style="@style/divider"
+        android:layout_below="@id/tv_habit_head_title" />
+</RelativeLayout>

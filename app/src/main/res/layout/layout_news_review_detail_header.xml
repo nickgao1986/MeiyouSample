@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/apk_all_white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rl_main_review"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_value_15"
+            android:paddingRight="@dimen/dp_value_15">
+
+            <nickgao.com.okhttpexample.view.LoaderImageView
+                android:id="@+id/iv_user_avatar"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/iv_user_avatar"
+                android:layout_marginLeft="@dimen/dp_value_10"
+                android:layout_marginTop="-2dp"
+                android:layout_toRightOf="@id/iv_user_avatar"
+                android:drawablePadding="8dp"
+                android:textColor="@color/black_a"
+                android:textSize="14sp"
+                tools:text="兰卡一生推" />
+
+            <TextView
+                android:id="@+id/tv_publish_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@id/iv_user_avatar"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="-2dp"
+                android:textColor="@color/black_c"
+                android:textSize="12sp"
+                tools:text="7-21 10:05" />
+
+            <TextView
+                android:id="@+id/tv_review_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_user_name"
+                android:layout_below="@id/tv_user_name"
+                android:layout_marginTop="10dp"
+                android:lineSpacingExtra="3dp"
+                android:textColor="@color/black_at"
+                android:textSize="18sp"
+                tools:text="回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复回复" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_review_content"
+                android:layout_below="@id/tv_review_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <nickgao.com.okhttpexample.view.LoaderImageView
+                        android:id="@+id/iv_news"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp" />
+
+                    <TextView
+                        android:id="@+id/tv_news_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_h"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容资讯内容"
+                        android:textColor="@color/black_at"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/new_review_item_comment_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_review"
+                        android:layout_width="52dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:drawableLeft="@drawable/tata_icon_commentthick"
+                        android:drawablePadding="@dimen/dp_value_4"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black_c"
+                        android:textSize="14sp"
+                        tools:text="9999" />
+
+                    <com.lingan.seeyou.ui.view.PraiseButton
+                        android:id="@+id/btn_praise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginRight="88dp"
+            android:src="@drawable/all_bg_quote" />
+    </LinearLayout>
+
+    <!-- 跳楼模式 头部loading -->
+    <LinearLayout
+        android:id="@+id/ll_head_loading"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/space_xxs"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:indeterminate="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:gravity="center"
+            android:text="正在加载更多... "
+            android:textColor="@color/black_b" />
+    </LinearLayout>
+</LinearLayout>

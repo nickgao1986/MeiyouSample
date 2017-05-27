@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/empty_container"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white_a"
+    android:paddingBottom="46dip"
+    android:paddingTop="46dip">
+
+    <com.lingan.seeyou.ui.view.CustomUrlTextView
+        android:id="@+id/tvTopicContent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_weight="1"
+        android:lineSpacingExtra="5dip"
+        android:lineSpacingMultiplier="1"
+        android:textColor="@color/black_a"
+        android:textSize="18sp"
+        android:text=" Android是一种基于Linux的自由及开放源代码的操作系统，主要使用于移动设备，如智能手机和平板电脑，由Google公司和开放手机联盟领导及开发。
+Android是一种基于Linux的自由及开放源代码的操作系统，主要使用于移动设备，如智能手机和平板电脑，由Google公司和开放手机联盟领导及开发。"/>
+</LinearLayout>

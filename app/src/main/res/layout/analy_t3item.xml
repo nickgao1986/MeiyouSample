@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/advice_about_container"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/actionbar_top_height"
+        android:layout_marginTop="@dimen/space_xs"
+        android:background="@drawable/apk_anlysis_redbg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:padding="@dimen/space_xxs">
+
+        <TextView
+            android:id="@+id/advice_about_count"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/space_xl"
+            android:background="@drawable/analyse_row_circle"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#fff"
+            android:textSize="@dimen/space_m"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/advice_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_xxs"
+            android:text="月经不调"
+            android:textColor="#fff"
+            android:textSize="14dip" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_Analysis"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/titleLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_m"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_xxs"
+                android:src="@drawable/apkanlysis_jiankanga"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/tvTitleOne"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="健康分析"
+                android:textColor="@color/black_at"
+                android:textSize="@dimen/text_size_18" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_m"
+            android:layout_marginRight="@dimen/space_m"
+            android:layout_marginTop="@dimen/dp_value_5"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/advice11"
+                layout="@layout/analy_advice" />
+
+            <include
+                android:id="@+id/advice12"
+                layout="@layout/analy_advice" />
+
+            <include
+                android:id="@+id/advice13"
+                layout="@layout/analy_advice" />
+
+            <include
+                android:id="@+id/advice14"
+                layout="@layout/analy_advice" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_Advice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xxl"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/titleAdviceLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_m"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_xxs"
+                android:src="@drawable/apkanlysis_jiankangjy"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/tvTitleTwo"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="健康建议"
+                android:textColor="@color/black_at"
+                android:textSize="@dimen/text_size_18" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_m"
+            android:layout_marginTop="@dimen/dp_value_5"
+            android:orientation="vertical"
+            android:layout_marginRight="@dimen/space_m"
+            >
+
+
+            <include
+                android:id="@+id/advice21"
+                layout="@layout/analy_advice" />
+
+            <include
+                android:id="@+id/advice22"
+                layout="@layout/analy_advice" />
+
+            <include
+                android:id="@+id/advice23"
+                layout="@layout/analy_advice" />
+
+            <include
+                android:id="@+id/advice24"
+                layout="@layout/analy_advice" />
+
+            <include
+                android:id="@+id/advice25"
+                layout="@layout/analy_advice" />
+
+            <include
+                android:id="@+id/advice26"
+                layout="@layout/analy_advice" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

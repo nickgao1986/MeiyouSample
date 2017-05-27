@@ -86,9 +86,9 @@ public class TestShoushouActivity extends PeriodBaseActivity{
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams)etContent.getLayoutParams();
         int titlebarHeight = this.getResources().getDimensionPixelSize(R.dimen.title_height);
 
-        int height = mScreenHeight - DeviceUtils.dip2px(this,50) -titlebarHeight - mStatusBarHeight - DeviceUtils.dip2px(this,140);
-        layoutParams.height = height;
-
+        int height = mScreenHeight -titlebarHeight - mStatusBarHeight - DeviceUtils.dip2px(this,140);
+//        layoutParams.height = height;
+        etContent.setMinHeight(height);
         //头像限制
         //MAX_PIC = 20;
 
@@ -103,15 +103,15 @@ public class TestShoushouActivity extends PeriodBaseActivity{
      */
     private void initBottomBar() {
         //Panel&键盘未弹起时底部的bar
-        mThreeSwitchBar = (PublishThreeSwitchBar) findViewById(R.id.no_keyboard_bar);
-        mThreeSwitchBar.setPublishTopicWatchLayout(mWatchLayout);
-        LinearLayout llEmojiSwitch = (LinearLayout) findViewById(R.id.ll_emoji_switch);
-        llEmojiSwitch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onEmojiSwitchClick();
-            }
-        });
+//        mThreeSwitchBar = (PublishThreeSwitchBar) findViewById(R.id.no_keyboard_bar);
+//        mThreeSwitchBar.setPublishTopicWatchLayout(mWatchLayout);
+//        LinearLayout llEmojiSwitch = (LinearLayout) findViewById(R.id.ll_emoji_switch);
+//        llEmojiSwitch.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onEmojiSwitchClick();
+//            }
+//        });
 
         //Panel&键盘弹起时底部的bar
         mFourSwitchBar = (PublishFourSwitchBar) findViewById(R.id.keyboard_bar);

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/rl_love_dashboard"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/space_xs_new"
+    android:background="@drawable/apk_all_white">
+
+    <include layout="@layout/layout_analysis_head_more"
+        android:id="@+id/include_id_love"/>
+
+    <FrameLayout
+        android:id="@+id/fl_love_dashboard_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include_id_love"
+        android:layout_gravity="center">
+
+        <RelativeLayout
+            android:layout_width="120dip"
+            android:layout_height="120dip"
+            android:layout_marginLeft="@dimen/space_xs"
+            android:layout_marginRight="@dimen/space_xs">
+
+            <com.lingan.seeyou.ui.view.CircleProgressbar
+                android:id="@+id/pb_love_dashboard"
+                android:layout_width="100dip"
+                android:layout_height="100dip"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_love_dashboard_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/red_a"
+                android:textSize="@dimen/text_size_xxll"/>
+
+            <TextView
+                android:id="@+id/tv_love_dashboard_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="%"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="2dp"
+                android:layout_marginLeft="1dp"
+                android:textColor="@color/red_a"
+                android:textSize="@dimen/text_size_s"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include_id_love"
+        android:layout_gravity="center"
+        android:layout_toRightOf="@id/fl_love_dashboard_content"
+        android:paddingRight="@dimen/space_xs">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/space_xs_new">
+
+            <LinearLayout
+                android:id="@+id/ll_love_dashboard_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxs">
+<!-- 可以使用Html.format改造 -->
+                <TextView
+                    android:id="@+id/tvLoveCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="爱爱次数"
+                    android:textColor="@color/black_a"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <TextView
+                    android:id="@+id/tv_love_dashboard_content_sum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space_xxs"
+                    android:text="0"
+                    android:textColor="@color/black_b"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <TextView
+                    android:id="@+id/tvLoveCountTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space_xxs_less"
+                    android:text="次"
+                    android:textColor="@color/black_b"
+                    android:textSize="@dimen/text_size_14"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_love_dashboard_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/ll_love_dashboard_content">
+
+                <LinearLayout
+                android:id="@+id/ll_love_dashboard_content_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/space_xxs">
+
+                <TextView
+                    android:id="@+id/tvYunqiLove"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="易孕期爱爱"
+                    android:textColor="@color/black_a"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <TextView
+                    android:id="@+id/tv_love_dashboard_sum_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space_xxs"
+                    android:text="0"
+                    android:textColor="@color/black_b"
+                    android:textSize="@dimen/text_size_16"/>
+
+                <TextView
+                    android:id="@+id/tvYunqiLoveCountTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/space_xxs_less"
+                    android:text="次"
+                    android:textColor="@color/black_b"
+                    android:textSize="@dimen/text_size_16"/>
+            </LinearLayout>
+
+                <TextView
+                android:id="@+id/tv_analysis_love_ps"
+                android:layout_below="@+id/ll_love_dashboard_content_2"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="@dimen/space_xxs"
+                android:layout_height="wrap_content"
+                android:text="(注：本周期爱爱后最大怀孕几率)"
+                android:textColor="@color/black_b"
+                android:textSize="12sp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_love_dashboard_huifuqi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_love_dashboard_content"
+                android:layout_marginTop="@dimen/space_xxs"
+                android:text="经期未恢复,无法计算几率"
+                android:textColor="@color/red_b"
+                android:textSize="14sp"
+                android:visibility="visible" />
+            
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_love_content_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/all_icon_arrow"/>
+    </RelativeLayout>
+</RelativeLayout>

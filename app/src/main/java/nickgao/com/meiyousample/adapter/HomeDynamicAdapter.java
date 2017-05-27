@@ -40,7 +40,7 @@ public class HomeDynamicAdapter extends BaseAdapter {
     private static final int LAYOUT_TYPE_SHARE = 1;    //话题分享布局
     private static final int LAYOUT_TYPE_CIRCLE_RECOMMEND = 2;  //话题推荐布局
 
-    private static final int TYPE_COUNT = LAYOUT_TYPE_CIRCLE_RECOMMEND + 1;//3种布局
+    private static final int TYPE_COUNT = 2;//2种布局
     private Activity context;
     private List<HomeDynamicModel> models;
     private int bigImageWidth;
@@ -263,11 +263,6 @@ public class HomeDynamicAdapter extends BaseAdapter {
                 viewHolder.tvNickname = (TextView) view.findViewById(R.id.tvNickname);
 
                 viewHolder.btn_praise = (PraiseButton) view.findViewById(R.id.btn_praise);
-
-//                viewHolder.llZan = (LinearLayout) view.findViewById(R.id.llZan);
-//                viewHolder.ivZan = (ImageView) view.findViewById(R.id.ivZanImage);
-//                viewHolder.tvZan = (TextView) view.findViewById(R.id.tvZan);
-
                 viewHolder.tvReply = (TextView) view.findViewById(R.id.tvReply);
                 viewHolder.llZanReply = (LinearLayout) view.findViewById(R.id.llZanReply);
                 viewHolder.zanDivider = (ImageView) view.findViewById(R.id.zanDivider);
@@ -309,9 +304,7 @@ public class HomeDynamicAdapter extends BaseAdapter {
                 }
             } else {
                 viewHolder.llZanReply.setVisibility(View.GONE);
-                // viewHolder.tvReply.setVisibility(View.GONE);
             }
-
 
             switch (layoutType) {
                 case LAYOUT_TYPE_DEFAULT:
@@ -322,7 +315,6 @@ public class HomeDynamicAdapter extends BaseAdapter {
                         viewHolder.tvContent.setText(homeDynamicModel.content);
                     } else {
                         viewHolder.tvContent.setVisibility(View.GONE);
-                        // viewHolder.tvWatchMore.setVisibility(View.GONE);
                     }
 
 
@@ -374,7 +366,6 @@ public class HomeDynamicAdapter extends BaseAdapter {
                     break;
             }
             fillAvatarIcon(viewHolder, homeDynamicModel);
-//            setListeners(viewHolder, homeDynamicModel, position, layoutType);
         } catch (Exception e) {
             e.printStackTrace();
         }

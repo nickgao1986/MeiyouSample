@@ -813,7 +813,7 @@
     <string name="should_have_nickname">设置昵称后才能操作哦</string>
     <string name="reply">回复</string>
     <string name="news_review_hint">优质评论将会被优先展示</string>
-    <string name="news_review_limit">内容最多%s字哦~</string>
+    <string name="news_review_limit">内容最多%d字哦~</string>
     <string name="reply_to">回复 %s :</string>
     <string name="reply_to_with_content">回复 %1$s :%2$s</string>
     <string name="load_no_more">哇，都看完啦～</string>
@@ -825,5 +825,33 @@
     <string name="report">举报</string>
     <string name="news_review_detail">详情</string>
     <string name="text_DynamicDetailActivity">nickgao.com.meiyousample.myfragment.DynamicDetailActivity</string>
+    <string name="network_broken">网络不佳</string>
+    <string name="news_reply">回复</string>
+    <string name="news_send">发送</string>
 
+
+    <string name="share_to">分享到</string>
+    <string name="share_wx_circles">微信朋友圈</string>
+    <string name="share_wx_friends">微信好友</string>
+    <string name="share_sina">新浪微博</string>
+    <string name="share_qq_zone">QQ空间</string>
+    <string name="share_sms">短信</string>
+    <string name="share_qq_friends">QQ好友</string>
+    <string name="share_talk">我的动态</string>
+    <string name="share_copy_url">复制链接</string>
+    <string name="share_content">这里是获取的内容\n FROM:柚宝宝-See You</string>
+    <string name="share_count_limit">只能分享%1$s个字符</string>
+    <string name="share_limit_hint">文字超出限制"</string>
+    <string name="default_share_title">"分享图片"</string>
+    <string name="beggin_share">开始分享</string>
+    <string name="start_share">分享中&#8230;</string>
+    <string name="share_success">分享成功</string>
+    <string name="share_failed_repeat">内容重复啦~ 已经分享过了哦！</string>
+    <string name="share_failed_privilege">功能权限不足，暂时无法使用！</string>
+    <string name="share_failed_token">授权已经失效</string>
+    <string name="share_failed">分享失败</string>
+    <string name="share_content_empty">分享内容为空！</string>
+    <string name="share_title_sina">新浪微博分享</string>
+    <string name="share_title_qqzone">QQ分享</string>
+    <string name="share_failed_qq_uninstalled">未安装QQ</string>
 </resources>

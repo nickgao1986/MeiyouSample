@@ -14,13 +14,13 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.com.meetyou.news.model.NewsReviewModel;
 import com.lingan.seeyou.ui.view.PraiseButton;
 import com.lingan.seeyou.ui.view.skin.ViewFactory;
 
 import java.util.List;
 
 import nickgao.com.meiyousample.R;
-import nickgao.com.meiyousample.model.NewsReviewModel;
 import nickgao.com.meiyousample.utils.CalendarUtil;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.meiyousample.utils.EmojiConversionUtil;

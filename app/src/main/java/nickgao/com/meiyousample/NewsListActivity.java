@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.alibaba.fastjson.JSON;
+import com.com.meetyou.news.model.NewsReviewModel;
 import com.lingan.seeyou.ui.view.LinearListView;
 import com.lingan.seeyou.ui.view.ListFooterUtil;
 import com.lingan.seeyou.ui.view.LoadingView;
@@ -43,7 +44,6 @@ import nickgao.com.meiyousample.event.NewsWebViewEvent;
 import nickgao.com.meiyousample.model.NewsDetailRecommendModel;
 import nickgao.com.meiyousample.model.NewsDetailReviewListModel;
 import nickgao.com.meiyousample.model.NewsDetailShareBodyModel;
-import nickgao.com.meiyousample.model.NewsReviewModel;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.okhttpexample.view.LoaderImageView;
 

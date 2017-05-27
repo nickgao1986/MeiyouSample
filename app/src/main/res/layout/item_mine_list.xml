@@ -8,7 +8,7 @@
     android:orientation="horizontal">
 
 
-    <com.lingan.seeyou.ui.view.LoaderImageView
+    <nickgao.com.okhttpexample.view.LoaderImageView
         android:id="@+id/im_mineIcon"
         android:layout_width="@dimen/list_icon_height_30"
         android:layout_height="@dimen/list_icon_height_30"
@@ -81,7 +81,7 @@
         android:visibility="gone"
         tools:visibility="visible">
 
-        <com.lingan.seeyou.ui.view.LoaderImageView
+        <nickgao.com.okhttpexample.view.LoaderImageView
             android:id="@+id/ri_itemminelist_headimg"
             android:layout_width="@dimen/list_icon_height_30"
             android:layout_height="@dimen/list_icon_height_30"

@@ -47,6 +47,8 @@ public class RcRestRequest<T> extends RestRequest {
 
     private Object requestBody;
 
+    public boolean isParseByFastJson;
+
     private HashMap<String, String> mRequestHeader;
     private HashMap<String, String> mResponseHeader;
 
@@ -66,8 +68,17 @@ public class RcRestRequest<T> extends RestRequest {
         mResponseType = responseType;
         mRequestHeader = new HashMap<String, String>();
         mResponseHeader = new HashMap<>();
-
     }
+
+    public RcRestRequest(String url, HttpMethod method, String logTag) {
+        super(method, logTag, LogHttp.ALL, LogHttp.ALL);
+        mRequestPath = url;
+        mResponseType = null;
+        isParseByFastJson = true;
+        mRequestHeader = new HashMap<String, String>();
+        mResponseHeader = new HashMap<>();
+    }
+
 
     public void addHeader(String key, String value) {
         mRequestHeader.put(key, value);
@@ -177,9 +188,7 @@ public class RcRestRequest<T> extends RestRequest {
                 }
             }
         }
-       // printString(response);
         onParse(response);
-
     }
 
     private void printString(Reader responseReader) {

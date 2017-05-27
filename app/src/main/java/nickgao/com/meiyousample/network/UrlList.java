@@ -15,5 +15,6 @@ public class UrlList {
 
     public static final String TOPIC_LIST = "http://users.seeyouyima.com/v2/userpublish?app_id=1&mode=0&v=6.0&platform=android&device_id=866798025057912";
     public static final String REPLY_LIST = "http://circle.seeyouyima.com/v2/user_review_list?app_id=1&mode=0&v=6.0&platform=android&device_id=866798025057912&type=8&size=20";
+    public static final String NEWS_REVIEW_LIST = "http://test-news.seeyouyima.com/v2/news_sub_review_list?goto=0&last=0&review_id=100619&load_direction=next&size=20";
 
 }

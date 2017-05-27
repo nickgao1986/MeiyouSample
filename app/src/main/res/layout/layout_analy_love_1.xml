@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/analysis_none"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#9000"
+        android:gravity="center"
+        android:paddingBottom="@dimen/space_xs"
+        android:paddingLeft="@dimen/space_xs"
+        android:paddingRight="@dimen/space_xs"
+        android:paddingTop="@dimen/space_xs"
+        android:text="的撒风飞凤飞飞"
+        android:textColor="#fff"
+        android:textSize="@dimen/space_m"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/baselayout_vg_cover"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/xiyou_translucent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" />
+
+    <com.meetyou.calendar.view.CalendarCustScrollView
+        android:id="@+id/scLoveLoveView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_analysis_main_love" />
+
+            <include
+                layout="@layout/activity_analysis_love_head"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/bottom_container"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/apk_all_white">
+
+                <RelativeLayout
+                    android:id="@+id/chartRly"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                    <!--爱爱分析曲线图布局-->
+                    <LinearLayout
+                        android:id="@+id/rl_habit_bottom"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="invisible"
+                        tools:visibility="visible">
+                        <!--爱爱分析图标标头布局-->
+
+                        <RelativeLayout
+                            android:id="@+id/rl_love_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="@dimen/space_s"
+                            android:paddingRight="@dimen/space_s">
+
+                            <TextView
+                                android:id="@+id/analy_love_res_"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginTop="@dimen/space_l"
+                                android:text="爱爱图表"
+                                android:textColor="@color/black_a"
+                                android:textSize="@dimen/text_size_17" />
+
+
+                            <ImageView
+                                android:id="@+id/ivArrow2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/all_icon_arrow"
+                                android:visibility="gone" />
+
+                            <TextView
+                                android:id="@+id/tvAllRecord"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="@dimen/space_xs"
+                                android:layout_marginRight="@dimen/space_xs"
+                                android:layout_toLeftOf="@+id/ivArrow2"
+                                android:gravity="center"
+                                android:text="所有记录"
+                                android:textColor="@color/black_b"
+                                android:textSize="@dimen/text_size_xs"
+                                android:visibility="gone" />
+
+                            <Button
+                                android:id="@+id/btn_analy_love_land"
+                                android:layout_width="60dp"
+                                android:layout_height="26dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/dp_value_15"
+                                android:background="@drawable/kuang_all_corners_black_e_selector"
+                                android:text="横屏"
+                                android:textColor="@color/black_b"
+                                android:textSize="@dimen/text_size_14" />
+
+                            <View
+                                android:id="@+id/viewLoveLove"
+                                style="@style/divider"
+                                android:layout_below="@id/analy_love_res_"
+                                android:layout_marginTop="@dimen/space_s" />
+                        </RelativeLayout>
+
+                        <com.meetyou.chartview.view.LineChartView
+                            android:id="@+id/line_chartview"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dip"
+                            android:paddingBottom="@dimen/dp_value_15"
+                            android:paddingRight="@dimen/dp_value_8"
+                            android:tag="chartview" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_analysis_state"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/space_xxxs"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/space_xs"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tv_layout_love_analysis_chart_bottom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="10dp"
+                            android:layout_marginTop="2dp"
+                            android:textSize="@dimen/text_size_14"
+                            android:visibility="gone"
+                            tools:text="爱爱次数 4次  体外 1次，避孕套 2次"
+                            tools:visibility="visible" />
+
+                    </LinearLayout>
+                    <!--爱爱分析加载中布局-->
+                    <com.lingan.seeyou.ui.view.LoadingView
+                        android:id="@+id/loadingView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true" />
+                    <!--爱爱分析空记录布局-->
+                    <include
+                        layout="@layout/analy_empty"
+                        android:visibility="invisible" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <!--爱爱分析建议布局-->
+            <View
+                android:id="@+id/tv_divider"
+                style="@style/divider"
+                android:layout_below="@id/chartRly"
+                android:layout_marginBottom="10dip"
+                android:layout_marginLeft="@dimen/space_m" />
+
+            <LinearLayout
+                android:id="@+id/llAdviceContainer"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@id/tv_divider"
+                android:background="@drawable/apk_all_white"
+                android:paddingTop="@dimen/dp_value_10"
+                android:paddingBottom="@dimen/dp_value_20"
+                android:orientation="vertical" />
+        </LinearLayout>
+    </com.meetyou.calendar.view.CalendarCustScrollView>
+</RelativeLayout>

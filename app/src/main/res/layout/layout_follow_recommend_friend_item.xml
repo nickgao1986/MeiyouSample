@@ -18,7 +18,7 @@
             android:layout_centerVertical="true"
             android:layout_margin="@dimen/space_s">
 
-            <com.lingan.seeyou.ui.view.LoaderImageView
+            <nickgao.com.okhttpexample.view.LoaderImageView
                 android:id="@+id/ivHeadPic"
                 android:layout_width="@dimen/list_icon_height_50"
                 android:layout_height="@dimen/list_icon_height_50" />

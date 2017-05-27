@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         >
 
-        <com.lingan.seeyou.ui.view.LoaderImageView
+        <nickgao.com.okhttpexample.view.LoaderImageView
             android:id="@+id/icon_family"
             android:layout_width="@dimen/list_icon_height_44"
             android:layout_height="@dimen/list_icon_height_44"

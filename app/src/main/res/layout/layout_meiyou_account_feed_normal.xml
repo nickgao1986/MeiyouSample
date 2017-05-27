@@ -87,7 +87,7 @@
             android:layout_toLeftOf="@+id/iv_image"
             android:paddingRight="12dip">
 
-            <com.lingan.seeyou.ui.view.LoaderImageView
+            <nickgao.com.okhttpexample.view.LoaderImageView
                 android:id="@+id/iv_block_two"
                 android:layout_width="16dip"
                 android:layout_height="16dip"

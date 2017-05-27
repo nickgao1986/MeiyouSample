@@ -1,5 +1,7 @@
 package nickgao.com.meiyousample.model;
 
+import com.com.meetyou.news.model.NewsReviewModel;
+
 import java.io.Serializable;
 import java.util.List;
 

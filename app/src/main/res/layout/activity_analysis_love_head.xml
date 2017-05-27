@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--HEAD-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:background="@drawable/analysis_detail_head"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tv_symp_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_value_12"
+        android:focusable="true"
+        android:text=""
+        android:textColor="@color/white_a"
+        android:textSize="@dimen/text_size_28"
+        tools:text="怀孕几率较低"
+        />
+
+    <TextView
+        android:id="@+id/tv_symp_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_symp_desc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_value_7"
+        android:text=""
+        android:textColor="@color/white_a"
+        android:textSize="@dimen/text_size_16"
+        tools:text="建议使用早孕试纸"
+        android:visibility="gone"
+        tools:visibility="visible"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_value_30"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_xianchuyu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_a"
+                android:textSize="16sp"
+                android:text="爱爱次数"
+                tools:text="爱爱次数"
+                />
+
+            <TextView
+                android:id="@+id/tv_analysis_temp_periodname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_xianchuyu"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/white_a"
+                android:textSize="24sp"
+                tools:text="5次"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/tv_now_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_a"
+                android:textSize="16sp"
+                tools:text="易孕爱爱次数"
+                android:gravity="center"
+                android:text="易孕爱爱次数"
+                />
+
+            <TextView
+                android:id="@+id/tv_now_period_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_now_period"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/white_a"
+                android:textSize="24sp"
+                tools:text="0次"
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

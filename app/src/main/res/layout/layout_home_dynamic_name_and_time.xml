@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:id="@+id/avatarLayout">
 
-        <com.lingan.seeyou.ui.view.LoaderImageView
+        <nickgao.com.okhttpexample.view.LoaderImageView
             android:id="@+id/ivAvatar"
             android:layout_width="32dp"
             android:layout_height="32dp"

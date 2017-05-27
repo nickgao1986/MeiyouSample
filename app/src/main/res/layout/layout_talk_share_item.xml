@@ -9,13 +9,13 @@
               android:focusableInTouchMode="true"
               android:gravity="center_vertical"
               android:orientation="horizontal"
-              android:padding="@dimen/space_xs">
+              android:paddingRight="15dp"
+              android:paddingLeft="15dp">
 
     <RelativeLayout
         android:id="@+id/rl_bottom"
         android:layout_width="fill_parent"
         android:layout_height="80dip"
-        android:layout_margin="@dimen/space_xxs"
         android:background="@drawable/apk_all_yellowbg"
         android:orientation="horizontal">
 

@@ -1,8 +1,10 @@
 package nickgao.com.meiyousample.myfragment;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Gravity;
@@ -11,7 +13,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
@@ -28,13 +29,17 @@ import com.lingan.seeyou.ui.view.BadgeImageView;
 import com.lingan.seeyou.ui.view.ParallaxScrollListView;
 import com.lingan.seeyou.ui.view.ResizeLayout;
 import com.lingan.seeyou.ui.view.RoundedImageView;
+import com.lingan.seeyou.ui.view.photo.UserPhotoManager;
+import com.lingan.seeyou.ui.view.skin.SkinManager;
 import com.lingan.seeyou.ui.view.skin.ViewFactory;
+import com.meetyou.crsdk.util.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import activity.PeriodBaseActivity;
 import nickgao.com.framework.utils.LogUtils;
+import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.adapter.HomeDynamicAdapter;
 import nickgao.com.meiyousample.firstPage.DynamicDetailClickPraiseEvent;
@@ -60,7 +65,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
     private String TAG = "DynamicHomeActivity";
     public static final String PREV = "prev";
     public static final String NEXT = "next";
-    private Context mContext;
+    private Activity myActivity;
 
     private HomeDynamicController mHomeDynamicController;
     private ResizeLayout rootContainer; // 根布局
@@ -120,6 +125,13 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
         return intent;
     }
 
+//    @Override
+//    public int getLayoutId() {
+//        return R.layout.dynamic_home_layout;
+//    }
+
+
+
     @Override
     protected int getLayoutId() {
         return R.layout.dynamic_home_layout;
@@ -132,23 +144,49 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        ImageLoader.initialize(this, false);
+        initSkin();
+
         super.onCreate(savedInstanceState);
+        myActivity = this;
         LogUtils.i("DynamicHomeActivity onCreate");
         try {
-            getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
             init();
             initUI();
             setListener();
             loadDataFirst();
+            setAvatar(false);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void initSkin() {
+        try {
+            //初始化皮肤
+            SkinManager.getInstance().init(this, this.getResources(), this.getAssets());
+            SkinManager.getInstance().setApply(true);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
 
+//    @Override
+//    public void onActivityCreated(Bundle savedInstanceState) {
+//        super.onActivityCreated(savedInstanceState);
+//        try {
+//            init();
+//            initUI();
+//            setListener();
+//            loadDataFirst();
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//    }
 
     @Override
-    protected void onResume() {
+    public void onResume() {
         super.onResume();
         try {
             LogUtils.i("DynamicHomeActivity onResume" + mLvCurrentPosition);
@@ -160,7 +198,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
 
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
         try {
             if (parallaxListview != null) {
@@ -177,31 +215,20 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
 
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         LogUtils.i("DynamicHomeActivity onDestory");
         try {
             isActivityFinish = true;
            // ExtendOperationController.getInstance().unRegister(extendListener);
-            setContentView(R.layout.view_null);
         } catch (Exception e) {
             e.printStackTrace();
         }
         super.onDestroy();
     }
 
-    @Override
-    public void onBackPressed() {
-        try {
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        super.onBackPressed();
-    }
 
     private void init() {
-        mContext = getApplicationContext();
-        mAdapter = new HomeDynamicAdapter(this);
+        mAdapter = new HomeDynamicAdapter(myActivity);
 
         mHomeDynamicController = HomeDynamicController.getInstance();
         // 接口监听
@@ -236,7 +263,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
                 if (isFistLoad) {//首次加载
                     isFistLoad = false;
                     mHomeDynamicController.getHomeDynamicListFromCache(
-                            DynamicHomeActivity.this, new IOnExcuteListener() {
+                            myActivity, new IOnExcuteListener() {
                                 @Override
                                 public void onResult(Object object) {
                                     try {
@@ -257,7 +284,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
         });
 
         // 上拉加载更多
-        parallaxListview.setOnScrollListener(new OnListViewScrollListener(getApplicationContext(), new android.widget.AbsListView.OnScrollListener() {
+        parallaxListview.setOnScrollListener(new OnListViewScrollListener(myActivity, new AbsListView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(AbsListView absListView,
                                              int scrollState) {
@@ -351,7 +378,10 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
 
                         if (mAdapter != null && null != homeDynamicModel) {
 
-                            //mAdapter.onItemClick(homeDynamicModel,false);
+//                            mAdapter.onItemClick(homeDynamicModel,false);
+                            Intent intent = new Intent();
+                            intent.setClass(myActivity,DynamicDetailActivity.class);
+                            startActivity(intent);
                         }
 
                     }
@@ -473,7 +503,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
         tv_publish_dynamic.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-//                AnalysisClickAgent.onEvent(mContext, "home-xss");
+//                AnalysisClickAgent.onEvent(myActivity, "home-xss");
 //                YouMentEventUtils.getInstance().countEvent(mActivity,"grzy-fdt",YouMentEventUtils.NOTHING,null);
 //                handlePublishDynamic();
             }
@@ -481,24 +511,22 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
         custom_iv_left.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                myActivity.finish();
             }
         });
     }
     @SuppressLint("ResourceAsColor")
     private void initUI() {
         getTitleBar().setCustomTitleBar(-1);
-
         initTitle();
 
         rootContainer = (ResizeLayout) findViewById(R.id.rootContainer);
         parallaxListview = (ParallaxScrollListView) findViewById(R.id.home_list);
 
-        llTopMenu = (LinearLayout) findViewById(R.id.linearMsgTopMenu);
-        llTopMenu.setVisibility(View.INVISIBLE);
+
 
         // 列表头部
-        mListViewHeader = ViewFactory.from(mContext).getLayoutInflater().inflate(R.layout.layout_dynamic_home_list_header, null);
+        mListViewHeader = ViewFactory.from(myActivity).getLayoutInflater().inflate(R.layout.layout_dynamic_home_list_header, null);
         //  mMask = (ImageView)mListViewHeader.findViewById(R.id.mask);
 
         mImageViewWithMask = (ImageViewWithMask)mListViewHeader.findViewById(R.id.ivBannerBg);
@@ -506,7 +534,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
 
         // ivBannerBg = (LoaderImageView) mListViewHeader.findViewById(R.id.ivBannerBg);
 
-        int bannerHeight = DeviceUtils.getScreenHeight(getApplicationContext()) / 4;
+        int bannerHeight = DeviceUtils.getScreenHeight(myActivity) / 4;
         RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mImageViewWithMask.getLayoutParams();
         if (bannerHeight > 0) {
             params.height = bannerHeight;
@@ -526,7 +554,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
         ivMsgIcon = (LoaderImageView) mListViewHeader.findViewById(R.id.ivMsgIcon);
 
         //消息提醒认证用户
-        bivMsgVerify = new BadgeImageView(getApplicationContext(), ivMsgIcon);
+        bivMsgVerify = new BadgeImageView(myActivity, ivMsgIcon);
         bivMsgVerify.setBadgePosition(BadgeImageView.POSITION_BOTTOM_RIGHT);
         bivMsgVerify.setImageResource(R.drawable.personal_v);
 
@@ -568,7 +596,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
 
     private void initListViewFooter() {
         // 列表底部
-        moreView = ViewFactory.from(this).getLayoutInflater().inflate(R.layout.listfooter_more,
+        moreView = ViewFactory.from(myActivity).getLayoutInflater().inflate(R.layout.listfooter_more,
                 null);
         moreProgressBar = (ProgressBar) moreView
                 .findViewById(R.id.pull_to_refresh_progress);
@@ -577,7 +605,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
         moreView.setVisibility(View.GONE);
 
         // 空底部
-        LinearLayout linearFoot = new LinearLayout(this);
+        LinearLayout linearFoot = new LinearLayout(myActivity);
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.FILL_PARENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -615,7 +643,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
 
         LinearLayout linearMenu = (LinearLayout) llTopMenu
                 .findViewById(R.id.linearMenu);
-        Animation animation = AnimationUtils.loadAnimation(this,
+        Animation animation = AnimationUtils.loadAnimation(myActivity,
                 R.anim.menu_out);
         animation.setAnimationListener(new Animation.AnimationListener() {
             @Override
@@ -680,7 +708,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
         try {
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) ivTopSanjiao
                     .getLayoutParams();
-            int totalWidth = DeviceUtils.dip2px(this, 48);
+            int totalWidth = DeviceUtils.dip2px(myActivity, 48);
             int subWidth = totalWidth - mSanjiaoWidth;
             int rightMargin = subWidth / 2;
             LogUtils.i("-->totalWidth:" + totalWidth + "-->subWidth:"
@@ -691,7 +719,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
             // 动画
             final LinearLayout linearMenu = (LinearLayout) llTopMenu
                     .findViewById(R.id.linearMenu);
-            Animation animation = AnimationUtils.loadAnimation(this,
+            Animation animation = AnimationUtils.loadAnimation(myActivity,
                     R.anim.menu_in);
             linearMenu.startAnimation(animation);
 
@@ -793,43 +821,42 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
      * banner
      */
     private void handleUpdateBanner() {
-//        try {
-//            final String bannerUrl = DataSaveHelper.getInstance(
-//                    getApplicationContext()).getHomeBannerUrl();
-//            LogUtils.i("updatebanner:" + bannerUrl);
-//            if (!StringUtils.isNull(bannerUrl)) {
-//                ImageLoader.getInstance().displayImage(mActivity.getApplicationContext(),
-//                        ivBannerBg, bannerUrl,
-//                        0, 0, 0, 0,
-//                        false, DeviceUtils.getScreenWidth(mActivity.getApplicationContext()), DeviceUtils.dip2px(mActivity.getApplicationContext(), 200), new ImageLoader.onCallBack(){
-//                            @Override
-//                            public void onSuccess(ImageView imageView, Bitmap bitmap, String s, Object... objects) {
-//                                //    mMask.setVisibility(View.VISIBLE);
-//                                mImageViewWithMask.addMask();
-//                            }
-//
-//                            @Override
-//                            public void onFail(String s, Object... objects) {
-//                                SkinManager.getInstance().setDrawable(ivBannerBg, R.drawable.personal_fragment_header_background);
-//                            }
-//
-//                            @Override
-//                            public void onProgress(int i, int i1) {
-//
-//                            }
-//
-//                            @Override
-//                            public void onExtend(Object... objects) {
-//
-//                            }
-//                        });
-//            } else {
-//                LogUtils.i("updatebanner default");
-//                SkinManager.getInstance().setDrawable(ivBannerBg, R.drawable.personal_fragment_header_background);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            final String bannerUrl = "http://sc.seeyouyima.com/android-dynamicBanner-129746620-1493947221310_972_972.jpg";
+            LogUtils.i("updatebanner:" + bannerUrl);
+            if (!StringUtils.isNull(bannerUrl)) {
+                ImageLoader.getInstance().displayImage(myActivity,
+                        ivBannerBg, bannerUrl,
+                        0, 0, 0, 0,
+                        false, DeviceUtils.getScreenWidth(myActivity), DeviceUtils.dip2px(myActivity, 200), new ImageLoader.onCallBack(){
+                            @Override
+                            public void onSuccess(ImageView imageView, Bitmap bitmap, String s, Object... objects) {
+                                //    mMask.setVisibility(View.VISIBLE);
+                                mImageViewWithMask.addMask();
+                            }
+
+                            @Override
+                            public void onFail(String s, Object... objects) {
+                                SkinManager.getInstance().setDrawable(ivBannerBg, R.drawable.personal_fragment_header_background);
+                            }
+
+                            @Override
+                            public void onProgress(int i, int i1) {
+
+                            }
+
+                            @Override
+                            public void onExtend(Object... objects) {
+
+                            }
+                        });
+            } else {
+                LogUtils.i("updatebanner default");
+                SkinManager.getInstance().setDrawable(ivBannerBg, R.drawable.personal_fragment_header_background);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -932,15 +959,13 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
      * @param
      */
     private void setAvatar(boolean bclearCache) {
-//        try {
-//            // 重新初始化头像,检查头像是否被更换
-//            UserPhotoManager userPhotoManager = UserPhotoManager.getInstance();
-//            userPhotoManager.showMyPhoto(this, ivHead,
-//                    R.drawable.apk_all_usericon, bclearCache, null);
-//            handleUpdateVip();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            UserPhotoManager userPhotoManager = UserPhotoManager.getInstance();
+             userPhotoManager.showMyPhoto(this, ivHead,
+                    R.drawable.apk_all_usericon, bclearCache, null);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -972,7 +997,7 @@ public class DynamicHomeActivity extends PeriodBaseActivity implements OnClickLi
                     if (null != homeDynamicModels && homeDynamicModels.size() > 0) {
                         if (!isLoaderMore) {//
                             // mAdapter.setDatas(mHomeDynamicController.refreshHomeDynamicList(DynamicHomeActivity.this, mAdapter.getDatas(), homeDynamicModels), AddFriendController.SYDynamicFocusFromTypeMiyouQuan);
-                            mHomeDynamicController.saveHomeDynamicListToCache(DynamicHomeActivity.this, mAdapter.getDatas()); // 保存到缓存
+                            mHomeDynamicController.saveHomeDynamicListToCache(myActivity, mAdapter.getDatas()); // 保存到缓存
                         } else {
                             mAdapter.addDatas(homeDynamicModels);
                         }

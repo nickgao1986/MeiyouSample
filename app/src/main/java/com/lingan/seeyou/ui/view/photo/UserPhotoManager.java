@@ -89,7 +89,6 @@ public class UserPhotoManager {
                     String photoname = "aaa";
                     if(StringUtils.isNull(photoname)) {
                         imageView.setImageResource(defaultPhoto);
-                       // UserPhotoManager.this.showMyPhotoFinish(listener);
                     } else {
                         String photoNameLocale = photoname;
                         if(photoname.contains("?")) {
@@ -107,16 +106,6 @@ public class UserPhotoManager {
                         } else {
                             imageView.setImageResource(defaultPhoto);
                             LogUtils.i("UserPhotoManager", "------------>showMyPhoto  获取不到本地缓存图片，需要重新下载");
-//                            if(!NetWorkStatusUtil.hasNetWork(context)) {
-//                                UserPhotoManager.this.showMyPhotoFinish(listener);
-//                                return;
-//                            }
-
-//                            UserPhotoManager.this.handleReloadUserImage(context, new UserPhotoManager.OnReLoadListener() {
-//                                public void onComplete() {
-//                                    UserPhotoManager.this.showMyPhotoFinish(listener);
-//                                }
-//                            });
                         }
 
                     }

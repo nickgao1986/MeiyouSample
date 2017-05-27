@@ -88,19 +88,19 @@
             android:visibility="visible"
             tools:visibility="visible">
 
-            <com.lingan.seeyou.ui.view.LoaderImageView
+            <nickgao.com.okhttpexample.view.LoaderImageView
                 android:id="@+id/liv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="invisible" />
 
-            <com.lingan.seeyou.ui.view.LoaderImageView
+            <nickgao.com.okhttpexample.view.LoaderImageView
                 android:id="@+id/liv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="invisible" />
 
-            <com.lingan.seeyou.ui.view.LoaderImageView
+            <nickgao.com.okhttpexample.view.LoaderImageView
                 android:id="@+id/liv3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

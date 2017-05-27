@@ -51,7 +51,9 @@ public class HttpRequestFactory {
     private static final AtomicLong sLockNumber = new AtomicLong(0);
 
     private static final int MAX_BODY_LENGTH_FOR_LOGGING = 10 * 1024;
-    private static final String AUTHENTICATION = "XDS 3.y3XoQIQaP+UgRMDq6/Q/8v9qEguoU7gNbujmOVNMeg8=";
+    private static final String AUTHENTICATION = "XDS 3.y3XoQIQaP+UgRMDq6/Q/8v9qEguoU7gNbujmOVNMeg8=";  //production
+   // private static final String AUTHENTICATION = "XDS 3.rOiJbgNvQObl8jXtnIsPqcAbKUrE92AqhJbCc6aMLds=";  //test 花儿
+
     /**
      * Keeps current authorization context.
      */
@@ -442,19 +444,10 @@ public class HttpRequestFactory {
 
                     boolean streamedLogging = false;
                     GZIPInputStream gis = new GZIPInputStream(respInpStream);
-
-
-//                    iReader = new InputStreamReader(respInpStream, "gbk");
-//                    int l;
-//                    byte[] tmp = new byte[4096];
-//                    while ((l=gis.read(tmp))!=-1){
-//                        bt.append(tmp, 0, l);
-//                    }
-
-//                    String resultString = new String(bt.toByteArray(),"utf-8");
-//                    LogUtils.d(resultString);
-
                     iReader = new InputStreamReader(gis,"utf-8");
+
+
+                   // iReader = new InputStreamReader(respInpStream, "gbk");
 
                     boolean onResponseError = false;
                     try {

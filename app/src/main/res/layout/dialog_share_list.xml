@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/black_i"
+    android:gravity="bottom"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/content_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <HorizontalScrollView
+                android:id="@+id/hsViewTop"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:paddingTop="25dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/ll_top_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp_10" />
+            </HorizontalScrollView>
+
+            <View
+                android:id="@+id/view"
+                style="@style/divider"
+                android:background="@color/black_d"
+                android:layout_below="@+id/hsViewTop" />
+
+            <HorizontalScrollView
+                android:id="@+id/hsViewBottom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
+                android:scrollbars="none"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll_bottom_share"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp_10" />
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/ll_other_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hsViewBottom"
+                android:orientation="horizontal" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/dialog_share_cancel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/apk_all_white_selector"
+            android:padding="@dimen/dp_10"
+            android:text="取消"
+            android:textColor="@color/black_a"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

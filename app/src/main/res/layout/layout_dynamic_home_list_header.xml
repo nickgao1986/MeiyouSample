@@ -54,7 +54,7 @@
         android:paddingRight="@dimen/space_m"
         android:visibility="gone">
 
-        <com.lingan.seeyou.ui.view.LoaderImageView
+        <nickgao.com.okhttpexample.view.LoaderImageView
             android:id="@+id/ivMsgIcon"
             android:layout_width="35dp"
             android:layout_height="35dp"

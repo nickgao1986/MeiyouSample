@@ -13,7 +13,7 @@
         android:background="@drawable/apk_all_white"
         >
 
-        <com.lingan.seeyou.ui.view.LoaderImageView
+        <nickgao.com.okhttpexample.view.LoaderImageView
             android:id="@+id/iv_layoutminelist_icon"
             android:layout_width="@dimen/dp_value_30"
             android:layout_height="@dimen/dp_value_30"
