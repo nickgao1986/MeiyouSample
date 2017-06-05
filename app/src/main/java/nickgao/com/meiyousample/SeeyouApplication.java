@@ -6,9 +6,7 @@ import android.os.Bundle;
 import android.support.multidex.MultiDex;
 
 import com.meetyou.crsdk.util.ImageLoader;
-import com.meetyou.media.player.client.MeetyouPlayerEngine;
 import com.meiyou.message.mipush.MiPushAdapter;
-
 import nickgao.com.meiyousample.utils.EmojiConversionUtil;
 import nickgao.com.messages.MessageController;
 import nickgao.com.messages.PushClientType;
@@ -27,9 +25,10 @@ public class SeeyouApplication extends Application {
         super.onCreate();
         mContext = this;
         MultiDex.install(this);
-        MeetyouPlayerEngine.Instance().init(this,true);
+//        MeetyouPlayerEngine.Instance().init(this,true);
        // FreelineCore.init(this);
         ImageLoader.initialize(this, false);
+        //UMShareAPI.get(this);
 
 //        new BaseContentResolver(this, SeeyouContentProvider.SEEYOU_AUTHORITY);
 //        SeeyouBeanFactory.init();

@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <com.lingan.seeyou.ui.view.CustomEditText
                 android:id="@+id/publish_et_content"
                 android:layout_width="match_parent"
@@ -36,19 +37,18 @@
                 android:textColorHint="@color/black_d"
                 android:textSize="17sp"/>
 
-
             <LinearLayout
                 android:id="@+id/linearGridViewPhoto"
+                android:visibility="gone"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_xs"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
                 android:orientation="vertical"
                 android:paddingBottom="@dimen/space_xs"
                 android:paddingLeft="@dimen/space_xxs"
                 android:paddingRight="@dimen/space_xxs"
-                android:paddingTop="@dimen/space_xs">
+                >
 
                 <com.lingan.seeyou.ui.view.MeasureGridView
                     android:id="@+id/gridViewPhoto"
@@ -61,10 +61,32 @@
 
                     />
             </LinearLayout>
+
         </LinearLayout>
 
-
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvWarnCount"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="@dimen/space_xs"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="34323"
+            android:textColor="@color/red_a"
+            android:textSize="@dimen/text_size_xs"
+            />
+    </LinearLayout>
+
+
 
     <View style="@style/divider"/>
     <!-- 底部操作栏 未显示键盘时 -->

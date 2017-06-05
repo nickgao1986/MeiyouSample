@@ -1,22 +1,18 @@
 package nickgao.com.meiyousample;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 
-import com.meiyou.framework.share.Config;
-import com.meiyou.framework.share.ShareType;
-import com.meiyou.framework.share.ShareTypeChoseListener;
-import com.meiyou.framework.share.SocialService;
-import com.meiyou.framework.share.data.BaseShareInfo;
-import com.meiyou.framework.share.data.ShareImage;
+import com.lingan.seeyou.ui.view.skin.SkinManager;
+import com.meetyou.crsdk.util.ImageLoader;
 
 import org.reactivestreams.Subscription;
 
-import nickgao.com.framework.utils.LogUtils;
-import nickgao.com.framework.utils.StringUtils;
+import nickgao.com.meiyousample.myfragment.TestFragmentUsingRecycleView;
 
 
 /**
@@ -31,58 +27,77 @@ public class TestNetworkActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ImageLoader.initialize(this, false);
+        initSkin();
         setContentView(R.layout.test_network_layout);
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendRequest();
+               // sendRequest();
+                Intent intent = new Intent();
+                intent.setClass(TestNetworkActivity.this, TestFragmentUsingRecycleView.class);
+                //intent.setClass(TestNetworkActivity.this, Test11Activity.class);
+
+                startActivity(intent);
             }
         });
         mActivity = this;
-        initSocialService();
-        showDialog();
+//        initSocialService();
+//        showDialog();
     }
 
 
-    private void initSocialService() {
+    private void initSkin() {
         try {
-
-            Config config = SocialService.getInstance().getConfig();
-            config.initAppConf(ShareType.SINA, GlobalConfig.SINA_APPKEY, GlobalConfig.SINA_SECRET, GlobalConfig.SINA_REDIRECT_URI);
-            config.initAppConf(ShareType.QQ_ZONE, GlobalConfig.QZONE_CLIENT_ID, GlobalConfig.QZONE_CLIENT_SECRET);
-            config.initAppConf(ShareType.WX_CIRCLES, GlobalConfig.WX_APP_ID, GlobalConfig.WX_APP_SECRET);
-            config.initAppConf(ShareType.WX_FRIENDS, GlobalConfig.WX_APP_ID, GlobalConfig.WX_APP_SECRET);
-            SocialService.getInstance().prepare(this);
-            LogUtils.d(TAG, "--->initNoNeedAtApplicationOrRecovery initSocialService ");
+            //初始化皮肤
+            SkinManager.getInstance().init(this, this.getResources(), this.getAssets());
+            SkinManager.getInstance().setApply(true);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    private void showDialog() {
-        final BaseShareInfo shareInfo = new BaseShareInfo(); //先随便给一个，onChoose的时候再确定
-        TopicDetailShareDialog dialog = new TopicDetailShareDialog(mActivity, null, shareInfo, new ShareTypeChoseListener() {
-            @Override
-            public BaseShareInfo onChoose(ShareType shareType, BaseShareInfo shareInfoDO) {
-                shareInfoDO.setContent("测试图片");
-                ShareImage image = new ShareImage();
-                image.setImageUrl("http://sc.seeyouyima.com/android-forumPublish-10310211-1495866710284_720_1280.jpg");
-                shareInfo.setShareMediaInfo(new ShareImage());
-                shareInfoDO.setLocation("003");
-                String umengEventString = "";
-                switch (shareType) {
 
-                    default:
-                        break;
-                }
-                if (!StringUtils.isNull(umengEventString)) {
-                }
-                return shareInfoDO;
-            }
-        }, null);
-        dialog.show();
-    }
+
+//    private void initSocialService() {
+//        try {
+//
+//            Config config = SocialService.getInstance().getConfig();
+//            config.initAppConf(ShareType.SINA, GlobalConfig.SINA_APPKEY, GlobalConfig.SINA_SECRET, GlobalConfig.SINA_REDIRECT_URI);
+//            config.initAppConf(ShareType.QQ_ZONE, GlobalConfig.QZONE_CLIENT_ID, GlobalConfig.QZONE_CLIENT_SECRET);
+//            config.initAppConf(ShareType.WX_CIRCLES, GlobalConfig.WX_APP_ID, GlobalConfig.WX_APP_SECRET);
+//            config.initAppConf(ShareType.WX_FRIENDS, GlobalConfig.WX_APP_ID, GlobalConfig.WX_APP_SECRET);
+//            SocialService.getInstance().prepare(this);
+//            LogUtils.d(TAG, "--->initNoNeedAtApplicationOrRecovery initSocialService ");
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+//
+//    private void showDialog() {
+//        final BaseShareInfo shareInfo = new BaseShareInfo(); //先随便给一个，onChoose的时候再确定
+//        TopicDetailShareDialog dialog = new TopicDetailShareDialog(mActivity, null, shareInfo, new ShareTypeChoseListener() {
+//            @Override
+//            public BaseShareInfo onChoose(ShareType shareType, BaseShareInfo shareInfoDO) {
+//                shareInfoDO.setContent("测试图片");
+//                ShareImage image = new ShareImage();
+//                image.setImageUrl("http://sc.seeyouyima.com/android-forumPublish-10310211-1495866710284_720_1280.jpg");
+//                shareInfo.setShareMediaInfo(new ShareImage());
+//                shareInfoDO.setLocation("003");
+//                String umengEventString = "";
+//                switch (shareType) {
+//
+//                    default:
+//                        break;
+//                }
+//                if (!StringUtils.isNull(umengEventString)) {
+//                }
+//                return shareInfoDO;
+//            }
+//        }, null);
+//        dialog.show();
+//    }
 
 
     private Subscription mSubscription;

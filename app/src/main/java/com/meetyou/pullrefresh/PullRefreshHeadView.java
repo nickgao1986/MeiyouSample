@@ -2,8 +2,6 @@ package com.meetyou.pullrefresh;
 
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +13,6 @@ import com.meetyou.pullrefresh.lib.PtrFrameLayout;
 import com.meetyou.pullrefresh.star.StarView;
 
 import nickgao.com.meiyousample.R;
-
-import static nickgao.com.meiyousample.SeeyouApplication.getContext;
 
 
 /**
@@ -46,7 +42,6 @@ public class PullRefreshHeadView extends PullRefreshLayout {
         initView();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public PullRefreshHeadView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         initView();

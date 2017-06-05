@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llMsgTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/space_l"
+        android:layout_marginTop="@dimen/space_l"
+        android:background="@drawable/apk_all_blackbg"
+        android:orientation="horizontal"
+        android:paddingRight="@dimen/space_m"
+        >
+
+        <nickgao.com.okhttpexample.view.LoaderImageView
+            android:id="@+id/ivMsgIcon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/space_xxs"/>
+
+        <TextView
+            android:id="@+id/tvMsgTip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawablePadding="@dimen/space_xs"
+            android:drawableRight="@drawable/news_arrow_up"
+            android:text="1条新消息"
+            android:textColor="@color/white_a"
+            android:textSize="@dimen/text_size_s"/>
+    </LinearLayout>
+
+</LinearLayout>

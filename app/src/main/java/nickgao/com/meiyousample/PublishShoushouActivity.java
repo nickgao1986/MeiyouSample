@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -44,6 +45,8 @@ import nickgao.com.meiyousample.controller.UserController;
 import nickgao.com.meiyousample.event.NewsWebViewEvent;
 import nickgao.com.meiyousample.model.GridViewImageModel;
 import nickgao.com.meiyousample.model.ShuoshuoModel;
+
+import static nickgao.com.meiyousample.R.id.scrollview;
 
 /**
  * Created by gaoyoujian on 2017/5/17.
@@ -129,6 +132,8 @@ public class PublishShoushouActivity  extends PeriodBaseActivity{
 
         setListener();
 
+
+
 //        if(emojiLayout!=null){
 //            SkinManager.getInstance().setDrawableBackground(emojiLayout.getEmojiView(),R.drawable.apk_all_white);
 //        }
@@ -195,6 +200,21 @@ public class PublishShoushouActivity  extends PeriodBaseActivity{
                 hideAllBoard();
             }
         });
+    }
+
+    private void resizeEditText() {
+        int mItemWH = (DeviceUtils.getScreenWidth(context)-DeviceUtils.dip2px(context,8*5))/4;
+        int photoPadding = DeviceUtils.dip2px(context, 8)*2;
+        int titlebarHeight = DeviceUtils.dip2px(context, 44);
+        int screenHeight = DeviceUtils.getScreenHeight(this);
+        int photoLineCount = gridViewImageApdater.getCount() % PHOTO_COLUMN_COUNT  == 0 ? gridViewImageApdater.getCount() / PHOTO_COLUMN_COUNT : (gridViewImageApdater.getCount() / PHOTO_COLUMN_COUNT) + 1;
+        int photoWidth = gridViewPhoto.getVisibility() == View.GONE ? 0 : mItemWH * photoLineCount + photoLineCount * DeviceUtils.dip2px(this, 8);
+        int bottomHeight = DeviceUtils.dip2px(context,60);
+        int waningLayoutHeight = DeviceUtils.dip2px(context,25);
+        LogUtils.d("====mItemWH="+mItemWH+"photoWidth="+photoWidth);
+        int minEditHeight = screenHeight - bottomHeight - titlebarHeight - waningLayoutHeight - mStatusBarHeight-photoWidth;
+        LogUtils.d("====minEditHeight="+minEditHeight);
+        this.etContent.setMinHeight(minEditHeight);
     }
 
     /**
@@ -333,6 +353,7 @@ public class PublishShoushouActivity  extends PeriodBaseActivity{
         mPhotoWidth = (DeviceUtils.getScreenWidth(mActivity) - (int) getResources().getDimension(R.dimen.space_xs) * (PHOTO_COLUMN_COUNT + 1)) / PHOTO_COLUMN_COUNT; //一行4张图
         mScreenHeight = DeviceUtils.getScreenHeight(this);
         mStatusBarHeight = DeviceUtils.getStatusBarHeight(this);
+        resizeEditText();
     }
 
     /**
@@ -352,7 +373,15 @@ public class PublishShoushouActivity  extends PeriodBaseActivity{
 
 
     private void initView() {
-        svContent = (ScrollView) findViewById(R.id.scrollview);
+        svContent = (ScrollView) findViewById(scrollview);
+        svContent.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                DeviceUtils.showkeyboard(PublishShoushouActivity.this,svContent);
+
+                return false;
+            }
+        });
         mWatchLayout = (PublishTopicWatchLayout) findViewById(R.id.ll_keyboard_watch);
         mWatchLayout.setOnKeyboardStatusChangeListener(new PublishTopicWatchLayout.OnKeyboardStatusChangeListener() {
             @Override
@@ -436,11 +465,13 @@ public class PublishShoushouActivity  extends PeriodBaseActivity{
 
                         shuoshuoModel.listPictures.clear();
                         shuoshuoModel.listPictures.addAll(compressPath);
+
                         LogUtils.i(TAG,
                                 "------> shuoshuoModel.listPictures:"
                                         + shuoshuoModel.listPictures.size());
                         isDraftChange = true;
                         checkPublishText();
+                        resizeEditText();
 
                     }
                 });

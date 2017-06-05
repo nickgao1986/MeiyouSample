@@ -6,6 +6,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.widget.AbsListView;
 
+import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.adapter.BaseQuickAdapter;
 
 
@@ -28,6 +29,7 @@ public class RecyclerViewHelper implements IListViewHelper {
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                LogUtils.d("====newState="+newState);
                 mCurrentScrollState = newState;
                 ifNeedLoadMore(recyclerView);
             }
@@ -42,7 +44,10 @@ public class RecyclerViewHelper implements IListViewHelper {
         int lastVisiblePosition = getLastVisibleItem(recyclerView);
         final int count = recyclerView.getAdapter().getItemCount();// 列表中子项总数
         isNeedLoadMore = mCurrentScrollState == AbsListView.OnScrollListener.SCROLL_STATE_IDLE && lastVisiblePosition == count - 1;
+        LogUtils.d("====lastVisiblePosition="+lastVisiblePosition+"count="+count+"isNeedLoadMore="+isNeedLoadMore);
+        LogUtils.d("===mFooterViewHelper.isIdle()="+mFooterViewHelper.isIdle()+"state="+mFooterViewHelper.getState());
         if (isNeedLoadMore && mAdapter.getItemCount() != 0 && mFooterViewHelper.isIdle() && mLoadMoreListener != null) {//正在加载中，无更多，加载失败三种状态均不自动执行该动作
+            LogUtils.d("====showloadmore");
             showLoadMoreLoading();
             mLoadMoreListener.onLoadMore();
         }

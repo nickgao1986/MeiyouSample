@@ -19,6 +19,11 @@ class FooterViewHelper implements IFooterViewHelper, View.OnClickListener {
 
     private View mFooterView;
     private OnReloadListener mReloadListener;
+
+    public LoadMoreState getState() {
+        return state;
+    }
+
     private LoadMoreState state = LoadMoreState.IDLE;
     private ListFooterUtil listFooterUtil;
     private String emptyText;

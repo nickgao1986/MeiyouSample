@@ -8,7 +8,7 @@ import java.util.List;
 
 import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.adapter.MyPersonalTopicListAdapter;
-import nickgao.com.meiyousample.model.reply.TopicModel;
+import nickgao.com.meiyousample.model.reply.TopicModelItem;
 import nickgao.com.meiyousample.model.topic.MyTopicModel;
 import nickgao.com.meiyousample.model.topic.TopicData;
 import nickgao.com.meiyousample.personal.TopicListener;
@@ -45,16 +45,16 @@ public class TopicFragment extends PersonalContentFragment implements TopicListe
             setLoadingState(LoadingState.LOADING_MORE);
             LogUtils.d("======dynamic subclassLoadmore");
             TopicService service = (TopicService) ServiceFactory.getInstance().getService(TopicService.class.getName());
-            service.sendRequest(this,models.get(models.size() - 1).published_date);
+          //  service.sendRequest(this,models.get(models.size() - 1).published_date);
         }
     }
 
     @Override
     public void onSuccess(TopicData response, final boolean isLoadMore) {
-        TopicModel[] contents = response.data;
+        TopicModelItem[] contents = response.data;
         final ArrayList<MyTopicModel> myList = new ArrayList<MyTopicModel>();
         for (int i=0; i < contents.length; i++) {
-            TopicModel topicModel = contents[i];
+            TopicModelItem topicModel = contents[i];
             MyTopicModel model = new MyTopicModel();
             model.forum_name = topicModel.forum_name;
             model.image_count = topicModel.image_count;
@@ -100,7 +100,7 @@ public class TopicFragment extends PersonalContentFragment implements TopicListe
         setLoadingState(LoadingState.LOADING_NEW_DATA);
 
         TopicService service = (TopicService) ServiceFactory.getInstance().getService(TopicService.class.getName());
-        service.sendRequest(this,null);
+       // service.sendRequest(this,null);
     }
 
     @Override

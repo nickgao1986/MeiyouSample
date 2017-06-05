@@ -17,9 +17,15 @@ import nickgao.com.meiyousample.request.RestListRequestParseJson;
 public class NewsReviewService {
 
     public static String content = "";
-    public static String sendRequest(Context context) throws InterruptedException{
+    public static String sendRequest(Context context,int size,String load_direction,int last) throws InterruptedException{
         final CountDownLatch latch=new CountDownLatch(1);//两个工人的协作
-        RestListRequestParseJson request = new RestListRequestParseJson<Object>(UrlList.NEWS_REVIEW_LIST, RestRequest.HttpMethod.GET, "aa");
+
+        String url = UrlList.NEWS_REVIEW_LIST;
+        url += "&load_direction="+load_direction;
+        url += "&last="+last;
+        url += "&size="+size;
+        LogUtils.d("=====url="+url);
+        RestListRequestParseJson request = new RestListRequestParseJson<Object>(url, RestRequest.HttpMethod.GET, "aa");
         request.executeRequest(context);
 
         request.registerOnRequestListener(new RcRestRequest.OnRequestListener(){

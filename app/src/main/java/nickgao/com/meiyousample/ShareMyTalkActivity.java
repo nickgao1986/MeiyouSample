@@ -13,7 +13,7 @@ import com.lingan.seeyou.ui.view.widget.EmojiLayout;
 import activity.PeriodBaseActivity;
 import nickgao.com.framework.utils.DeviceUtils;
 import nickgao.com.meiyousample.event.NewsWebViewEvent;
-import nickgao.com.meiyousample.model.reply.TopicModel;
+import nickgao.com.meiyousample.model.reply.TopicModelItem;
 import nickgao.com.okhttpexample.view.ImageLoadParams;
 import nickgao.com.okhttpexample.view.LoaderImageView;
 
@@ -33,7 +33,7 @@ public class ShareMyTalkActivity extends PeriodBaseActivity {
     private LoaderImageView ivSharePic;
     private TextView tvShareContent;
     private EmojiLayout emojiLayout;
-    private TopicModel topicModel = null;
+    private TopicModelItem topicModel = null;
     //private ToolsTipModel tipModel = null;
     private TextView tvShareCategoryTitle;
     public int type;//0代表是帖子分享 1代表是贴士分享

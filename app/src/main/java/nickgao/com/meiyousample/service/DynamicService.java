@@ -2,6 +2,8 @@ package nickgao.com.meiyousample.service;
 
 import android.content.Context;
 
+import java.util.concurrent.CountDownLatch;
+
 import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.model.dynamicModel.DynamicData;
@@ -19,6 +21,7 @@ public class DynamicService extends AbstractService {
     private PersonalListener mListener;
     private int sort;
     private boolean isLoadMore = false;
+    public DynamicData mDynamicData = null;
 
     public DynamicService(IRequestFactory requestFactory) {
         super(requestFactory);
@@ -26,10 +29,11 @@ public class DynamicService extends AbstractService {
     }
 
 
-    public void sendRequest(PersonalListener listener,final int sort) {
+    public DynamicData sendRequest(final int sort) throws InterruptedException{
+        final CountDownLatch latch=new CountDownLatch(1);//两个工人的协作
+
         Context context = SeeyouApplication.getContext();
         RcRestRequest<DynamicData> request = this.mRequestFactory.createDynamicListRequest(sort);
-        mListener = listener;
         request.registerOnRequestListener(new RcRestRequest.OnRequestListener<DynamicData>() {
             @Override
             public void onSuccess(RcRestRequest<DynamicData> request, DynamicData response) {
@@ -37,7 +41,9 @@ public class DynamicService extends AbstractService {
                 if(sort == 0) {
                     isLoadMore = true;
                 }
-                mListener.onSuccess(response,isLoadMore);
+                mDynamicData = response;
+                latch.countDown();
+              //  mListener.onSuccess(response,isLoadMore);
             }
 
             @Override
@@ -53,6 +59,8 @@ public class DynamicService extends AbstractService {
         });
 
         request.executeRequest(context);
+        latch.await();
+        return mDynamicData;
 
     }
 

@@ -1,7 +1,8 @@
 package nickgao.com.meiyousample.service;
 
 import android.content.Context;
-import android.text.TextUtils;
+
+import java.util.concurrent.CountDownLatch;
 
 import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.model.topic.TopicData;
@@ -16,24 +17,29 @@ public class TopicService extends AbstractService {
 
     private IRequestFactory requestFactory;
     private TopicListener mListener;
+    public TopicData mTopicData = null;
+
     public TopicService(IRequestFactory requestFactory) {
         super(requestFactory);
     }
 
 
-    public void sendRequest(TopicListener listener, final String last) {
+    public TopicData sendRequest(final String last) throws InterruptedException{
         Context context = SeeyouApplication.getContext();
         RcRestRequest<TopicData> request = this.mRequestFactory.createTopicListRequest(last);
-        mListener = listener;
+        final CountDownLatch latch=new CountDownLatch(1);//两个工人的协作
+
         request.registerOnRequestListener(new RcRestRequest.OnRequestListener<TopicData>() {
             @Override
             public void onSuccess(RcRestRequest<TopicData> request, TopicData response) {
-                mListener.onSuccess(response, !TextUtils.isEmpty(last));
+//                mListener.onSuccess(response, !TextUtils.isEmpty(last));
+                mTopicData = response;
+                latch.countDown();
             }
 
             @Override
             public void onFail(RcRestRequest<TopicData> request, int errorCode) {
-                mListener.onFail();
+               // mListener.onFail();
             }
 
             @Override
@@ -42,8 +48,8 @@ public class TopicService extends AbstractService {
             }
         });
 
-
         request.executeRequest(context);
-
+        latch.await();
+        return mTopicData;
     }
 }

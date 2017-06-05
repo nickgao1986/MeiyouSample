@@ -5,143 +5,107 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.ImageView;
 
-import com.lingan.seeyou.ui.view.BadgeImageView;
+import com.com.meetyou.news.LoadStateHelper;
+import com.com.meetyou.news.OnNewsDetailLoadFailureListener;
+import com.com.meetyou.news.RecyclerViewHelper;
 import com.lingan.seeyou.ui.view.LoadingView;
-import com.lingan.seeyou.ui.view.ParallaxScrollListView;
-import com.lingan.seeyou.ui.view.ResizeLayout;
-import com.lingan.seeyou.ui.view.RoundedImageView;
-import com.lingan.seeyou.ui.view.skin.SkinManager;
-import com.meetyou.crsdk.util.ImageLoader;
+import com.meetyou.news.view.OnRecycleViewScrollListener;
 import com.meetyou.pullrefresh.lib.PtrFrameLayout;
 
-import activity.PeriodBaseActivity;
+import java.util.ArrayList;
+
+import fragment.PeriodBaseFragment;
 import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.R;
-import nickgao.com.meiyousample.adapter.HomeDynamicAdapter;
-import nickgao.com.meiyousample.personal.ImageViewWithMask;
-import nickgao.com.okhttpexample.view.LoaderImageView;
+import nickgao.com.meiyousample.adapter.HomeDynamicMultiItemAdapter;
+import nickgao.com.meiyousample.event.NewsWebViewEvent;
+import nickgao.com.meiyousample.model.HomeDynamicModel;
 
 
 /**
  * 密友圈
  */
-public class DynamicHomeActivityUsingRecycleView extends PeriodBaseActivity{
+public class DynamicHomeActivityUsingRecycleView extends PeriodBaseFragment implements IRecycleViewLoaderView {
 
     private String TAG = "DynamicHomeActivity";
-    public static final String PREV = "prev";
-    public static final String NEXT = "next";
     private Activity myActivity;
-
-    private HomeDynamicController mHomeDynamicController;
-    private ResizeLayout rootContainer; // 根布局
-    private ParallaxScrollListView parallaxListview;
-
-
-    private LoaderImageView ivBannerBg;
-    private TextView tvNoNetwork;
-
-
-    private RoundedImageView ivHead;
-
-
-    private BadgeImageView bivVerify;
-    private LinearLayout llMsgTip;
-    private TextView tvMsgTip;// 消息提示
-
-
-    private LoaderImageView ivMsgIcon;
-    private BadgeImageView bivMsgVerify;
-
-    private LinearLayout llTopMenu;
-
-
-    // 列表底部
-    private View moreView;
-    private ProgressBar moreProgressBar;
-    private TextView loadMoreView;
-
-    // 正在加载
-    private boolean bLoading = false;
-    private boolean isFistLoad;//是否首次加载
-
-    private LinearLayout llEmptyContainer;
-    private Button btnOperate;
-
-
-    private HomeDynamicAdapter mAdapter;
+    private HomeDynamicMultiItemAdapter mAdapter;
 
     private int mLvCurrentPosition = 0;
     private boolean isKeyboardShow;
-
-    private int scrolledX;
-    private int scrolledY;
-    boolean isActivityFinish = false;
-    private float mLastY;
-    private RelativeLayout rl_custom_title_bar;
-    private float headerHeight = 0f;
-    private View mListViewHeader;
-    //private ImageView mMask;
-    private ImageViewWithMask mImageViewWithMask;
-
     private RecyclerView mRecyclerView;
     private PtrFrameLayout mPtrFrameLayout;
     private LoadingView loadingView;
     private LinearLayoutManager mLayoutManager;
+    ArrayList<HomeDynamicModel> myList = new ArrayList<HomeDynamicModel>();
+    private RecycleViewLoader mViewLoader;
+    private DynamicModel mDynamicModel = new DynamicModel(myList);
+    private ImageView backgroudView;
+  //  private SwipeRefreshLayout mSwipeRefreshLayout;
+
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.dynamic_home_layout_using_recycle_view;
+    protected int getLayout() {
+        return R.layout.personal_fragment_item_using_recycleview;
     }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        LogUtils.i("DynamicHomeActivity onActivityCreated");
+        getTitleBar().setCustomTitleBar(-1);
+        View view = getRootView();
+        //mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipRefreshlayout);
+        loadingView = (LoadingView) view.findViewById(R.id.loadingView);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        backgroudView = (ImageView) view.findViewById(R.id.fruit_image_view);
+//        setSupportActionBar(toolbar);
+//        ActionBar actionBar = getSupportActionBar();
+
+        mAdapter = new HomeDynamicMultiItemAdapter(myActivity, myList);
+        mLayoutManager = new LinearLayoutManager(myActivity);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.addOnScrollListener(new OnRecycleViewScrollListener(myActivity));
+        mRecyclerView.setAdapter(mAdapter);
+
+        mViewLoader = new RecycleViewLoader(this, mDynamicModel);
+        mViewLoader.setListViewHelper(new RecyclerViewHelper(mRecyclerView));
+        mViewLoader.setLoadStateHelper(new LoadStateHelper(mRecyclerView, loadingView));
+      //  mViewLoader.setRefreshViewHelper(new RecycleViewRefreshViewHelper(mSwipeRefreshLayout));
+
+        mViewLoader.setOnLoadFailureListener(new OnNewsDetailLoadFailureListener(myActivity));
+        mViewLoader.setOnLoadSuccessListener(new OnLoadListSuccessListener<DynamicModel>() {
+            @Override
+            public void onSuccess(boolean isRefreshing, DynamicModel response) {
+                myList = (ArrayList<HomeDynamicModel>) response.mList;
+                mAdapter.notifyDataSetChanged();
+            }
+        });
+
+        mViewLoader.load(true);
+
+    }
+
+
+    @Override
+    public void onAttach(Activity activity) {
+        LogUtils.i("DynamicHomeActivity onAttach");
+
+        super.onAttach(activity);
+        myActivity = activity;
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        ImageLoader.initialize(this, false);
-        initSkin();
 
         super.onCreate(savedInstanceState);
-        myActivity = this;
         LogUtils.i("DynamicHomeActivity onCreate");
-
-        loadingView = (LoadingView) findViewById(R.id.loadingView);
-        mRecyclerView = (RecyclerView) findViewById(R.id.rv_review_detail);
-        mPtrFrameLayout = (PtrFrameLayout) findViewById(R.id.ptr_layout);
-        mPtrFrameLayout.setVisibility(View.GONE);
-
     }
 
-
-    private void initRecyclerView() {
-//        mLayoutManager = new LinearLayoutManager(this);
-//        mRecyclerView.setLayoutManager(mLayoutManager);
-//        mRecyclerView.addItemDecoration(new ReviewDetailItemDecoration(this));
-//        mRecyclerView.addOnScrollListener(new OnRecycleViewScrollListener(this));
-//        LayoutInflater inflater = ViewFactory.from(mActivity).getLayoutInflater();
-//        View headerView = inflater.inflate(R.layout.layout_news_review_detail_header, mRecyclerView, false);
-//
-//
-//        mAdapter = new NewsReviewDetailAdapter(mActivity, mSubReviews);
-//        mAdapter.addHeaderView(headerView);
-//        mAdapter.setHeaderAndEmpty(true);
-//        mAdapter.setPageCode(mPageCode);
-//        mRecyclerView.setAdapter(mAdapter);
-    }
-
-    private void initSkin() {
-        try {
-            //初始化皮肤
-            SkinManager.getInstance().init(this, this.getResources(), this.getAssets());
-            SkinManager.getInstance().setApply(true);
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-    }
 
 
     @Override
@@ -169,4 +133,17 @@ public class DynamicHomeActivityUsingRecycleView extends PeriodBaseActivity{
         super.onDestroy();
     }
 
+    public void onEventMainThread(NewsWebViewEvent webViewEvent) {
+
+    }
+
+    @Override
+    public void destroyLoader() {
+        mViewLoader.onDestroy();
+    }
+
+    @Override
+    public void setDataLoader(RecycleViewLoader loader) {
+
+    }
 }

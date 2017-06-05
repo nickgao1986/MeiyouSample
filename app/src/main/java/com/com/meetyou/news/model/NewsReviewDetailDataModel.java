@@ -27,7 +27,7 @@ public class NewsReviewDetailDataModel extends ListModel<NewsReviewDetailModel, 
     private Disposable mDisposable;
     private int reviewId;//评论id
     private int lastId;//最后一条id
-    private int pageSize = 20;
+    private int pageSize = 5;
     private int gotoId;//跳楼模式，跳到某一楼的id
     private boolean isDownDirection = true;
     private boolean isShowHeader;//视频页面不显示header，资讯评论详情页面显示header。所以用是否显示header来判断要不要显示空界面
@@ -90,21 +90,8 @@ public class NewsReviewDetailDataModel extends ListModel<NewsReviewDetailModel, 
         mDisposable = Flowable.create(new FlowableOnSubscribe<NewsReviewDetailModel>() {
             @Override
             public void subscribe(FlowableEmitter<NewsReviewDetailModel> emitter) throws Exception {
-//                final HttpCall<HttpResult> call = mController.getNewsSubReviewList(reviewId, lastId, gotoId, pageSize, getLoadDirection());
-//                emitter.setCancellable(new Cancellable() {
-//                    @Override
-//                    public void cancel() throws Exception {
-//                        call.cancel();
-//                    }
-//                });
-//                HttpResult result = call.execute();
-//                if (emitter.isCancelled())
-//                    return;
-         //       NewsReviewDetailModel model = parse(result);
-                String result =  NewsReviewService.sendRequest(SeeyouApplication.getContext());
+                String result =  NewsReviewService.sendRequest(SeeyouApplication.getContext(),5,getLoadDirection(),lastId);
                 NewsReviewDetailModel model = parse(result);
-
-               // NewsReviewDetailModel model = null;
                 emitter.onNext(model);
             }
         }, BackpressureStrategy.BUFFER)
@@ -134,28 +121,6 @@ public class NewsReviewDetailDataModel extends ListModel<NewsReviewDetailModel, 
         }
         throw new HttpStatusErrorException(code);
     }
-
-//    private NewsReviewDetailModel parse(HttpResult httpResult) throws Exception {
-//        if (httpResult == null)
-//            throw new HttpUnKnowException();
-//        if (httpResult.getVolleyError() != null)
-//            throw httpResult.getVolleyError();
-//        if (!httpResult.isSuccess())
-//            throw new HttpFailedException();
-//        if (httpResult.getResult() == null)
-//            throw new HttpResultNullException();
-//        //http请求成功
-//        String jsonString = httpResult.getResult().toString();
-//        JSONObject jsonObject = new JSONObject(jsonString);
-//        int code = jsonObject.getInt("code");
-//        if (code == 0) {
-//            String dataString = jsonObject.optString("data");
-//            if (!StringUtils.isNull(dataString)) {
-//                return JSON.parseObject(dataString, NewsReviewDetailModel.class);
-//            }
-//        }
-//        throw new HttpStatusErrorException(code);
-//    }
 
     public void cancel() {
         if (mDisposable != null) {

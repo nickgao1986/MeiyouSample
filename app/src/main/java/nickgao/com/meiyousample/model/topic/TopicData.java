@@ -1,6 +1,6 @@
 package nickgao.com.meiyousample.model.topic;
 
-import nickgao.com.meiyousample.model.reply.TopicModel;
+import nickgao.com.meiyousample.model.reply.TopicModelItem;
 
 /**
  * Created by gaoyoujian on 2017/4/28.
@@ -8,5 +8,5 @@ import nickgao.com.meiyousample.model.reply.TopicModel;
 
 public class TopicData {
     public int code;
-    public TopicModel[] data;
+    public TopicModelItem[] data;
 }

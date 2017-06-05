@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.R;
 import nickgao.com.meiyousample.listener.OnItemTextExpandListener;
@@ -308,7 +307,6 @@ public class HomeDynamicAdapter extends BaseAdapter {
 
             switch (layoutType) {
                 case LAYOUT_TYPE_DEFAULT:
-                    LogUtils.d("====layoutType=LAYOUT_TYPE_DEFAULT homeDynamicModel.content=" + homeDynamicModel.content);
                     viewHolder.tvNickname.setText(homeDynamicModel.screenName);
                     if (!StringUtils.isNull(homeDynamicModel.content)) {
                         viewHolder.tvContent.setVisibility(View.VISIBLE);
@@ -322,8 +320,6 @@ public class HomeDynamicAdapter extends BaseAdapter {
 
                     break;
                 case LAYOUT_TYPE_SHARE:
-                    LogUtils.d("====layoutType=LAYOUT_TYPE_SHARE sharewords=" + homeDynamicModel.shareWords);
-
                     viewHolder.tvNickname.setText(homeDynamicModel.screenName);
                     if (!StringUtils.isNull(homeDynamicModel.shareWords)) {
                         String words = homeDynamicModel.shareWords;
@@ -400,19 +396,6 @@ public class HomeDynamicAdapter extends BaseAdapter {
             if (homeDynamicModel.type == IHomeDynamicType.LOCAL_DATA) {
                 viewHolder.ivAvatar.setImageResource(R.drawable.apk_news_remindmeetyou);
             }
-            //设置V认证图标
-//            if (AccountAction.isShowV(homeDynamicModel.user_type, homeDynamicModel.isvip)) {
-//                if (null == viewHolder.bvVerify) {
-//                    viewHolder.bvVerify = new BadgeImageView(context, viewHolder.ivAvatar);
-//                    viewHolder.bvVerify.setBadgePosition(BadgeImageView.POSITION_BOTTOM_RIGHT);
-//                    viewHolder.bvVerify.setImageResource(AccountAction.getShowVIcon(homeDynamicModel.user_type, homeDynamicModel.isvip));
-//                }
-//                viewHolder.bvVerify.show();
-//            } else {
-//                if (viewHolder.bvVerify != null && viewHolder.bvVerify.isShown()) {
-//                    viewHolder.bvVerify.hide();
-//                }
-//            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -466,33 +449,22 @@ public class HomeDynamicAdapter extends BaseAdapter {
         RelativeLayout rlItemContainer;
         LoaderImageView ivAvatar;
         TextView tvNickname;
-        // TextView tvTypeFrom;
         CustomUrlTextView tvContent;
-        // TextView tvWatchMore;
-        LinearLayout llDynamicContent;
 
         LinearLayout llZanReply;
         PraiseButton btn_praise;
         ImageView zanDivider;
-        //        LinearLayout llZan;
-//        ImageView ivZan;
-//        TextView tvZan;
+
         TextView tvReply;
 
         ViewStub vsImages;
         ViewStub vsImageGrid;
-        ViewStub vsFriendInfo;
-
-        TextView tvRecommendResoan;
 
         LinearLayout llShareContent;
         LoaderImageView ivShareIcon;
         TextView tvShareTitle;
         TextView tvSharePublisher;
-        TextView tvSharePublisher2;
-        //TextView tv_video_time;
 
-      //  BadgeImageView bvVerify;
         ImageView ivMoreItem;
         TextView tvTime;
 

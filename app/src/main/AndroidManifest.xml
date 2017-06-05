@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="nickgao.com.meiyousample" >
-
-
+          package="nickgao.com.meiyousample">
 
 
     <application
@@ -14,13 +12,27 @@
 
         >
 
-        <activity android:name=".TestNetworkActivity">
+        <activity
+            android:name=".TestNetworkActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <service android:name=".skin.SkinDownloadService" />
+
+        <activity
+            android:name=".PublishShoushouActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity android:name=".myfragment.TestFragmentUsingRecycleView" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".myfragment.Test11Activity" android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".myfragment.DynamicHomeActivityUsingRecycleView" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".myfragment.FruitActivity" android:theme="@style/AppTheme.NoActionBar"/>
+        <service android:name=".skin.SkinDownloadService"/>
+
         <activity android:name="com.lingan.seeyou.ui.view.photo.ReviewActivity"/>
 
         <activity android:name=".myfragment.DynamicDetailActivity"></activity>

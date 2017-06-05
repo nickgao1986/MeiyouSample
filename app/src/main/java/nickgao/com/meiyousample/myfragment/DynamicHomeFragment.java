@@ -46,8 +46,6 @@ import nickgao.com.meiyousample.personal.ILoadMoreViewState;
 import nickgao.com.meiyousample.personal.ImageViewWithMask;
 import nickgao.com.meiyousample.personal.OnListViewScrollListener;
 import nickgao.com.meiyousample.personal.PersonalListener;
-import nickgao.com.meiyousample.service.DynamicService;
-import nickgao.com.meiyousample.service.ServiceFactory;
 import nickgao.com.meiyousample.utils.DeviceUtils;
 import nickgao.com.okhttpexample.view.LoaderImageView;
 
@@ -465,8 +463,8 @@ public class DynamicHomeFragment extends PeriodBaseFragment implements OnClickLi
         }
 //        TaskLoadDynamic taskLoadDynamic = new TaskLoadDynamic(time, loadMode);
 //        taskLoadDynamic.execute();
-        DynamicService service = (DynamicService) ServiceFactory.getInstance().getService(DynamicService.class.getName());
-        service.sendRequest(this,time);
+//        DynamicService service = (DynamicService) ServiceFactory.getInstance().getService(DynamicService.class.getName());
+//        service.sendRequest(time);
 
     }
 

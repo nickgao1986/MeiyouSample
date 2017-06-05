@@ -5,6 +5,6 @@ package nickgao.com.meiyousample.model.reply;
  */
 
 public class Topics {
-    public TopicModel[] topics;
+    public TopicModelItem[] topics;
 
 }

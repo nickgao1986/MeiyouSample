@@ -1,7 +1,8 @@
 package nickgao.com.meiyousample.service;
 
 import android.content.Context;
-import android.text.TextUtils;
+
+import java.util.concurrent.CountDownLatch;
 
 import nickgao.com.meiyousample.SeeyouApplication;
 import nickgao.com.meiyousample.model.reply.ReplyData;
@@ -19,16 +20,18 @@ public class ReplyService extends AbstractService {
     public ReplyService(IRequestFactory requestFactory) {
         super(requestFactory);
     }
+    public ReplyData mReplyData = null;
 
 
-    public void sendRequest(ReplyListener listener, final String last) {
+    public ReplyData sendRequest(final String last) throws InterruptedException {
         Context context = SeeyouApplication.getContext();
         RcRestRequest<ReplyData> request = this.mRequestFactory.createReplyListRequest(last);
-        mListener = listener;
+        final CountDownLatch latch=new CountDownLatch(1);//两个工人的协作
         request.registerOnRequestListener(new RcRestRequest.OnRequestListener<ReplyData>() {
             @Override
             public void onSuccess(RcRestRequest<ReplyData> request, ReplyData response) {
-                mListener.onSuccess(response,!TextUtils.isEmpty(last));
+                mReplyData = response;
+                latch.countDown();
             }
 
             @Override
@@ -43,6 +46,7 @@ public class ReplyService extends AbstractService {
         });
 
         request.executeRequest(context);
-
+        latch.await();
+        return mReplyData;
     }
 }

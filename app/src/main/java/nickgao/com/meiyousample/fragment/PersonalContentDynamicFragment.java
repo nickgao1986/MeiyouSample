@@ -12,8 +12,6 @@ import nickgao.com.meiyousample.model.HomeDynamicModel;
 import nickgao.com.meiyousample.model.dynamicModel.DynamicContent;
 import nickgao.com.meiyousample.model.dynamicModel.DynamicData;
 import nickgao.com.meiyousample.personal.PersonalListener;
-import nickgao.com.meiyousample.service.DynamicService;
-import nickgao.com.meiyousample.service.ServiceFactory;
 
 
 /**
@@ -49,8 +47,8 @@ public class PersonalContentDynamicFragment extends PersonalContentFragment impl
         if(models != null && models.size() > 0) {
             setLoadingState(LoadingState.LOADING_MORE);
             LogUtils.d("======dynamic subclassLoadmore");
-            DynamicService service = (DynamicService) ServiceFactory.getInstance().getService(DynamicService.class.getName());
-            service.sendRequest(this,models.get(models.size() - 1).sort);
+//            DynamicService service = (DynamicService) ServiceFactory.getInstance().getService(DynamicService.class.getName());
+//            service.sendRequest(models.get(models.size() - 1).sort);
         }
     }
 
@@ -103,8 +101,8 @@ public class PersonalContentDynamicFragment extends PersonalContentFragment impl
     void sendRequest() {
         setLoadingState(LoadingState.LOADING_NEW_DATA);
 
-        DynamicService service = (DynamicService) ServiceFactory.getInstance().getService(DynamicService.class.getName());
-        service.sendRequest(this,0);
+//        DynamicService service = (DynamicService) ServiceFactory.getInstance().getService(DynamicService.class.getName());
+//        service.sendRequest(0);
     }
 
     @Override

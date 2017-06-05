@@ -12,13 +12,13 @@ import com.com.meetyou.news.OnReloadListener;
  */
 public class DataLoader<T> implements SwipeRefreshLayout.OnRefreshListener, OnReloadListener {
 
-    ILoadStateHelper mLoadStateViewHelper;
-    IRefreshViewHelper mRefreshViewHelper;
-    OnLoadSuccessListener<T> onLoadSuccessListener;
-    OnLoadFailureListener onLoadFailureListener;
+    ILoadStateHelper mLoadStateViewHelper;  //显示什么视图，是显示空视图，还是error视图
+    IRefreshViewHelper mRefreshViewHelper;  //刷新控件,看看是否在刷新中，还是刷新完成了
+    OnLoadSuccessListener<T> onLoadSuccessListener;  //成功监听
+    OnLoadFailureListener onLoadFailureListener; //失败监听
     boolean isSilenceRefresh;//是否手动刷新
-    private IModel<T> model;
-    private ILoaderView view;
+    private IModel<T> model;  //数据模型
+    private ILoaderView view;    //给activity设置dataLoader
 
     public DataLoader(ILoaderView view, IModel<T> model) {
         this.view = view;
@@ -119,7 +119,7 @@ public class DataLoader<T> implements SwipeRefreshLayout.OnRefreshListener, OnRe
             return;
         if (mLoadStateViewHelper == null)
             return;
-        mLoadStateViewHelper.showLoading();
+        mLoadStateViewHelper.showLoading(true);
     }
 
     /**

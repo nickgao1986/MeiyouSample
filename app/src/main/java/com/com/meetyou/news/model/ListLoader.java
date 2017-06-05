@@ -79,7 +79,7 @@ public class ListLoader<INFO, ITEM> extends DataLoader<INFO> implements OnLoadMo
             return;
         if (mLoadStateViewHelper == null)
             return;
-        mLoadStateViewHelper.showLoading();
+        mLoadStateViewHelper.showLoading(true);
     }
 
     /**

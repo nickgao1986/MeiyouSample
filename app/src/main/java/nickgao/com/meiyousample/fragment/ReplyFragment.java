@@ -9,7 +9,7 @@ import java.util.List;
 import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.adapter.MyPersonalTopicListAdapter;
 import nickgao.com.meiyousample.model.reply.ReplyData;
-import nickgao.com.meiyousample.model.reply.TopicModel;
+import nickgao.com.meiyousample.model.reply.TopicModelItem;
 import nickgao.com.meiyousample.model.topic.MyTopicModel;
 import nickgao.com.meiyousample.personal.ReplyListener;
 import nickgao.com.meiyousample.service.ReplyService;
@@ -45,16 +45,16 @@ public class ReplyFragment extends PersonalContentFragment implements ReplyListe
             setLoadingState(LoadingState.LOADING_MORE);
             LogUtils.d("======dynamic subclassLoadmore");
             ReplyService service = (ReplyService) ServiceFactory.getInstance().getService(ReplyService.class.getName());
-            service.sendRequest(this,models.get(models.size() - 1).published_date);
+           // service.sendRequest(this,models.get(models.size() - 1).published_date);
         }
     }
 
     @Override
     public void onSuccess(ReplyData response, final boolean isLoadMore) {
-        TopicModel[] contents = response.data.topics;
+        TopicModelItem[] contents = response.data.topics;
         final ArrayList<MyTopicModel> myList = new ArrayList<MyTopicModel>();
         for (int i=0; i < contents.length; i++) {
-            TopicModel topicModel = contents[i];
+            TopicModelItem topicModel = contents[i];
             MyTopicModel model = new MyTopicModel();
             model.forum_name = topicModel.forum_name;
             model.image_count = topicModel.image_count;
@@ -101,7 +101,7 @@ public class ReplyFragment extends PersonalContentFragment implements ReplyListe
         setLoadingState(LoadingState.LOADING_NEW_DATA);
 
         ReplyService service = (ReplyService) ServiceFactory.getInstance().getService(ReplyService.class.getName());
-        service.sendRequest(this,null);
+       // service.sendRequest(this,null);
     }
 
     @Override

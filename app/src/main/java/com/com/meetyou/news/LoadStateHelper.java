@@ -32,9 +32,11 @@ public class LoadStateHelper implements ILoadStateHelper {
     }
 
     @Override
-    public void showLoading() {
-        mContentView.setVisibility(View.INVISIBLE);
-        mLoadingView.setStatus(LoadingView.STATUS_LOADING);
+    public void showLoading(boolean isFirstLoad) {
+        if(isFirstLoad) {
+            mContentView.setVisibility(View.INVISIBLE);
+            mLoadingView.setStatus(LoadingView.STATUS_LOADING);
+        }
     }
 
     @Override

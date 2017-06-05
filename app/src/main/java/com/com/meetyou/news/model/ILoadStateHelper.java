@@ -17,7 +17,7 @@ public interface ILoadStateHelper {
     /**
      * 显示加载中视图
      */
-    void showLoading();
+    void showLoading(boolean isFirstLoad);
 
     /**
      * 显示空界面视图

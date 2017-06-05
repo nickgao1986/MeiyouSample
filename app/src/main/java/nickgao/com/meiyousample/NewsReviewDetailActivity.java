@@ -139,21 +139,16 @@ public class NewsReviewDetailActivity extends PeriodBaseActivity implements ILoa
         btnPraise = (PraiseButton) headerView.findViewById(R.id.btn_praise);
         llNews = (LinearLayout) headerView.findViewById(R.id.ll_news);
 
-//        NewsReviewModel model1 = new NewsReviewModel();
-//        model1.content = "dasfdsfsfsdfsd";
-//        model1.id = 2;
-//        mSubReviews.add(model1);
-//
-//        NewsReviewModel model2 = new NewsReviewModel();
-//        model2.content = "fdsmfkmwkefewfe";
-//        model2.id = 3;
-//        mSubReviews.add(model1);
-
         mAdapter = new NewsReviewDetailAdapter(mActivity, mSubReviews);
         mAdapter.addHeaderView(headerView);
         mAdapter.setHeaderAndEmpty(true);
         mAdapter.setPageCode(mPageCode);
         mRecyclerView.setAdapter(mAdapter);
+
+//        this.mReviewHelper = new NewsDetailReplyHelper(this, this.mBottomBarLayout, this.tvWriteReview, this.mPageCode);
+//        this.mReviewHelper.setInReviewDetail(true);
+//        this.mAdapter.setReviewHelper(this.mReviewHelper);
+//        this.mAdapter.setPageCode(this.mPageCode);
     }
 
     public void onEventMainThread(NewsWebViewEvent webViewEvent) {

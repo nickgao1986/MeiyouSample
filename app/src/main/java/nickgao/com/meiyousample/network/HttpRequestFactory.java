@@ -446,8 +446,7 @@ public class HttpRequestFactory {
                     GZIPInputStream gis = new GZIPInputStream(respInpStream);
                     iReader = new InputStreamReader(gis,"utf-8");
 
-
-                   // iReader = new InputStreamReader(respInpStream, "gbk");
+//                  iReader = new InputStreamReader(respInpStream, "gbk");
 
                     boolean onResponseError = false;
                     try {

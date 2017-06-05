@@ -10,13 +10,15 @@ import java.util.List;
 
 import nickgao.com.framework.utils.StringUtils;
 import nickgao.com.meiyousample.adapter.DynamicImageApdater;
+import nickgao.com.meiyousample.adapter.DynamicModelType;
+import nickgao.com.meiyousample.adapter.MultiItemEntity;
 
 /**
  * 注意：该对象已序列化，请不要传未序列化的对象进来，以免影响缓存
  * 说说动态 model
  * Created by Administrator on 2014/7/14.
  */
-public class HomeDynamicModel implements Serializable {
+public class HomeDynamicModel implements Serializable,MultiItemEntity {
     private static final long serialVersionUID = 165165416L;
     private static final String TAG = "HomeDynamicModel";
     public String uuid = "";
@@ -196,8 +198,24 @@ public class HomeDynamicModel implements Serializable {
                 }
             }
         }
-
-
     }
 
+    private static final int LAYOUT_TYPE_DEFAULT = 0;  //默认  说说布局
+    private static final int LAYOUT_TYPE_SHARE = 1;    //话题分享布局
+    private static final int LAYOUT_TYPE_CIRCLE_RECOMMEND = 2;  //话题推荐布局
+
+    @Override
+    public int getItemType() {
+        if (null == this) {
+            return LAYOUT_TYPE_DEFAULT;
+        }
+        int layoutType = type;
+
+        if (layoutType == DynamicModelType.SHUOSHUO) {
+            return LAYOUT_TYPE_DEFAULT;
+        } else {
+            return LAYOUT_TYPE_SHARE;
+        }
+
+    }
 }

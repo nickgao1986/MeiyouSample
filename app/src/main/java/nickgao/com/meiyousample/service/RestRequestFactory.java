@@ -4,7 +4,9 @@ import android.text.TextUtils;
 
 import com.google.gson.reflect.TypeToken;
 
+import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.URLEncoder;
 
 import nickgao.com.framework.utils.LogUtils;
 import nickgao.com.meiyousample.model.UserHomePage.UserHomePage;
@@ -31,10 +33,11 @@ public class RestRequestFactory implements IRequestFactory {
         String url = UrlList.DYNAMIC_LIST;
         if(sort != 0) {
             url += "&"+"time="+sort;
-            url += "&"+"fuid=129746620";
+           // url += "&"+"fuid=129746620";
+            url += "&direction=next";
         }
         LogUtils.d("=====url="+url);
-        return new RestListRequest<DynamicData>(UrlList.DYNAMIC_LIST, type, RestRequest.HttpMethod.GET, TAG_DYNAMIC_LIST);
+        return new RestListRequest<DynamicData>(url, type, RestRequest.HttpMethod.GET, TAG_DYNAMIC_LIST);
     }
 
 
@@ -52,7 +55,12 @@ public class RestRequestFactory implements IRequestFactory {
 
         String url = UrlList.TOPIC_LIST;
         if(!TextUtils.isEmpty(last)) {
-            url += "&"+"last="+last;
+            try {
+                last = URLEncoder.encode(last,"utf-8");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+            url += "&"+"last="+ last;
         }
         return new RestListRequest<TopicData>(url, type, RestRequest.HttpMethod.GET, TAG_TOPIC_LIST);
     }
@@ -64,6 +72,11 @@ public class RestRequestFactory implements IRequestFactory {
 
         String url = UrlList.REPLY_LIST;
         if(!TextUtils.isEmpty(last)) {
+            try {
+                last = URLEncoder.encode(last,"utf-8");
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
             url += "&"+"last="+last;
         }
         return new RestListRequest<ReplyData>(url, type, RestRequest.HttpMethod.GET, TAG_REPLY_LIST);
