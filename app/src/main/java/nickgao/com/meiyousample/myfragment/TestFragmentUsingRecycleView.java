@@ -137,10 +137,12 @@ public class TestFragmentUsingRecycleView extends PeriodBaseActivity implements 
                 Log.d("STATE", state.name());
                 if( state == State.EXPANDED ) {
                     //展开状态
+                    rl_custom_title_bar.setAlpha(0);
                     LogUtils.d("====state == State.EXPANDED");
 
                 }else if(state == State.COLLAPSED){
                     //折叠状态
+                    rl_custom_title_bar.setAlpha(1);
                     LogUtils.d("====state == State.COLLAPSED");
                     custom_tv_title.setText(R.string.personal);
 
